@@ -22,6 +22,18 @@ public extension DNSThemeButtonStyle {
                                 border: DNSUIBorder.DNSForm.Button.default,
                                 shadow: DNSUIShadow.DNSForm.Button.default,
                                 tintColor: DNSUIColor.DNSForm.Button.Default.tint)
+        public static var destructive =
+            DNSThemeButtonStyle(styleName: "destructive",
+                                titleColor: DNSUIColor.DNSForm.Button.Destructive.title,
+                                titleFont: DNSUIFont.DNSForm.Button.Destructive.title,
+                                titleShadow: DNSUIShadow.DNSForm.Button.Destructive.title,
+                                subtitleColor: DNSUIColor.DNSForm.Button.Destructive.subtitle,
+                                subtitleFont: DNSUIFont.DNSForm.Button.Destructive.subtitle,
+                                subtitleShadow: DNSUIShadow.DNSForm.Button.Destructive.subtitle,
+                                backgroundColor: DNSUIColor.DNSForm.Button.Destructive.background,
+                                border: DNSUIBorder.DNSForm.Button.destructive,
+                                shadow: DNSUIShadow.DNSForm.Button.destructive,
+                                tintColor: DNSUIColor.DNSForm.Button.Destructive.tint)
         public static var square =
             DNSThemeButtonStyle(styleName: "square",
                                 titleColor: DNSUIColor.DNSForm.Button.Square.title,

@@ -12,11 +12,16 @@ import UIKit
 public extension DNSUIBorder {
     enum DNSForm {  // swiftlint:disable:this type_name
         public enum Button {
-            public static var `default` = DNSUIBorder(color: DNSUIColor.DNSForm.Button.Default.border,
-                                                      cornerRadius: 10)
-            public static var square = DNSUIBorder(color: DNSUIColor.DNSForm.Button.Square.border,
-                                                   cornerRadius: 0,
-                                                   width: 1)
+            public static var `default` =
+                DNSUIBorder(color: DNSUIColor.DNSForm.Button.Default.border,
+                            cornerRadius: 10)
+            public static var destructive =
+                DNSUIBorder(color: DNSUIColor.DNSForm.Button.Destructive.border,
+                            cornerRadius: 10)
+            public static var square =
+                DNSUIBorder(color: DNSUIColor.DNSForm.Button.Square.border,
+                            cornerRadius: 0,
+                            width: 1)
         }
     }
 }
