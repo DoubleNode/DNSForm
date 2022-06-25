@@ -112,6 +112,56 @@ public extension DNSUIColor {
                                highlighted: UIColor.DNSForm.Button.Destructive.Title.Shadow.highlighted,
                                selected: UIColor.DNSForm.Button.Destructive.Title.Shadow.selected)
             }
+            public enum IndexTab {
+                public static var background =
+                    DNSUIColor(UIColor.DNSForm.Button.IndexTab.Background.normal,
+                               disabled: UIColor.DNSForm.Button.IndexTab.Background.disabled,
+                               focused: UIColor.DNSForm.Button.IndexTab.Background.focused,
+                               highlighted: UIColor.DNSForm.Button.IndexTab.Background.highlighted,
+                               selected: UIColor.DNSForm.Button.IndexTab.Background.selected)
+                public static var border =
+                    DNSUIColor(UIColor.DNSForm.Button.IndexTab.Border.normal,
+                               disabled: UIColor.DNSForm.Button.IndexTab.Border.disabled,
+                               focused: UIColor.DNSForm.Button.IndexTab.Border.focused,
+                               highlighted: UIColor.DNSForm.Button.IndexTab.Border.highlighted,
+                               selected: UIColor.DNSForm.Button.IndexTab.Border.selected)
+                public static var shadow =
+                    DNSUIColor(UIColor.DNSForm.Button.IndexTab.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.IndexTab.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.IndexTab.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.IndexTab.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.IndexTab.Shadow.selected)
+                public static var subtitle =
+                    DNSUIColor(UIColor.DNSForm.Button.IndexTab.Subtitle.normal,
+                               disabled: UIColor.DNSForm.Button.IndexTab.Subtitle.disabled,
+                               focused: UIColor.DNSForm.Button.IndexTab.Subtitle.focused,
+                               highlighted: UIColor.DNSForm.Button.IndexTab.Subtitle.highlighted,
+                               selected: UIColor.DNSForm.Button.IndexTab.Subtitle.selected)
+                public static var subtitleShadow =
+                    DNSUIColor(UIColor.DNSForm.Button.IndexTab.Subtitle.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.IndexTab.Subtitle.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.IndexTab.Subtitle.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.IndexTab.Subtitle.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.IndexTab.Subtitle.Shadow.selected)
+                public static var tint =
+                    DNSUIColor(UIColor.DNSForm.Button.IndexTab.Tint.normal,
+                               disabled: UIColor.DNSForm.Button.IndexTab.Tint.disabled,
+                               focused: UIColor.DNSForm.Button.IndexTab.Tint.focused,
+                               highlighted: UIColor.DNSForm.Button.IndexTab.Tint.highlighted,
+                               selected: UIColor.DNSForm.Button.IndexTab.Tint.selected)
+                public static var title =
+                    DNSUIColor(UIColor.DNSForm.Button.IndexTab.Title.normal,
+                               disabled: UIColor.DNSForm.Button.IndexTab.Title.disabled,
+                               focused: UIColor.DNSForm.Button.IndexTab.Title.focused,
+                               highlighted: UIColor.DNSForm.Button.IndexTab.Title.highlighted,
+                               selected: UIColor.DNSForm.Button.IndexTab.Title.selected)
+                public static var titleShadow =
+                    DNSUIColor(UIColor.DNSForm.Button.IndexTab.Title.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.IndexTab.Title.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.IndexTab.Title.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.IndexTab.Title.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.IndexTab.Title.Shadow.selected)
+            }
             public enum Square {
                 public static var background =
                     DNSUIColor(UIColor.DNSForm.Button.Square.Background.normal,
