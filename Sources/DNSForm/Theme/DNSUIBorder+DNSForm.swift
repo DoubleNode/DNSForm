@@ -25,6 +25,9 @@ public extension DNSUIBorder {
                             cornerTopLeftRadius: 10,
                             cornerTopRightRadius: 10,
                             width: 1)
+            public static var preview =
+                DNSUIBorder(color: DNSUIColor.DNSForm.Button.Preview.border,
+                            cornerRadius: 10)
             public static var square =
                 DNSUIBorder(color: DNSUIColor.DNSForm.Button.Square.border,
                             cornerRadius: 0,

@@ -46,6 +46,18 @@ public extension DNSThemeButtonStyle {
                                 border: DNSUIBorder.DNSForm.Button.indexTab,
                                 shadow: DNSUIShadow.DNSForm.Button.indexTab,
                                 tintColor: DNSUIColor.DNSForm.Button.IndexTab.tint)
+        public static var preview =
+            DNSThemeButtonStyle(styleName: "preview",
+                                titleColor: DNSUIColor.DNSForm.Button.Preview.title,
+                                titleFont: DNSUIFont.DNSForm.Button.Preview.title,
+                                titleShadow: DNSUIShadow.DNSForm.Button.Preview.title,
+                                subtitleColor: DNSUIColor.DNSForm.Button.Preview.subtitle,
+                                subtitleFont: DNSUIFont.DNSForm.Button.Preview.subtitle,
+                                subtitleShadow: DNSUIShadow.DNSForm.Button.Preview.subtitle,
+                                backgroundColor: DNSUIColor.DNSForm.Button.Preview.background,
+                                border: DNSUIBorder.DNSForm.Button.preview,
+                                shadow: DNSUIShadow.DNSForm.Button.preview,
+                                tintColor: DNSUIColor.DNSForm.Button.Preview.tint)
         public static var square =
             DNSThemeButtonStyle(styleName: "square",
                                 titleColor: DNSUIColor.DNSForm.Button.Square.title,

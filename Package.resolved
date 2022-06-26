@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "animatedfield",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DoubleNodeOpen/AnimatedField.git",
+      "state" : {
+        "revision" : "2d020e5d477c5e09a360865a950e64cc1cf45c73",
+        "version" : "2.5.0"
+      }
+    },
+    {
       "identity" : "atomicswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNodeOpen/AtomicSwift.git",
@@ -50,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseTheme.git",
       "state" : {
-        "revision" : "fdc1ef9127ff599da9d6695f37643d6b2d450857",
-        "version" : "1.8.0"
+        "revision" : "049c29c52d9154c3f060e0de72d32dc0d7104ac7",
+        "version" : "1.8.3"
       }
     },
     {
@@ -113,8 +122,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSDataObjects.git",
       "state" : {
-        "revision" : "57d9fec7eeee2c758193c12186c8ad60b9c4162b",
-        "version" : "1.8.4"
+        "revision" : "aeec4e276d562e3456a589b78d43f2ee4ec5d3f0",
+        "version" : "1.8.8"
       }
     },
     {
@@ -223,6 +232,15 @@
       "state" : {
         "revision" : "90ec3de89965be4612b496211e1f31a363a1df42",
         "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "swift-mask-textfield",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DoubleNodeOpen/swift-mask-textfield.git",
+      "state" : {
+        "revision" : "a5546b7ae52f8d6e0b067c25606f3455056b92a5",
+        "version" : "1.1.2"
       }
     },
     {

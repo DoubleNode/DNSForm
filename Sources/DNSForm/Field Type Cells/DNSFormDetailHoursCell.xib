@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="URW Type Foundry - URWDIN-Medium.otf">
+            <string>URWDIN-Medium</string>
+        </array>
+        <array key="URW Type Foundry - URWDIN-Regular.otf">
+            <string>URWDIN-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DNSFormDetailHoursCell" customModule="MEAdminApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8Z-e5-aHa">
+                                <rect key="frame" x="24" y="6" width="70.5" height="13"/>
+                                <fontDescription key="fontDescription" name="URWDIN-Medium" family="URW DIN" pointSize="13"/>
+                                <color key="textColor" name="FormFootnote"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njb-EG-v3S">
+                                <rect key="frame" x="24" y="25" width="56" height="11"/>
+                                <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
+                                <color key="textColor" name="FormFootnote"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zh-Qd-KcT" userLabel="Date Text Field" customClass="AnimatedField" customModule="AnimatedField">
+                                <rect key="frame" x="24" y="19" width="176" height="76"/>
+                                <color key="tintColor" name="TitleDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="jPx-i4-cfN"/>
+                                </constraints>
+                            </view>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" translatesAutoresizingMaskIntoConstraints="NO" id="ala-U9-OFA">
+                                <rect key="frame" x="24" y="19" width="176" height="76"/>
+                                <color key="tintColor" name="TitleDark"/>
+                                <connections>
+                                    <action selector="dateValueChangedActionWithSender:" destination="gTV-IL-0wX" eventType="valueChanged" id="Ze9-M6-5Bs"/>
+                                </connections>
+                            </datePicker>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UXn-gT-llh">
+                                <rect key="frame" x="172" y="43.5" width="20" height="19"/>
+                                <color key="tintColor" name="TitleDark"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-Nc-3jh" userLabel="Line View">
+                                <rect key="frame" x="24" y="72" width="176" height="1"/>
+                                <color key="backgroundColor" name="greyishBrown"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Ykx-gm-uQe"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Close Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3e-20-2EJ" userLabel="Time Label">
+                                <rect key="frame" x="214" y="25" width="57.5" height="11"/>
+                                <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
+                                <color key="textColor" name="FormFootnote"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0J-MI-Xmn" userLabel="Time Text Field" customClass="AnimatedField" customModule="AnimatedField">
+                                <rect key="frame" x="214" y="19" width="176" height="76"/>
+                                <color key="tintColor" name="TitleDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="KwF-Rx-PQU"/>
+                                </constraints>
+                            </view>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" translatesAutoresizingMaskIntoConstraints="NO" id="vTS-EN-5KK">
+                                <rect key="frame" x="214" y="19" width="176" height="76"/>
+                                <color key="tintColor" name="TitleDark"/>
+                                <connections>
+                                    <action selector="dateValueChangedActionWithSender:" destination="gTV-IL-0wX" eventType="valueChanged" id="W1L-rO-q3L"/>
+                                </connections>
+                            </datePicker>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7hz-cO-IB0" userLabel="clock">
+                                <rect key="frame" x="362" y="43.5" width="20" height="19"/>
+                                <color key="tintColor" name="TitleDark"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DL-Eo-7yt" userLabel="Line View">
+                                <rect key="frame" x="214" y="72" width="176" height="1"/>
+                                <color key="backgroundColor" name="greyishBrown"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="yMm-qf-VBi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="9zh-Qd-KcT" firstAttribute="bottom" secondItem="I0J-MI-Xmn" secondAttribute="bottom" id="0Y5-8m-K4L"/>
+                            <constraint firstItem="I0J-MI-Xmn" firstAttribute="leading" secondItem="7DL-Eo-7yt" secondAttribute="leading" id="1cs-wR-fz1"/>
+                            <constraint firstItem="x8Z-e5-aHa" firstAttribute="leading" secondItem="KuD-TU-KgD" secondAttribute="leading" constant="24" id="3F8-7X-PFL"/>
+                            <constraint firstItem="i3e-20-2EJ" firstAttribute="top" secondItem="njb-EG-v3S" secondAttribute="top" id="7ZP-JU-r6X"/>
+                            <constraint firstItem="ala-U9-OFA" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="leading" id="8Bg-Qd-s5w"/>
+                            <constraint firstItem="I0J-MI-Xmn" firstAttribute="trailing" secondItem="7DL-Eo-7yt" secondAttribute="trailing" id="8lq-LE-opp"/>
+                            <constraint firstItem="7DL-Eo-7yt" firstAttribute="top" secondItem="7hz-cO-IB0" secondAttribute="bottom" constant="9" id="BIy-DV-1Ms"/>
+                            <constraint firstAttribute="bottom" secondItem="9zh-Qd-KcT" secondAttribute="bottom" id="Bvg-Rz-vnG"/>
+                            <constraint firstItem="I0J-MI-Xmn" firstAttribute="leading" secondItem="vTS-EN-5KK" secondAttribute="leading" id="C6N-IX-66r"/>
+                            <constraint firstItem="I0J-MI-Xmn" firstAttribute="top" secondItem="vTS-EN-5KK" secondAttribute="top" id="C7X-MJ-06r"/>
+                            <constraint firstItem="I0J-MI-Xmn" firstAttribute="leading" secondItem="i3e-20-2EJ" secondAttribute="leading" id="Gyz-MT-d5D"/>
+                            <constraint firstAttribute="bottom" secondItem="fyx-Nc-3jh" secondAttribute="bottom" constant="22" id="Ju3-zB-D1g"/>
+                            <constraint firstItem="UXn-gT-llh" firstAttribute="trailing" secondItem="fyx-Nc-3jh" secondAttribute="trailing" constant="-8" id="LEE-hm-0dz"/>
+                            <constraint firstItem="i3e-20-2EJ" firstAttribute="bottom" secondItem="njb-EG-v3S" secondAttribute="bottom" id="LOt-AX-8EO"/>
+                            <constraint firstItem="fyx-Nc-3jh" firstAttribute="top" secondItem="UXn-gT-llh" secondAttribute="bottom" constant="9" id="PRr-P8-UY9"/>
+                            <constraint firstItem="I0J-MI-Xmn" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="trailing" constant="14" id="QCF-2f-FLQ"/>
+                            <constraint firstItem="x8Z-e5-aHa" firstAttribute="top" secondItem="KuD-TU-KgD" secondAttribute="top" constant="6" id="R15-ti-KlB"/>
+                            <constraint firstItem="fyx-Nc-3jh" firstAttribute="trailing" secondItem="9zh-Qd-KcT" secondAttribute="trailing" id="SAe-eI-Bdf"/>
+                            <constraint firstItem="fyx-Nc-3jh" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="leading" id="T16-JQ-t3J"/>
+                            <constraint firstItem="9zh-Qd-KcT" firstAttribute="leading" secondItem="KuD-TU-KgD" secondAttribute="leading" constant="24" id="VyL-sm-yf9"/>
+                            <constraint firstItem="9zh-Qd-KcT" firstAttribute="leading" secondItem="njb-EG-v3S" secondAttribute="leading" id="aoN-oS-7FD"/>
+                            <constraint firstItem="7hz-cO-IB0" firstAttribute="trailing" secondItem="7DL-Eo-7yt" secondAttribute="trailing" constant="-8" id="cgb-pp-WXA"/>
+                            <constraint firstAttribute="trailing" secondItem="I0J-MI-Xmn" secondAttribute="trailing" constant="24" id="cjY-GC-Fvn"/>
+                            <constraint firstItem="9zh-Qd-KcT" firstAttribute="top" secondItem="I0J-MI-Xmn" secondAttribute="top" id="ga5-CQ-NWI"/>
+                            <constraint firstItem="fyx-Nc-3jh" firstAttribute="bottom" secondItem="7DL-Eo-7yt" secondAttribute="bottom" id="h3X-Na-6UK"/>
+                            <constraint firstItem="9zh-Qd-KcT" firstAttribute="top" secondItem="njb-EG-v3S" secondAttribute="top" constant="-6" id="i6e-YU-8e6"/>
+                            <constraint firstItem="I0J-MI-Xmn" firstAttribute="bottom" secondItem="vTS-EN-5KK" secondAttribute="bottom" id="iKg-D4-WFJ"/>
+                            <constraint firstItem="ala-U9-OFA" firstAttribute="bottom" secondItem="9zh-Qd-KcT" secondAttribute="bottom" id="kJ4-fc-e7H"/>
+                            <constraint firstItem="ala-U9-OFA" firstAttribute="trailing" secondItem="9zh-Qd-KcT" secondAttribute="trailing" id="qS7-Uc-g97"/>
+                            <constraint firstItem="I0J-MI-Xmn" firstAttribute="width" secondItem="9zh-Qd-KcT" secondAttribute="width" id="sL7-cn-F7D"/>
+                            <constraint firstItem="ala-U9-OFA" firstAttribute="top" secondItem="9zh-Qd-KcT" secondAttribute="top" id="slj-yL-eKJ"/>
+                            <constraint firstItem="I0J-MI-Xmn" firstAttribute="trailing" secondItem="vTS-EN-5KK" secondAttribute="trailing" id="xLh-KT-2cN"/>
+                            <constraint firstItem="9zh-Qd-KcT" firstAttribute="top" secondItem="x8Z-e5-aHa" secondAttribute="bottom" id="yWh-2a-mVb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="KuD-TU-KgD" secondAttribute="trailing" id="9v4-Eu-ZbX"/>
+                <constraint firstItem="KuD-TU-KgD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eGb-qL-iLr"/>
+                <constraint firstAttribute="bottom" secondItem="KuD-TU-KgD" secondAttribute="bottom" id="fvc-qh-f4V"/>
+                <constraint firstItem="KuD-TU-KgD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yEI-ee-ByT"/>
+            </constraints>
+            <size key="customSize" width="414" height="413"/>
+            <connections>
+                <outlet property="closeLabel" destination="i3e-20-2EJ" id="0b5-z4-g5K"/>
+                <outlet property="closePicker" destination="vTS-EN-5KK" id="7e5-T6-Abv"/>
+                <outlet property="closePickerLineView" destination="7DL-Eo-7yt" id="7C7-mc-nsy"/>
+                <outlet property="closeTextField" destination="I0J-MI-Xmn" id="3SQ-uY-k0i"/>
+                <outlet property="hoursLabel" destination="x8Z-e5-aHa" id="IU6-Dd-IdI"/>
+                <outlet property="openLabel" destination="njb-EG-v3S" id="sFt-hI-D0R"/>
+                <outlet property="openPicker" destination="ala-U9-OFA" id="vY1-tf-q6K"/>
+                <outlet property="openPickerLineView" destination="fyx-Nc-3jh" id="YUl-2b-GtU"/>
+                <outlet property="openTextField" destination="9zh-Qd-KcT" id="JA9-aw-kjJ"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="143.63839285714286"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="clock" catalog="system" width="128" height="123"/>
+        <namedColor name="FormFootnote">
+            <color red="0.48600000143051147" green="0.48600000143051147" blue="0.48600000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TitleDark">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greyishBrown">
+            <color red="0.3449999988079071" green="0.3449999988079071" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

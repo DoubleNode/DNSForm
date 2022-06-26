@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DNSFormDetailWeblinkCell" customModule="MEAdminApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-oh-Ee1" userLabel="Text Field" customClass="AnimatedField" customModule="AnimatedField">
+                                <rect key="frame" x="24" y="0.0" width="326" height="64"/>
+                                <color key="tintColor" name="TitleDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Aew-Xl-w2x"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weblink" translatesAutoresizingMaskIntoConstraints="NO" id="2Vc-Hg-VvM">
+                                <rect key="frame" x="365.5" y="11.5" width="33.5" height="33.5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLZ-IM-Id7">
+                                <rect key="frame" x="350" y="0.0" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WLZ-IM-Id7" secondAttribute="height" multiplier="1:1" id="ITF-4D-pDY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                <connections>
+                                    <action selector="weblinkButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="5p3-oc-10q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="aUe-oh-Ee1" firstAttribute="top" secondItem="KuD-TU-KgD" secondAttribute="top" id="78d-dL-hQy"/>
+                            <constraint firstItem="WLZ-IM-Id7" firstAttribute="top" secondItem="KuD-TU-KgD" secondAttribute="top" id="7ew-iI-3eO"/>
+                            <constraint firstItem="aUe-oh-Ee1" firstAttribute="leading" secondItem="KuD-TU-KgD" secondAttribute="leading" constant="24" id="EGm-Gu-5F6"/>
+                            <constraint firstItem="2Vc-Hg-VvM" firstAttribute="centerY" secondItem="aUe-oh-Ee1" secondAttribute="centerY" constant="-4" id="Qcj-pu-ng7"/>
+                            <constraint firstAttribute="trailing" secondItem="WLZ-IM-Id7" secondAttribute="trailing" id="UY9-Tm-LHB"/>
+                            <constraint firstAttribute="bottom" secondItem="aUe-oh-Ee1" secondAttribute="bottom" id="fMP-ee-Bv6"/>
+                            <constraint firstAttribute="trailing" secondItem="2Vc-Hg-VvM" secondAttribute="trailing" constant="15" id="fP6-sm-tEp"/>
+                            <constraint firstItem="WLZ-IM-Id7" firstAttribute="leading" secondItem="aUe-oh-Ee1" secondAttribute="trailing" id="qmO-4H-WmG"/>
+                            <constraint firstAttribute="bottom" secondItem="WLZ-IM-Id7" secondAttribute="bottom" id="wZ4-Pn-xBB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="KuD-TU-KgD" secondAttribute="trailing" id="9v4-Eu-ZbX"/>
+                <constraint firstItem="KuD-TU-KgD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eGb-qL-iLr"/>
+                <constraint firstAttribute="bottom" secondItem="KuD-TU-KgD" secondAttribute="bottom" id="fvc-qh-f4V"/>
+                <constraint firstItem="KuD-TU-KgD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yEI-ee-ByT"/>
+            </constraints>
+            <size key="customSize" width="414" height="413"/>
+            <connections>
+                <outlet property="previewButton" destination="WLZ-IM-Id7" id="1pL-DR-oPS"/>
+                <outlet property="previewImageView" destination="2Vc-Hg-VvM" id="zCN-hB-cOZ"/>
+                <outlet property="textField" destination="aUe-oh-Ee1" id="85v-Nt-9Yr"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="143.30357142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="weblink" width="33.5" height="33.5"/>
+        <namedColor name="TitleDark">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

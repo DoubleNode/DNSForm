@@ -26,11 +26,13 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/DoubleNode/DNSBaseStage.git",  branch: "master"),
-        .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.8.0"),
+        .package(url: "https://github.com/DoubleNodeOpen/AnimatedField.git", from: "2.5.0"),
+        .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", branch: "master"),
+        .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.8.3"),
         .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.8.0"),
         .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", from: "1.8.0"),
         .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.8.0"),
+        .package(url: "https://github.com/Nirma/SFSymbol", from: "1.1.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -38,8 +40,8 @@ let package = Package(
         .target(
             name: "DNSForm",
             dependencies: [
-                "DNSBaseStage", "DNSBaseTheme", "DNSCore", "DNSCoreThreading",
-                "DNSProtocols"
+                "AnimatedField", "DNSBaseStage", "DNSBaseTheme", "DNSCore",
+                "DNSCoreThreading", "DNSProtocols", "SFSymbol"
             ]),
         .testTarget(
             name: "DNSFormTests",

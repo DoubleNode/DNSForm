@@ -1,0 +1,138 @@
+//
+//  DNSFormDetailAppActionCell.swift
+//  DoubleNode Swift Framework (DNSFramework) - DNSForm
+//
+//  Created by Darren Ehlers.
+//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//
+
+import AnimatedField
+import Combine
+import DNSBaseStage
+import DNSBaseTheme
+import DNSCore
+import DNSCoreThreading
+import DNSDataObjects
+import DNSProtocols
+import UIKit
+
+public protocol DNSFormDetailAppActionCellLogic: DNSBaseStageCellLogic {
+    typealias Stage = DNSFormDetailStage
+    // MARK: - Outgoing Pipelines -
+    var actionEditActionPublisher: PassthroughSubject<Stage.Models.AppAction.Request, Never> { get }
+    var changeTextPublisher: PassthroughSubject<Stage.Models.Field.Request, Never> { get }
+    var selectActionPublisher: PassthroughSubject<Stage.Models.AppAction.Request, Never> { get }
+}
+open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
+    DNSFormDetailAppActionCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
+    public typealias Stage = DNSFormDetailStage
+    static let recommendedContentSize = CGSize(width: 414, height: 80)
+
+    public struct Data: Hashable {
+        var field: String
+        var label: String
+        var languageCode: String
+        var placeholder: String
+        var readonly: Bool
+        var required: Bool
+        var selectMode: Bool
+        var appAction: DAOAppAction?
+    }
+    public var selectMode: Bool {
+        guard let data = self.data else { return false }
+        guard data.appAction != nil else { return false }
+        return data.selectMode
+    }
+    public var data: Data? {
+        didSet {
+            guard let data = self.data else {
+                textField.isEnabled = false
+                textField.type = .text("field", 0, 64)
+                textField.placeholder = ""
+                textField.text = ""
+                self.progressView.setProgress(0.0, animated: false)
+                self.progressView.isHidden = true
+                self.imageView.image = nil
+                self.selectModeView?.backgroundColor = UIColor.clear
+                return
+            }
+
+            self.selectModeView.isSelected = self.selectMode
+
+            textField.isEnabled = false
+            textField.type = .text(data.label, data.required ? 1 : 0, 64)
+            textField.placeholder = data.placeholder + " (\(data.languageCode))"
+
+            textField.text = data.appAction?.title.asString(for: data.languageCode)
+
+            self.progressView.setProgress(0.0, animated: false)
+            self.progressView.isHidden = true
+            self.imageView.image = nil
+            if let imageUrl = data.appAction?.imageUrl.asURL {
+                self.progressView.isHidden = false
+                self.imageView.af
+                    .setImage(withURL: imageUrl,
+                              cacheKey: imageUrl.absoluteString,
+                              progress: { (progress) in
+                        self.progressView.setProgress(Float(progress.fractionCompleted),
+                                                      animated: true)
+                        self.progressView.isHidden = (progress.fractionCompleted >= 1.0)
+                    },
+                              imageTransition: UIImageView.ImageTransition.crossDissolve(0.2))
+            }
+        }
+    }
+
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var progressView: UIProgressView!
+    @IBOutlet var selectModeView: DNSUIView!
+    @IBOutlet var textField: AnimatedField!
+
+    // MARK: - Outgoing Pipelines -
+    public var actionEditActionPublisher = PassthroughSubject<Stage.Models.AppAction.Request, Never>()
+    public var changeTextPublisher = PassthroughSubject<Stage.Models.Field.Request, Never>()
+    public var selectActionPublisher = PassthroughSubject<Stage.Models.AppAction.Request, Never>()
+
+    override open func awakeFromNib() {
+        super.awakeFromNib()
+        textField.format = Stage.AnimatedField.Format.default
+        textField.type = .url("field", 0)
+        textField.placeholder = "field"
+        textField.keyboardType = .URL
+        textField.isSecure = false
+        textField.dataSource = self
+        textField.delegate = self
+        textField.returnKeyType = UIReturnKeyType.next
+    }
+    override open func contentInit() {
+        super.contentInit()
+        data = nil
+    }
+
+    // MARK: - AnimatedFieldDataSource methods
+    public func animatedFieldShouldReturn(_ animatedField: AnimatedField) -> Bool {
+        _ = animatedField.resignFirstResponder()
+        return true
+    }
+
+    // MARK: - AnimatedFieldDelegate methods
+    public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
+        try? self.analyticsWorker?.doAutoTrack(class: String(describing: self), method: "\(#function)")
+    }
+
+    // MARK: - Action Methods -
+    @IBAction func actionEditButtonAction(_ sender: UIButton) {
+        try? self.analyticsWorker?.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        guard let data = self.data else { return }
+        if data.selectMode {
+            guard self.selectMode else { return }
+            selectActionPublisher
+                .send(Stage.Models.AppAction.Request(field: data.field,
+                                                     appAction: data.appAction))
+            return
+        }
+        actionEditActionPublisher
+            .send(Stage.Models.AppAction.Request(field: data.field,
+                                                 appAction: data.appAction))
+    }
+}

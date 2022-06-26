@@ -15,6 +15,7 @@ public extension DNSUIShadow {
             public static var `default` = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Default.shadow)
             public static var destructive = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Destructive.shadow)
             public static var indexTab = DNSUIShadow(color: DNSUIColor.DNSForm.Button.IndexTab.shadow)
+            public static var preview = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Preview.shadow)
             public static var square = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Square.shadow)
             public enum Default {
                 public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Default.subtitleShadow)
@@ -27,6 +28,10 @@ public extension DNSUIShadow {
             public enum IndexTab {
                 public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.IndexTab.subtitleShadow)
                 public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.IndexTab.titleShadow)
+            }
+            public enum Preview {
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Preview.subtitleShadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Preview.titleShadow)
             }
             public enum Square {
                 public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Square.subtitleShadow)
