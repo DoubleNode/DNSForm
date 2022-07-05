@@ -30,6 +30,14 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
         public var languageCode: String
         public var placeholder: String
         public var text: String
+
+        public init(field: String, label: String, languageCode: String, placeholder: String, text: String) {
+            self.field = field
+            self.label = label
+            self.languageCode = languageCode
+            self.placeholder = placeholder
+            self.text = text
+        }
     }
     public var data: Data? {
         didSet {

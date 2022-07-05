@@ -33,6 +33,17 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
         public var required: Bool
         public var selectionStrings: [String]
         public var text: String
+
+        public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool, required: Bool, selectionStrings: [String], text: String) {
+            self.field = field
+            self.label = label
+            self.languageCode = languageCode
+            self.placeholder = placeholder
+            self.readonly = readonly
+            self.required = required
+            self.selectionStrings = selectionStrings
+            self.text = text
+        }
     }
     public var data: Data? {
         didSet {

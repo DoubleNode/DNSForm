@@ -38,6 +38,16 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         public var languageCode: String
         public var readonly: Bool
         public var required: Bool
+
+        public init(date: Date, dateLabel: String, datePlaceholder: String, field: String, languageCode: String, readonly: Bool, required: Bool) {
+            self.date = date
+            self.dateLabel = dateLabel
+            self.datePlaceholder = datePlaceholder
+            self.field = field
+            self.languageCode = languageCode
+            self.readonly = readonly
+            self.required = required
+        }
     }
     public var data: Data? {
         didSet {

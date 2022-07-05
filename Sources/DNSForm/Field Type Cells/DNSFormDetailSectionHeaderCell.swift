@@ -27,6 +27,12 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
         public var label: String
         public var lineBottomOffset: Double
         public var section: Int
+
+        public init(label: String, lineBottomOffset: Double, section: Int) {
+            self.label = label
+            self.lineBottomOffset = lineBottomOffset
+            self.section = section
+        }
     }
     public var data: Data? {
         didSet {

@@ -38,6 +38,16 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
         public var timeOfDay: DNSTimeOfDay
         public var timeLabel: String
         public var timePlaceholder: String
+
+        public init(field: String, languageCode: String, readonly: Bool, required: Bool, timeOfDay: DNSTimeOfDay, timeLabel: String, timePlaceholder: String) {
+            self.field = field
+            self.languageCode = languageCode
+            self.readonly = readonly
+            self.required = required
+            self.timeOfDay = timeOfDay
+            self.timeLabel = timeLabel
+            self.timePlaceholder = timePlaceholder
+        }
     }
     public var data: Data? {
         didSet {

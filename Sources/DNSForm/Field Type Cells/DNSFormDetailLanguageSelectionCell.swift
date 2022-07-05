@@ -29,6 +29,13 @@ open class DNSFormDetailLanguageSelectionCell: DNSBaseStageCollectionViewCell,
         public var label: String
         public var lineBottomOffset: Double
         public var section: Int
+
+        public init(languageCode: String, label: String, lineBottomOffset: Double, section: Int) {
+            self.languageCode = languageCode
+            self.label = label
+            self.lineBottomOffset = lineBottomOffset
+            self.section = section
+        }
     }
     public var data: Data? {
         didSet {

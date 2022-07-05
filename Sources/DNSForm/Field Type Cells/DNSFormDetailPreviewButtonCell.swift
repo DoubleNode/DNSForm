@@ -24,6 +24,11 @@ open class DNSFormDetailPreviewButtonCell: DNSBaseStageCollectionViewCell, DNSFo
     public struct Data: Hashable {
         public var enabled: Bool
         public var label: String
+
+        public init(enabled: Bool, label: String) {
+            self.enabled = enabled
+            self.label = label
+        }
     }
     public var data: Data? {
         didSet {

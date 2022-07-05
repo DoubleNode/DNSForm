@@ -33,6 +33,16 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
         public var weblink: URL?
+
+        public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool, required: Bool, weblink: URL? = nil) {
+            self.field = field
+            self.label = label
+            self.languageCode = languageCode
+            self.placeholder = placeholder
+            self.readonly = readonly
+            self.required = required
+            self.weblink = weblink
+        }
     }
     public var data: Data? {
         didSet {

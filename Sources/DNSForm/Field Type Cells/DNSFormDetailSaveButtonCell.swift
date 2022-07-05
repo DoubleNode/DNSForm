@@ -27,6 +27,13 @@ open class DNSFormDetailSaveButtonCell: DNSBaseStageCollectionViewCell,
         public var label: String
         public var newObject: Bool
         public var newObjectLabel: String
+
+        public init(enabled: Bool, label: String, newObject: Bool, newObjectLabel: String) {
+            self.enabled = enabled
+            self.label = label
+            self.newObject = newObject
+            self.newObjectLabel = newObjectLabel
+        }
     }
     public var data: Data? {
         didSet {

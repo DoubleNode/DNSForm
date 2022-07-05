@@ -42,6 +42,19 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         public var openPlaceholder: String
         public var readonly: Bool
         public var required: Bool
+
+        public init(closeLabel: String, closePlaceholder: String, field: String, hours: DAODayHours, hoursLabel: String, languageCode: String, openLabel: String, openPlaceholder: String, readonly: Bool, required: Bool) {
+            self.closeLabel = closeLabel
+            self.closePlaceholder = closePlaceholder
+            self.field = field
+            self.hours = hours
+            self.hoursLabel = hoursLabel
+            self.languageCode = languageCode
+            self.openLabel = openLabel
+            self.openPlaceholder = openPlaceholder
+            self.readonly = readonly
+            self.required = required
+        }
     }
     public var data: Data? {
         didSet {

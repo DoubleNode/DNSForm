@@ -18,6 +18,11 @@ open class DNSFormDetailHeaderView: DNSBaseStageCollectionReusableView {
     public struct Data: Hashable {
         public var section: Int
         public var title: String
+
+        public init(section: Int, title: String) {
+            self.section = section
+            self.title = title
+        }
     }
     public var data: Data? {
         didSet {

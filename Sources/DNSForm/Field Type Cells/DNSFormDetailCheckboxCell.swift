@@ -28,6 +28,13 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
         public var detailText: String
         public var field: String
         public var titleText: String
+
+        public init(checked: Bool, detailText: String, field: String, titleText: String) {
+            self.checked = checked
+            self.detailText = detailText
+            self.field = field
+            self.titleText = titleText
+        }
     }
     public var data: Data? {
         didSet {

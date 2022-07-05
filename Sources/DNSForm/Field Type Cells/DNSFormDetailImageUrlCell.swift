@@ -35,6 +35,16 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
         public var url: URL?
+
+        public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool, required: Bool, url: URL? = nil) {
+            self.field = field
+            self.label = label
+            self.languageCode = languageCode
+            self.placeholder = placeholder
+            self.readonly = readonly
+            self.required = required
+            self.url = url
+        }
     }
     public var data: Data? {
         didSet {

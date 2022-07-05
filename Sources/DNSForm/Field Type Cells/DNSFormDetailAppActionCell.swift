@@ -37,6 +37,17 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
         public var required: Bool
         public var selectMode: Bool
         public var appAction: DAOAppAction?
+
+        public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool, required: Bool, selectMode: Bool, appAction: DAOAppAction? = nil) {
+            self.field = field
+            self.label = label
+            self.languageCode = languageCode
+            self.placeholder = placeholder
+            self.readonly = readonly
+            self.required = required
+            self.selectMode = selectMode
+            self.appAction = appAction
+        }
     }
     public var selectMode: Bool {
         guard let data = self.data else { return false }
