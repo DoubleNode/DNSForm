@@ -13,38 +13,38 @@ import UIKit
 open class DNSFormDetailModels: DNSBaseStageModels {
     public enum AppAction {
         public struct Request: DNSBaseStageBaseRequest {
-            var field: String
-            var appAction: DAOAppAction?
+            public var field: String
+            public var appAction: DAOAppAction?
         }
     }
     public enum Field {
         public struct Request: DNSBaseStageBaseRequest {
-            var field: String
-            var languageCode: String
-            var value: Any?
+            public var field: String
+            public var languageCode: String
+            public var value: Any?
         }
     }
     public enum Image {
         public struct Request: DNSBaseStageBaseRequest {
-            var field: String
-            var image: UIImage
+            public var field: String
+            public var image: UIImage
         }
     }
     public enum Language {
         public struct Request: DNSBaseStageBaseRequest {
-            var languageCode: String
+            public var languageCode: String
         }
         public struct Response: DNSBaseStageBaseResponse {
-            var languageCode: String
+            public var languageCode: String
         }
         public struct ViewModel: DNSBaseStageBaseViewModel {
-            var languageCode: String
+            public var languageCode: String
         }
     }
     public enum Weblink {
         public struct Request: DNSBaseStageBaseRequest {
-            var field: String
-            var weblink: URL?
+            public var field: String
+            public var weblink: URL?
         }
     }
 }
