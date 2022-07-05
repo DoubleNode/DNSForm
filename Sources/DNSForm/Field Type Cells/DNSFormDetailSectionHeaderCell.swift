@@ -21,12 +21,12 @@ public protocol DNSFormDetailSectionHeaderCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
                                            DNSFormDetailSectionHeaderCellLogic {
     public typealias Stage = DNSFormDetailStage
-    static let recommendedContentSize = CGSize(width: 414, height: 30)
+    static public let recommendedContentSize = CGSize(width: 414, height: 30)
 
     public struct Data: Hashable {
-        var label: String
-        var lineBottomOffset: Double
-        var section: Int
+        public var label: String
+        public var lineBottomOffset: Double
+        public var section: Int
     }
     public var data: Data? {
         didSet {

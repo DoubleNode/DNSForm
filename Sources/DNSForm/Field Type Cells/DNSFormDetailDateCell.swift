@@ -22,7 +22,7 @@ public protocol DNSFormDetailDateCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
     DNSFormDetailDateCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormDetailStage
-    static let recommendedContentSize = CGSize(width: 414, height: 76)
+    static public let recommendedContentSize = CGSize(width: 414, height: 76)
 
     public lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -31,13 +31,13 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
     }()
 
     public struct Data: Hashable {
-        var date: Date
-        var dateLabel: String
-        var datePlaceholder: String
-        var field: String
-        var languageCode: String
-        var readonly: Bool
-        var required: Bool
+        public var date: Date
+        public var dateLabel: String
+        public var datePlaceholder: String
+        public var field: String
+        public var languageCode: String
+        public var readonly: Bool
+        public var required: Bool
     }
     public var data: Data? {
         didSet {

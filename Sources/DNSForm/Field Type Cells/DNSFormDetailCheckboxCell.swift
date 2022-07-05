@@ -21,13 +21,13 @@ public protocol DNSFormDetailCheckboxCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
                                       DNSFormDetailCheckboxCellLogic {
     public typealias Stage = DNSFormDetailStage
-    static let recommendedContentSize = CGSize(width: 414, height: 52)
+    static public let recommendedContentSize = CGSize(width: 414, height: 52)
 
     public struct Data: Hashable {
-        var checked: Bool
-        var detailText: String
-        var field: String
-        var titleText: String
+        public var checked: Bool
+        public var detailText: String
+        public var field: String
+        public var titleText: String
     }
     public var data: Data? {
         didSet {

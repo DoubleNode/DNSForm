@@ -23,20 +23,20 @@ public protocol DNSFormDetailDayOfWeekCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailDayOfWeekCell: DNSBaseStageCollectionViewCell,
                                        DNSFormDetailDayOfWeekCellLogic {
     public typealias Stage = DNSFormDetailStage
-    static let recommendedContentSize = CGSize(width: 414, height: 67)
+    static public let recommendedContentSize = CGSize(width: 414, height: 67)
 
     public struct Data: Hashable {
-        var dayOfWeek: DAODayOfWeekFlags
-        var field: String
-        var label: String
+        public var dayOfWeek: DAODayOfWeekFlags
+        public var field: String
+        public var label: String
 
-        var monday: Bool = true
-        var tuesday: Bool = true
-        var wednesday: Bool = true
-        var thursday: Bool = true
-        var friday: Bool = true
-        var saturday: Bool = true
-        var sunday: Bool = true
+        public var monday: Bool = true
+        public var tuesday: Bool = true
+        public var wednesday: Bool = true
+        public var thursday: Bool = true
+        public var friday: Bool = true
+        public var saturday: Bool = true
+        public var sunday: Bool = true
 
         public init(dayOfWeek: DAODayOfWeekFlags,
                     field: String,

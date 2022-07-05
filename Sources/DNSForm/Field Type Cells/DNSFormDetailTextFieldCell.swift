@@ -22,16 +22,16 @@ public protocol DNSFormDetailTextFieldCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
    DNSFormDetailTextFieldCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormDetailStage
-    static let recommendedContentSize = CGSize(width: 414, height: 64)
+    static public let recommendedContentSize = CGSize(width: 414, height: 64)
 
     public struct Data: Hashable {
-        var field: String
-        var label: String
-        var languageCode: String
-        var placeholder: String
-        var readonly: Bool
-        var required: Bool
-        var text: String
+        public var field: String
+        public var label: String
+        public var languageCode: String
+        public var placeholder: String
+        public var readonly: Bool
+        public var required: Bool
+        public var text: String
     }
     public var data: Data? {
         didSet {

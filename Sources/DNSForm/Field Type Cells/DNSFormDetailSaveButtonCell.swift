@@ -20,13 +20,13 @@ public protocol DNSFormDetailSaveButtonCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailSaveButtonCell: DNSBaseStageCollectionViewCell,
                                         DNSFormDetailSaveButtonCellLogic {
     public typealias Stage = DNSFormDetailStage
-    static let recommendedContentSize = CGSize(width: 414, height: 72)
+    static public let recommendedContentSize = CGSize(width: 414, height: 72)
 
     public struct Data: Hashable {
-        var enabled: Bool
-        var label: String
-        var newObject: Bool
-        var newObjectLabel: String
+        public var enabled: Bool
+        public var label: String
+        public var newObject: Bool
+        public var newObjectLabel: String
     }
     public var data: Data? {
         didSet {

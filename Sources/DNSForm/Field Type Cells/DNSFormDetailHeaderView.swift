@@ -13,11 +13,11 @@ import UIKit
 
 open class DNSFormDetailHeaderView: DNSBaseStageCollectionReusableView {
     public typealias Stage = DNSFormDetailStage
-    static let recommendedContentSize = CGSize(width: 414, height: 90)
+    static public let recommendedContentSize = CGSize(width: 414, height: 90)
 
     public struct Data: Hashable {
-        var section: Int
-        var title: String
+        public var section: Int
+        public var title: String
     }
     public var data: Data? {
         didSet {

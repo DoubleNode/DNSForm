@@ -48,25 +48,25 @@ public enum DNSFormDetailStage {
     }
 
     // swiftlint:disable line_length
-    enum Localizations {
-        enum DayOfWeekCell {
-            static let mondayLabel = NSLocalizedString("FormDetailDayOfWeekCellMondayLabel", comment: "FormDetailDayOfWeekCellMondayLabel")
-            static let tuesdayLabel = NSLocalizedString("FormDetailDayOfWeekCellTuesdayLabel", comment: "FormDetailDayOfWeekCellTuesdayLabel")
-            static let wednesdayLabel = NSLocalizedString("FormDetailDayOfWeekCellWednesdayLabel", comment: "FormDetailDayOfWeekCellWednesdayLabel")
-            static let thursdayLabel = NSLocalizedString("FormDetailDayOfWeekCellThursdayLabel", comment: "FormDetailDayOfWeekCellThursdayLabel")
-            static let fridayLabel = NSLocalizedString("FormDetailDayOfWeekCellFridayLabel", comment: "FormDetailDayOfWeekCellFridayLabel")
-            static let saturdayLabel = NSLocalizedString("FormDetailDayOfWeekCellSaturdayLabel", comment: "FormDetailDayOfWeekCellSaturdayLabel")
-            static let sundayLabel = NSLocalizedString("FormDetailDayOfWeekCellSundayLabel", comment: "FormDetailDayOfWeekCellSundayLabel")
+    public enum Localizations {
+        public enum DayOfWeekCell {
+            static public let mondayLabel = NSLocalizedString("FormDetailDayOfWeekCellMondayLabel", comment: "FormDetailDayOfWeekCellMondayLabel")
+            static public let tuesdayLabel = NSLocalizedString("FormDetailDayOfWeekCellTuesdayLabel", comment: "FormDetailDayOfWeekCellTuesdayLabel")
+            static public let wednesdayLabel = NSLocalizedString("FormDetailDayOfWeekCellWednesdayLabel", comment: "FormDetailDayOfWeekCellWednesdayLabel")
+            static public let thursdayLabel = NSLocalizedString("FormDetailDayOfWeekCellThursdayLabel", comment: "FormDetailDayOfWeekCellThursdayLabel")
+            static public let fridayLabel = NSLocalizedString("FormDetailDayOfWeekCellFridayLabel", comment: "FormDetailDayOfWeekCellFridayLabel")
+            static public let saturdayLabel = NSLocalizedString("FormDetailDayOfWeekCellSaturdayLabel", comment: "FormDetailDayOfWeekCellSaturdayLabel")
+            static public let sundayLabel = NSLocalizedString("FormDetailDayOfWeekCellSundayLabel", comment: "FormDetailDayOfWeekCellSundayLabel")
         }
-        enum ImagePopup {
-            static let closeButton = NSLocalizedString("FormDetailImagePopupCloseButton", comment: "FormDetailImagePopupCloseButton")
+        public enum ImagePopup {
+            static public let closeButton = NSLocalizedString("FormDetailImagePopupCloseButton", comment: "FormDetailImagePopupCloseButton")
         }
     }
     // swiftlint:enable line_length
     
     public enum AnimatedField {
         public enum Format {
-            static var `default`: AnimatedFieldFormat {
+            static public var `default`: AnimatedFieldFormat {
                 var format = AnimatedFieldFormat()
                 format.dnsApply(DNSThemeFieldStyle.DNSForm.default)
                 format.alertEnabled = true

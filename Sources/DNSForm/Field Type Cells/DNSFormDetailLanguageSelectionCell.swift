@@ -22,13 +22,13 @@ public protocol DNSFormDetailLanguageSelectionCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailLanguageSelectionCell: DNSBaseStageCollectionViewCell,
                                                DNSFormDetailLanguageSelectionCellLogic {
     public typealias Stage = DNSFormDetailStage
-    static let recommendedContentSize = CGSize(width: 414, height: 60)
+    static public let recommendedContentSize = CGSize(width: 414, height: 60)
 
     public struct Data: Hashable {
-        var languageCode: String
-        var label: String
-        var lineBottomOffset: Double
-        var section: Int
+        public var languageCode: String
+        public var label: String
+        public var lineBottomOffset: Double
+        public var section: Int
     }
     public var data: Data? {
         didSet {

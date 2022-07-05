@@ -23,7 +23,7 @@ public protocol DNSFormDetailHoursCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
     DNSFormDetailHoursCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormDetailStage
-    static let recommendedContentSize = CGSize(width: 414, height: 95)
+    static public let recommendedContentSize = CGSize(width: 414, height: 95)
 
     public lazy var timeFormatter: DateFormatter = {
         let timeFormatter = DateFormatter()
@@ -32,16 +32,16 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
     }()
 
     public struct Data: Hashable {
-        var closeLabel: String
-        var closePlaceholder: String
-        var field: String
-        var hours: DAODayHours
-        var hoursLabel: String
-        var languageCode: String
-        var openLabel: String
-        var openPlaceholder: String
-        var readonly: Bool
-        var required: Bool
+        public var closeLabel: String
+        public var closePlaceholder: String
+        public var field: String
+        public var hours: DAODayHours
+        public var hoursLabel: String
+        public var languageCode: String
+        public var openLabel: String
+        public var openPlaceholder: String
+        public var readonly: Bool
+        public var required: Bool
     }
     public var data: Data? {
         didSet {

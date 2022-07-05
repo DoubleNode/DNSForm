@@ -19,11 +19,11 @@ public protocol DNSFormDetailPreviewButtonCellLogic: DNSBaseStageCellLogic {
 }
 open class DNSFormDetailPreviewButtonCell: DNSBaseStageCollectionViewCell, DNSFormDetailPreviewButtonCellLogic {
     public typealias Stage = DNSFormDetailStage
-    static let recommendedContentSize = CGSize(width: 414, height: 72)
+    static public let recommendedContentSize = CGSize(width: 414, height: 72)
 
     public struct Data: Hashable {
-        var enabled: Bool
-        var label: String
+        public var enabled: Bool
+        public var label: String
     }
     public var data: Data? {
         didSet {
