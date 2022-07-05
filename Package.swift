@@ -42,7 +42,29 @@ let package = Package(
             dependencies: [
                 "AnimatedField", "DNSBaseStage", "DNSBaseTheme", "DNSCore",
                 "DNSCoreThreading", "DNSProtocols", "SFSymbol"
-            ]),
+            ],
+            resources: [
+                .process("FieldTypeCells/DNSFormDetailAppActionCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailCheckboxCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailDateCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailDateTimeCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailDayOfWeekCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailDeleteButtonCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailHeaderView.xib"),
+                .process("FieldTypeCells/DNSFormDetailHoursCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailImageUrlCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailLanguageSelectionCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailPreviewButtonCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailSaveButtonCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailSectionHeaderCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailTextFieldCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailTextSelectionFieldCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailTextViewCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailTimeOfDayCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailWeblinkCell.xib"),
+                .process("DNSFormDetailImagePopupViewController.xib")
+            ]
+        ),
         .testTarget(
             name: "DNSFormTests",
             dependencies: ["DNSForm"]),
