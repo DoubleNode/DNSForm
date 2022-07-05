@@ -25,26 +25,27 @@ public enum DNSFormDetailStage {
     }
 
     static public func register(to collectionView: UICollectionView) {
-        DNSFormDetailAppActionCell.register(to: collectionView)
-        DNSFormDetailCheckboxCell.register(to: collectionView)
-        DNSFormDetailDateCell.register(to: collectionView)
-        DNSFormDetailDateTimeCell.register(to: collectionView)
-        DNSFormDetailDayOfWeekCell.register(to: collectionView)
-        DNSFormDetailDeleteButtonCell.register(to: collectionView)
-        DNSFormDetailHoursCell.register(to: collectionView)
-        DNSFormDetailImageUrlCell.register(to: collectionView)
-        DNSFormDetailLanguageSelectionCell.register(to: collectionView)
-        DNSFormDetailPreviewButtonCell.register(to: collectionView)
-        DNSFormDetailSaveButtonCell.register(to: collectionView)
-        DNSFormDetailSectionHeaderCell.register(to: collectionView)
-        DNSFormDetailTextFieldCell.register(to: collectionView)
-        DNSFormDetailTextSelectionFieldCell.register(to: collectionView)
-        DNSFormDetailTextViewCell.register(to: collectionView)
-        DNSFormDetailTimeOfDayCell.register(to: collectionView)
-        DNSFormDetailWeblinkCell.register(to: collectionView)
+        DNSFormDetailAppActionCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailCheckboxCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailDateCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailDateTimeCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailDayOfWeekCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailDeleteButtonCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailHoursCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailImageUrlCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailLanguageSelectionCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailPreviewButtonCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailSaveButtonCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailSectionHeaderCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailTextFieldCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailTextSelectionFieldCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailTextViewCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailTimeOfDayCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailWeblinkCell.register(to: collectionView, from: Bundle.module)
 
         DNSFormDetailHeaderView.register(to: collectionView,
-                                         for: UICollectionView.elementKindSectionHeader)
+                                         for: UICollectionView.elementKindSectionHeader,
+                                         from: Bundle.module)
     }
 
     // swiftlint:disable line_length
