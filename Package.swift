@@ -62,7 +62,8 @@ let package = Package(
                 .process("FieldTypeCells/DNSFormDetailTextViewCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailTimeOfDayCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailWeblinkCell.xib"),
-                .process("DNSFormDetailImagePopupViewController.xib")
+                .process("Resources/DNSFormDetailImagePopupViewController.xib"),
+                .process("Resources/Assets.xcassets")
             ]
         ),
         .testTarget(
