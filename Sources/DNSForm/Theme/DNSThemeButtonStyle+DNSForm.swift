@@ -12,6 +12,7 @@ public extension DNSThemeButtonStyle {
     enum DNSForm {
         public static var `default` =
             DNSThemeButtonStyle(styleName: "default",
+                                styleDescription: "DNSForm.default",
                                 titleColor: DNSUIColor.DNSForm.Button.Default.title,
                                 titleFont: DNSUIFont.DNSForm.Button.Default.title,
                                 titleShadow: DNSUIShadow.DNSForm.Button.Default.title,
@@ -24,6 +25,7 @@ public extension DNSThemeButtonStyle {
                                 tintColor: DNSUIColor.DNSForm.Button.Default.tint)
         public static var destructive =
             DNSThemeButtonStyle(styleName: "destructive",
+                                styleDescription: "DNSForm.destructive",
                                 titleColor: DNSUIColor.DNSForm.Button.Destructive.title,
                                 titleFont: DNSUIFont.DNSForm.Button.Destructive.title,
                                 titleShadow: DNSUIShadow.DNSForm.Button.Destructive.title,
@@ -36,6 +38,7 @@ public extension DNSThemeButtonStyle {
                                 tintColor: DNSUIColor.DNSForm.Button.Destructive.tint)
         public static var indexTab =
             DNSThemeButtonStyle(styleName: "indexTab",
+                                styleDescription: "DNSForm.indexTab",
                                 titleColor: DNSUIColor.DNSForm.Button.IndexTab.title,
                                 titleFont: DNSUIFont.DNSForm.Button.IndexTab.title,
                                 titleShadow: DNSUIShadow.DNSForm.Button.IndexTab.title,
@@ -48,6 +51,7 @@ public extension DNSThemeButtonStyle {
                                 tintColor: DNSUIColor.DNSForm.Button.IndexTab.tint)
         public static var preview =
             DNSThemeButtonStyle(styleName: "preview",
+                                styleDescription: "DNSForm.preview",
                                 titleColor: DNSUIColor.DNSForm.Button.Preview.title,
                                 titleFont: DNSUIFont.DNSForm.Button.Preview.title,
                                 titleShadow: DNSUIShadow.DNSForm.Button.Preview.title,
@@ -60,6 +64,7 @@ public extension DNSThemeButtonStyle {
                                 tintColor: DNSUIColor.DNSForm.Button.Preview.tint)
         public static var square =
             DNSThemeButtonStyle(styleName: "square",
+                                styleDescription: "DNSForm.square",
                                 titleColor: DNSUIColor.DNSForm.Button.Square.title,
                                 titleFont: DNSUIFont.DNSForm.Button.Square.title,
                                 titleShadow: DNSUIShadow.DNSForm.Button.Square.title,

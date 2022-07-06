@@ -10,6 +10,7 @@ import DNSBaseTheme
 
 public extension DNSThemeFieldStyle {
     enum DNSForm {  // swiftlint:disable:this type_name
-        public static var `default` = DNSThemeFieldStyle.Base.default
+        public static var `default` = DNSThemeFieldStyle(styleName: "default",
+                                                         styleDescription: "DNSForm.default")
     }
 }

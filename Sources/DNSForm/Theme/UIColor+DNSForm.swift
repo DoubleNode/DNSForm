@@ -319,6 +319,8 @@ public extension UIColor {
             public static var title = UIColor.darkText
         }
         public enum View {
+            public static var background = UIColor.clear
+            public static var tint = UIColor.systemBlue
         }
     }
 }   // swiftlint:disable:this file_length

@@ -270,6 +270,10 @@ public extension DNSUIColor {
             public static var title = DNSUIColor(UIColor.DNSForm.Label.title)
         }
         public enum View {
+            public enum Default {
+                public static var background = DNSUIColor(UIColor.DNSForm.View.background)
+                public static var tint = DNSUIColor(UIColor.DNSForm.View.tint)
+            }
         }
     }
 }   // swiftlint:disable:this file_length
