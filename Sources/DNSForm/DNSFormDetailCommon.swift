@@ -25,6 +25,7 @@ public enum DNSFormDetailStage {
     }
 
     static public func register(to collectionView: UICollectionView) {
+        DNSFormDetailActionButtonCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailAppActionCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailCheckboxCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailDateCell.register(to: collectionView, from: Bundle.module)
