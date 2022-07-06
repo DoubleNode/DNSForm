@@ -19,14 +19,20 @@ public protocol DNSFormDetailActionButtonCellLogic: DNSBaseStageCellLogic {
     var pushActionPublisher: PassthroughSubject<Stage.Models.Base.Request, Never> { get }
 }
 
-class DNSFormDetailActionButtonCell: DNSBaseStageCollectionViewCell, DNSFormDetailActionButtonCellLogic {
+open class DNSFormDetailActionButtonCell: DNSBaseStageCollectionViewCell, DNSFormDetailActionButtonCellLogic {
     public typealias Stage = DNSFormDetailStage
-    static let recommendedContentSize = CGSize(width: 414, height: 72)
+    static public let recommendedContentSize = CGSize(width: 414, height: 72)
 
     public struct Data: Hashable {
-        var enabled: Bool
-        var label: String
-        var style: DNSThemeButtonStyle
+        public var enabled: Bool
+        public var label: String
+        public var style: DNSThemeButtonStyle
+
+        public init(enabled: Bool, label: String, style: DNSThemeButtonStyle) {
+            self.enabled = enabled
+            self.label = label
+            self.style = style
+        }
     }
     public var data: Data? {
         didSet {

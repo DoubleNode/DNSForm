@@ -44,6 +44,7 @@ let package = Package(
                 "DNSCoreThreading", "DNSProtocols", "SFSymbol"
             ],
             resources: [
+                .process("FieldTypeCells/DNSFormDetailActionButtonCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailAppActionCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailCheckboxCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailDateCell.xib"),
