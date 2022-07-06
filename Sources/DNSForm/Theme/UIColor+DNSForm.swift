@@ -109,11 +109,11 @@ public extension UIColor {
                     }
                 }
                 public enum Tint {
-                    public static var disabled = UIColor.systemBlue
-                    public static var focused = UIColor.systemBlue
-                    public static var highlighted = UIColor.systemBlue
-                    public static var normal = UIColor.systemBlue
-                    public static var selected = UIColor.systemBlue
+                    public static var disabled = UIColor.black
+                    public static var focused = UIColor.black
+                    public static var highlighted = UIColor.black
+                    public static var normal = UIColor.black
+                    public static var selected = UIColor.black
                 }
                 public enum Title {
                     public static var disabled = UIColor.darkGray
@@ -169,11 +169,11 @@ public extension UIColor {
                     }
                 }
                 public enum Tint {
-                    public static var disabled = UIColor.systemBlue
-                    public static var focused = UIColor.systemBlue
-                    public static var highlighted = UIColor.systemBlue
-                    public static var normal = UIColor.systemBlue
-                    public static var selected = UIColor.systemBlue
+                    public static var disabled = UIColor.black
+                    public static var focused = UIColor.black
+                    public static var highlighted = UIColor.black
+                    public static var normal = UIColor.black
+                    public static var selected = UIColor.black
                 }
                 public enum Title {
                     public static var disabled = UIColor.darkGray
@@ -229,11 +229,11 @@ public extension UIColor {
                     }
                 }
                 public enum Tint {
-                    public static var disabled = UIColor.systemBlue
-                    public static var focused = UIColor.systemBlue
-                    public static var highlighted = UIColor.systemBlue
-                    public static var normal = UIColor.systemBlue
-                    public static var selected = UIColor.systemBlue
+                    public static var disabled = UIColor.black
+                    public static var focused = UIColor.black
+                    public static var highlighted = UIColor.black
+                    public static var normal = UIColor.black
+                    public static var selected = UIColor.black
                 }
                 public enum Title {
                     public static var disabled = UIColor.darkGray

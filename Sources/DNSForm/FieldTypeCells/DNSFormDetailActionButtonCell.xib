@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -68,8 +69,10 @@
                                 <fontDescription key="fontDescription" name="URWDINCond-Bold" family="URW DIN Cond" pointSize="18"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" image="arrowshape.turn.up.right.fill" catalog="system">
+                                <state key="normal">
                                     <color key="titleColor" name="TitleDark"/>
+                                    <imageReference key="image" image="arrowshape.turn.up.right.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="18" scale="large" weight="regular"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="actionRight"/>
@@ -120,10 +123,10 @@
     </objects>
     <designables>
         <designable name="7Yw-SJ-cTl">
-            <size key="intrinsicContentSize" width="49" height="33"/>
+            <size key="intrinsicContentSize" width="35" height="30"/>
         </designable>
         <designable name="9Iq-Mu-pNA">
-            <size key="intrinsicContentSize" width="21" height="21"/>
+            <size key="intrinsicContentSize" width="28.5" height="25"/>
         </designable>
     </designables>
     <resources>

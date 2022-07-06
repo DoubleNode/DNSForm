@@ -35,19 +35,19 @@
                                     <constraint firstAttribute="height" constant="24" id="Qjh-nj-ZxH"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HY-KK-0su">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HY-KK-0su" customClass="DNSUILabel" customModule="DNSBaseTheme">
                                 <rect key="frame" x="64" y="12.999999999999998" width="114" height="16.333333333333329"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="14"/>
                                 <color key="textColor" name="TitleDark"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[This is a note on content type and frequency]" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inU-rk-1bD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[This is a note on content type and frequency]" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inU-rk-1bD" customClass="DNSUILabel" customModule="DNSBaseTheme">
                                 <rect key="frame" x="64" y="35.333333333333336" width="322" height="8.6666666666666643"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0b-Yz-IDA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0b-Yz-IDA" customClass="DNSUIButton" customModule="DNSBaseTheme">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
                                 <connections>
                                     <action selector="selectActionWithSender:" destination="gTV-IL-0wX" eventType="touchUpInside" id="77a-n7-4HD"/>
