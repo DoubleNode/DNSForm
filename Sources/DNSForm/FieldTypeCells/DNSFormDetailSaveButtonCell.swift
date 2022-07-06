@@ -55,12 +55,12 @@ open class DNSFormDetailSaveButtonCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        button.style = DNSThemeButtonStyle.DNSForm.default
         button.setTitle("", for: UIControl.State.normal)
     }
     override open func contentInit() {
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.default
+        button.style = DNSThemeButtonStyle.DNSForm.default
         data = nil
     }
 

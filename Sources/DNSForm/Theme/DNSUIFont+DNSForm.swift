@@ -26,6 +26,48 @@ public extension DNSUIFont {
                               highlighted: UIFont.DNSForm.Button.Default.Title.highlighted,
                               selected: UIFont.DNSForm.Button.Default.Title.selected)
             }
+            public enum Action {
+                public static var subtitle =
+                    DNSUIFont(UIFont.DNSForm.Button.Action.Subtitle.normal,
+                              disabled: UIFont.DNSForm.Button.Action.Subtitle.disabled,
+                              focused: UIFont.DNSForm.Button.Action.Subtitle.focused,
+                              highlighted: UIFont.DNSForm.Button.Action.Subtitle.highlighted,
+                              selected: UIFont.DNSForm.Button.Action.Subtitle.selected)
+                public static var title =
+                    DNSUIFont(UIFont.DNSForm.Button.Action.Title.normal,
+                              disabled: UIFont.DNSForm.Button.Action.Title.disabled,
+                              focused: UIFont.DNSForm.Button.Action.Title.focused,
+                              highlighted: UIFont.DNSForm.Button.Action.Title.highlighted,
+                              selected: UIFont.DNSForm.Button.Action.Title.selected)
+            }
+            public enum ActionLeft {
+                public static var subtitle =
+                    DNSUIFont(UIFont.DNSForm.Button.ActionLeft.Subtitle.normal,
+                              disabled: UIFont.DNSForm.Button.ActionLeft.Subtitle.disabled,
+                              focused: UIFont.DNSForm.Button.ActionLeft.Subtitle.focused,
+                              highlighted: UIFont.DNSForm.Button.ActionLeft.Subtitle.highlighted,
+                              selected: UIFont.DNSForm.Button.ActionLeft.Subtitle.selected)
+                public static var title =
+                    DNSUIFont(UIFont.DNSForm.Button.ActionLeft.Title.normal,
+                              disabled: UIFont.DNSForm.Button.ActionLeft.Title.disabled,
+                              focused: UIFont.DNSForm.Button.ActionLeft.Title.focused,
+                              highlighted: UIFont.DNSForm.Button.ActionLeft.Title.highlighted,
+                              selected: UIFont.DNSForm.Button.ActionLeft.Title.selected)
+            }
+            public enum ActionRight {
+                public static var subtitle =
+                    DNSUIFont(UIFont.DNSForm.Button.ActionRight.Subtitle.normal,
+                              disabled: UIFont.DNSForm.Button.ActionRight.Subtitle.disabled,
+                              focused: UIFont.DNSForm.Button.ActionRight.Subtitle.focused,
+                              highlighted: UIFont.DNSForm.Button.ActionRight.Subtitle.highlighted,
+                              selected: UIFont.DNSForm.Button.ActionRight.Subtitle.selected)
+                public static var title =
+                    DNSUIFont(UIFont.DNSForm.Button.ActionRight.Title.normal,
+                              disabled: UIFont.DNSForm.Button.ActionRight.Title.disabled,
+                              focused: UIFont.DNSForm.Button.ActionRight.Title.focused,
+                              highlighted: UIFont.DNSForm.Button.ActionRight.Title.highlighted,
+                              selected: UIFont.DNSForm.Button.ActionRight.Title.selected)
+            }
             public enum Destructive {
                 public static var subtitle =
                     DNSUIFont(UIFont.DNSForm.Button.Destructive.Subtitle.normal,

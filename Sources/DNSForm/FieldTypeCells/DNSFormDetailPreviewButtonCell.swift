@@ -49,12 +49,12 @@ open class DNSFormDetailPreviewButtonCell: DNSBaseStageCollectionViewCell, DNSFo
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        button.style = DNSThemeButtonStyle.DNSForm.preview
         button.setTitle("", for: UIControl.State.normal)
     }
     override open func contentInit() {
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.default
+        button.style = DNSThemeButtonStyle.DNSForm.preview
         data = nil
     }
 

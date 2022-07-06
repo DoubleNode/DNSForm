@@ -23,6 +23,45 @@ public extension DNSThemeButtonStyle {
                                 border: DNSUIBorder.DNSForm.Button.default,
                                 shadow: DNSUIShadow.DNSForm.Button.default,
                                 tintColor: DNSUIColor.DNSForm.Button.Default.tint)
+        public static var action =
+            DNSThemeButtonStyle(styleName: "action",
+                                styleDescription: "DNSForm.action",
+                                titleColor: DNSUIColor.DNSForm.Button.Action.title,
+                                titleFont: DNSUIFont.DNSForm.Button.Action.title,
+                                titleShadow: DNSUIShadow.DNSForm.Button.Action.title,
+                                subtitleColor: DNSUIColor.DNSForm.Button.Action.subtitle,
+                                subtitleFont: DNSUIFont.DNSForm.Button.Action.subtitle,
+                                subtitleShadow: DNSUIShadow.DNSForm.Button.Action.subtitle,
+                                backgroundColor: DNSUIColor.DNSForm.Button.Action.background,
+                                border: DNSUIBorder.DNSForm.Button.action,
+                                shadow: DNSUIShadow.DNSForm.Button.action,
+                                tintColor: DNSUIColor.DNSForm.Button.Action.tint)
+        public static var actionLeft =
+            DNSThemeButtonStyle(styleName: "actionLeft",
+                                styleDescription: "DNSForm.actionLeft",
+                                titleColor: DNSUIColor.DNSForm.Button.ActionLeft.title,
+                                titleFont: DNSUIFont.DNSForm.Button.ActionLeft.title,
+                                titleShadow: DNSUIShadow.DNSForm.Button.ActionLeft.title,
+                                subtitleColor: DNSUIColor.DNSForm.Button.ActionLeft.subtitle,
+                                subtitleFont: DNSUIFont.DNSForm.Button.ActionLeft.subtitle,
+                                subtitleShadow: DNSUIShadow.DNSForm.Button.ActionLeft.subtitle,
+                                backgroundColor: DNSUIColor.DNSForm.Button.ActionLeft.background,
+                                border: DNSUIBorder.DNSForm.Button.actionLeft,
+                                shadow: DNSUIShadow.DNSForm.Button.actionLeft,
+                                tintColor: DNSUIColor.DNSForm.Button.ActionLeft.tint)
+        public static var actionRight =
+            DNSThemeButtonStyle(styleName: "actionRight",
+                                styleDescription: "DNSForm.actionRight",
+                                titleColor: DNSUIColor.DNSForm.Button.ActionRight.title,
+                                titleFont: DNSUIFont.DNSForm.Button.ActionRight.title,
+                                titleShadow: DNSUIShadow.DNSForm.Button.ActionRight.title,
+                                subtitleColor: DNSUIColor.DNSForm.Button.ActionRight.subtitle,
+                                subtitleFont: DNSUIFont.DNSForm.Button.ActionRight.subtitle,
+                                subtitleShadow: DNSUIShadow.DNSForm.Button.ActionRight.subtitle,
+                                backgroundColor: DNSUIColor.DNSForm.Button.ActionRight.background,
+                                border: DNSUIBorder.DNSForm.Button.actionRight,
+                                shadow: DNSUIShadow.DNSForm.Button.actionRight,
+                                tintColor: DNSUIColor.DNSForm.Button.ActionRight.tint)
         public static var destructive =
             DNSThemeButtonStyle(styleName: "destructive",
                                 styleDescription: "DNSForm.destructive",

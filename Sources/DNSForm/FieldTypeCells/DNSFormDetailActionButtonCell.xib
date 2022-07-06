@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="URW++ - URWDINCond-Bold.otf">
+            <string>URWDINCond-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DNSFormDetailActionButtonCell" customModule="DNSForm">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="705-oA-UlF" userLabel="Content View">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yw-SJ-cTl" customClass="DNSUIButton" customModule="DNSBaseTheme">
+                                <rect key="frame" x="24" y="12" width="312" height="48"/>
+                                <color key="backgroundColor" name="TagBackgroundSafety"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="YZs-gn-ll2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="URWDINCond-Bold" family="URW DIN Cond" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="SEND">
+                                    <color key="titleColor" name="TitleDark"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="actionLeft"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusMulti" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerTopLeftRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerTopRightRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerBottomLeftRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerBottomRightRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ani-AK-35K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Iq-Mu-pNA" customClass="DNSUIButton" customModule="DNSBaseTheme">
+                                <rect key="frame" x="342" y="12" width="48" height="48"/>
+                                <color key="backgroundColor" name="TagBackgroundSafety"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9Iq-Mu-pNA" secondAttribute="height" multiplier="1:1" id="12z-So-dob"/>
+                                    <constraint firstAttribute="height" constant="48" id="I75-Px-ahH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="URWDINCond-Bold" family="URW DIN Cond" pointSize="18"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" image="arrowshape.turn.up.right.fill" catalog="system">
+                                    <color key="titleColor" name="TitleDark"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="actionRight"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusMulti" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerTopLeftRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerTopRightRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerBottomLeftRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerBottomRightRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="IO8-zI-EFX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="9Iq-Mu-pNA" firstAttribute="bottom" secondItem="7Yw-SJ-cTl" secondAttribute="bottom" id="0U4-Aq-EWY"/>
+                            <constraint firstAttribute="bottom" secondItem="7Yw-SJ-cTl" secondAttribute="bottom" constant="12" id="1px-XE-p1B"/>
+                            <constraint firstItem="9Iq-Mu-pNA" firstAttribute="leading" secondItem="7Yw-SJ-cTl" secondAttribute="trailing" constant="6" id="GUt-FZ-8jz"/>
+                            <constraint firstItem="9Iq-Mu-pNA" firstAttribute="top" secondItem="7Yw-SJ-cTl" secondAttribute="top" id="O8c-bU-hTQ"/>
+                            <constraint firstItem="7Yw-SJ-cTl" firstAttribute="leading" secondItem="705-oA-UlF" secondAttribute="leading" constant="24" id="Or5-N6-Js9"/>
+                            <constraint firstItem="7Yw-SJ-cTl" firstAttribute="top" secondItem="705-oA-UlF" secondAttribute="top" constant="12" id="tG7-rr-swF"/>
+                            <constraint firstAttribute="trailing" secondItem="9Iq-Mu-pNA" secondAttribute="trailing" constant="24" id="wB7-kL-qb1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="705-oA-UlF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MWy-Wx-XX1"/>
+                <constraint firstAttribute="trailing" secondItem="705-oA-UlF" secondAttribute="trailing" id="Xn3-AX-Sej"/>
+                <constraint firstAttribute="bottom" secondItem="705-oA-UlF" secondAttribute="bottom" id="k0K-kT-G8N"/>
+                <constraint firstItem="705-oA-UlF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sgM-YW-f7E"/>
+            </constraints>
+            <connections>
+                <outlet property="iconButton" destination="9Iq-Mu-pNA" id="Qdl-XU-eUG"/>
+                <outlet property="textButton" destination="7Yw-SJ-cTl" id="Kty-UK-CwJ"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </collectionViewCell>
+    </objects>
+    <designables>
+        <designable name="7Yw-SJ-cTl">
+            <size key="intrinsicContentSize" width="49" height="33"/>
+        </designable>
+        <designable name="9Iq-Mu-pNA">
+            <size key="intrinsicContentSize" width="21" height="21"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="104"/>
+        <namedColor name="TagBackgroundSafety">
+            <color red="0.98000001907348633" green="0.88200002908706665" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TitleDark">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

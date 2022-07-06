@@ -29,13 +29,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8Z-e5-aHa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8Z-e5-aHa" customClass="DNSUILabel" customModule="DNSBaseTheme">
                                 <rect key="frame" x="24" y="6" width="70.333333333333329" height="13"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Medium" family="URW DIN" pointSize="13"/>
                                 <color key="textColor" name="FormFootnote"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njb-EG-v3S">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njb-EG-v3S" customClass="DNSUILabel" customModule="DNSBaseTheme">
                                 <rect key="frame" x="24" y="25" width="57" height="13"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>
@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="height" constant="1" id="Ykx-gm-uQe"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Close Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3e-20-2EJ" userLabel="Time Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Close Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3e-20-2EJ" userLabel="Time Label" customClass="DNSUILabel" customModule="DNSBaseTheme">
                                 <rect key="frame" x="214" y="25" width="58.333333333333314" height="13"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>

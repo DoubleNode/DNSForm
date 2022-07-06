@@ -26,7 +26,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njb-EG-v3S">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njb-EG-v3S" customClass="DNSUILabel" customModule="DNSBaseTheme">
                                 <rect key="frame" x="24" y="6" width="53" height="13"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>

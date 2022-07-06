@@ -104,14 +104,6 @@ open class DNSFormDetailDayOfWeekCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        monButton.style = DNSThemeButtonStyle.DNSForm.square
-        tueButton.style = DNSThemeButtonStyle.DNSForm.square
-        wedButton.style = DNSThemeButtonStyle.DNSForm.square
-        thrButton.style = DNSThemeButtonStyle.DNSForm.square
-        friButton.style = DNSThemeButtonStyle.DNSForm.square
-        satButton.style = DNSThemeButtonStyle.DNSForm.square
-        sunButton.style = DNSThemeButtonStyle.DNSForm.square
-
         monButton.setTitle(Stage.Localizations.DayOfWeekCell.mondayLabel,
                            for: UIControl.State.normal)
         tueButton.setTitle(Stage.Localizations.DayOfWeekCell.tuesdayLabel,
@@ -130,6 +122,13 @@ open class DNSFormDetailDayOfWeekCell: DNSBaseStageCollectionViewCell,
     override open func contentInit() {
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.default
+        monButton.style = DNSThemeButtonStyle.DNSForm.square
+        tueButton.style = DNSThemeButtonStyle.DNSForm.square
+        wedButton.style = DNSThemeButtonStyle.DNSForm.square
+        thrButton.style = DNSThemeButtonStyle.DNSForm.square
+        friButton.style = DNSThemeButtonStyle.DNSForm.square
+        satButton.style = DNSThemeButtonStyle.DNSForm.square
+        sunButton.style = DNSThemeButtonStyle.DNSForm.square
         data = nil
     }
 

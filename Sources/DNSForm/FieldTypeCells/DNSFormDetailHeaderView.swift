@@ -34,11 +34,12 @@ open class DNSFormDetailHeaderView: DNSBaseStageCollectionReusableView {
             titleLabel.text = data.title
         }
     }
-    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var titleLabel: DNSUILabel!
     
     override open func contentInit() {
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.default
+        titleLabel.style = DNSThemeLabelStyle.DNSForm.default
         data = nil
     }
 }

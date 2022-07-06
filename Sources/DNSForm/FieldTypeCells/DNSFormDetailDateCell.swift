@@ -64,7 +64,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         }
     }
 
-    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var dateLabel: DNSUILabel!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var datePickerLineView: UIView!
     @IBOutlet var dateTextField: AnimatedField!
@@ -96,6 +96,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
     override open func contentInit() {
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.default
+        dateLabel.style = DNSThemeLabelStyle.DNSForm.default
         self.contentInitDatePicker()
         self.data = nil
     }

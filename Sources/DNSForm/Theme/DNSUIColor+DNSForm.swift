@@ -62,6 +62,156 @@ public extension DNSUIColor {
                                highlighted: UIColor.DNSForm.Button.Default.Title.Shadow.highlighted,
                                selected: UIColor.DNSForm.Button.Default.Title.Shadow.selected)
             }
+            public enum Action {
+                public static var background =
+                    DNSUIColor(UIColor.DNSForm.Button.Action.Background.normal,
+                               disabled: UIColor.DNSForm.Button.Action.Background.disabled,
+                               focused: UIColor.DNSForm.Button.Action.Background.focused,
+                               highlighted: UIColor.DNSForm.Button.Action.Background.highlighted,
+                               selected: UIColor.DNSForm.Button.Action.Background.selected)
+                public static var border =
+                    DNSUIColor(UIColor.DNSForm.Button.Action.Border.normal,
+                               disabled: UIColor.DNSForm.Button.Action.Border.disabled,
+                               focused: UIColor.DNSForm.Button.Action.Border.focused,
+                               highlighted: UIColor.DNSForm.Button.Action.Border.highlighted,
+                               selected: UIColor.DNSForm.Button.Action.Border.selected)
+                public static var shadow =
+                    DNSUIColor(UIColor.DNSForm.Button.Action.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.Action.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.Action.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.Action.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.Action.Shadow.selected)
+                public static var subtitle =
+                    DNSUIColor(UIColor.DNSForm.Button.Action.Subtitle.normal,
+                               disabled: UIColor.DNSForm.Button.Action.Subtitle.disabled,
+                               focused: UIColor.DNSForm.Button.Action.Subtitle.focused,
+                               highlighted: UIColor.DNSForm.Button.Action.Subtitle.highlighted,
+                               selected: UIColor.DNSForm.Button.Action.Subtitle.selected)
+                public static var subtitleShadow =
+                    DNSUIColor(UIColor.DNSForm.Button.Action.Subtitle.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.Action.Subtitle.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.Action.Subtitle.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.Action.Subtitle.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.Action.Subtitle.Shadow.selected)
+                public static var tint =
+                    DNSUIColor(UIColor.DNSForm.Button.Action.Tint.normal,
+                               disabled: UIColor.DNSForm.Button.Action.Tint.disabled,
+                               focused: UIColor.DNSForm.Button.Action.Tint.focused,
+                               highlighted: UIColor.DNSForm.Button.Action.Tint.highlighted,
+                               selected: UIColor.DNSForm.Button.Action.Tint.selected)
+                public static var title =
+                    DNSUIColor(UIColor.DNSForm.Button.Action.Title.normal,
+                               disabled: UIColor.DNSForm.Button.Action.Title.disabled,
+                               focused: UIColor.DNSForm.Button.Action.Title.focused,
+                               highlighted: UIColor.DNSForm.Button.Action.Title.highlighted,
+                               selected: UIColor.DNSForm.Button.Action.Title.selected)
+                public static var titleShadow =
+                    DNSUIColor(UIColor.DNSForm.Button.Action.Title.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.Action.Title.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.Action.Title.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.Action.Title.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.Action.Title.Shadow.selected)
+            }
+            public enum ActionLeft {
+                public static var background =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionLeft.Background.normal,
+                               disabled: UIColor.DNSForm.Button.ActionLeft.Background.disabled,
+                               focused: UIColor.DNSForm.Button.ActionLeft.Background.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionLeft.Background.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionLeft.Background.selected)
+                public static var border =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionLeft.Border.normal,
+                               disabled: UIColor.DNSForm.Button.ActionLeft.Border.disabled,
+                               focused: UIColor.DNSForm.Button.ActionLeft.Border.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionLeft.Border.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionLeft.Border.selected)
+                public static var shadow =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionLeft.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.ActionLeft.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.ActionLeft.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionLeft.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionLeft.Shadow.selected)
+                public static var subtitle =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionLeft.Subtitle.normal,
+                               disabled: UIColor.DNSForm.Button.ActionLeft.Subtitle.disabled,
+                               focused: UIColor.DNSForm.Button.ActionLeft.Subtitle.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionLeft.Subtitle.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionLeft.Subtitle.selected)
+                public static var subtitleShadow =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionLeft.Subtitle.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.ActionLeft.Subtitle.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.ActionLeft.Subtitle.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionLeft.Subtitle.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionLeft.Subtitle.Shadow.selected)
+                public static var tint =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionLeft.Tint.normal,
+                               disabled: UIColor.DNSForm.Button.ActionLeft.Tint.disabled,
+                               focused: UIColor.DNSForm.Button.ActionLeft.Tint.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionLeft.Tint.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionLeft.Tint.selected)
+                public static var title =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionLeft.Title.normal,
+                               disabled: UIColor.DNSForm.Button.ActionLeft.Title.disabled,
+                               focused: UIColor.DNSForm.Button.ActionLeft.Title.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionLeft.Title.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionLeft.Title.selected)
+                public static var titleShadow =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionLeft.Title.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.ActionLeft.Title.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.ActionLeft.Title.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionLeft.Title.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionLeft.Title.Shadow.selected)
+            }
+            public enum ActionRight {
+                public static var background =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionRight.Background.normal,
+                               disabled: UIColor.DNSForm.Button.ActionRight.Background.disabled,
+                               focused: UIColor.DNSForm.Button.ActionRight.Background.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionRight.Background.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionRight.Background.selected)
+                public static var border =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionRight.Border.normal,
+                               disabled: UIColor.DNSForm.Button.ActionRight.Border.disabled,
+                               focused: UIColor.DNSForm.Button.ActionRight.Border.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionRight.Border.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionRight.Border.selected)
+                public static var shadow =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionRight.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.ActionRight.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.ActionRight.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionRight.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionRight.Shadow.selected)
+                public static var subtitle =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionRight.Subtitle.normal,
+                               disabled: UIColor.DNSForm.Button.ActionRight.Subtitle.disabled,
+                               focused: UIColor.DNSForm.Button.ActionRight.Subtitle.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionRight.Subtitle.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionRight.Subtitle.selected)
+                public static var subtitleShadow =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionRight.Subtitle.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.ActionRight.Subtitle.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.ActionRight.Subtitle.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionRight.Subtitle.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionRight.Subtitle.Shadow.selected)
+                public static var tint =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionRight.Tint.normal,
+                               disabled: UIColor.DNSForm.Button.ActionRight.Tint.disabled,
+                               focused: UIColor.DNSForm.Button.ActionRight.Tint.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionRight.Tint.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionRight.Tint.selected)
+                public static var title =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionRight.Title.normal,
+                               disabled: UIColor.DNSForm.Button.ActionRight.Title.disabled,
+                               focused: UIColor.DNSForm.Button.ActionRight.Title.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionRight.Title.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionRight.Title.selected)
+                public static var titleShadow =
+                    DNSUIColor(UIColor.DNSForm.Button.ActionRight.Title.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.ActionRight.Title.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.ActionRight.Title.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.ActionRight.Title.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.ActionRight.Title.Shadow.selected)
+            }
             public enum Destructive {
                 public static var background =
                     DNSUIColor(UIColor.DNSForm.Button.Destructive.Background.normal,

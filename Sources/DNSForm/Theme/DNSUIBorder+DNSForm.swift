@@ -15,6 +15,19 @@ public extension DNSUIBorder {
             public static var `default` =
                 DNSUIBorder(color: DNSUIColor.DNSForm.Button.Default.border,
                             cornerRadius: 10)
+            public static var action =
+                DNSUIBorder(color: DNSUIColor.DNSForm.Button.Action.border,
+                            cornerRadius: 10)
+            public static var actionLeft =
+                DNSUIBorder(color: DNSUIColor.DNSForm.Button.ActionLeft.border,
+                            cornerRadiusMulti: true,
+                            cornerTopLeftRadius: 10,
+                            cornerBottomLeftRadius: 10)
+            public static var actionRight =
+                DNSUIBorder(color: DNSUIColor.DNSForm.Button.ActionRight.border,
+                            cornerRadiusMulti: true,
+                            cornerTopRightRadius: 10,
+                            cornerBottomRightRadius: 10)
             public static var destructive =
                 DNSUIBorder(color: DNSUIColor.DNSForm.Button.Destructive.border,
                             cornerRadius: 10)

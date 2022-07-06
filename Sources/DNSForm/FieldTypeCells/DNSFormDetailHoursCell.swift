@@ -82,12 +82,12 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         }
     }
 
-    @IBOutlet var closeLabel: UILabel!
+    @IBOutlet var closeLabel: DNSUILabel!
     @IBOutlet var closePicker: UIDatePicker!
     @IBOutlet var closePickerLineView: UIView!
     @IBOutlet var closeTextField: AnimatedField!
-    @IBOutlet var hoursLabel: UILabel!
-    @IBOutlet var openLabel: UILabel!
+    @IBOutlet var hoursLabel: DNSUILabel!
+    @IBOutlet var openLabel: DNSUILabel!
     @IBOutlet var openPicker: UIDatePicker!
     @IBOutlet var openPickerLineView: UIView!
     @IBOutlet var openTextField: AnimatedField!
@@ -135,6 +135,9 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
     override open func contentInit() {
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.default
+        closeLabel.style = DNSThemeLabelStyle.DNSForm.default
+        hoursLabel.style = DNSThemeLabelStyle.DNSForm.default
+        openLabel.style = DNSThemeLabelStyle.DNSForm.default
         self.contentInitOpenPicker()
         self.contentInitClosePicker()
         self.data = nil

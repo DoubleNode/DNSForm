@@ -51,8 +51,8 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
     }
 
     @IBOutlet var checkImageView: UIImageView!
-    @IBOutlet var detailLabel: UILabel!
-    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var detailLabel: DNSUILabel!
+    @IBOutlet var titleLabel: DNSUILabel!
 
     // MARK: - Outgoing Pipelines -
     public var selectedPublisher = PassthroughSubject<Stage.Models.Field.Request, Never>()
@@ -60,6 +60,8 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
     override open func contentInit() {
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.default
+        detailLabel.style = DNSThemeLabelStyle.DNSForm.default
+        titleLabel.style = DNSThemeLabelStyle.DNSForm.default
         data = nil
     }
 

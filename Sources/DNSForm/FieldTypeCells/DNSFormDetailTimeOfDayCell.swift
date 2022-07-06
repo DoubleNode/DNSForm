@@ -64,7 +64,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
         }
     }
 
-    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var timeLabel: DNSUILabel!
     @IBOutlet var timePicker: UIDatePicker!
     @IBOutlet var timePickerLineView: UIView!
     @IBOutlet var timeTextField: AnimatedField!
@@ -96,6 +96,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
     override open func contentInit() {
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.default
+        timeLabel.style = DNSThemeLabelStyle.DNSForm.default
         self.contentInitTimePicker()
         self.data = nil
     }

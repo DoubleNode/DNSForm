@@ -51,12 +51,12 @@ open class DNSFormDetailDeleteButtonCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        button.style = DNSThemeButtonStyle.DNSForm.destructive
         button.setTitle("", for: UIControl.State.normal)
     }
     override open func contentInit() {
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.default
+        button.style = DNSThemeButtonStyle.DNSForm.destructive
         data = nil
     }
 

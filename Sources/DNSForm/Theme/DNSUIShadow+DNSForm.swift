@@ -13,6 +13,9 @@ public extension DNSUIShadow {
     enum DNSForm {  // swiftlint:disable:this type_name
         public enum Button {
             public static var `default` = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Default.shadow)
+            public static var action = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Action.shadow)
+            public static var actionLeft = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionLeft.shadow)
+            public static var actionRight = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionRight.shadow)
             public static var destructive = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Destructive.shadow)
             public static var indexTab = DNSUIShadow(color: DNSUIColor.DNSForm.Button.IndexTab.shadow)
             public static var preview = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Preview.shadow)
@@ -20,6 +23,18 @@ public extension DNSUIShadow {
             public enum Default {
                 public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Default.subtitleShadow)
                 public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Default.titleShadow)
+            }
+            public enum Action {
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Action.subtitleShadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Action.titleShadow)
+            }
+            public enum ActionLeft {
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionLeft.subtitleShadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionLeft.titleShadow)
+            }
+            public enum ActionRight {
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionRight.subtitleShadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionRight.titleShadow)
             }
             public enum Destructive {
                 public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Destructive.subtitleShadow)

@@ -68,14 +68,12 @@ open class DNSFormDetailLanguageSelectionCell: DNSBaseStageCollectionViewCell,
     // MARK: - Outgoing Pipelines -
     public var selectedPublisher = PassthroughSubject<Stage.Models.Language.Request, Never>()
 
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        enButton.style = DNSThemeButtonStyle.DNSForm.indexTab
-        es419Button.style = DNSThemeButtonStyle.DNSForm.indexTab
-    }
     override open func contentInit() {
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.default
+        enButton.style = DNSThemeButtonStyle.DNSForm.indexTab
+        es419Button.style = DNSThemeButtonStyle.DNSForm.indexTab
+        sectionLabel.style = DNSThemeLabelStyle.DNSForm.default
         data = nil
     }
 
