@@ -84,7 +84,6 @@
                                 <constraint firstAttribute="height" constant="50" id="rTM-tU-5at"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="URWDINCond-Bold" family="URW DIN Cond" pointSize="18"/>
-                            <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="CLOSE">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>

@@ -421,8 +421,14 @@ public extension DNSUIColor {
         }
         public enum View {
             public enum Default {
-                public static var background = DNSUIColor(UIColor.DNSForm.View.background)
-                public static var tint = DNSUIColor(UIColor.DNSForm.View.tint)
+                public static var background = DNSUIColor(UIColor.DNSForm.View.Default.background)
+                public static var border = DNSUIColor(UIColor.DNSForm.View.Default.border)
+                public static var tint = DNSUIColor(UIColor.DNSForm.View.Default.tint)
+            }
+            public enum Clear {
+                public static var background = DNSUIColor(UIColor.DNSForm.View.Clear.background)
+                public static var border = DNSUIColor(UIColor.DNSForm.View.Clear.border)
+                public static var tint = DNSUIColor(UIColor.DNSForm.View.Clear.tint)
             }
         }
     }
