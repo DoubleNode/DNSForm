@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DNSFormDetailAppActionCell" customModule="MEAdminApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DNSFormDetailAppActionCell" customModule="DNSForm">
             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -105,10 +105,10 @@
             </constraints>
             <size key="customSize" width="414" height="413"/>
             <connections>
-                <outlet property="imageView" destination="2Fe-WC-Oam" id="Suq-f2-DDm"/>
-                <outlet property="progressView" destination="zdv-7N-njv" id="9nO-Ah-oVd"/>
-                <outlet property="selectModeView" destination="KuD-TU-KgD" id="bNJ-mU-bSg"/>
-                <outlet property="textField" destination="aUe-oh-Ee1" id="85v-Nt-9Yr"/>
+                <outlet property="imageView" destination="2Fe-WC-Oam" id="zjz-RU-pbf"/>
+                <outlet property="progressView" destination="zdv-7N-njv" id="wQv-C5-jr4"/>
+                <outlet property="selectModeView" destination="Jap-NZ-Uma" id="3u0-wq-4oO"/>
+                <outlet property="textField" destination="aUe-oh-Ee1" id="Kxz-Tv-ggB"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="143.30357142857142"/>
         </collectionViewCell>

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,7 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DNSFormDetailDayOfWeekCell" id="gTV-IL-0wX" customClass="DNSFormDetailDayOfWeekCell" customModule="MEAdminApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DNSFormDetailDayOfWeekCell" id="gTV-IL-0wX" customClass="DNSFormDetailDayOfWeekCell" customModule="DNSForm">
             <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -227,14 +228,14 @@
             </constraints>
             <size key="customSize" width="140" height="261"/>
             <connections>
-                <outlet property="friButton" destination="o2b-1x-rFh" id="nYm-Lg-KPt"/>
-                <outlet property="label" destination="n6P-1A-QWV" id="8QP-FQ-nSG"/>
-                <outlet property="monButton" destination="RW2-zE-Aln" id="qoS-aK-WWi"/>
-                <outlet property="satButton" destination="YMz-1i-pdw" id="dEw-ue-z7i"/>
-                <outlet property="sunButton" destination="gbp-wn-DYL" id="e2b-ZT-ea0"/>
-                <outlet property="thrButton" destination="C54-cN-4kc" id="NKk-C3-0ng"/>
-                <outlet property="tueButton" destination="dr1-Ha-AdO" id="tb2-qP-T3w"/>
-                <outlet property="wedButton" destination="Uhd-wt-uRz" id="7Jf-R3-xPl"/>
+                <outlet property="friButton" destination="o2b-1x-rFh" id="usF-P6-FFn"/>
+                <outlet property="label" destination="n6P-1A-QWV" id="Ioq-K9-gKJ"/>
+                <outlet property="monButton" destination="RW2-zE-Aln" id="24h-mf-yAS"/>
+                <outlet property="satButton" destination="YMz-1i-pdw" id="su7-xC-bbC"/>
+                <outlet property="sunButton" destination="gbp-wn-DYL" id="w63-wk-gAZ"/>
+                <outlet property="thrButton" destination="C54-cN-4kc" id="bT3-tD-vxi"/>
+                <outlet property="tueButton" destination="dr1-Ha-AdO" id="7fo-zh-xhT"/>
+                <outlet property="wedButton" destination="Uhd-wt-uRz" id="RoN-5B-i1U"/>
             </connections>
             <point key="canvasLocation" x="195.6521739130435" y="194.86607142857142"/>
         </collectionViewCell>

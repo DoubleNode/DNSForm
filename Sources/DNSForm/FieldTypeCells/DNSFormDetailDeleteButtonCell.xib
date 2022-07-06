@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DNSFormDetailDeleteButtonCell" customModule="MEAdminApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DNSFormDetailDeleteButtonCell" customModule="DNSForm">
             <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -63,11 +65,16 @@
                 <constraint firstItem="705-oA-UlF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sgM-YW-f7E"/>
             </constraints>
             <connections>
-                <outlet property="button" destination="7Yw-SJ-cTl" id="Fuq-09-BEg"/>
+                <outlet property="button" destination="7Yw-SJ-cTl" id="3FR-KV-AVo"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="7Yw-SJ-cTl">
+            <size key="intrinsicContentSize" width="138" height="33"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="BodyLight">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DNSFormDetailLanguageSelectionCell" id="gTV-IL-0wX" customClass="DNSFormDetailLanguageSelectionCell" customModule="MEAdminApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DNSFormDetailLanguageSelectionCell" id="gTV-IL-0wX" customClass="DNSFormDetailLanguageSelectionCell" customModule="DNSForm">
             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -84,7 +85,7 @@
                                         <rect key="frame" x="266" y="0.0" width="120" height="16"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMAGE URLS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4Q-fu-3yH" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                                                <rect key="frame" x="10" y="5" width="42.5" height="10"/>
+                                                <rect key="frame" x="10" y="4" width="60.5" height="12"/>
                                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="10"/>
                                                 <color key="textColor" name="BodyLight"/>
                                                 <nil key="highlightedColor"/>
@@ -161,11 +162,11 @@
             </constraints>
             <size key="customSize" width="140" height="261"/>
             <connections>
-                <outlet property="enButton" destination="RW2-zE-Aln" id="jkF-Lq-vob"/>
-                <outlet property="es419Button" destination="gbp-wn-DYL" id="oiP-V5-8b5"/>
-                <outlet property="lineView" destination="Mke-m6-mGw" id="zxQ-cb-5tx"/>
-                <outlet property="lineViewBottomConstraint" destination="WRF-sm-maS" id="rp0-Kp-bPf"/>
-                <outlet property="sectionLabel" destination="a4Q-fu-3yH" id="uUh-v3-rNF"/>
+                <outlet property="enButton" destination="RW2-zE-Aln" id="a10-bG-HdG"/>
+                <outlet property="es419Button" destination="gbp-wn-DYL" id="cHf-cb-4iF"/>
+                <outlet property="lineView" destination="Mke-m6-mGw" id="dMh-h9-5VI"/>
+                <outlet property="lineViewBottomConstraint" destination="WRF-sm-maS" id="jsB-y8-WnL"/>
+                <outlet property="sectionLabel" destination="a4Q-fu-3yH" id="5Ih-RR-jyv"/>
             </connections>
             <point key="canvasLocation" x="195.6521739130435" y="194.86607142857142"/>
         </collectionViewCell>
@@ -175,7 +176,7 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="a4Q-fu-3yH">
-            <size key="intrinsicContentSize" width="42.5" height="10"/>
+            <size key="intrinsicContentSize" width="60.5" height="12"/>
         </designable>
         <designable name="gbp-wn-DYL">
             <size key="intrinsicContentSize" width="49" height="30"/>
