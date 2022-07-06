@@ -52,6 +52,11 @@ open class DNSFormDetailPreviewButtonCell: DNSBaseStageCollectionViewCell, DNSFo
         button.style = DNSThemeButtonStyle.DNSForm.preview
         button.setTitle("", for: UIControl.State.normal)
     }
+    override open func contentInit() {
+        super.contentInit()
+        style = DNSThemeViewStyle.DNSForm.default
+        data = nil
+    }
 
     // MARK: - Action Methods -
     @IBAction func selectButtonAction(_ sender: UIButton) {

@@ -9,6 +9,7 @@
 import AnimatedField
 import Combine
 import DNSBaseStage
+import DNSBaseTheme
 import DNSCore
 import DNSCoreThreading
 import DNSProtocols
@@ -83,6 +84,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
+        style = DNSThemeViewStyle.DNSForm.default
         data = nil
     }
 

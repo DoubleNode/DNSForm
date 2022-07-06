@@ -9,6 +9,7 @@
 import AnimatedField
 import Combine
 import DNSBaseStage
+import DNSBaseTheme
 import DNSCore
 import DNSCoreThreading
 import DNSProtocols
@@ -76,6 +77,7 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
+        style = DNSThemeViewStyle.DNSForm.default
         lineView.backgroundColor = textView.format.lineColor
         data = nil
     }

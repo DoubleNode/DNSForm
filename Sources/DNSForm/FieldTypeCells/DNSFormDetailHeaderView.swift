@@ -8,6 +8,7 @@
 
 import Combine
 import DNSBaseStage
+import DNSBaseTheme
 import DNSProtocols
 import UIKit
 
@@ -34,4 +35,10 @@ open class DNSFormDetailHeaderView: DNSBaseStageCollectionReusableView {
         }
     }
     @IBOutlet var titleLabel: UILabel!
+    
+    override open func contentInit() {
+        super.contentInit()
+        style = DNSThemeViewStyle.DNSForm.default
+        data = nil
+    }
 }

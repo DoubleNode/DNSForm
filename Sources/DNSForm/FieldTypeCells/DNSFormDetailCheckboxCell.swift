@@ -8,6 +8,7 @@
 
 import Combine
 import DNSBaseStage
+import DNSBaseTheme
 import DNSCore
 import DNSProtocols
 import SFSymbol
@@ -58,6 +59,7 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
 
     override open func contentInit() {
         super.contentInit()
+        style = DNSThemeViewStyle.DNSForm.default
         data = nil
     }
 

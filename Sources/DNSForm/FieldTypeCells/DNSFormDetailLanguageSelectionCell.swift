@@ -73,6 +73,11 @@ open class DNSFormDetailLanguageSelectionCell: DNSBaseStageCollectionViewCell,
         enButton.style = DNSThemeButtonStyle.DNSForm.indexTab
         es419Button.style = DNSThemeButtonStyle.DNSForm.indexTab
     }
+    override open func contentInit() {
+        super.contentInit()
+        style = DNSThemeViewStyle.DNSForm.default
+        data = nil
+    }
 
     // MARK: - Action methods -
     @IBAction func selectAction(sender: UIButton) {

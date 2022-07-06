@@ -9,6 +9,7 @@
 import AnimatedField
 import Combine
 import DNSBaseStage
+import DNSBaseTheme
 import DNSCore
 import DNSCoreThreading
 import DNSProtocols
@@ -129,6 +130,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
+        style = DNSThemeViewStyle.DNSForm.default
         self.contentInitDatePicker()
         self.contentInitTimePicker()
         self.data = nil

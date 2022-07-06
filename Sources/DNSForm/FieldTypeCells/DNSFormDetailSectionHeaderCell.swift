@@ -22,12 +22,12 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
                                            DNSFormDetailSectionHeaderCellLogic {
     public typealias Stage = DNSFormDetailStage
     static public let recommendedContentSize = CGSize(width: 414, height: 30)
-
+    
     public struct Data: Hashable {
         public var label: String
         public var lineBottomOffset: Double
         public var section: Int
-
+        
         public init(label: String, lineBottomOffset: Double, section: Int) {
             self.label = label
             self.lineBottomOffset = lineBottomOffset
@@ -45,8 +45,14 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
             sectionLabel.text = data.label
         }
     }
-
+    
     @IBOutlet var lineView: UIView!
     @IBOutlet var lineViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var sectionLabel: DNSUILabel!
+    
+    override open func contentInit() {
+        super.contentInit()
+        style = DNSThemeViewStyle.DNSForm.default
+        data = nil
+    }
 }
