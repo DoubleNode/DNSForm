@@ -12,7 +12,7 @@ import UIKit
 public extension DNSThemeViewStyle {
     enum DNSForm {  // swiftlint:disable:this type_name
         public static var `default` = DNSThemeViewStyle(styleName: "default",
-                                                        styleDescription: "DNSForm.default",
+                                                        styleSetName: "DNSForm",
                                                         backgroundColor: DNSUIColor(UIColor.DNSForm.View.background),
                                                         border: DNSUIBorder(),
                                                         shadow: DNSUIShadow(),

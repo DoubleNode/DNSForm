@@ -39,12 +39,9 @@ open class DNSFormDetailActionButtonCell: DNSBaseStageCollectionViewCell, DNSFor
                 self.textButton.isEnabled = false
                 return
             }
-//            let iconImage = UIImage(dnsSystemSymbol: .arrowshapeTurnUpRightFill)
-//            self.iconButton.setImage(iconImage, for: UIControl.State.normal)
             self.iconButton.isEnabled = data.enabled
-
-            self.textButton.setTitle(data.label, for: UIControl.State.normal)
             self.textButton.isEnabled = data.enabled
+            self.textButton.setTitle(data.label, for: UIControl.State.normal)
         }
     }
 
@@ -57,13 +54,9 @@ open class DNSFormDetailActionButtonCell: DNSBaseStageCollectionViewCell, DNSFor
     override open func contentInit() {
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.default
-
-//        let iconImage = UIImage(dnsSystemSymbol: .arrowshapeTurnUpRightFill)
-//        iconButton.setImage(iconImage, for: UIControl.State.normal)
         iconButton.style = DNSThemeButtonStyle.DNSForm.actionRight
-
-        textButton.setTitle("", for: UIControl.State.normal)
         textButton.style = DNSThemeButtonStyle.DNSForm.actionLeft
+        textButton.setTitle("", for: UIControl.State.normal)
         data = nil
     }
 
