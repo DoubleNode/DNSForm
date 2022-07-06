@@ -53,7 +53,7 @@ open class DNSFormDetailActionButtonCell: DNSBaseStageCollectionViewCell, DNSFor
 
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.default
+        style = DNSThemeViewStyle.DNSForm.clear
         iconButton.style = DNSThemeButtonStyle.DNSForm.actionRight
         textButton.style = DNSThemeButtonStyle.DNSForm.actionLeft
         textButton.setTitle("", for: UIControl.State.normal)

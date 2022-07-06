@@ -59,9 +59,9 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
 
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.default
-        detailLabel.style = DNSThemeLabelStyle.DNSForm.default
-        titleLabel.style = DNSThemeLabelStyle.DNSForm.default
+        style = DNSThemeViewStyle.DNSForm.clear
+        detailLabel.style = DNSThemeLabelStyle.DNSForm.field
+        titleLabel.style = DNSThemeLabelStyle.DNSForm.body
         data = nil
     }
 

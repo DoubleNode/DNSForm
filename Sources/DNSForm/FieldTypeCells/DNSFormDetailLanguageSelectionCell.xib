@@ -89,6 +89,9 @@
                                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="10"/>
                                                 <color key="textColor" name="BodyLight"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.section"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" name="CenterAction"/>

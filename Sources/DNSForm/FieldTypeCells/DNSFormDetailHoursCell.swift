@@ -134,10 +134,10 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.default
-        closeLabel.style = DNSThemeLabelStyle.DNSForm.default
-        hoursLabel.style = DNSThemeLabelStyle.DNSForm.default
-        openLabel.style = DNSThemeLabelStyle.DNSForm.default
+        style = DNSThemeViewStyle.DNSForm.clear
+        closeLabel.style = DNSThemeLabelStyle.DNSForm.field
+        hoursLabel.style = DNSThemeLabelStyle.DNSForm.field
+        openLabel.style = DNSThemeLabelStyle.DNSForm.field
         self.contentInitOpenPicker()
         self.contentInitClosePicker()
         self.data = nil

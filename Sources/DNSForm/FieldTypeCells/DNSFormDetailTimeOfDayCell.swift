@@ -95,8 +95,8 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.default
-        timeLabel.style = DNSThemeLabelStyle.DNSForm.default
+        style = DNSThemeViewStyle.DNSForm.clear
+        timeLabel.style = DNSThemeLabelStyle.DNSForm.field
         self.contentInitTimePicker()
         self.data = nil
     }

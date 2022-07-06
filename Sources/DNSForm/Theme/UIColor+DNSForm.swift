@@ -495,12 +495,23 @@ public extension UIColor {
         public enum Label {
             public static var `default` = UIColor.darkText
             public static var body = UIColor.darkText
+            public static var bodyTight = UIColor.darkText
+            public static var field = UIColor.darkText
+            public static var section = UIColor.lightText
             public static var tag = UIColor.darkText
             public static var title = UIColor.darkText
         }
         public enum View {
-            public static var background = UIColor.clear
-            public static var tint = UIColor.systemBlue
+            public enum Default {
+                public static var background = UIColor.systemBackground
+                public static var border = UIColor.systemGray
+                public static var tint = UIColor.systemBlue
+            }
+            public enum Clear {
+                public static var background = UIColor.clear
+                public static var border = UIColor.clear
+                public static var tint = UIColor.systemBlue
+            }
         }
     }
 }   // swiftlint:disable:this file_length

@@ -29,6 +29,9 @@
                             <fontDescription key="fontDescription" name="DirtyBrush" family="Dirty Brush" pointSize="34"/>
                             <color key="textColor" name="TitleDark"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.title"/>
+                            </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                     <constraints>
@@ -52,6 +55,11 @@
             <point key="canvasLocation" x="138" y="21"/>
         </collectionReusableView>
     </objects>
+    <designables>
+        <designable name="xcn-Fk-6yk">
+            <size key="intrinsicContentSize" width="612.66666666666663" height="39.666666666666664"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="TitleDark">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>

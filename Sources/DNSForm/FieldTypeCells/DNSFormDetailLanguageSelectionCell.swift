@@ -70,10 +70,10 @@ open class DNSFormDetailLanguageSelectionCell: DNSBaseStageCollectionViewCell,
 
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.default
+        style = DNSThemeViewStyle.DNSForm.clear
         enButton.style = DNSThemeButtonStyle.DNSForm.indexTab
         es419Button.style = DNSThemeButtonStyle.DNSForm.indexTab
-        sectionLabel.style = DNSThemeLabelStyle.DNSForm.default
+        sectionLabel.style = DNSThemeLabelStyle.DNSForm.section
         data = nil
     }
 

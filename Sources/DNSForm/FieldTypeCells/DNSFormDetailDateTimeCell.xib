@@ -31,6 +31,9 @@
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.field"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zh-Qd-KcT" userLabel="Date Text Field" customClass="AnimatedField" customModule="AnimatedField">
                                 <rect key="frame" x="24" y="0.0" width="176" height="76"/>
@@ -62,6 +65,9 @@
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.field"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0J-MI-Xmn" userLabel="Time Text Field" customClass="AnimatedField" customModule="AnimatedField">
                                 <rect key="frame" x="214" y="0.0" width="176" height="76"/>
@@ -145,6 +151,14 @@
             <point key="canvasLocation" x="137.68115942028987" y="143.63839285714286"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="i3e-20-2EJ">
+            <size key="intrinsicContentSize" width="54" height="13"/>
+        </designable>
+        <designable name="njb-EG-v3S">
+            <size key="intrinsicContentSize" width="53" height="13"/>
+        </designable>
+    </designables>
     <resources>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="clock" catalog="system" width="128" height="123"/>

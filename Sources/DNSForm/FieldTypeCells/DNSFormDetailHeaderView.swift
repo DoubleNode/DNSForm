@@ -38,8 +38,8 @@ open class DNSFormDetailHeaderView: DNSBaseStageCollectionReusableView {
     
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.default
-        titleLabel.style = DNSThemeLabelStyle.DNSForm.default
+        style = DNSThemeViewStyle.DNSForm.clear
+        titleLabel.style = DNSThemeLabelStyle.DNSForm.title
         data = nil
     }
 }

@@ -34,12 +34,18 @@
                                 <fontDescription key="fontDescription" name="URWDIN-Medium" family="URW DIN" pointSize="13"/>
                                 <color key="textColor" name="FormFootnote"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.field"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njb-EG-v3S" customClass="DNSUILabel" customModule="DNSBaseTheme">
                                 <rect key="frame" x="24" y="25" width="57" height="13"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.field"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zh-Qd-KcT" userLabel="Date Text Field" customClass="AnimatedField" customModule="AnimatedField">
                                 <rect key="frame" x="24" y="19" width="176" height="76"/>
@@ -71,6 +77,9 @@
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.field"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0J-MI-Xmn" userLabel="Time Text Field" customClass="AnimatedField" customModule="AnimatedField">
                                 <rect key="frame" x="214" y="19" width="176" height="76"/>
@@ -158,6 +167,17 @@
             <point key="canvasLocation" x="137.68115942028987" y="143.63839285714286"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="i3e-20-2EJ">
+            <size key="intrinsicContentSize" width="58.333333333333336" height="13"/>
+        </designable>
+        <designable name="njb-EG-v3S">
+            <size key="intrinsicContentSize" width="57" height="13"/>
+        </designable>
+        <designable name="x8Z-e5-aHa">
+            <size key="intrinsicContentSize" width="70.333333333333329" height="15.333333333333334"/>
+        </designable>
+    </designables>
     <resources>
         <image name="clock" catalog="system" width="128" height="123"/>
         <namedColor name="FormFootnote">

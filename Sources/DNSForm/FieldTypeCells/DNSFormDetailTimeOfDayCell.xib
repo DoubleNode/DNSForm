@@ -27,10 +27,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3e-20-2EJ" userLabel="Time Label" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                                <rect key="frame" x="24" y="-6" width="54" height="13"/>
+                                <rect key="frame" x="24" y="6" width="54" height="13"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.field"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0J-MI-Xmn" userLabel="Time Text Field" customClass="AnimatedField" customModule="AnimatedField">
                                 <rect key="frame" x="24" y="0.0" width="366" height="76"/>
@@ -71,7 +74,7 @@
                             <constraint firstAttribute="trailing" secondItem="I0J-MI-Xmn" secondAttribute="trailing" constant="24" id="cjY-GC-Fvn"/>
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="bottom" secondItem="vTS-EN-5KK" secondAttribute="bottom" id="iKg-D4-WFJ"/>
                             <constraint firstAttribute="bottom" secondItem="I0J-MI-Xmn" secondAttribute="bottom" id="llz-Ed-5eu"/>
-                            <constraint firstItem="i3e-20-2EJ" firstAttribute="top" secondItem="I0J-MI-Xmn" secondAttribute="top" constant="-6" id="npf-zn-cuB"/>
+                            <constraint firstItem="i3e-20-2EJ" firstAttribute="top" secondItem="I0J-MI-Xmn" secondAttribute="top" constant="6" id="npf-zn-cuB"/>
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="trailing" secondItem="vTS-EN-5KK" secondAttribute="trailing" id="xLh-KT-2cN"/>
                         </constraints>
                     </view>
@@ -94,6 +97,11 @@
             <point key="canvasLocation" x="137.68115942028987" y="143.63839285714286"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="i3e-20-2EJ">
+            <size key="intrinsicContentSize" width="54" height="13"/>
+        </designable>
+    </designables>
     <resources>
         <image name="clock" catalog="system" width="128" height="123"/>
         <namedColor name="FormFootnote">

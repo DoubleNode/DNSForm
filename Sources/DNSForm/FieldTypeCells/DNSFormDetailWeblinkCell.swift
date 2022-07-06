@@ -98,7 +98,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.default
+        style = DNSThemeViewStyle.DNSForm.clear
         data = nil
     }
 

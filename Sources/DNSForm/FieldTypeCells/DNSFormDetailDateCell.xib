@@ -8,11 +8,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="URW Type Foundry - URWDIN-Regular.otf">
-            <string>URWDIN-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -27,10 +22,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njb-EG-v3S" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                                <rect key="frame" x="24" y="6" width="53" height="13"/>
-                                <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
+                                <rect key="frame" x="24.000000000000004" y="6.0000000000000009" width="56.333333333333343" height="13.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.field"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zh-Qd-KcT" userLabel="Date Text Field" customClass="AnimatedField" customModule="AnimatedField">
                                 <rect key="frame" x="24" y="0.0" width="366" height="76"/>
@@ -94,6 +92,11 @@
             <point key="canvasLocation" x="137.68115942028987" y="143.63839285714286"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="njb-EG-v3S">
+            <size key="intrinsicContentSize" width="56.333333333333336" height="13.333333333333334"/>
+        </designable>
+    </designables>
     <resources>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <namedColor name="FormFootnote">

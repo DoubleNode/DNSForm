@@ -77,7 +77,7 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.default
+        style = DNSThemeViewStyle.DNSForm.clear
         lineView.backgroundColor = textView.format.lineColor
         data = nil
     }

@@ -84,7 +84,7 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.default
+        style = DNSThemeViewStyle.DNSForm.clear
         textField.keyboardAppearance = .dark
         data = nil
     }

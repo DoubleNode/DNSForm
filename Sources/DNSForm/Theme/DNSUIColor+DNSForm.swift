@@ -416,13 +416,22 @@ public extension DNSUIColor {
         public enum Label {
             public static var `default` = DNSUIColor(UIColor.DNSForm.Label.default)
             public static var body = DNSUIColor(UIColor.DNSForm.Label.body)
+            public static var bodyTight = DNSUIColor(UIColor.DNSForm.Label.bodyTight)
+            public static var field = DNSUIColor(UIColor.DNSForm.Label.field)
+            public static var section = DNSUIColor(UIColor.DNSForm.Label.section)
             public static var tag = DNSUIColor(UIColor.DNSForm.Label.tag)
             public static var title = DNSUIColor(UIColor.DNSForm.Label.title)
         }
         public enum View {
             public enum Default {
-                public static var background = DNSUIColor(UIColor.DNSForm.View.background)
-                public static var tint = DNSUIColor(UIColor.DNSForm.View.tint)
+                public static var background = DNSUIColor(UIColor.DNSForm.View.Default.background)
+                public static var border = DNSUIColor(UIColor.DNSForm.View.Default.border)
+                public static var tint = DNSUIColor(UIColor.DNSForm.View.Default.tint)
+            }
+            public enum Clear {
+                public static var background = DNSUIColor(UIColor.DNSForm.View.Clear.background)
+                public static var border = DNSUIColor(UIColor.DNSForm.View.Clear.border)
+                public static var tint = DNSUIColor(UIColor.DNSForm.View.Clear.tint)
             }
         }
     }

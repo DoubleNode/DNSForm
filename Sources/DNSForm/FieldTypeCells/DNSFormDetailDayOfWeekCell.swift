@@ -90,7 +90,7 @@ open class DNSFormDetailDayOfWeekCell: DNSBaseStageCollectionViewCell,
         }
     }
 
-    @IBOutlet var label: UILabel!
+    @IBOutlet var label: DNSUILabel!
     @IBOutlet var monButton: DNSUIButton!
     @IBOutlet var tueButton: DNSUIButton!
     @IBOutlet var wedButton: DNSUIButton!
@@ -121,7 +121,8 @@ open class DNSFormDetailDayOfWeekCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.default
+        style = DNSThemeViewStyle.DNSForm.clear
+        label.style = DNSThemeLabelStyle.DNSForm.field
         monButton.style = DNSThemeButtonStyle.DNSForm.square
         tueButton.style = DNSThemeButtonStyle.DNSForm.square
         wedButton.style = DNSThemeButtonStyle.DNSForm.square

@@ -59,7 +59,7 @@ open class DNSFormDetailSaveButtonCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.default
+        style = DNSThemeViewStyle.DNSForm.clear
         button.style = DNSThemeButtonStyle.DNSForm.default
         data = nil
     }
