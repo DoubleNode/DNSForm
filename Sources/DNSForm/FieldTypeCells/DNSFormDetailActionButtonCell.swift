@@ -26,12 +26,10 @@ open class DNSFormDetailActionButtonCell: DNSBaseStageCollectionViewCell, DNSFor
     public struct Data: Hashable {
         public var enabled: Bool
         public var label: String
-        public var style: DNSThemeButtonStyle
 
-        public init(enabled: Bool, label: String, style: DNSThemeButtonStyle) {
+        public init(enabled: Bool, label: String) {
             self.enabled = enabled
             self.label = label
-            self.style = style
         }
     }
     public var data: Data? {
@@ -42,11 +40,9 @@ open class DNSFormDetailActionButtonCell: DNSBaseStageCollectionViewCell, DNSFor
                 return
             }
             let iconImage = UIImage(dnsSystemSymbol: .arrowshapeTurnUpRightFill)
-            self.iconButton.style = data.style
             self.iconButton.setImage(iconImage, for: UIControl.State.normal)
             self.iconButton.isEnabled = data.enabled
 
-            self.textButton.style = data.style
             self.textButton.setTitle(data.label, for: UIControl.State.normal)
             self.textButton.isEnabled = data.enabled
         }
