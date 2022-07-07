@@ -118,6 +118,7 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
     override open func contentInit() {
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.clear
+        self.selectModeView.style = DNSThemeViewStyle.DNSForm.clear
         data = nil
     }
 

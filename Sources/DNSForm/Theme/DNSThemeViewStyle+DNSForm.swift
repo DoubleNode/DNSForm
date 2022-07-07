@@ -13,15 +13,15 @@ public extension DNSThemeViewStyle {
     enum DNSForm {  // swiftlint:disable:this type_name
         public static var `default` = DNSThemeViewStyle(styleName: "default",
                                                         styleSetName: "DNSForm",
-                                                        backgroundColor: DNSUIColor(UIColor.DNSForm.View.Default.background),
+                                                        backgroundColor: DNSUIColor.DNSForm.View.Default.background,
                                                         border: DNSUIBorder(),
                                                         shadow: DNSUIShadow(),
-                                                        tintColor: DNSUIColor(UIColor.DNSForm.View.Default.tint))
+                                                        tintColor: DNSUIColor.DNSForm.View.Default.tint)
         public static var clear = DNSThemeViewStyle(styleName: "clear",
                                                     styleSetName: "DNSForm",
-                                                    backgroundColor: DNSUIColor(UIColor.DNSForm.View.Clear.background),
+                                                    backgroundColor: DNSUIColor.DNSForm.View.Clear.background,
                                                     border: DNSUIBorder(),
                                                     shadow: DNSUIShadow(),
-                                                    tintColor: DNSUIColor(UIColor.DNSForm.View.Clear.tint))
+                                                    tintColor: DNSUIColor.DNSForm.View.Clear.tint)
     }
 }

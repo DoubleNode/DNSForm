@@ -536,7 +536,13 @@ public extension UIColor {
                 public static var tint = UIColor.systemBlue
             }
             public enum Clear {
-                public static var background = UIColor.clear
+                public enum Background {
+                    public static var disabled = UIColor.clear
+                    public static var focused = UIColor.clear
+                    public static var highlighted = UIColor.clear
+                    public static var normal = UIColor.clear
+                    public static var selected = UIColor.systemBlue.withAlphaComponent(0.5)
+                }
                 public static var border = UIColor.clear
                 public static var tint = UIColor.systemBlue
             }

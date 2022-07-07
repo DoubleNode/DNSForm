@@ -457,7 +457,8 @@ public extension DNSUIColor {
                 public static var tint = DNSUIColor(UIColor.DNSForm.View.Default.tint)
             }
             public enum Clear {
-                public static var background = DNSUIColor(UIColor.DNSForm.View.Clear.background)
+                public static var background = DNSUIColor(UIColor.DNSForm.View.Clear.Background.normal,
+                                                          selected: UIColor.DNSForm.View.Clear.Background.selected)
                 public static var border = DNSUIColor(UIColor.DNSForm.View.Clear.border)
                 public static var tint = DNSUIColor(UIColor.DNSForm.View.Clear.tint)
             }
