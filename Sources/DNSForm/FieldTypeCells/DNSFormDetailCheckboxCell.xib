@@ -36,7 +36,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HY-KK-0su" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                                <rect key="frame" x="64.000000000000014" y="10.333333333333334" width="153.33333333333337" height="21.666666666666664"/>
+                                <rect key="frame" x="64.000000000000014" y="9.3333333333333339" width="153.33333333333337" height="21.666666666666664"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,8 +44,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.title"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[This is a note on content type and frequency]" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inU-rk-1bD" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                                <rect key="frame" x="64" y="32" width="322" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[This is a note on content type and frequency]" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inU-rk-1bD" customClass="DNSUILabel" customModule="DNSBaseTheme">
+                                <rect key="frame" x="64" y="31" width="322" height="13"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>
                                 <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="inU-rk-1bD" firstAttribute="top" secondItem="2HY-KK-0su" secondAttribute="bottom" id="5A0-7t-9I3"/>
-                            <constraint firstItem="2HY-KK-0su" firstAttribute="centerY" secondItem="9xM-ac-bzl" secondAttribute="centerY" constant="1" id="JCx-mR-ZuX"/>
+                            <constraint firstItem="2HY-KK-0su" firstAttribute="centerY" secondItem="9xM-ac-bzl" secondAttribute="centerY" id="JCx-mR-ZuX"/>
                             <constraint firstItem="2HY-KK-0su" firstAttribute="leading" secondItem="9xM-ac-bzl" secondAttribute="trailing" constant="12" id="KR0-ex-9VC"/>
                             <constraint firstItem="9xM-ac-bzl" firstAttribute="top" secondItem="jyP-bB-mz5" secondAttribute="top" constant="8" id="NAP-za-9IQ"/>
                             <constraint firstItem="9xM-ac-bzl" firstAttribute="leading" secondItem="jyP-bB-mz5" secondAttribute="leading" constant="28" id="SBS-h7-0cb"/>

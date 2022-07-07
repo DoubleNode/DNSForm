@@ -502,19 +502,19 @@ public extension UIColor {
                 public static var line = UIColor.tertiaryLabel
                 public static var shadow = UIColor.clear
                 public static var text = UIColor.label
-                public static var tint = UIColor.systemBlue
+                public static var tint = UIColor.systemPurple
                 public static var title = UIColor.tertiaryLabel
             }
             public enum TextView {
                 public static var alert = UIColor.systemRed
                 public static var background = UIColor.systemBackground
                 public static var border = UIColor.clear
-                public static var counter = UIColor.quaternaryLabel
-                public static var highlight = UIColor.systemBlue
+                public static var counter = UIColor.darkText
+                public static var highlight = UIColor.clear
                 public static var line = UIColor.clear
                 public static var shadow = UIColor.clear
                 public static var text = UIColor.label
-                public static var tint = UIColor.systemBlue
+                public static var tint = UIColor.systemPurple
                 public static var title = UIColor.tertiaryLabel
             }
         }
@@ -523,8 +523,9 @@ public extension UIColor {
             public static var body = UIColor.darkText
             public static var bodyTight = UIColor.darkText
             public static var field = UIColor.darkText
+            public static var fieldHeader = UIColor.darkText
             public static var header = UIColor.darkText
-            public static var section = UIColor.lightText
+            public static var section = UIColor.white
             public static var tag = UIColor.darkText
             public static var title = UIColor.darkText
         }

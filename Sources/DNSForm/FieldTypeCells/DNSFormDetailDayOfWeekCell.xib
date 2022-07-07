@@ -44,10 +44,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="lRh-WI-BRN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Mon">
-                                    <color key="titleColor" name="BodyLight"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -65,7 +64,6 @@
                                 <rect key="frame" x="76.333333333333329" y="27" width="51.666666666666671" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Tue">
                                     <color key="titleColor" name="BodyLight"/>
                                 </state>
@@ -85,7 +83,6 @@
                                 <rect key="frame" x="129" y="27" width="51.333333333333343" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Wed">
                                     <color key="titleColor" name="BodyLight"/>
                                 </state>
@@ -105,7 +102,6 @@
                                 <rect key="frame" x="181.33333333333334" y="27" width="51.333333333333343" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Thr">
                                     <color key="titleColor" name="BodyLight"/>
                                 </state>
@@ -125,7 +121,6 @@
                                 <rect key="frame" x="233.66666666666666" y="27" width="51.333333333333343" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Fri">
                                     <color key="titleColor" name="BodyLight"/>
                                 </state>
@@ -145,7 +140,6 @@
                                 <rect key="frame" x="286" y="27" width="51.666666666666686" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Sat">
                                     <color key="titleColor" name="BodyLight"/>
                                 </state>
@@ -165,7 +159,6 @@
                                 <rect key="frame" x="338.66666666666669" y="27" width="51.333333333333314" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Sun">
                                     <color key="titleColor" name="BodyLight"/>
                                 </state>
@@ -261,6 +254,9 @@
         </designable>
         <designable name="gbp-wn-DYL">
             <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="n6P-1A-QWV">
+            <size key="intrinsicContentSize" width="224.66666666666666" height="13"/>
         </designable>
         <designable name="o2b-1x-rFh">
             <size key="intrinsicContentSize" width="30" height="30"/>

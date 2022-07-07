@@ -28,6 +28,10 @@ public extension DNSThemeLabelStyle {
                                                      styleSetName: "DNSForm",
                                                      color: DNSUIColor.DNSForm.Label.field,
                                                      font: DNSUIFont.DNSForm.Label.field)
+        public static var fieldHeader = DNSThemeLabelStyle(styleName: "fieldHeader",
+                                                           styleSetName: "DNSForm",
+                                                           color: DNSUIColor.DNSForm.Label.fieldHeader,
+                                                           font: DNSUIFont.DNSForm.Label.fieldHeader)
         public static var header = DNSThemeLabelStyle(styleName: "header",
                                                       styleSetName: "DNSForm",
                                                       color: DNSUIColor.DNSForm.Label.header,
