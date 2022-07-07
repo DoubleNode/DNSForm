@@ -497,25 +497,25 @@ public extension UIColor {
                 public static var alert = UIColor.systemRed
                 public static var background = UIColor.systemBackground
                 public static var border = UIColor.clear
-                public static var counter = UIColor.quaternaryLabel
+                public static var counter = UIColor.darkText
                 public static var highlight = UIColor.systemBlue
-                public static var line = UIColor.tertiaryLabel
+                public static var line = UIColor.darkText
                 public static var shadow = UIColor.clear
                 public static var text = UIColor.label
                 public static var tint = UIColor.systemPurple
-                public static var title = UIColor.tertiaryLabel
+                public static var title = UIColor.darkText
             }
             public enum TextView {
                 public static var alert = UIColor.systemRed
                 public static var background = UIColor.systemBackground
                 public static var border = UIColor.clear
                 public static var counter = UIColor.darkText
-                public static var highlight = UIColor.clear
+                public static var highlight = UIColor.systemBlue
                 public static var line = UIColor.clear
                 public static var shadow = UIColor.clear
                 public static var text = UIColor.label
                 public static var tint = UIColor.systemPurple
-                public static var title = UIColor.tertiaryLabel
+                public static var title = UIColor.darkText
             }
         }
         public enum Label {
