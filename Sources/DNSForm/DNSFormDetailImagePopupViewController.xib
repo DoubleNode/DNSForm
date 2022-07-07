@@ -62,7 +62,7 @@
                             <color key="textColor" name="blackBrand"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.default"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.title"/>
                             </userDefinedRuntimeAttributes>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Displayed at the bottom of the Home Screen." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yuz-DG-t3J" userLabel="Message" customClass="DNSUILabel" customModule="DNSBaseTheme">
@@ -74,7 +74,7 @@
                                 <userDefinedRuntimeAttribute type="number" keyPath="zeplinLineHeight">
                                     <real key="value" value="20"/>
                                 </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.default"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.body"/>
                             </userDefinedRuntimeAttributes>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rl1-yx-ELo" customClass="DNSUIButton" customModule="DNSBaseTheme">

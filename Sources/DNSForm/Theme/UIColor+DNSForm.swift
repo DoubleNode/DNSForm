@@ -497,6 +497,7 @@ public extension UIColor {
             public static var body = UIColor.darkText
             public static var bodyTight = UIColor.darkText
             public static var field = UIColor.darkText
+            public static var header = UIColor.darkText
             public static var section = UIColor.lightText
             public static var tag = UIColor.darkText
             public static var title = UIColor.darkText

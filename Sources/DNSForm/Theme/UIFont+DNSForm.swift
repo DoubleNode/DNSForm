@@ -145,6 +145,7 @@ public extension UIFont {
             public static var body = UIFont.systemFont(ofSize: 14, weight: .regular)
             public static var bodyTight = UIFont.systemFont(ofSize: 9, weight: .semibold)
             public static var field = UIFont.systemFont(ofSize: 11, weight: .regular)
+            public static var header = UIFont.systemFont(ofSize: 28, weight: .bold)
             public static var section = UIFont.systemFont(ofSize: 10, weight: .regular)
             public static var tag = UIFont.systemFont(ofSize: 9, weight: .semibold)
             public static var title = UIFont.systemFont(ofSize: 18, weight: .semibold)
