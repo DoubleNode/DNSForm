@@ -66,7 +66,7 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        textView.format = Stage.AnimatedField.Format.default
+        textView.format = Stage.AnimatedField.Format.textView
         textView.type = .multiline
         textView.placeholder = ""
         textView.keyboardType = .default

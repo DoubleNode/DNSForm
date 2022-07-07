@@ -413,6 +413,32 @@ public extension DNSUIColor {
                                selected: UIColor.DNSForm.Button.Square.Title.Shadow.selected)
             }
         }
+        public enum Field {
+            public enum Default {
+                public static var alert = DNSUIColor(UIColor.DNSForm.Field.Default.alert)
+                public static var background = DNSUIColor(UIColor.DNSForm.Field.Default.background)
+                public static var border = DNSUIColor(UIColor.DNSForm.Field.Default.border)
+                public static var counter = DNSUIColor(UIColor.DNSForm.Field.Default.counter)
+                public static var highlight = DNSUIColor(UIColor.DNSForm.Field.Default.highlight)
+                public static var line = DNSUIColor(UIColor.DNSForm.Field.Default.line)
+                public static var shadow = DNSUIColor(UIColor.DNSForm.Field.Default.shadow)
+                public static var text = DNSUIColor(UIColor.DNSForm.Field.Default.text)
+                public static var tint = DNSUIColor(UIColor.DNSForm.Field.Default.tint)
+                public static var title = DNSUIColor(UIColor.DNSForm.Field.Default.title)
+            }
+            public enum TextView {
+                public static var alert = DNSUIColor(UIColor.DNSForm.Field.TextView.alert)
+                public static var background = DNSUIColor(UIColor.DNSForm.Field.TextView.background)
+                public static var border = DNSUIColor(UIColor.DNSForm.Field.TextView.border)
+                public static var counter = DNSUIColor(UIColor.DNSForm.Field.TextView.counter)
+                public static var highlight = DNSUIColor(UIColor.DNSForm.Field.TextView.highlight)
+                public static var line = DNSUIColor(UIColor.DNSForm.Field.TextView.line)
+                public static var shadow = DNSUIColor(UIColor.DNSForm.Field.TextView.shadow)
+                public static var text = DNSUIColor(UIColor.DNSForm.Field.TextView.text)
+                public static var tint = DNSUIColor(UIColor.DNSForm.Field.TextView.tint)
+                public static var title = DNSUIColor(UIColor.DNSForm.Field.TextView.title)
+            }
+        }
         public enum Label {
             public static var `default` = DNSUIColor(UIColor.DNSForm.Label.default)
             public static var body = DNSUIColor(UIColor.DNSForm.Label.body)

@@ -53,6 +53,10 @@ public extension DNSUIShadow {
                 public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Square.titleShadow)
             }
         }
+        public enum Field {
+            public static var `default` = DNSUIShadow(color: DNSUIColor.DNSForm.Field.Default.shadow)
+            public static var textView = DNSUIShadow(color: DNSUIColor.DNSForm.Field.TextView.shadow)
+        }
         public enum View {
         }
     }

@@ -85,6 +85,11 @@ public enum DNSFormDetailStage {
                 format.visibleOffImage = UIImage(dnsSystemSymbol: SFSymbol.eyeSlash)
                 return format
             }
+            static public var textView: AnimatedFieldFormat {
+                var format = Format.default
+                format.dnsApply(DNSThemeFieldStyle.DNSForm.textView)
+                return format
+            }
         }
     }
 }

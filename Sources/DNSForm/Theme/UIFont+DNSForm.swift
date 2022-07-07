@@ -140,6 +140,20 @@ public extension UIFont {
                 }
             }
         }
+        public enum Field {
+            public enum Default {
+                public static var alert = UIFont.dnsCustom(with: "System", and: 13)
+                public static var counter = UIFont.dnsCustom(with: "System", and: 13)
+                public static var text = UIFont.dnsCustom(with: "System", and: 16)
+                public static var title = UIFont.dnsCustom(with: "System", and: 13)
+            }
+            public enum TextView {
+                public static var alert = UIFont.dnsCustom(with: "System", and: 13)
+                public static var counter = UIFont.dnsCustom(with: "System", and: 13)
+                public static var text = UIFont.dnsCustom(with: "System", and: 16)
+                public static var title = UIFont.dnsCustom(with: "System", and: 13)
+            }
+        }
         public enum Label {
             public static var `default` = UIFont.systemFont(ofSize: 18, weight: .regular)
             public static var body = UIFont.systemFont(ofSize: 14, weight: .regular)

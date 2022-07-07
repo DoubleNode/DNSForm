@@ -36,16 +36,16 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HY-KK-0su" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                                <rect key="frame" x="64" y="12.999999999999998" width="114" height="16.333333333333329"/>
-                                <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="14"/>
-                                <color key="textColor" name="TitleDark"/>
+                                <rect key="frame" x="64.000000000000014" y="10.333333333333334" width="153.33333333333337" height="21.666666666666664"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.body"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.title"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[This is a note on content type and frequency]" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inU-rk-1bD" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                                <rect key="frame" x="64" y="35.333333333333336" width="322" height="8.6666666666666643"/>
+                                <rect key="frame" x="64" y="32" width="322" height="12"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>
                                 <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="inU-rk-1bD" firstAttribute="top" secondItem="2HY-KK-0su" secondAttribute="bottom" constant="6" id="5A0-7t-9I3"/>
+                            <constraint firstItem="inU-rk-1bD" firstAttribute="top" secondItem="2HY-KK-0su" secondAttribute="bottom" id="5A0-7t-9I3"/>
                             <constraint firstItem="2HY-KK-0su" firstAttribute="centerY" secondItem="9xM-ac-bzl" secondAttribute="centerY" constant="1" id="JCx-mR-ZuX"/>
                             <constraint firstItem="2HY-KK-0su" firstAttribute="leading" secondItem="9xM-ac-bzl" secondAttribute="trailing" constant="12" id="KR0-ex-9VC"/>
                             <constraint firstItem="9xM-ac-bzl" firstAttribute="top" secondItem="jyP-bB-mz5" secondAttribute="top" constant="8" id="NAP-za-9IQ"/>
@@ -101,7 +101,7 @@
     </objects>
     <designables>
         <designable name="2HY-KK-0su">
-            <size key="intrinsicContentSize" width="114" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="153.33333333333334" height="21.666666666666668"/>
         </designable>
         <designable name="i0b-Yz-IDA">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -114,9 +114,6 @@
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <namedColor name="FormFootnote">
             <color red="0.48600000143051147" green="0.48600000143051147" blue="0.48600000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="TitleDark">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

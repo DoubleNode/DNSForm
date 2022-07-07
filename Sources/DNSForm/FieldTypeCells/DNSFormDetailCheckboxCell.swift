@@ -61,7 +61,7 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.clear
         detailLabel.style = DNSThemeLabelStyle.DNSForm.field
-        titleLabel.style = DNSThemeLabelStyle.DNSForm.body
+        titleLabel.style = DNSThemeLabelStyle.DNSForm.title
         data = nil
     }
 

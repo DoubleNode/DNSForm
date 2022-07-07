@@ -46,6 +46,10 @@ public extension DNSUIBorder {
                             cornerRadius: 0,
                             width: 1)
         }
+        public enum Field {
+            public static var `default` = DNSUIBorder(color: DNSUIColor.DNSForm.Field.Default.border)
+            public static var textView = DNSUIBorder(color: DNSUIColor.DNSForm.Field.TextView.border)
+        }
         public enum View {
             public static var `default` =
                 DNSUIBorder(color: DNSUIColor.DNSForm.View.Default.border,

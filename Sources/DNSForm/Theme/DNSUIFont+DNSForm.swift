@@ -125,6 +125,20 @@ public extension DNSUIFont {
                               selected: UIFont.DNSForm.Button.Square.Title.selected)
             }
         }
+        public enum Field {
+            public enum Default {
+                public static var alert = DNSUIFont(UIFont.DNSForm.Field.Default.alert)
+                public static var counter = DNSUIFont(UIFont.DNSForm.Field.Default.counter)
+                public static var text = DNSUIFont(UIFont.DNSForm.Field.Default.text)
+                public static var title = DNSUIFont(UIFont.DNSForm.Field.Default.title)
+            }
+            public enum TextView {
+                public static var alert = DNSUIFont(UIFont.DNSForm.Field.TextView.alert)
+                public static var counter = DNSUIFont(UIFont.DNSForm.Field.TextView.counter)
+                public static var text = DNSUIFont(UIFont.DNSForm.Field.TextView.text)
+                public static var title = DNSUIFont(UIFont.DNSForm.Field.TextView.title)
+            }
+        }
         public enum Label {
             public static var `default` = DNSUIFont(UIFont.DNSForm.Label.default)
             public static var body = DNSUIFont(UIFont.DNSForm.Label.body)

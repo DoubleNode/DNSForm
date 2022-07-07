@@ -28,8 +28,8 @@
                                         <rect key="frame" x="266" y="0.0" width="120" height="16"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMAGE URLS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pX-XK-23v" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                                                <rect key="frame" x="10" y="4.5" width="56" height="11"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                <rect key="frame" x="10" y="2" width="64.5" height="12"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                 <color key="textColor" name="BodyLight"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
@@ -42,7 +42,7 @@
                                             <constraint firstAttribute="width" constant="120" id="0mF-3U-0FD"/>
                                             <constraint firstItem="1pX-XK-23v" firstAttribute="leading" secondItem="pOc-ku-bUq" secondAttribute="leading" constant="10" id="8Ma-vR-57N"/>
                                             <constraint firstAttribute="height" constant="16" id="Pio-nh-R7n"/>
-                                            <constraint firstItem="1pX-XK-23v" firstAttribute="centerY" secondItem="pOc-ku-bUq" secondAttribute="centerY" constant="2" id="mEN-au-IyW"/>
+                                            <constraint firstItem="1pX-XK-23v" firstAttribute="centerY" secondItem="pOc-ku-bUq" secondAttribute="centerY" id="mEN-au-IyW"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1pX-XK-23v" secondAttribute="trailing" constant="10" id="vk1-eD-Uq6"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -111,7 +111,7 @@
     </objects>
     <designables>
         <designable name="1pX-XK-23v">
-            <size key="intrinsicContentSize" width="56" height="11"/>
+            <size key="intrinsicContentSize" width="64.5" height="12"/>
         </designable>
     </designables>
     <resources>
