@@ -510,7 +510,7 @@ public extension UIColor {
                 public static var background = UIColor.systemBackground
                 public static var border = UIColor.clear
                 public static var counter = UIColor.quaternaryLabel
-                public static var highlight = UIColor.systemBlue
+                public static var highlight = UIColor.clear
                 public static var line = UIColor.clear
                 public static var shadow = UIColor.clear
                 public static var text = UIColor.label
@@ -523,6 +523,7 @@ public extension UIColor {
             public static var body = UIColor.darkText
             public static var bodyTight = UIColor.darkText
             public static var field = UIColor.darkText
+            public static var fieldHeader = UIColor.darkText
             public static var header = UIColor.darkText
             public static var section = UIColor.lightText
             public static var tag = UIColor.darkText

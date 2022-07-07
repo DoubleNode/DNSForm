@@ -444,6 +444,7 @@ public extension DNSUIColor {
             public static var body = DNSUIColor(UIColor.DNSForm.Label.body)
             public static var bodyTight = DNSUIColor(UIColor.DNSForm.Label.bodyTight)
             public static var field = DNSUIColor(UIColor.DNSForm.Label.field)
+            public static var fieldHeader = DNSUIColor(UIColor.DNSForm.Label.fieldHeader)
             public static var header = DNSUIColor(UIColor.DNSForm.Label.header)
             public static var section = DNSUIColor(UIColor.DNSForm.Label.section)
             public static var tag = DNSUIColor(UIColor.DNSForm.Label.tag)

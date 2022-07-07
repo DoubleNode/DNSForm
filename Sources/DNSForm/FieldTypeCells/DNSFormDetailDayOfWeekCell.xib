@@ -262,6 +262,9 @@
         <designable name="gbp-wn-DYL">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
+        <designable name="n6P-1A-QWV">
+            <size key="intrinsicContentSize" width="224.66666666666666" height="13"/>
+        </designable>
         <designable name="o2b-1x-rFh">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>

@@ -87,6 +87,11 @@ public enum DNSFormDetailStage {
             }
             static public var textView: AnimatedFieldFormat {
                 var format = Format.default
+                format.titleAlwaysVisible = true
+                format.counterEnabled = true
+                format.countDown = false
+                format.counterAnimation = true
+                format.highlightColor = nil
                 format.dnsApply(DNSThemeFieldStyle.DNSForm.textView)
                 return format
             }

@@ -144,6 +144,7 @@ public extension DNSUIFont {
             public static var body = DNSUIFont(UIFont.DNSForm.Label.body)
             public static var bodyTight = DNSUIFont(UIFont.DNSForm.Label.bodyTight)
             public static var field = DNSUIFont(UIFont.DNSForm.Label.field)
+            public static var fieldHeader = DNSUIFont(UIFont.DNSForm.Label.fieldHeader)
             public static var header = DNSUIFont(UIFont.DNSForm.Label.header)
             public static var section = DNSUIFont(UIFont.DNSForm.Label.section)
             public static var tag = DNSUIFont(UIFont.DNSForm.Label.tag)

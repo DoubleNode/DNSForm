@@ -93,18 +93,18 @@ public extension UIFont {
             }
             public enum IndexTab {
                 public enum Subtitle {
-                    public static var disabled = UIFont.systemFont(ofSize: 12, weight: .semibold)
-                    public static var focused = UIFont.systemFont(ofSize: 12, weight: .semibold)
-                    public static var highlighted = UIFont.systemFont(ofSize: 12, weight: .semibold)
-                    public static var normal = UIFont.systemFont(ofSize: 12, weight: .semibold)
-                    public static var selected = UIFont.systemFont(ofSize: 12, weight: .semibold)
+                    public static var disabled = UIFont.systemFont(ofSize: 12, weight: .thin)
+                    public static var focused = UIFont.systemFont(ofSize: 12, weight: .regular)
+                    public static var highlighted = UIFont.systemFont(ofSize: 12, weight: .regular)
+                    public static var normal = UIFont.systemFont(ofSize: 12, weight: .regular)
+                    public static var selected = UIFont.systemFont(ofSize: 12, weight: .regular)
                 }
                 public enum Title {
-                    public static var disabled = UIFont.systemFont(ofSize: 18, weight: .bold)
-                    public static var focused = UIFont.systemFont(ofSize: 18, weight: .bold)
-                    public static var highlighted = UIFont.systemFont(ofSize: 18, weight: .bold)
-                    public static var normal = UIFont.systemFont(ofSize: 18, weight: .bold)
-                    public static var selected = UIFont.systemFont(ofSize: 18, weight: .bold)
+                    public static var disabled = UIFont.systemFont(ofSize: 18, weight: .regular)
+                    public static var focused = UIFont.systemFont(ofSize: 18, weight: .semibold)
+                    public static var highlighted = UIFont.systemFont(ofSize: 18, weight: .semibold)
+                    public static var normal = UIFont.systemFont(ofSize: 18, weight: .semibold)
+                    public static var selected = UIFont.systemFont(ofSize: 18, weight: .semibold)
                 }
             }
             public enum Preview {
@@ -142,16 +142,16 @@ public extension UIFont {
         }
         public enum Field {
             public enum Default {
-                public static var alert = UIFont.dnsCustom(with: "System", and: 13)
-                public static var counter = UIFont.dnsCustom(with: "System", and: 13)
-                public static var text = UIFont.dnsCustom(with: "System", and: 16)
-                public static var title = UIFont.dnsCustom(with: "System", and: 13)
+                public static var alert = UIFont.systemFont(ofSize: 13, weight: .bold)
+                public static var counter = UIFont.systemFont(ofSize: 11, weight: .regular)
+                public static var text = UIFont.systemFont(ofSize: 16, weight: .regular)
+                public static var title = UIFont.systemFont(ofSize: 13, weight: .regular)
             }
             public enum TextView {
-                public static var alert = UIFont.dnsCustom(with: "System", and: 13)
-                public static var counter = UIFont.dnsCustom(with: "System", and: 13)
-                public static var text = UIFont.dnsCustom(with: "System", and: 16)
-                public static var title = UIFont.dnsCustom(with: "System", and: 13)
+                public static var alert = UIFont.systemFont(ofSize: 13, weight: .bold)
+                public static var counter = UIFont.systemFont(ofSize: 11, weight: .regular)
+                public static var text = UIFont.systemFont(ofSize: 16, weight: .regular)
+                public static var title = UIFont.systemFont(ofSize: 13, weight: .regular)
             }
         }
         public enum Label {
@@ -159,8 +159,9 @@ public extension UIFont {
             public static var body = UIFont.systemFont(ofSize: 14, weight: .regular)
             public static var bodyTight = UIFont.systemFont(ofSize: 9, weight: .semibold)
             public static var field = UIFont.systemFont(ofSize: 11, weight: .regular)
+            public static var fieldHeader = UIFont.systemFont(ofSize: 13, weight: .medium)
             public static var header = UIFont.systemFont(ofSize: 28, weight: .bold)
-            public static var section = UIFont.systemFont(ofSize: 10, weight: .regular)
+            public static var section = UIFont.systemFont(ofSize: 10, weight: .semibold)
             public static var tag = UIFont.systemFont(ofSize: 9, weight: .semibold)
             public static var title = UIFont.systemFont(ofSize: 18, weight: .semibold)
         }

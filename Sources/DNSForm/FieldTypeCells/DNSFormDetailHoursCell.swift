@@ -136,7 +136,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         super.contentInit()
         style = DNSThemeViewStyle.DNSForm.clear
         closeLabel.style = DNSThemeLabelStyle.DNSForm.field
-        hoursLabel.style = DNSThemeLabelStyle.DNSForm.field
+        hoursLabel.style = DNSThemeLabelStyle.DNSForm.fieldHeader
         openLabel.style = DNSThemeLabelStyle.DNSForm.field
         self.contentInitOpenPicker()
         self.contentInitClosePicker()
