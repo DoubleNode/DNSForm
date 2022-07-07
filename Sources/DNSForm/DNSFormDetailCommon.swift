@@ -91,7 +91,7 @@ public enum DNSFormDetailStage {
                 format.counterAnimation = true
                 format.titleAlwaysVisible = true
                 format.dnsApply(DNSThemeFieldStyle.DNSForm.textView)
-                format.highlightColor = nil
+//                format.highlightColor = nil
                 return format
             }
         }

@@ -107,7 +107,7 @@
             <connections>
                 <outlet property="imageView" destination="2Fe-WC-Oam" id="zjz-RU-pbf"/>
                 <outlet property="progressView" destination="zdv-7N-njv" id="wQv-C5-jr4"/>
-                <outlet property="selectModeView" destination="Jap-NZ-Uma" id="3u0-wq-4oO"/>
+                <outlet property="selectModeView" destination="KuD-TU-KgD" id="SnQ-i5-Goi"/>
                 <outlet property="textField" destination="aUe-oh-Ee1" id="Kxz-Tv-ggB"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="143.30357142857142"/>
