@@ -541,7 +541,7 @@ public extension UIColor {
                     public static var focused = UIColor.clear
                     public static var highlighted = UIColor.clear
                     public static var normal = UIColor.clear
-                    public static var selected = UIColor.systemBlue.withAlphaComponent(0.5)
+                    public static var selected = UIColor.systemGreen.withAlphaComponent(0.25)
                 }
                 public static var border = UIColor.clear
                 public static var tint = UIColor.systemBlue
