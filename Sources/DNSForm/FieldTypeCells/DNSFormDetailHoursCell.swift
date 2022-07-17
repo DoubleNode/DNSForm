@@ -36,7 +36,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         public var closeLabel: String
         public var closePlaceholder: String
         public var field: String
-        public var hours: DAODayHours
+        public var hours: DNSDayHours
         public var hoursLabel: String
         public var languageCode: String
         public var openLabel: String
@@ -44,7 +44,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
 
-        public init(closeLabel: String, closePlaceholder: String, field: String, hours: DAODayHours, hoursLabel: String, languageCode: String, openLabel: String, openPlaceholder: String, readonly: Bool, required: Bool) {
+        public init(closeLabel: String, closePlaceholder: String, field: String, hours: DNSDayHours, hoursLabel: String, languageCode: String, openLabel: String, openPlaceholder: String, readonly: Bool, required: Bool) {
             self.closeLabel = closeLabel
             self.closePlaceholder = closePlaceholder
             self.field = field
@@ -183,7 +183,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         close = closeTimeOfDay.today
         closeTextField.hideAlert()
 
-        let hours = DAODayHours(open: openTimeOfDay, close: closeTimeOfDay)
+        let hours = DNSDayHours(open: openTimeOfDay, close: closeTimeOfDay)
         changePublisher.send(Stage.Models.Field.Request(field: data.field,
                                                         languageCode: "",
                                                         value: hours))
@@ -199,7 +199,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         let close = closePicker.date
         let closeTimeOfDay = DNSTimeOfDay(hour: close.dnsHour,
                                           minute: close.dnsMinute)
-        let hours = DAODayHours(open: openTimeOfDay, close: closeTimeOfDay)
+        let hours = DNSDayHours(open: openTimeOfDay, close: closeTimeOfDay)
         changePublisher.send(Stage.Models.Field.Request(field: data.field,
                                                         languageCode: "",
                                                         value: hours))

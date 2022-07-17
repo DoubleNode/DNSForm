@@ -26,7 +26,7 @@ open class DNSFormDetailDayOfWeekCell: DNSBaseStageCollectionViewCell,
     static public let recommendedContentSize = CGSize(width: 414, height: 67)
 
     public struct Data: Hashable {
-        public var dayOfWeek: DAODayOfWeekFlags
+        public var dayOfWeek: DNSDayOfWeekFlags
         public var field: String
         public var label: String
 
@@ -38,7 +38,7 @@ open class DNSFormDetailDayOfWeekCell: DNSBaseStageCollectionViewCell,
         public var saturday: Bool = true
         public var sunday: Bool = true
 
-        public init(dayOfWeek: DAODayOfWeekFlags,
+        public init(dayOfWeek: DNSDayOfWeekFlags,
                     field: String,
                     label: String) {
             self.dayOfWeek = dayOfWeek
