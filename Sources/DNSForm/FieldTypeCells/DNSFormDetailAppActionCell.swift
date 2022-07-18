@@ -79,7 +79,7 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
             self.progressView.setProgress(0.0, animated: false)
             self.progressView.isHidden = true
             self.imageView.image = nil
-            if let imageUrl = data.appAction?.imageUrl.asURL {
+            if let imageUrl = data.appAction?.topImageUrl.asURL {
                 self.progressView.isHidden = false
                 self.imageView.af
                     .setImage(withURL: imageUrl,
