@@ -4,7 +4,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSForm
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import PackageDescription
@@ -27,11 +27,11 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/DoubleNodeOpen/AnimatedField.git", from: "2.5.16"),
-        .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.9.0"),
+        .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.9.1"),
         .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.8.11"),
         .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.8.1"),
         .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", from: "1.8.0"),
-        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.9.9"),
+        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.9.13"),
         .package(url: "https://github.com/Nirma/SFSymbol", from: "1.1.0")
     ],
     targets: [

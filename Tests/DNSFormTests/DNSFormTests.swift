@@ -3,7 +3,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSErrorTests
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2020 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import XCTest
