@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankNetwork.git",
       "state" : {
-        "revision" : "45d2b4fa889f436fe002ac65dc938a5dc98b78fe",
-        "version" : "1.9.5"
+        "revision" : "f62ff10d6720b6cb6e61b62627368d7d26d459c9",
+        "version" : "1.9.8"
       }
     },
     {
@@ -77,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankSystems.git",
       "state" : {
-        "revision" : "5eb994acbd5f767a08647778929c0916f6ba21b0",
-        "version" : "1.9.1"
+        "revision" : "62cdc0d383471594e152001e1753225a62d94272",
+        "version" : "1.9.2"
       }
     },
     {
@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "5ebacce4a3f3bcf568046a1125d3a7974166971c",
-        "version" : "1.9.8"
+        "revision" : "0655bd15a35876845282f561e4ae14fadcf17a86",
+        "version" : "1.9.10"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCore.git",
       "state" : {
-        "revision" : "dc68b3e2a8a2d8ad417d3c7cdeac9ffb80af78dc",
-        "version" : "1.9.4"
+        "revision" : "37974f6c269a5af13cf4f8b8f91737c3f4ef53dc",
+        "version" : "1.9.12"
       }
     },
     {
@@ -113,8 +113,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashNetwork.git",
       "state" : {
-        "revision" : "895e65abbe6fae059b67d8ac8ecf82a8ad005471",
-        "version" : "1.9.2"
+        "revision" : "74b11a8d25de933c8b93e21130dcb400c5bba01a",
+        "version" : "1.9.4"
       }
     },
     {
@@ -122,8 +122,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashSystems.git",
       "state" : {
-        "revision" : "5639ed923ba5f8fb1c0d84ddddde4fa8d25dbc91",
-        "version" : "1.9.0"
+        "revision" : "9bf57baa0991b5e255fb97333ddcb06a3837c067",
+        "version" : "1.9.1"
       }
     },
     {
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSDataObjects.git",
       "state" : {
-        "revision" : "02de1cb3970ed40a1b769b3833c67ca1f3ca5ea9",
-        "version" : "1.9.17"
+        "revision" : "533f2a1a324ae7c975457e763e679efbadcd02fc",
+        "version" : "1.9.21"
       }
     },
     {
@@ -167,8 +167,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSProtocols.git",
       "state" : {
-        "revision" : "ba2f854379fc8ef277fc296ce884fce05a6ea8af",
-        "version" : "1.9.29"
+        "revision" : "0f7c1feb89e983239aa591b8ebf4e3590eea893e",
+        "version" : "1.9.34"
       }
     },
     {
