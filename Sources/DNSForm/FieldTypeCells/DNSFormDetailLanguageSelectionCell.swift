@@ -79,7 +79,7 @@ open class DNSFormDetailLanguageSelectionCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Action methods -
     @IBAction func selectAction(sender: UIButton) {
-        try? self.analyticsWorker?.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.analyticsWorker.doAutoTrack(class: String(describing: self), method: "\(#function)")
         var language = ""
         if sender == enButton {
             language = "en"

@@ -130,12 +130,12 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
-        try? self.analyticsWorker?.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.analyticsWorker.doAutoTrack(class: String(describing: self), method: "\(#function)")
     }
 
     // MARK: - Action Methods -
     @IBAction func actionEditButtonAction(_ sender: UIButton) {
-        try? self.analyticsWorker?.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.analyticsWorker.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
         if data.selectMode {
             guard self.selectMode else { return }

@@ -126,7 +126,7 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
-        try? self.analyticsWorker?.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.analyticsWorker.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
         guard textField.isValid else {
             textField.showAlert()
@@ -148,7 +148,7 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Action Methods -
     @IBAction func imagePopupButtonAction(_ sender: UIButton) {
-        try? self.analyticsWorker?.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.analyticsWorker.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
         guard let image = self.imageView.image else { return }
         imagePopupActionPublisher

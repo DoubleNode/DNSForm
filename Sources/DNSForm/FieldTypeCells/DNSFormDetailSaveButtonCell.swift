@@ -66,7 +66,7 @@ open class DNSFormDetailSaveButtonCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Action Methods -
     @IBAction func selectButtonAction(_ sender: UIButton) {
-        try? self.analyticsWorker?.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.analyticsWorker.doAutoTrack(class: String(describing: self), method: "\(#function)")
         pushActionPublisher.send(Stage.Models.Base.Request())
     }
 }
