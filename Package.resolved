@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSAppCore.git",
       "state" : {
-        "revision" : "e3be5a3fdec36bf4814ec7d7eee75442b566ba00",
-        "version" : "1.9.3"
+        "revision" : "e5d95961023ecb0a754ffec6a570a24241181a26",
+        "version" : "1.9.4"
       }
     },
     {
