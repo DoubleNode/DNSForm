@@ -135,7 +135,7 @@ open class DNSFormDetailDayOfWeekCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Action methods -
     @IBAction func selectAction(sender: UIButton) {
-        self.analyticsWorker.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
         let dayOfWeek = data.dayOfWeek
         if sender == monButton {

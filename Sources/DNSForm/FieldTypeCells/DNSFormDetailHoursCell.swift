@@ -169,7 +169,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
-        self.analyticsWorker.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
         var open = timeFormatter.date(from: openTextField.text!) ?? Date()
         let openTimeOfDay = DNSTimeOfDay(hour: open.dnsHour,
@@ -191,7 +191,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Action methods -
     @IBAction func dateValueChangedAction(sender: UIDatePicker) {
-        self.analyticsWorker.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
         let open = openPicker.date
         let openTimeOfDay = DNSTimeOfDay(hour: open.dnsHour,

@@ -164,7 +164,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
-        self.analyticsWorker.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
         let date = dateFormatter.date(from: dateTextField.text!) ?? Date()
         var time = timeFormatter.date(from: timeTextField.text!) ?? Date()
@@ -180,7 +180,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Action methods -
     @IBAction func dateValueChangedAction(sender: UIDatePicker) {
-        self.analyticsWorker.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
         let date = datePicker.date
         var time = timePicker.date
