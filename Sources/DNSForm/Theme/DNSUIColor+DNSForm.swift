@@ -7,6 +7,7 @@
 //
 
 import DNSBaseTheme
+import DNSCore
 import UIKit
 
 public extension DNSUIColor {

@@ -7,7 +7,7 @@
 //
 
 import DNSBaseTheme
-import UIKit
+import DNSCore
 
 public extension DNSUIShadow {
     enum DNSForm {  // swiftlint:disable:this type_name

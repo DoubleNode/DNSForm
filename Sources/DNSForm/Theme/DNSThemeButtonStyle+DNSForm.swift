@@ -7,6 +7,7 @@
 //
 
 import DNSBaseTheme
+import DNSCore
 
 public extension DNSThemeButtonStyle {
     enum DNSForm {
