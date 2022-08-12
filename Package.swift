@@ -31,7 +31,7 @@ let package = Package(
         .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.9.10"),
         .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.9.1"),
         .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.9.45"),
-        .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.9.16"),
+        .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.9.18"),
         .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", from: "1.8.0"),
         .package(url: "https://github.com/DoubleNode/DNSCrashNetwork.git", from: "1.9.12"),
         .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", from: "1.9.7"),
