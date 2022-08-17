@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21223" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21204"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,21 +31,21 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zh-Qd-KcT" userLabel="Date Text Field" customClass="AnimatedField" customModule="AnimatedField">
-                                <rect key="frame" x="24" y="0.0" width="366" height="76"/>
+                                <rect key="frame" x="24" y="0.0" width="335.33333333333331" height="76"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="jPx-i4-cfN"/>
                                 </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="ala-U9-OFA">
-                                <rect key="frame" x="24" y="0.0" width="366" height="76"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="ala-U9-OFA">
+                                <rect key="frame" x="24" y="0.0" width="335.33333333333331" height="76"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <connections>
                                     <action selector="dateValueChangedActionWithSender:" destination="gTV-IL-0wX" eventType="valueChanged" id="Ze9-M6-5Bs"/>
                                 </connections>
                             </datePicker>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UXn-gT-llh">
-                                <rect key="frame" x="361" y="25.333333333333332" width="21" height="17.333333333333339"/>
+                                <rect key="frame" x="369.33333333333331" y="25.333333333333332" width="20.666666666666686" height="17.333333333333339"/>
                                 <color key="tintColor" name="TitleDark"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-Nc-3jh" userLabel="Line View">
@@ -60,15 +60,15 @@
                             <constraint firstItem="ala-U9-OFA" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="leading" id="8Bg-Qd-s5w"/>
                             <constraint firstAttribute="bottom" secondItem="9zh-Qd-KcT" secondAttribute="bottom" id="Bvg-Rz-vnG"/>
                             <constraint firstAttribute="bottom" secondItem="fyx-Nc-3jh" secondAttribute="bottom" constant="22" id="Ju3-zB-D1g"/>
-                            <constraint firstItem="UXn-gT-llh" firstAttribute="trailing" secondItem="fyx-Nc-3jh" secondAttribute="trailing" constant="-8" id="LEE-hm-0dz"/>
+                            <constraint firstItem="UXn-gT-llh" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="trailing" constant="10" id="K7H-pP-zk3"/>
                             <constraint firstItem="fyx-Nc-3jh" firstAttribute="top" secondItem="UXn-gT-llh" secondAttribute="bottom" constant="9" id="PRr-P8-UY9"/>
-                            <constraint firstItem="fyx-Nc-3jh" firstAttribute="trailing" secondItem="9zh-Qd-KcT" secondAttribute="trailing" id="SAe-eI-Bdf"/>
                             <constraint firstItem="fyx-Nc-3jh" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="leading" id="T16-JQ-t3J"/>
                             <constraint firstItem="9zh-Qd-KcT" firstAttribute="leading" secondItem="KuD-TU-KgD" secondAttribute="leading" constant="24" id="VyL-sm-yf9"/>
                             <constraint firstItem="9zh-Qd-KcT" firstAttribute="leading" secondItem="njb-EG-v3S" secondAttribute="leading" id="aoN-oS-7FD"/>
-                            <constraint firstAttribute="trailing" secondItem="9zh-Qd-KcT" secondAttribute="trailing" constant="24" id="e61-YL-4jm"/>
                             <constraint firstItem="9zh-Qd-KcT" firstAttribute="top" secondItem="njb-EG-v3S" secondAttribute="top" constant="-6" id="i6e-YU-8e6"/>
                             <constraint firstItem="ala-U9-OFA" firstAttribute="bottom" secondItem="9zh-Qd-KcT" secondAttribute="bottom" id="kJ4-fc-e7H"/>
+                            <constraint firstAttribute="trailing" secondItem="UXn-gT-llh" secondAttribute="trailing" constant="24" id="kU7-Uv-Ihg"/>
+                            <constraint firstItem="UXn-gT-llh" firstAttribute="trailing" secondItem="fyx-Nc-3jh" secondAttribute="trailing" id="phB-gG-JTU"/>
                             <constraint firstItem="ala-U9-OFA" firstAttribute="trailing" secondItem="9zh-Qd-KcT" secondAttribute="trailing" id="qS7-Uc-g97"/>
                             <constraint firstItem="ala-U9-OFA" firstAttribute="top" secondItem="9zh-Qd-KcT" secondAttribute="top" id="slj-yL-eKJ"/>
                         </constraints>
