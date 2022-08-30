@@ -21,41 +21,53 @@ public extension DNSUIShadow {
             public static var preview = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Preview.shadow)
             public static var square = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Square.shadow)
             public enum Default {
-                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Default.subtitleShadow)
-                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Default.titleShadow)
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Default.Subtitle.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Default.Title.shadow)
             }
             public enum Action {
-                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Action.subtitleShadow)
-                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Action.titleShadow)
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Action.Subtitle.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Action.Title.shadow)
             }
             public enum ActionLeft {
-                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionLeft.subtitleShadow)
-                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionLeft.titleShadow)
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionLeft.Subtitle.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionLeft.Title.shadow)
             }
             public enum ActionRight {
-                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionRight.subtitleShadow)
-                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionRight.titleShadow)
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionRight.Subtitle.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.ActionRight.Title.shadow)
             }
             public enum Destructive {
-                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Destructive.subtitleShadow)
-                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Destructive.titleShadow)
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Destructive.Subtitle.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Destructive.Title.shadow)
             }
             public enum IndexTab {
-                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.IndexTab.subtitleShadow)
-                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.IndexTab.titleShadow)
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.IndexTab.Subtitle.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.IndexTab.Title.shadow)
             }
             public enum Preview {
-                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Preview.subtitleShadow)
-                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Preview.titleShadow)
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Preview.Subtitle.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Preview.Title.shadow)
             }
             public enum Square {
-                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Square.subtitleShadow)
-                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Square.titleShadow)
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Square.Subtitle.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Square.Title.shadow)
             }
         }
         public enum Field {
             public static var `default` = DNSUIShadow(color: DNSUIColor.DNSForm.Field.Default.shadow)
             public static var textView = DNSUIShadow(color: DNSUIColor.DNSForm.Field.TextView.shadow)
+            public enum Default {
+                public static var alert = DNSUIShadow(color: DNSUIColor.DNSForm.Field.Default.Alert.shadow)
+                public static var counter = DNSUIShadow(color: DNSUIColor.DNSForm.Field.Default.Counter.shadow)
+                public static var text = DNSUIShadow(color: DNSUIColor.DNSForm.Field.Default.Text.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Field.Default.Title.shadow)
+            }
+            public enum TextView {
+                public static var alert = DNSUIShadow(color: DNSUIColor.DNSForm.Field.TextView.Alert.shadow)
+                public static var counter = DNSUIShadow(color: DNSUIColor.DNSForm.Field.TextView.Counter.shadow)
+                public static var text = DNSUIShadow(color: DNSUIColor.DNSForm.Field.TextView.Text.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Field.TextView.Title.shadow)
+            }
         }
         public enum View {
         }

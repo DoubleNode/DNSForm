@@ -38,17 +38,91 @@ public extension DNSUIBorder {
                             cornerTopLeftRadius: 10,
                             cornerTopRightRadius: 10,
                             width: 1)
-            public static var preview =
-                DNSUIBorder(color: DNSUIColor.DNSForm.Button.Preview.border,
-                            cornerRadius: 10)
-            public static var square =
-                DNSUIBorder(color: DNSUIColor.DNSForm.Button.Square.border,
-                            cornerRadius: 0,
-                            width: 1)
+            public static var preview = DNSUIBorder(color: DNSUIColor.DNSForm.Button.Preview.border,
+                                                    cornerRadius: 10)
+            public static var square = DNSUIBorder(color: DNSUIColor.DNSForm.Button.Square.border,
+                                                   cornerRadius: 0,
+                                                   width: 1)
+            public enum Default {
+                public static var subtitle =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Default.Subtitle.border,
+                                cornerRadius: 0)
+                public static var title =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Default.Title.border,
+                                cornerRadius: 0)
+            }
+            public enum Action {
+                public static var subtitle =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Action.Subtitle.border,
+                                cornerRadius: 0)
+                public static var title =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Action.Title.border,
+                                cornerRadius: 0)
+            }
+            public enum ActionLeft {
+                public static var subtitle =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.ActionLeft.Subtitle.border,
+                                cornerRadius: 0)
+                public static var title =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.ActionLeft.Title.border,
+                                cornerRadius: 0)
+            }
+            public enum ActionRight {
+                public static var subtitle =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.ActionRight.Subtitle.border,
+                                cornerRadius: 0)
+                public static var title =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.ActionRight.Title.border,
+                                cornerRadius: 0)
+            }
+            public enum Destructive {
+                public static var subtitle =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Destructive.Subtitle.border,
+                                cornerRadius: 0)
+                public static var title =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Destructive.Title.border,
+                                cornerRadius: 0)
+            }
+            public enum IndexTab {
+                public static var subtitle =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.IndexTab.Subtitle.border,
+                                cornerRadius: 0)
+                public static var title =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.IndexTab.Title.border,
+                                cornerRadius: 0)
+            }
+            public enum Preview {
+                public static var subtitle =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Preview.Subtitle.border,
+                                cornerRadius: 0)
+                public static var title =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Preview.Title.border,
+                                cornerRadius: 0)
+            }
+            public enum Square {
+                public static var subtitle =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Square.Subtitle.border,
+                                cornerRadius: 0)
+                public static var title =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Square.Title.border,
+                                cornerRadius: 0)
+            }
         }
         public enum Field {
             public static var `default` = DNSUIBorder(color: DNSUIColor.DNSForm.Field.Default.border)
             public static var textView = DNSUIBorder(color: DNSUIColor.DNSForm.Field.TextView.border)
+            public enum Default {
+                public static var alert = DNSUIBorder(color: DNSUIColor.DNSForm.Field.Default.Alert.border)
+                public static var counter = DNSUIBorder(color: DNSUIColor.DNSForm.Field.Default.Counter.border)
+                public static var text = DNSUIBorder(color: DNSUIColor.DNSForm.Field.Default.Text.border)
+                public static var title = DNSUIBorder(color: DNSUIColor.DNSForm.Field.Default.Title.border)
+            }
+            public enum TextView {
+                public static var alert = DNSUIBorder(color: DNSUIColor.DNSForm.Field.TextView.Alert.border)
+                public static var counter = DNSUIBorder(color: DNSUIColor.DNSForm.Field.TextView.Counter.border)
+                public static var text = DNSUIBorder(color: DNSUIColor.DNSForm.Field.TextView.Text.border)
+                public static var title = DNSUIBorder(color: DNSUIColor.DNSForm.Field.TextView.Title.border)
+            }
         }
         public enum View {
             public static var `default` =

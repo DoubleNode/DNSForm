@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseStage.git",
       "state" : {
-        "revision" : "42e748ae30949db7a9b6fc785077b6d5ef681568",
-        "version" : "1.9.18"
+        "revision" : "9c5fc1c930c4e1df37dec93d393a75d46d611a96",
+        "version" : "1.9.19"
       }
     },
     {
@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseTheme.git",
       "state" : {
-        "revision" : "f15f4f211d447d2cfa5202c616fc6f528d8c49cf",
-        "version" : "1.9.2"
+        "revision" : "9a2d80cd8ac7b95f8d2b6c9f1e41c29269bbaf81",
+        "version" : "1.9.3"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCore.git",
       "state" : {
-        "revision" : "e57c03d06518dea638ed5d962e7bb3897437d095",
-        "version" : "1.9.28"
+        "revision" : "895e7e5e4af7cabc8463371a4afb725ee32ac399",
+        "version" : "1.9.29"
       }
     },
     {
@@ -167,8 +167,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSProtocols.git",
       "state" : {
-        "revision" : "884e360fb8624da552ec84d8a3a96abea5bba796",
-        "version" : "1.9.83"
+        "revision" : "a6f8b078c7d60ed39c49bb296d07d3a008c8efbe",
+        "version" : "1.9.84"
       }
     },
     {
