@@ -35,7 +35,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.field"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zh-Qd-KcT" userLabel="Date Text Field" customClass="AnimatedField" customModule="AnimatedField">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zh-Qd-KcT" userLabel="Date Text Field" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
                                 <rect key="frame" x="24" y="0.0" width="146" height="76"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>
@@ -69,7 +69,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.field"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0J-MI-Xmn" userLabel="Time Text Field" customClass="AnimatedField" customModule="AnimatedField">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0J-MI-Xmn" userLabel="Time Text Field" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
                                 <rect key="frame" x="214" y="0.0" width="146" height="76"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>

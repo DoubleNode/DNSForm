@@ -65,35 +65,4 @@ public enum DNSFormDetailStage {
         }
     }
     // swiftlint:enable line_length
-    
-    public enum AnimatedField {
-        public enum Format {
-            static public var `default`: AnimatedFieldFormat {
-                var format = AnimatedFieldFormat()
-                format.dnsApply(DNSThemeFieldStyle.DNSForm.default)
-                format.alertEnabled = true
-                format.alertFieldActive = false
-                format.alertLineActive = true
-                format.alertTitleActive = false
-                format.alertPosition = .bottom
-                format.counterEnabled = false
-                format.countDown = false
-                format.counterAnimation = false
-                format.invalidCharacters = ""
-                format.titleAlwaysVisible = false
-                format.visibleOnImage = UIImage(dnsSystemSymbol: SFSymbol.eye)
-                format.visibleOffImage = UIImage(dnsSystemSymbol: SFSymbol.eyeSlash)
-                return format
-            }
-            static public var textView: AnimatedFieldFormat {
-                var format = Format.default
-                format.counterEnabled = true
-                format.counterAnimation = true
-                format.titleAlwaysVisible = true
-                format.dnsApply(DNSThemeFieldStyle.DNSForm.textView)
-//                format.highlightColor = nil
-                return format
-            }
-        }
-    }
 }

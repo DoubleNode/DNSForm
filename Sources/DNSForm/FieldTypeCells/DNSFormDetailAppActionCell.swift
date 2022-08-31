@@ -97,7 +97,7 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var progressView: UIProgressView!
     @IBOutlet var selectModeView: DNSUIView!
-    @IBOutlet var textField: AnimatedField!
+    @IBOutlet var textField: DNSUIAnimatedField!
 
     // MARK: - Outgoing Pipelines -
     public var actionEditActionPublisher = PassthroughSubject<Stage.Models.AppAction.Request, Never>()
@@ -106,7 +106,7 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        textField.format = Stage.AnimatedField.Format.default
+        textField.style = DNSThemeFieldStyle.DNSForm.default
         textField.type = .url("field", 0)
         textField.placeholder = "field"
         textField.keyboardType = .URL

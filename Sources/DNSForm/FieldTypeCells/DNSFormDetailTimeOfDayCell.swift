@@ -67,7 +67,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
     @IBOutlet var timeLabel: DNSUILabel!
     @IBOutlet var timePicker: UIDatePicker!
     @IBOutlet var timePickerLineView: UIView!
-    @IBOutlet var timeTextField: AnimatedField!
+    @IBOutlet var timeTextField: DNSUIAnimatedField!
 
     // MARK: - Outgoing Pipelines -
     public var changePublisher = PassthroughSubject<Stage.Models.Field.Request, Never>()
@@ -77,6 +77,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
+        timeTextField.style = DNSThemeFieldStyle.DNSForm.default
         if #available(iOS 14, *) {
             timePicker.alpha = 1
             timePickerLineView.alpha = 1
@@ -85,10 +86,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
             timePicker.alpha = 0
             timePickerLineView.alpha = 0
             timeTextField.alpha = 1
-
-            timeTextField.format = Stage.AnimatedField.Format.default
             timeTextField.placeholder = "SELECT TIME"   // TODO: Localize
-
             timeTextField.dataSource = self
             timeTextField.delegate = self
         }

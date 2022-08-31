@@ -85,12 +85,12 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
     @IBOutlet var closeLabel: DNSUILabel!
     @IBOutlet var closePicker: UIDatePicker!
     @IBOutlet var closePickerLineView: UIView!
-    @IBOutlet var closeTextField: AnimatedField!
+    @IBOutlet var closeTextField: DNSUIAnimatedField!
     @IBOutlet var hoursLabel: DNSUILabel!
     @IBOutlet var openLabel: DNSUILabel!
     @IBOutlet var openPicker: UIDatePicker!
     @IBOutlet var openPickerLineView: UIView!
-    @IBOutlet var openTextField: AnimatedField!
+    @IBOutlet var openTextField: DNSUIAnimatedField!
 
     // MARK: - Outgoing Pipelines -
     public var changePublisher = PassthroughSubject<Stage.Models.Field.Request, Never>()
@@ -100,6 +100,8 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
+        closeTextField.style = DNSThemeFieldStyle.DNSForm.default
+        openTextField.style = DNSThemeFieldStyle.DNSForm.default
         if #available(iOS 14, *) {
             openPicker.alpha = 1
             openPickerLineView.alpha = 1
@@ -108,10 +110,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             openPicker.alpha = 0
             openPickerLineView.alpha = 0
             openTextField.alpha = 1
-
-            openTextField.format = Stage.AnimatedField.Format.default
             openTextField.placeholder = "SELECT OPEN TIME"   // TODO: Localize
-
             openTextField.dataSource = self
             openTextField.delegate = self
         }
@@ -124,10 +123,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             closePicker.alpha = 0
             closePickerLineView.alpha = 0
             closeTextField.alpha = 1
-
-            closeTextField.format = Stage.AnimatedField.Format.default
             closeTextField.placeholder = "SELECT CLOSE TIME"   // TODO: Localize
-
             closeTextField.dataSource = self
             closeTextField.delegate = self
         }

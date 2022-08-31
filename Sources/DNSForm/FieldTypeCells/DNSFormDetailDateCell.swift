@@ -67,7 +67,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
     @IBOutlet var dateLabel: DNSUILabel!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var datePickerLineView: UIView!
-    @IBOutlet var dateTextField: AnimatedField!
+    @IBOutlet var dateTextField: DNSUIAnimatedField!
 
     // MARK: - Outgoing Pipelines -
     public var changeDatePublisher = PassthroughSubject<Stage.Models.Field.Request, Never>()
@@ -77,6 +77,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
+        dateTextField.style = DNSThemeFieldStyle.DNSForm.default
         if #available(iOS 14, *) {
             datePicker.alpha = 1
             datePickerLineView.alpha = 1
@@ -85,10 +86,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
             datePicker.alpha = 0
             datePickerLineView.alpha = 0
             dateTextField.alpha = 1
-
-            dateTextField.format = Stage.AnimatedField.Format.default
             dateTextField.placeholder = "SELECT DATE"   // TODO: Localize
-
             dateTextField.dataSource = self
             dateTextField.delegate = self
         }

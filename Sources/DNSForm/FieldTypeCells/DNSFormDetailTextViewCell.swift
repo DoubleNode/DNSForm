@@ -59,14 +59,14 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
     }
 
     @IBOutlet var lineView: UIView!
-    @IBOutlet var textView: AnimatedField!
+    @IBOutlet var textView: DNSUIAnimatedField!
 
     // MARK: - Outgoing Pipelines -
     public var changeTextPublisher = PassthroughSubject<Stage.Models.Field.Request, Never>()
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        textView.format = Stage.AnimatedField.Format.textView
+        textView.style = DNSThemeFieldStyle.DNSForm.textView
         textView.type = .multiline
         textView.placeholder = ""
         textView.keyboardType = .default

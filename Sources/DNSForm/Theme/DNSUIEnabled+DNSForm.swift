@@ -47,16 +47,48 @@ public extension DNSUIEnabled {
         }
         public enum Field {
             public enum Default {
-                public static var alert = DNSUIEnabled(false)
-                public static var counter = DNSUIEnabled(false)
-                public static var text = DNSUIEnabled(false)
-                public static var title = DNSUIEnabled(false)
+                public static var alertEnabled = DNSUIEnabled(true)
+                public static var alertFieldActive = DNSUIEnabled(false)
+                public static var alertLineActive = DNSUIEnabled(true)
+                public static var alertTitleActive = DNSUIEnabled(false)
+                public static var countDown = DNSUIEnabled(false)
+                public static var counterAnimation = DNSUIEnabled(false)
+                public static var counterEnabled = DNSUIEnabled(false)
+                public static var titleAlwaysVisible = DNSUIEnabled(false)
+                public enum Alert {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Counter {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Text {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Title {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
             }
             public enum TextView {
-                public static var alert = DNSUIEnabled(false)
-                public static var counter = DNSUIEnabled(false)
-                public static var text = DNSUIEnabled(false)
-                public static var title = DNSUIEnabled(false)
+                public static var alertEnabled = DNSUIEnabled(true)
+                public static var alertFieldActive = DNSUIEnabled(false)
+                public static var alertLineActive = DNSUIEnabled(true)
+                public static var alertTitleActive = DNSUIEnabled(false)
+                public static var countDown = DNSUIEnabled(false)
+                public static var counterAnimation = DNSUIEnabled(true)
+                public static var counterEnabled = DNSUIEnabled(true)
+                public static var titleAlwaysVisible = DNSUIEnabled(true)
+                public enum Alert {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Counter {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Text {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Title {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
             }
         }
     }

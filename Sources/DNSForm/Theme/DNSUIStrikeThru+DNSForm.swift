@@ -81,30 +81,30 @@ public extension DNSUIStrikeThru {
             public enum Default {
                 public static var alert =
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.Default.Alert.strikeThru,
-                                    enabled: DNSUIEnabled.DNSForm.Field.Default.alert)
+                                    enabled: DNSUIEnabled.DNSForm.Field.Default.Alert.strikeThru)
                 public static var counter =
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.Default.Counter.strikeThru,
-                                    enabled: DNSUIEnabled.DNSForm.Field.Default.counter)
+                                    enabled: DNSUIEnabled.DNSForm.Field.Default.Counter.strikeThru)
                 public static var text =
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.Default.Text.strikeThru,
-                                    enabled: DNSUIEnabled.DNSForm.Field.Default.text)
+                                    enabled: DNSUIEnabled.DNSForm.Field.Default.Text.strikeThru)
                 public static var title =
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.Default.Title.strikeThru,
-                                    enabled: DNSUIEnabled.DNSForm.Field.Default.title)
+                                    enabled: DNSUIEnabled.DNSForm.Field.Default.Title.strikeThru)
             }
             public enum TextView {
                 public static var alert =
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.TextView.Alert.strikeThru,
-                                    enabled: DNSUIEnabled.DNSForm.Field.TextView.alert)
+                                    enabled: DNSUIEnabled.DNSForm.Field.TextView.Alert.strikeThru)
                 public static var counter =
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.TextView.Counter.strikeThru,
-                                    enabled: DNSUIEnabled.DNSForm.Field.TextView.counter)
+                                    enabled: DNSUIEnabled.DNSForm.Field.TextView.Counter.strikeThru)
                 public static var text =
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.TextView.Text.strikeThru,
-                                    enabled: DNSUIEnabled.DNSForm.Field.TextView.text)
+                                    enabled: DNSUIEnabled.DNSForm.Field.TextView.Text.strikeThru)
                 public static var title =
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.TextView.Title.strikeThru,
-                                    enabled: DNSUIEnabled.DNSForm.Field.TextView.title)
+                                    enabled: DNSUIEnabled.DNSForm.Field.TextView.Title.strikeThru)
             }
         }
     }
