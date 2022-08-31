@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "activelabel.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/optonaut/ActiveLabel.swift",
+      "state" : {
+        "revision" : "36949c1a69ef8b40574da20c9e24b115f387b1cf",
+        "version" : "1.1.5"
+      }
+    },
+    {
       "identity" : "alamofire",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
@@ -23,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNodeOpen/AnimatedField.git",
       "state" : {
-        "revision" : "398d4b9c5f280d5ca557910af851d0bbf40ed85d",
-        "version" : "2.5.18"
+        "revision" : "097fc1263e0cacc0edc11edbad229e76cf1631b1",
+        "version" : "2.5.21"
       }
     },
     {
@@ -50,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseStage.git",
       "state" : {
-        "revision" : "47edb2e781b40592e69aa29276c8f7ff8a7f5921",
-        "version" : "1.9.20"
+        "revision" : "350ac9a1aab9f00a29c88237ac0e9e93e1e02f30",
+        "version" : "1.9.30"
       }
     },
     {
@@ -59,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseTheme.git",
       "state" : {
-        "revision" : "41665c37b40f95f42c389e80c1f3acc0efe2e505",
-        "version" : "1.9.4"
+        "revision" : "0753aca91aa5cbde63fcbea03349284e90601c5f",
+        "version" : "1.9.9"
       }
     },
     {
@@ -86,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "ea93a61c8367b8afac1671fc20e5253787743d8c",
-        "version" : "1.9.60"
+        "revision" : "0d776c982969a5497c741422c91253f10894fc7b",
+        "version" : "1.9.64"
       }
     },
     {
@@ -95,8 +104,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCore.git",
       "state" : {
-        "revision" : "895e7e5e4af7cabc8463371a4afb725ee32ac399",
-        "version" : "1.9.29"
+        "revision" : "c583a5e1cff8aa3f1e01ed0568fc414b9e4e3ee8",
+        "version" : "1.9.32"
       }
     },
     {
@@ -131,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashWorkers.git",
       "state" : {
-        "revision" : "bdc65104bc8d36eb9d1fa0fbef1137d4c3067159",
-        "version" : "1.9.45"
+        "revision" : "efca446cc2786ab898dd6cfc06230af3cb9ccdee",
+        "version" : "1.9.48"
       }
     },
     {
@@ -140,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSDataObjects.git",
       "state" : {
-        "revision" : "b6de0346a5ded63f97535f3c3b6f19ddb60e64ce",
-        "version" : "1.9.36"
+        "revision" : "884b0ff6c2d20072b596453f1b30aafb899c14ec",
+        "version" : "1.9.41"
       }
     },
     {
@@ -167,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSProtocols.git",
       "state" : {
-        "revision" : "16fac0b0b51e8da2e6a3caf8bf9a5656a6af8cf4",
-        "version" : "1.9.85"
+        "revision" : "fc286ce19365684923cf0e42672cc8f8f522e68c",
+        "version" : "1.9.90"
       }
     },
     {
