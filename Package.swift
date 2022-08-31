@@ -28,7 +28,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/DoubleNodeOpen/AnimatedField.git", from: "2.5.18"),
         .package(url: "https://github.com/DoubleNode/DNSAppCore.git", from: "1.9.8"),
-        .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.9.20"),
+        .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.9.21"),
         .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.9.4"),
         .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.9.60"),
         .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.9.29"),
