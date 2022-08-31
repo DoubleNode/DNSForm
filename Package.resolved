@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseStage.git",
       "state" : {
-        "revision" : "47edb2e781b40592e69aa29276c8f7ff8a7f5921",
-        "version" : "1.9.20"
+        "revision" : "7b827655bf328aac14f7ed90a2084ffc29e2f1b0",
+        "version" : "1.9.23"
       }
     },
     {
@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseTheme.git",
       "state" : {
-        "revision" : "41665c37b40f95f42c389e80c1f3acc0efe2e505",
-        "version" : "1.9.4"
+        "revision" : "55695b1d8303c84591d882da2b4845d8af4a31a3",
+        "version" : "1.9.6"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCore.git",
       "state" : {
-        "revision" : "895e7e5e4af7cabc8463371a4afb725ee32ac399",
-        "version" : "1.9.29"
+        "revision" : "d8b71aa0aefe0a3ef874f8ee20d438f04fcca107",
+        "version" : "1.9.30"
       }
     },
     {
