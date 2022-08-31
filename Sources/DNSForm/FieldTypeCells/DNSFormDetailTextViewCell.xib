@@ -23,7 +23,6 @@
                         <subviews>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbd-ae-TKK" userLabel="Background View">
                                 <rect key="frame" x="24" y="24" width="366" height="201"/>
-                                <color key="backgroundColor" name="OutlineLight"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="201" id="4m5-jv-odz"/>
                                 </constraints>
