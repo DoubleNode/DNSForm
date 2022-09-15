@@ -1062,13 +1062,13 @@ public extension UIColor {
         }
         public enum Field {
             public enum Default {
-                public static var background = UIColor.systemBackground
+                public static var background = UIColor.clear
                 public static var border = UIColor.clear
                 public static var line = UIColor.darkText
                 public static var shadow = UIColor.clear
                 public static var tint = UIColor.systemPurple
                 public enum Alert {
-                    public static var background = UIColor.systemBackground
+                    public static var background = UIColor.clear
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.systemRed
@@ -1076,7 +1076,7 @@ public extension UIColor {
                     public static var tint = UIColor.systemPurple
                 }
                 public enum Counter {
-                    public static var background = UIColor.systemBackground
+                    public static var background = UIColor.clear
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.darkText
@@ -1084,7 +1084,7 @@ public extension UIColor {
                     public static var tint = UIColor.systemPurple
                 }
                 public enum Text {
-                    public static var background = UIColor.systemBackground
+                    public static var background = UIColor.clear
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.label
@@ -1092,7 +1092,7 @@ public extension UIColor {
                     public static var tint = UIColor.systemPurple
                 }
                 public enum Title {
-                    public static var background = UIColor.systemBackground
+                    public static var background = UIColor.clear
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.darkText
