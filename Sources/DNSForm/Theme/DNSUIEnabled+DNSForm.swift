@@ -28,6 +28,10 @@ public extension DNSUIEnabled {
                 public static var subtitle = DNSUIEnabled(false)
                 public static var title = DNSUIEnabled(false)
             }
+            public enum Clear {
+                public static var subtitle = DNSUIEnabled(false)
+                public static var title = DNSUIEnabled(false)
+            }
             public enum Destructive {
                 public static var subtitle = DNSUIEnabled(false)
                 public static var title = DNSUIEnabled(false)

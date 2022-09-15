@@ -75,6 +75,22 @@ public extension UIFont {
                     public static var selected = UIFont.systemFont(ofSize: 18, weight: .bold)
                 }
             }
+            public enum Clear {
+                public enum Subtitle {
+                    public static var disabled = UIFont.systemFont(ofSize: 12, weight: .light)
+                    public static var focused = UIFont.systemFont(ofSize: 12, weight: .light)
+                    public static var highlighted = UIFont.systemFont(ofSize: 12, weight: .light)
+                    public static var normal = UIFont.systemFont(ofSize: 12, weight: .light)
+                    public static var selected = UIFont.systemFont(ofSize: 12, weight: .light)
+                }
+                public enum Title {
+                    public static var disabled = UIFont.systemFont(ofSize: 15, weight: .regular)
+                    public static var focused = UIFont.systemFont(ofSize: 15, weight: .regular)
+                    public static var highlighted = UIFont.systemFont(ofSize: 15, weight: .regular)
+                    public static var normal = UIFont.systemFont(ofSize: 15, weight: .regular)
+                    public static var selected = UIFont.systemFont(ofSize: 15, weight: .regular)
+                }
+            }
             public enum Destructive {
                 public enum Subtitle {
                     public static var disabled = UIFont.systemFont(ofSize: 12, weight: .semibold)

@@ -469,6 +469,124 @@ public extension UIColor {
                     }
                 }
             }
+            public enum Clear {
+                public enum Background {
+                    public static var disabled = UIColor.clear
+                    public static var focused = UIColor.clear
+                    public static var highlighted = UIColor.clear
+                    public static var normal = UIColor.clear
+                    public static var selected = UIColor.clear
+                }
+                public enum Border {
+                    public static var disabled = UIColor.clear
+                    public static var focused = UIColor.clear
+                    public static var highlighted = UIColor.clear
+                    public static var normal = UIColor.clear
+                    public static var selected = UIColor.clear
+                }
+                public enum Shadow {
+                    public static var disabled = UIColor.clear
+                    public static var focused = UIColor.clear
+                    public static var highlighted = UIColor.clear
+                    public static var normal = UIColor.clear
+                    public static var selected = UIColor.clear
+                }
+                public enum Tint {
+                    public static var disabled = UIColor.clear
+                    public static var focused = UIColor.clear
+                    public static var highlighted = UIColor.clear
+                    public static var normal = UIColor.clear
+                    public static var selected = UIColor.clear
+                }
+                public enum Subtitle {
+                    public enum Background {
+                        public static var disabled = UIColor.clear
+                        public static var focused = UIColor.clear
+                        public static var highlighted = UIColor.clear
+                        public static var normal = UIColor.clear
+                        public static var selected = UIColor.clear
+                    }
+                    public enum Border {
+                        public static var disabled = UIColor.clear
+                        public static var focused = UIColor.clear
+                        public static var highlighted = UIColor.clear
+                        public static var normal = UIColor.clear
+                        public static var selected = UIColor.clear
+                    }
+                    public enum Shadow {
+                        public static var disabled = UIColor.clear
+                        public static var focused = UIColor.clear
+                        public static var highlighted = UIColor.clear
+                        public static var normal = UIColor.clear
+                        public static var selected = UIColor.clear
+                    }
+                    public enum StrikeThru {
+                        public static var disabled = UIColor.clear
+                        public static var focused = UIColor.clear
+                        public static var highlighted = UIColor.clear
+                        public static var normal = UIColor.clear
+                        public static var selected = UIColor.clear
+                    }
+                    public enum Text {
+                        public static var disabled = UIColor.clear
+                        public static var focused = UIColor.clear
+                        public static var highlighted = UIColor.clear
+                        public static var normal = UIColor.clear
+                        public static var selected = UIColor.clear
+                    }
+                    public enum Tint {
+                        public static var disabled = UIColor.clear
+                        public static var focused = UIColor.clear
+                        public static var highlighted = UIColor.clear
+                        public static var normal = UIColor.clear
+                        public static var selected = UIColor.clear
+                    }
+                }
+                public enum Title {
+                    public enum Background {
+                        public static var disabled = UIColor.clear
+                        public static var focused = UIColor.clear
+                        public static var highlighted = UIColor.clear
+                        public static var normal = UIColor.clear
+                        public static var selected = UIColor.clear
+                    }
+                    public enum Border {
+                        public static var disabled = UIColor.clear
+                        public static var focused = UIColor.clear
+                        public static var highlighted = UIColor.clear
+                        public static var normal = UIColor.clear
+                        public static var selected = UIColor.clear
+                    }
+                    public enum Shadow {
+                        public static var disabled = UIColor.clear
+                        public static var focused = UIColor.clear
+                        public static var highlighted = UIColor.clear
+                        public static var normal = UIColor.clear
+                        public static var selected = UIColor.clear
+                    }
+                    public enum StrikeThru {
+                        public static var disabled = UIColor.clear
+                        public static var focused = UIColor.clear
+                        public static var highlighted = UIColor.clear
+                        public static var normal = UIColor.clear
+                        public static var selected = UIColor.clear
+                    }
+                    public enum Text {
+                        public static var disabled = UIColor.clear
+                        public static var focused = UIColor.clear
+                        public static var highlighted = UIColor.clear
+                        public static var normal = UIColor.clear
+                        public static var selected = UIColor.clear
+                    }
+                    public enum Tint {
+                        public static var disabled = UIColor.clear
+                        public static var focused = UIColor.clear
+                        public static var highlighted = UIColor.clear
+                        public static var normal = UIColor.clear
+                        public static var selected = UIColor.clear
+                    }
+                }
+            }
             public enum Destructive {
                 public enum Background {
                     public static var disabled = UIColor.gray

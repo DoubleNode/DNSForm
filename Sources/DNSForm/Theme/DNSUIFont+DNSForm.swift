@@ -69,6 +69,20 @@ public extension DNSUIFont {
                               highlighted: UIFont.DNSForm.Button.ActionRight.Title.highlighted,
                               selected: UIFont.DNSForm.Button.ActionRight.Title.selected)
             }
+            public enum Clear {
+                public static var subtitle =
+                    DNSUIFont(UIFont.DNSForm.Button.Clear.Subtitle.normal,
+                              disabled: UIFont.DNSForm.Button.Clear.Subtitle.disabled,
+                              focused: UIFont.DNSForm.Button.Clear.Subtitle.focused,
+                              highlighted: UIFont.DNSForm.Button.Clear.Subtitle.highlighted,
+                              selected: UIFont.DNSForm.Button.Clear.Subtitle.selected)
+                public static var title =
+                    DNSUIFont(UIFont.DNSForm.Button.Clear.Title.normal,
+                              disabled: UIFont.DNSForm.Button.Clear.Title.disabled,
+                              focused: UIFont.DNSForm.Button.Clear.Title.focused,
+                              highlighted: UIFont.DNSForm.Button.Clear.Title.highlighted,
+                              selected: UIFont.DNSForm.Button.Clear.Title.selected)
+            }
             public enum Destructive {
                 public static var subtitle =
                     DNSUIFont(UIFont.DNSForm.Button.Destructive.Subtitle.normal,

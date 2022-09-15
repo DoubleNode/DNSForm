@@ -47,6 +47,15 @@ public extension DNSThemeButtonStyle {
                                 border: DNSUIBorder.DNSForm.Button.actionRight,
                                 shadow: DNSUIShadow.DNSForm.Button.actionRight,
                                 tintColor: DNSUIColor.DNSForm.Button.ActionRight.tint)
+        public static var clear =
+            DNSThemeButtonStyle(styleName: "clear",
+                                styleSetName: "DNSForm",
+                                titleStyle: DNSThemeLabelStyle.DNSForm.Button.Clear.title,
+                                subtitleStyle: DNSThemeLabelStyle.DNSForm.Button.Clear.subtitle,
+                                backgroundColor: DNSUIColor.DNSForm.Button.Clear.background,
+                                border: DNSUIBorder.DNSForm.Button.clear,
+                                shadow: DNSUIShadow.DNSForm.Button.clear,
+                                tintColor: DNSUIColor.DNSForm.Button.Clear.tint)
         public static var destructive =
             DNSThemeButtonStyle(styleName: "destructive",
                                 styleSetName: "DNSForm",

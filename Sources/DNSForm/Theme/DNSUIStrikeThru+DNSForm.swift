@@ -44,6 +44,14 @@ public extension DNSUIStrikeThru {
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Button.ActionRight.Subtitle.strikeThru,
                                     enabled: DNSUIEnabled.DNSForm.Button.ActionRight.subtitle)
             }
+            public enum Clear {
+                public static var subtitle =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Button.Clear.Subtitle.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Button.Clear.subtitle)
+                public static var title =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Button.Clear.Subtitle.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Button.Clear.subtitle)
+            }
             public enum Destructive {
                 public static var subtitle =
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Button.Destructive.Subtitle.strikeThru,

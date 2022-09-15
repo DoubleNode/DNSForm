@@ -421,6 +421,108 @@ public extension DNSUIColor {
                                    selected: UIColor.DNSForm.Button.ActionRight.Title.Tint.selected)
                 }
             }
+            public enum Clear {
+                public static var background =
+                    DNSUIColor(UIColor.DNSForm.Button.Clear.Background.normal,
+                               disabled: UIColor.DNSForm.Button.Clear.Background.disabled,
+                               focused: UIColor.DNSForm.Button.Clear.Background.focused,
+                               highlighted: UIColor.DNSForm.Button.Clear.Background.highlighted,
+                               selected: UIColor.DNSForm.Button.Clear.Background.selected)
+                public static var border =
+                    DNSUIColor(UIColor.DNSForm.Button.Clear.Border.normal,
+                               disabled: UIColor.DNSForm.Button.Clear.Border.disabled,
+                               focused: UIColor.DNSForm.Button.Clear.Border.focused,
+                               highlighted: UIColor.DNSForm.Button.Clear.Border.highlighted,
+                               selected: UIColor.DNSForm.Button.Clear.Border.selected)
+                public static var shadow =
+                    DNSUIColor(UIColor.DNSForm.Button.Clear.Shadow.normal,
+                               disabled: UIColor.DNSForm.Button.Clear.Shadow.disabled,
+                               focused: UIColor.DNSForm.Button.Clear.Shadow.focused,
+                               highlighted: UIColor.DNSForm.Button.Clear.Shadow.highlighted,
+                               selected: UIColor.DNSForm.Button.Clear.Shadow.selected)
+                public static var tint =
+                    DNSUIColor(UIColor.DNSForm.Button.Clear.Tint.normal,
+                               disabled: UIColor.DNSForm.Button.Clear.Tint.disabled,
+                               focused: UIColor.DNSForm.Button.Clear.Tint.focused,
+                               highlighted: UIColor.DNSForm.Button.Clear.Tint.highlighted,
+                               selected: UIColor.DNSForm.Button.Clear.Tint.selected)
+                public enum Subtitle {
+                    public static var background =
+                        DNSUIColor(UIColor.DNSForm.Button.Clear.Subtitle.Background.normal,
+                                   disabled: UIColor.DNSForm.Button.Clear.Subtitle.Background.disabled,
+                                   focused: UIColor.DNSForm.Button.Clear.Subtitle.Background.focused,
+                                   highlighted: UIColor.DNSForm.Button.Clear.Subtitle.Background.highlighted,
+                                   selected: UIColor.DNSForm.Button.Clear.Subtitle.Background.selected)
+                    public static var border =
+                        DNSUIColor(UIColor.DNSForm.Button.Clear.Subtitle.Border.normal,
+                                   disabled: UIColor.DNSForm.Button.Clear.Subtitle.Border.disabled,
+                                   focused: UIColor.DNSForm.Button.Clear.Subtitle.Border.focused,
+                                   highlighted: UIColor.DNSForm.Button.Clear.Subtitle.Border.highlighted,
+                                   selected: UIColor.DNSForm.Button.Clear.Subtitle.Border.selected)
+                    public static var shadow =
+                        DNSUIColor(UIColor.DNSForm.Button.Clear.Subtitle.Shadow.normal,
+                                   disabled: UIColor.DNSForm.Button.Clear.Subtitle.Shadow.disabled,
+                                   focused: UIColor.DNSForm.Button.Clear.Subtitle.Shadow.focused,
+                                   highlighted: UIColor.DNSForm.Button.Clear.Subtitle.Shadow.highlighted,
+                                   selected: UIColor.DNSForm.Button.Clear.Subtitle.Shadow.selected)
+                    public static var strikeThru =
+                        DNSUIColor(UIColor.DNSForm.Button.Clear.Subtitle.StrikeThru.normal,
+                                   disabled: UIColor.DNSForm.Button.Clear.Subtitle.StrikeThru.disabled,
+                                   focused: UIColor.DNSForm.Button.Clear.Subtitle.StrikeThru.focused,
+                                   highlighted: UIColor.DNSForm.Button.Clear.Subtitle.StrikeThru.highlighted,
+                                   selected: UIColor.DNSForm.Button.Clear.Subtitle.StrikeThru.selected)
+                    public static var text =
+                        DNSUIColor(UIColor.DNSForm.Button.Clear.Subtitle.Text.normal,
+                                   disabled: UIColor.DNSForm.Button.Clear.Subtitle.Text.disabled,
+                                   focused: UIColor.DNSForm.Button.Clear.Subtitle.Text.focused,
+                                   highlighted: UIColor.DNSForm.Button.Clear.Subtitle.Text.highlighted,
+                                   selected: UIColor.DNSForm.Button.Clear.Subtitle.Text.selected)
+                    public static var tint =
+                        DNSUIColor(UIColor.DNSForm.Button.Clear.Subtitle.Tint.normal,
+                                   disabled: UIColor.DNSForm.Button.Clear.Subtitle.Tint.disabled,
+                                   focused: UIColor.DNSForm.Button.Clear.Subtitle.Tint.focused,
+                                   highlighted: UIColor.DNSForm.Button.Clear.Subtitle.Tint.highlighted,
+                                   selected: UIColor.DNSForm.Button.Clear.Subtitle.Tint.selected)
+                }
+                public enum Title {
+                    public static var background =
+                        DNSUIColor(UIColor.DNSForm.Button.Clear.Title.Background.normal,
+                                   disabled: UIColor.DNSForm.Button.Clear.Title.Background.disabled,
+                                   focused: UIColor.DNSForm.Button.Clear.Title.Background.focused,
+                                   highlighted: UIColor.DNSForm.Button.Clear.Title.Background.highlighted,
+                                   selected: UIColor.DNSForm.Button.Clear.Title.Background.selected)
+                    public static var border =
+                        DNSUIColor(UIColor.DNSForm.Button.Clear.Title.Border.normal,
+                                   disabled: UIColor.DNSForm.Button.Clear.Title.Border.disabled,
+                                   focused: UIColor.DNSForm.Button.Clear.Title.Border.focused,
+                                   highlighted: UIColor.DNSForm.Button.Clear.Title.Border.highlighted,
+                                   selected: UIColor.DNSForm.Button.Clear.Title.Border.selected)
+                    public static var shadow =
+                        DNSUIColor(UIColor.DNSForm.Button.Clear.Title.Shadow.normal,
+                                   disabled: UIColor.DNSForm.Button.Clear.Title.Shadow.disabled,
+                                   focused: UIColor.DNSForm.Button.Clear.Title.Shadow.focused,
+                                   highlighted: UIColor.DNSForm.Button.Clear.Title.Shadow.highlighted,
+                                   selected: UIColor.DNSForm.Button.Clear.Title.Shadow.selected)
+                    public static var strikeThru =
+                        DNSUIColor(UIColor.DNSForm.Button.Clear.Title.StrikeThru.normal,
+                                   disabled: UIColor.DNSForm.Button.Clear.Title.StrikeThru.disabled,
+                                   focused: UIColor.DNSForm.Button.Clear.Title.StrikeThru.focused,
+                                   highlighted: UIColor.DNSForm.Button.Clear.Title.StrikeThru.highlighted,
+                                   selected: UIColor.DNSForm.Button.Clear.Title.StrikeThru.selected)
+                    public static var text =
+                        DNSUIColor(UIColor.DNSForm.Button.Clear.Title.Text.normal,
+                                   disabled: UIColor.DNSForm.Button.Clear.Title.Text.disabled,
+                                   focused: UIColor.DNSForm.Button.Clear.Title.Text.focused,
+                                   highlighted: UIColor.DNSForm.Button.Clear.Title.Text.highlighted,
+                                   selected: UIColor.DNSForm.Button.Clear.Title.Text.selected)
+                    public static var tint =
+                        DNSUIColor(UIColor.DNSForm.Button.Clear.Title.Tint.normal,
+                                   disabled: UIColor.DNSForm.Button.Clear.Title.Tint.disabled,
+                                   focused: UIColor.DNSForm.Button.Clear.Title.Tint.focused,
+                                   highlighted: UIColor.DNSForm.Button.Clear.Title.Tint.highlighted,
+                                   selected: UIColor.DNSForm.Button.Clear.Title.Tint.selected)
+                }
+            }
             public enum Destructive {
                 public static var background =
                     DNSUIColor(UIColor.DNSForm.Button.Destructive.Background.normal,

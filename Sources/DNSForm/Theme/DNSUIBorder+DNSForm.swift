@@ -28,6 +28,9 @@ public extension DNSUIBorder {
                             cornerRadiusMulti: true,
                             cornerTopRightRadius: 10,
                             cornerBottomRightRadius: 10)
+            public static var clear =
+                DNSUIBorder(color: DNSUIColor.DNSForm.Button.Clear.border,
+                            cornerRadius: 0)
             public static var destructive =
                 DNSUIBorder(color: DNSUIColor.DNSForm.Button.Destructive.border,
                             cornerRadius: 10)
@@ -73,6 +76,14 @@ public extension DNSUIBorder {
                                 cornerRadius: 0)
                 public static var title =
                     DNSUIBorder(color: DNSUIColor.DNSForm.Button.ActionRight.Title.border,
+                                cornerRadius: 0)
+            }
+            public enum Clear {
+                public static var subtitle =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Clear.Subtitle.border,
+                                cornerRadius: 0)
+                public static var title =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Clear.Title.border,
                                 cornerRadius: 0)
             }
             public enum Destructive {

@@ -138,6 +138,28 @@ public extension DNSThemeLabelStyle {
                                        border: DNSUIBorder.DNSForm.Button.ActionRight.title,
                                        tintColor: DNSUIColor.DNSForm.Button.ActionRight.Title.tint)
             }
+            public enum Clear {
+                public static var subtitle =
+                    DNSThemeLabelStyle(styleName: "Button.Clear.subtitle",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Button.Clear.Subtitle.text,
+                                       font: DNSUIFont.DNSForm.Button.Clear.subtitle,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Button.Clear.subtitle,
+                                       shadow: DNSUIShadow.DNSForm.Button.Clear.subtitle,
+                                       backgroundColor: DNSUIColor.DNSForm.Button.Clear.Subtitle.background,
+                                       border: DNSUIBorder.DNSForm.Button.Clear.subtitle,
+                                       tintColor: DNSUIColor.DNSForm.Button.Clear.Subtitle.tint)
+                public static var title =
+                    DNSThemeLabelStyle(styleName: "Button.Clear.title",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Button.Clear.Title.text,
+                                       font: DNSUIFont.DNSForm.Button.Clear.title,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Button.Clear.title,
+                                       shadow: DNSUIShadow.DNSForm.Button.Clear.title,
+                                       backgroundColor: DNSUIColor.DNSForm.Button.Clear.Title.background,
+                                       border: DNSUIBorder.DNSForm.Button.Clear.title,
+                                       tintColor: DNSUIColor.DNSForm.Button.Clear.Title.tint)
+            }
             public enum Destructive {
                 public static var subtitle =
                     DNSThemeLabelStyle(styleName: "Button.Destructive.subtitle",
