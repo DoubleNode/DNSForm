@@ -86,7 +86,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
         textField.style = DNSThemeFieldStyle.DNSForm.default
         textField.type = .text("field", 0, 64)
         textField.placeholder = "field"
-        textField.keyboardType = .namePhonePad
+        textField.keyboardType = .URL
         textField.isSecure = false
 
         textField.dataSource = self
