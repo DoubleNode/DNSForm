@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseStage.git",
       "state" : {
-        "revision" : "91224a073fc3ef8330192157780faacdb804339d",
-        "version" : "1.9.34"
+        "revision" : "6cede4980b2483fd5ac2b9c342dc7007d3e4391f",
+        "version" : "1.9.35"
       }
     },
     {
