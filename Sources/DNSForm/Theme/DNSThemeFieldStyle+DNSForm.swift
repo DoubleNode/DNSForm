@@ -8,9 +8,17 @@
 
 import DNSBaseTheme
 import DNSCore
+import DNSCoreThreading
 
 public extension DNSThemeFieldStyle {
     enum DNSForm {  // swiftlint:disable:this type_name
+        public static func initThemes() {
+            DNSThemeFieldStyle.initThemes(block: createThemes)
+        }
+        public static let createThemes: DNSBlock = {
+            _ = Self.default
+            _ = Self.textView
+        }
         public static var `default` =
             DNSThemeFieldStyle(styleName: "default",
                                styleSetName: "DNSForm",

@@ -8,9 +8,50 @@
 
 import DNSBaseTheme
 import DNSCore
+import DNSCoreThreading
 
 public extension DNSThemeLabelStyle {
     enum DNSForm {  // swiftlint:disable:this type_name
+        public static func initThemes() {
+            DNSThemeLabelStyle.initThemes(block: createThemes)
+        }
+        public static let createThemes: DNSBlock = {
+            _ = Self.default
+            _ = Self.body
+            _ = Self.bodyTight
+            _ = Self.field
+            _ = Self.fieldHeader
+            _ = Self.header
+            _ = Self.section
+            _ = Self.tag
+            _ = Self.title
+            _ = Self.Button.Default.subtitle
+            _ = Self.Button.Default.title
+            _ = Self.Button.Action.subtitle
+            _ = Self.Button.Action.title
+            _ = Self.Button.ActionLeft.subtitle
+            _ = Self.Button.ActionLeft.title
+            _ = Self.Button.ActionRight.subtitle
+            _ = Self.Button.ActionRight.title
+            _ = Self.Button.Clear.subtitle
+            _ = Self.Button.Clear.title
+            _ = Self.Button.Destructive.subtitle
+            _ = Self.Button.Destructive.title
+            _ = Self.Button.IndexTab.subtitle
+            _ = Self.Button.IndexTab.title
+            _ = Self.Button.Preview.subtitle
+            _ = Self.Button.Preview.title
+            _ = Self.Button.Square.subtitle
+            _ = Self.Button.Square.title
+            _ = Self.Field.Default.alert
+            _ = Self.Field.Default.counter
+            _ = Self.Field.Default.text
+            _ = Self.Field.Default.title
+            _ = Self.Field.TextView.alert
+            _ = Self.Field.TextView.counter
+            _ = Self.Field.TextView.text
+            _ = Self.Field.TextView.title
+        }
         public static var `default` = DNSThemeLabelStyle(styleName: "default",
                                                          styleSetName: "DNSForm",
                                                          color: DNSUIColor.DNSForm.Label.default,

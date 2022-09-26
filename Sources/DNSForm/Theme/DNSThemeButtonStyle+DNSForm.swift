@@ -8,9 +8,24 @@
 
 import DNSBaseTheme
 import DNSCore
+import DNSCoreThreading
 
 public extension DNSThemeButtonStyle {
     enum DNSForm {
+        public static func initThemes() {
+            DNSThemeButtonStyle.initThemes(block: createThemes)
+        }
+        public static let createThemes: DNSBlock = {
+            _ = Self.default
+            _ = Self.action
+            _ = Self.actionLeft
+            _ = Self.actionRight
+            _ = Self.clear
+            _ = Self.destructive
+            _ = Self.indexTab
+            _ = Self.preview
+            _ = Self.square
+        }
         public static var `default` =
             DNSThemeButtonStyle(styleName: "default",
                                 styleSetName: "DNSForm",
