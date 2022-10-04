@@ -77,7 +77,6 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        timeTextField.style = DNSThemeFieldStyle.DNSForm.default
         if #available(iOS 14, *) {
             timePicker.alpha = 1
             timePickerLineView.alpha = 1
@@ -93,8 +92,6 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.clear
-        timeLabel.style = DNSThemeLabelStyle.DNSForm.field
         self.contentInitTimePicker()
         self.data = nil
     }

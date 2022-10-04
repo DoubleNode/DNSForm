@@ -55,8 +55,6 @@ open class DNSFormDetailDeleteButtonCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.clear
-        button.style = DNSThemeButtonStyle.DNSForm.destructive
         data = nil
     }
 

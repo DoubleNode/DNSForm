@@ -52,8 +52,6 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
     
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.clear
-        sectionLabel.style = DNSThemeLabelStyle.DNSForm.section
         data = nil
     }
 }

@@ -66,7 +66,6 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        textView.style = DNSThemeFieldStyle.DNSForm.textView
         textView.type = .multiline
         textView.placeholder = ""
         textView.keyboardType = .default
@@ -77,7 +76,6 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.clear
         lineView.backgroundColor = textView.format.lineColor
         data = nil
     }

@@ -1019,7 +1019,7 @@ public extension DNSUIColor {
             public static var field = DNSUIColor(UIColor.DNSForm.Label.field)
             public static var fieldHeader = DNSUIColor(UIColor.DNSForm.Label.fieldHeader)
             public static var header = DNSUIColor(UIColor.DNSForm.Label.header)
-            public static var section = DNSUIColor(UIColor.DNSForm.Label.section)
+            public static var sectionFrameTitle = DNSUIColor(UIColor.DNSForm.Label.sectionFrameTitle)
             public static var tag = DNSUIColor(UIColor.DNSForm.Label.tag)
             public static var title = DNSUIColor(UIColor.DNSForm.Label.title)
         }
@@ -1034,6 +1034,16 @@ public extension DNSUIColor {
                                                           selected: UIColor.DNSForm.View.Clear.Background.selected)
                 public static var border = DNSUIColor(UIColor.DNSForm.View.Clear.border)
                 public static var tint = DNSUIColor(UIColor.DNSForm.View.Clear.tint)
+            }
+            public enum SectionFrame {
+                public static var background = DNSUIColor(UIColor.DNSForm.View.SectionFrame.background)
+                public static var border = DNSUIColor(UIColor.DNSForm.View.SectionFrame.border)
+                public static var tint = DNSUIColor(UIColor.DNSForm.View.SectionFrame.tint)
+            }
+            public enum SectionFrameTitle {
+                public static var background = DNSUIColor(UIColor.DNSForm.View.SectionFrameTitle.background)
+                public static var border = DNSUIColor(UIColor.DNSForm.View.SectionFrameTitle.border)
+                public static var tint = DNSUIColor(UIColor.DNSForm.View.SectionFrameTitle.tint)
             }
         }
     }

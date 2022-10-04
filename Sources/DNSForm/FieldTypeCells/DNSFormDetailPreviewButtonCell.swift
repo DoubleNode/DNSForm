@@ -53,8 +53,6 @@ open class DNSFormDetailPreviewButtonCell: DNSBaseStageCollectionViewCell, DNSFo
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.clear
-        button.style = DNSThemeButtonStyle.DNSForm.preview
         data = nil
     }
 

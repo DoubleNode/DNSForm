@@ -75,7 +75,6 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        textField.style = DNSThemeFieldStyle.DNSForm.default
         textField.keyboardType = .namePhonePad
         textField.isSecure = false
         textField.dataSource = self
@@ -84,7 +83,6 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.clear
         textField.keyboardAppearance = .dark
         data = nil
     }

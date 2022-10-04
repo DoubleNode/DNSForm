@@ -100,8 +100,6 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        closeTextField.style = DNSThemeFieldStyle.DNSForm.default
-        openTextField.style = DNSThemeFieldStyle.DNSForm.default
         if #available(iOS 14, *) {
             openPicker.alpha = 1
             openPickerLineView.alpha = 1
@@ -130,10 +128,6 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.clear
-        closeLabel.style = DNSThemeLabelStyle.DNSForm.field
-        hoursLabel.style = DNSThemeLabelStyle.DNSForm.fieldHeader
-        openLabel.style = DNSThemeLabelStyle.DNSForm.field
         self.contentInitOpenPicker()
         self.contentInitClosePicker()
         self.data = nil

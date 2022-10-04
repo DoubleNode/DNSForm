@@ -87,7 +87,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.section"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.sectionFrameTitle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
@@ -113,6 +113,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerTopRightRadius">
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.sectionFrameTitle"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
@@ -130,6 +131,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.sectionFrame"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>

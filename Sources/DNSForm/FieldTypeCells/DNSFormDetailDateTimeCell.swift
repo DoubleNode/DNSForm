@@ -96,8 +96,6 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        dateTextField.style = DNSThemeFieldStyle.DNSForm.default
-        timeTextField.style = DNSThemeFieldStyle.DNSForm.default
         if #available(iOS 14, *) {
             datePicker.alpha = 1
             datePickerLineView.alpha = 1
@@ -125,9 +123,6 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.clear
-        dateLabel.style = DNSThemeLabelStyle.DNSForm.field
-        timeLabel.style = DNSThemeLabelStyle.DNSForm.field
         self.contentInitDatePicker()
         self.contentInitTimePicker()
         self.data = nil

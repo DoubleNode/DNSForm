@@ -144,6 +144,15 @@ public extension DNSUIBorder {
                 DNSUIBorder(color: DNSUIColor.DNSForm.View.Clear.border,
                             cornerRadius: 10,
                             width: 1)
+            public static var sectionFrame =
+                DNSUIBorder(color: DNSUIColor.DNSForm.View.SectionFrame.border,
+                            cornerRadius: 10,
+                            width: 2)
+            public static var sectionFrameTitle =
+                DNSUIBorder(color: DNSUIColor.DNSForm.View.SectionFrameTitle.border,
+                            cornerRadiusMulti: true,
+                            cornerTopRightRadius: 10,
+                            cornerBottomLeftRadius: 10)
         }
     }
 }

@@ -1147,7 +1147,7 @@ public extension UIColor {
             public static var field = UIColor.darkText
             public static var fieldHeader = UIColor.darkText
             public static var header = UIColor.darkText
-            public static var section = UIColor.white
+            public static var sectionFrameTitle = UIColor.white
             public static var tag = UIColor.darkText
             public static var title = UIColor.darkText
         }
@@ -1167,6 +1167,16 @@ public extension UIColor {
                 }
                 public static var border = UIColor.clear
                 public static var tint = UIColor.systemBlue
+            }
+            public enum SectionFrame {
+                public static var background = UIColor.clear
+                public static var border = UIColor.darkGray
+                public static var tint = UIColor.darkGray
+            }
+            public enum SectionFrameTitle {
+                public static var background = UIColor.darkGray
+                public static var border = UIColor.darkGray
+                public static var tint = UIColor.darkGray
             }
         }
     }

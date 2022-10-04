@@ -83,7 +83,6 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        textField.style = DNSThemeFieldStyle.DNSForm.default
         textField.type = .text("field", 0, 64)
         textField.placeholder = "field"
         textField.keyboardType = .URL
@@ -98,7 +97,6 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.clear
         data = nil
     }
 

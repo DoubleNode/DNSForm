@@ -161,7 +161,7 @@ public extension DNSUIFont {
             public static var field = DNSUIFont(UIFont.DNSForm.Label.field)
             public static var fieldHeader = DNSUIFont(UIFont.DNSForm.Label.fieldHeader)
             public static var header = DNSUIFont(UIFont.DNSForm.Label.header)
-            public static var section = DNSUIFont(UIFont.DNSForm.Label.section)
+            public static var sectionFrameTitle = DNSUIFont(UIFont.DNSForm.Label.sectionFrameTitle)
             public static var tag = DNSUIFont(UIFont.DNSForm.Label.tag)
             public static var title = DNSUIFont(UIFont.DNSForm.Label.title)
         }

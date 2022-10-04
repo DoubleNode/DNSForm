@@ -40,7 +40,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="destructive"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.destructive"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="selectButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ani-AK-35K"/>

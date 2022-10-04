@@ -22,7 +22,7 @@ public extension DNSThemeLabelStyle {
             _ = Self.field
             _ = Self.fieldHeader
             _ = Self.header
-            _ = Self.section
+            _ = Self.sectionFrameTitle
             _ = Self.tag
             _ = Self.title
             _ = Self.Button.Default.subtitle
@@ -78,10 +78,11 @@ public extension DNSThemeLabelStyle {
                                                       styleSetName: "DNSForm",
                                                       color: DNSUIColor.DNSForm.Label.header,
                                                       font: DNSUIFont.DNSForm.Label.header)
-        public static var section = DNSThemeLabelStyle(styleName: "section",
-                                                       styleSetName: "DNSForm",
-                                                       color: DNSUIColor.DNSForm.Label.section,
-                                                       font: DNSUIFont.DNSForm.Label.section)
+        public static var sectionFrameTitle =
+            DNSThemeLabelStyle(styleName: "sectionFrameTitle",
+                               styleSetName: "DNSForm",
+                               color: DNSUIColor.DNSForm.Label.sectionFrameTitle,
+                               font: DNSUIFont.DNSForm.Label.sectionFrameTitle)
         public static var tag = DNSThemeLabelStyle(styleName: "tag",
                                                    styleSetName: "DNSForm",
                                                    color: DNSUIColor.DNSForm.Label.tag,

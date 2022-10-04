@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View" customClass="DNSUIView" customModule="DNSBaseTheme">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-oh-Ee1" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
@@ -63,7 +63,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" name="TitleDark"/>
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
@@ -93,6 +93,9 @@
                             <constraint firstItem="Jap-NZ-Uma" firstAttribute="centerY" secondItem="aUe-oh-Ee1" secondAttribute="centerY" id="qfe-Ts-Nlw"/>
                             <constraint firstItem="LHd-B1-HV1" firstAttribute="bottom" secondItem="aUe-oh-Ee1" secondAttribute="bottom" id="rqd-Xb-Lio"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.clear"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>

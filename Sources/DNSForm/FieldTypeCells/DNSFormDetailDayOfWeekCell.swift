@@ -121,15 +121,6 @@ open class DNSFormDetailDayOfWeekCell: DNSBaseStageCollectionViewCell,
     }
     override open func contentInit() {
         super.contentInit()
-        style = DNSThemeViewStyle.DNSForm.clear
-        label.style = DNSThemeLabelStyle.DNSForm.field
-        monButton.style = DNSThemeButtonStyle.DNSForm.square
-        tueButton.style = DNSThemeButtonStyle.DNSForm.square
-        wedButton.style = DNSThemeButtonStyle.DNSForm.square
-        thrButton.style = DNSThemeButtonStyle.DNSForm.square
-        friButton.style = DNSThemeButtonStyle.DNSForm.square
-        satButton.style = DNSThemeButtonStyle.DNSForm.square
-        sunButton.style = DNSThemeButtonStyle.DNSForm.square
         data = nil
     }
 
