@@ -94,6 +94,9 @@
                 <constraint firstItem="jyP-bB-mz5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FND-up-NPO"/>
             </constraints>
             <size key="customSize" width="140" height="261"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.clear"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="checkImageView" destination="9xM-ac-bzl" id="BAC-Xq-tSF"/>
                 <outlet property="detailLabel" destination="inU-rk-1bD" id="gVR-t3-gqF"/>
@@ -105,9 +108,6 @@
     <designables>
         <designable name="2HY-KK-0su">
             <size key="intrinsicContentSize" width="153.33333333333334" height="21.666666666666668"/>
-        </designable>
-        <designable name="i0b-Yz-IDA">
-            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="inU-rk-1bD">
             <size key="intrinsicContentSize" width="224.66666666666666" height="13"/>
