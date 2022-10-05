@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -87,6 +88,15 @@
                                 <rect key="frame" x="370" y="24.666666666666664" width="20" height="19"/>
                                 <color key="tintColor" name="TitleDark"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZERO TIME" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="25" translatesAutoresizingMaskIntoConstraints="NO" id="9uz-rl-xQe" userLabel="Zero Time Label">
+                                <rect key="frame" x="214" y="0.0" width="25" height="76"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="8"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.field"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DL-Eo-7yt" userLabel="Line View">
                                 <rect key="frame" x="214" y="53" width="176" height="1"/>
                                 <color key="backgroundColor" name="greyishBrown"/>
@@ -113,14 +123,17 @@
                             <constraint firstItem="7hz-cO-IB0" firstAttribute="leading" secondItem="I0J-MI-Xmn" secondAttribute="trailing" constant="10" id="Nlf-im-noW"/>
                             <constraint firstItem="fyx-Nc-3jh" firstAttribute="top" secondItem="UXn-gT-llh" secondAttribute="bottom" constant="9" id="PRr-P8-UY9"/>
                             <constraint firstItem="fyx-Nc-3jh" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="leading" id="T16-JQ-t3J"/>
+                            <constraint firstItem="9uz-rl-xQe" firstAttribute="top" secondItem="I0J-MI-Xmn" secondAttribute="top" id="UVF-pE-2hG"/>
                             <constraint firstItem="9zh-Qd-KcT" firstAttribute="leading" secondItem="KuD-TU-KgD" secondAttribute="leading" constant="24" id="VyL-sm-yf9"/>
                             <constraint firstItem="9zh-Qd-KcT" firstAttribute="leading" secondItem="njb-EG-v3S" secondAttribute="leading" id="aoN-oS-7FD"/>
+                            <constraint firstItem="9uz-rl-xQe" firstAttribute="bottom" secondItem="I0J-MI-Xmn" secondAttribute="bottom" id="dFi-72-d8d"/>
                             <constraint firstItem="UXn-gT-llh" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="trailing" constant="10" id="ewk-WO-bBN"/>
                             <constraint firstItem="9zh-Qd-KcT" firstAttribute="top" secondItem="I0J-MI-Xmn" secondAttribute="top" id="ga5-CQ-NWI"/>
                             <constraint firstItem="fyx-Nc-3jh" firstAttribute="bottom" secondItem="7DL-Eo-7yt" secondAttribute="bottom" id="h3X-Na-6UK"/>
                             <constraint firstItem="9zh-Qd-KcT" firstAttribute="top" secondItem="njb-EG-v3S" secondAttribute="top" constant="-6" id="i6e-YU-8e6"/>
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="bottom" secondItem="vTS-EN-5KK" secondAttribute="bottom" id="iKg-D4-WFJ"/>
                             <constraint firstItem="ala-U9-OFA" firstAttribute="bottom" secondItem="9zh-Qd-KcT" secondAttribute="bottom" id="kJ4-fc-e7H"/>
+                            <constraint firstItem="9uz-rl-xQe" firstAttribute="leading" secondItem="I0J-MI-Xmn" secondAttribute="leading" id="lYG-fs-Anr"/>
                             <constraint firstItem="ala-U9-OFA" firstAttribute="trailing" secondItem="9zh-Qd-KcT" secondAttribute="trailing" id="qS7-Uc-g97"/>
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="width" secondItem="9zh-Qd-KcT" secondAttribute="width" id="sL7-cn-F7D"/>
                             <constraint firstItem="ala-U9-OFA" firstAttribute="top" secondItem="9zh-Qd-KcT" secondAttribute="top" id="slj-yL-eKJ"/>
@@ -150,11 +163,15 @@
                 <outlet property="timePicker" destination="vTS-EN-5KK" id="8iS-d8-ofB"/>
                 <outlet property="timePickerLineView" destination="7DL-Eo-7yt" id="gGR-cr-rhd"/>
                 <outlet property="timeTextField" destination="I0J-MI-Xmn" id="ftR-le-wn5"/>
+                <outlet property="timeZeroLabel" destination="9uz-rl-xQe" id="nAK-Qq-D6i"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="143.63839285714286"/>
+            <point key="canvasLocation" x="136.92307692307691" y="143.60189573459715"/>
         </collectionViewCell>
     </objects>
     <designables>
+        <designable name="9uz-rl-xQe">
+            <size key="intrinsicContentSize" width="25" height="19.333333333333332"/>
+        </designable>
         <designable name="i3e-20-2EJ">
             <size key="intrinsicContentSize" width="54" height="13"/>
         </designable>
@@ -174,5 +191,8 @@
         <namedColor name="greyishBrown">
             <color red="0.3449999988079071" green="0.3449999988079071" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

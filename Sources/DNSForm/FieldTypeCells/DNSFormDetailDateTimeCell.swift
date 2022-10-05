@@ -64,6 +64,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
             guard let data = self.data else {
                 self.datePicker.date = Date()
                 self.timePicker.date = Date()
+                self.timeZeroLabel.isHidden = true
                 return
             }
             self.dateLabel.text = data.dateLabel
@@ -71,10 +72,15 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
             self.datePicker.isEnabled = !data.readonly
             self.dateTextField.placeholder = data.datePlaceholder
             self.dateTextField.text = dateFormatter.string(from: data.date)
+
             self.timeLabel.text = data.timeLabel
             self.timePicker.date = data.date
             self.timePicker.isEnabled = !data.readonly
             self.timeTextField.placeholder = data.timePlaceholder
+
+            let timeOfDay = DNSTimeOfDay(hour: data.date.dnsHour,
+                                         minute: data.date.dnsMinute)
+            self.timeZeroLabel.isHidden = (timeOfDay != Date.zeroTime)
             self.timeTextField.text = timeFormatter.string(from: data.date)
         }
     }
@@ -84,6 +90,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
     @IBOutlet var datePickerLineView: UIView!
     @IBOutlet var dateTextField: DNSUIAnimatedField!
     @IBOutlet var timeLabel: DNSUILabel!
+    @IBOutlet var timeZeroLabel: UILabel!
     @IBOutlet var timePicker: UIDatePicker!
     @IBOutlet var timePickerLineView: UIView!
     @IBOutlet var timeTextField: DNSUIAnimatedField!

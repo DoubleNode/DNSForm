@@ -54,17 +54,23 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
         didSet {
             guard let data = self.data else {
                 self.timePicker.date = Date()
+                self.timeZeroLabel.isHidden = true
                 return
             }
             self.timeLabel.text = data.timeLabel
             self.timePicker.date = data.timeOfDay.today
             self.timePicker.isEnabled = !data.readonly
             self.timeTextField.placeholder = data.timePlaceholder
+
+            let timeOfDay = DNSTimeOfDay(hour: data.timeOfDay.hour,
+                                         minute: data.timeOfDay.minute)
+            self.timeZeroLabel.isHidden = (timeOfDay != Date.zeroTime)
             self.timeTextField.text = timeFormatter.string(from: data.timeOfDay.today)
         }
     }
 
     @IBOutlet var timeLabel: DNSUILabel!
+    @IBOutlet var timeZeroLabel: UILabel!
     @IBOutlet var timePicker: UIDatePicker!
     @IBOutlet var timePickerLineView: UIView!
     @IBOutlet var timeTextField: DNSUIAnimatedField!
