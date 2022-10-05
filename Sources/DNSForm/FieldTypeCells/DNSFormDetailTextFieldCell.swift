@@ -29,6 +29,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
         public var field: String
         public var label: String
         public var languageCode: String
+        public var maximumLength: Int = 128
         public var placeholder: String
         public var readonly: Bool
         public var required: Bool
@@ -48,13 +49,13 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
         didSet {
             guard let data = self.data else {
                 textField.isEnabled = false
-                textField.type = .text("field", 0, 64)
+                textField.type = .text("field", 0, 128)
                 textField.placeholder = ""
                 textField.text = ""
                 return
             }
             textField.isEnabled = !data.readonly
-            textField.type = .text(data.label, data.required ? 1 : 0, 64)
+            textField.type = .text(data.label, data.required ? 1 : 0, data.maximumLength)
             textField.placeholder = data.placeholder + " (\(data.languageCode))"
 
             if textField.text != data.text {
@@ -73,7 +74,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        textField.type = .text("field", 0, 64)
+        textField.type = .text("field", 0, 128)
         textField.placeholder = "field"
         textField.keyboardType = .default
         textField.isSecure = false
