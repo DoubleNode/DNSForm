@@ -60,7 +60,14 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
             self.timePicker.date = data.timeOfDay.today
             self.timePicker.isEnabled = !data.readonly
             self.timeTextField.placeholder = data.timePlaceholder
-            self.timeTextField.text = timeFormatter.string(from: data.timeOfDay.today)
+
+            var timeText = timeFormatter.string(from: data.timeOfDay.today)
+            let timeOfDay = DNSTimeOfDay(hour: data.timeOfDay.hour,
+                                         minute: data.timeOfDay.minute)
+            if timeOfDay == Date.zeroTime {
+                timeText = "Zero Time (\(timeText))"
+            }
+            self.timeTextField.text = timeText
         }
     }
 

@@ -71,11 +71,19 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
             self.datePicker.isEnabled = !data.readonly
             self.dateTextField.placeholder = data.datePlaceholder
             self.dateTextField.text = dateFormatter.string(from: data.date)
+
             self.timeLabel.text = data.timeLabel
             self.timePicker.date = data.date
             self.timePicker.isEnabled = !data.readonly
             self.timeTextField.placeholder = data.timePlaceholder
-            self.timeTextField.text = timeFormatter.string(from: data.date)
+
+            var timeText = timeFormatter.string(from: data.date)
+            let timeOfDay = DNSTimeOfDay(hour: data.date.dnsHour,
+                                         minute: data.date.dnsMinute)
+            if timeOfDay == Date.zeroTime {
+                timeText = "Zero Time (\(timeText))"
+            }
+            self.timeTextField.text = timeText
         }
     }
 
