@@ -708,10 +708,10 @@ public extension UIColor {
             public enum IndexTab {
                 public enum Background {
                     public static var disabled = UIColor.gray
-                    public static var focused = UIColor.black
+                    public static var focused = UIColor.darkGray
                     public static var highlighted = UIColor.black
-                    public static var normal = UIColor.black
-                    public static var selected = UIColor.black
+                    public static var normal = UIColor.darkGray
+                    public static var selected = UIColor.darkGray
                 }
                 public enum Border {
                     public static var disabled = UIColor.clear

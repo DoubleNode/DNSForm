@@ -147,7 +147,7 @@ public extension DNSUIBorder {
             public static var sectionFrame =
                 DNSUIBorder(color: DNSUIColor.DNSForm.View.SectionFrame.border,
                             cornerRadius: 10,
-                            width: 2)
+                            width: 3)
             public static var sectionFrameTitle =
                 DNSUIBorder(color: DNSUIColor.DNSForm.View.SectionFrameTitle.border,
                             cornerRadiusMulti: true,
