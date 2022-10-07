@@ -29,7 +29,7 @@ let package = Package(
         .package(url: "https://github.com/DoubleNodeOpen/AnimatedField.git", from: "2.5.27"),
         .package(url: "https://github.com/DoubleNode/DNSAppCore.git", from: "1.9.10"),
         .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.9.57"),
-        .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.9.39"),
+        .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.9.40"),
         .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.9.72"),
         .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.9.42"),
         .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", from: "1.9.0"),
