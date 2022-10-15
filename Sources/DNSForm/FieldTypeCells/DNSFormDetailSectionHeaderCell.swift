@@ -27,11 +27,14 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
         public var label: String
         public var lineBottomOffset: Double
         public var section: Int
-        
-        public init(label: String, lineBottomOffset: Double, section: Int) {
+        public var sectionLabelWidth: Double
+
+        public init(label: String, lineBottomOffset: Double, section: Int,
+                    sectionLabelWidth: Double = 120) {
             self.label = label
             self.lineBottomOffset = lineBottomOffset
             self.section = section
+            self.sectionLabelWidth = sectionLabelWidth
         }
     }
     public var data: Data? {
@@ -43,13 +46,15 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
             }
             lineViewBottomConstraint.constant = data.lineBottomOffset
             sectionLabel.text = data.label
+            sectionLabelWidthConstraint.constant = data.sectionLabelWidth
         }
     }
     
     @IBOutlet var lineView: UIView!
     @IBOutlet var lineViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var sectionLabel: DNSUILabel!
-    
+    @IBOutlet var sectionLabelWidthConstraint: NSLayoutConstraint!
+
     override open func contentInit() {
         super.contentInit()
         data = nil

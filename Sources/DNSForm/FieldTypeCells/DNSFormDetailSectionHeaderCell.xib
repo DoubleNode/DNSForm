@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,7 @@
                                 <rect key="frame" x="14" y="0.0" width="386" height="216"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOc-ku-bUq" userLabel="Title View" customClass="DNSUIView" customModule="DNSBaseTheme">
-                                        <rect key="frame" x="266" y="0.0" width="120" height="16"/>
+                                        <rect key="frame" x="221" y="0.0" width="165" height="16"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMAGE URLS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pX-XK-23v" customClass="DNSUILabel" customModule="DNSBaseTheme">
                                                 <rect key="frame" x="10" y="2" width="64.5" height="12"/>
@@ -38,7 +38,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="0mF-3U-0FD"/>
+                                            <constraint firstAttribute="width" constant="165" id="0mF-3U-0FD"/>
                                             <constraint firstItem="1pX-XK-23v" firstAttribute="leading" secondItem="pOc-ku-bUq" secondAttribute="leading" constant="10" id="8Ma-vR-57N"/>
                                             <constraint firstAttribute="height" constant="16" id="Pio-nh-R7n"/>
                                             <constraint firstItem="1pX-XK-23v" firstAttribute="centerY" secondItem="pOc-ku-bUq" secondAttribute="centerY" id="mEN-au-IyW"/>
@@ -109,6 +109,7 @@
                 <outlet property="lineView" destination="pR5-gM-3yX" id="8U0-j0-2Js"/>
                 <outlet property="lineViewBottomConstraint" destination="09B-tF-vF5" id="Wlh-tc-gXy"/>
                 <outlet property="sectionLabel" destination="1pX-XK-23v" id="t3m-Pr-II3"/>
+                <outlet property="sectionLabelWidthConstraint" destination="0mF-3U-0FD" id="3zt-at-lgO"/>
             </connections>
             <point key="canvasLocation" x="195.6521739130435" y="194.86607142857142"/>
         </collectionViewCell>
