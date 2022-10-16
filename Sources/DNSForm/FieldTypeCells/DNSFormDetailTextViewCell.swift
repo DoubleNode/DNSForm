@@ -94,6 +94,17 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         lineView.backgroundColor = textView.format.lineColor
     }
+    public func animatedFieldDidChange(_ animatedField: AnimatedField) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        lineView.backgroundColor = textView.format.lineColor
+        guard let data = self.data else { return }
+        guard textView.text != data.text else { return }
+        let text = textView.text
+        let request = Stage.Models.Field.Request(field: data.field,
+                                                 languageCode: data.languageCode,
+                                                 value: text)
+        changeTextPublisher.send(request)
+    }
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         lineView.backgroundColor = textView.format.lineColor

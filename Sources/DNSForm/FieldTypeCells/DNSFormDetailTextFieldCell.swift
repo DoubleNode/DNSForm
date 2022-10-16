@@ -126,6 +126,16 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
     }
 
     // MARK: - AnimatedFieldDelegate methods
+    public func animatedFieldDidChange(_ animatedField: AnimatedField) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        guard let data = self.data else { return }
+        guard textField.text != data.text else { return }
+        let text = textField.text
+        let request = Stage.Models.Field.Request(field: data.field,
+                                                 languageCode: data.languageCode,
+                                                 value: text)
+        changeTextPublisher.send(request)
+    }
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }

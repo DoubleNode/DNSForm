@@ -21,7 +21,7 @@ public protocol DNSFormDetailSectionHeaderCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
                                            DNSFormDetailSectionHeaderCellLogic {
     public typealias Stage = DNSFormDetailStage
-    static public let recommendedContentSize = CGSize(width: 414, height: 30)
+    static public let recommendedContentSize = CGSize(width: 414, height: 42)
     
     public struct Data: Hashable {
         public var label: String
