@@ -56,9 +56,9 @@ public extension DNSUIEnabled {
         public enum Field {
             public enum Default {
                 public static var alertEnabled = DNSUIEnabled(true)
-                public static var alertFieldActive = DNSUIEnabled(false)
+                public static var alertFieldActive = DNSUIEnabled(true)
                 public static var alertLineActive = DNSUIEnabled(true)
-                public static var alertTitleActive = DNSUIEnabled(false)
+                public static var alertTitleActive = DNSUIEnabled(true)
                 public static var countDown = DNSUIEnabled(false)
                 public static var counterAnimation = DNSUIEnabled(false)
                 public static var counterEnabled = DNSUIEnabled(false)
