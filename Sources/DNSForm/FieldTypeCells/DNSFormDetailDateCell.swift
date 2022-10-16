@@ -96,6 +96,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         self.data = nil
     }
     func contentInitDatePicker() {
+        datePicker.contentHorizontalAlignment = .left
         datePicker.date = Date()
         datePicker.timeZone = NSTimeZone.local
         datePicker.tintColor = dateTextField.format.highlightColor
@@ -117,16 +118,6 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
         let date = dateFormatter.date(from: dateTextField.text!) ?? Date()
-        dateTextField.hideAlert()
-        changeDatePublisher.send(Stage.Models.Field.Request(field: data.field,
-                                                            languageCode: "",
-                                                            value: date))
-    }
-    public func animatedField(_ animatedField: AnimatedField,
-                              didChangePickerValue value: String) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        guard let data = self.data else { return }
-        let date = dateFormatter.date(from: value) ?? Date()
         dateTextField.hideAlert()
         changeDatePublisher.send(Stage.Models.Field.Request(field: data.field,
                                                             languageCode: "",

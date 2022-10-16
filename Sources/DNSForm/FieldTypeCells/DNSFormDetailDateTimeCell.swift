@@ -135,6 +135,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
         self.data = nil
     }
     func contentInitDatePicker() {
+        datePicker.contentHorizontalAlignment = .left
         datePicker.date = Date()
         datePicker.timeZone = NSTimeZone.local
         datePicker.tintColor = dateTextField.format.highlightColor
@@ -143,6 +144,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
         dateTextField.type = .datepicker(.date, datePicker.date, nil, nil, "", dateFormatter.dateFormat)
     }
     func contentInitTimePicker() {
+        timePicker.contentHorizontalAlignment = .left
         timePicker.date = Date()
         timePicker.timeZone = NSTimeZone.local
         timePicker.tintColor = timeTextField.format.highlightColor

@@ -100,6 +100,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
+        openPicker.contentHorizontalAlignment = .left
         if #available(iOS 14, *) {
             openPicker.alpha = 1
             openPickerLineView.alpha = 1
@@ -113,6 +114,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             openTextField.delegate = self
         }
 
+        closePicker.contentHorizontalAlignment = .left
         if #available(iOS 14, *) {
             closePicker.alpha = 1
             closePickerLineView.alpha = 1

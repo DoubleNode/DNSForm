@@ -102,6 +102,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
         self.data = nil
     }
     open func contentInitTimePicker() {
+        timePicker.contentHorizontalAlignment = .left
         timePicker.date = Date()
         timePicker.timeZone = NSTimeZone.local
         timePicker.tintColor = timeTextField.format.highlightColor
