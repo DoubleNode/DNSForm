@@ -34,6 +34,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
         public var lowercaseOnly = false
         public var maximumLength: Int = 128
         public var maximumPrice: Double = 999999.00
+        public var minimumLength: Int = 1
         public var placeholder: String
         public var readonly: Bool
         public var required: Bool
@@ -76,23 +77,26 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
             switch data.type {
             case .none, .text:
                 if case .text = textField.type { break }
-                textField.type = .text(data.label, data.required ? 1 : 0, data.maximumLength)
+                textField.type = .text(data.label, data.required ? data.minimumLength : 0,
+                                       data.maximumLength)
             case .email:
                 if case .email = textField.type { break }
                 textField.type = .email
             case .password:
                 if case .password = textField.type { break }
-                textField.type = .password(data.required ? 1 : 0, data.maximumLength)
+                textField.type = .password(data.required ? data.minimumLength : 0,
+                                           data.maximumLength)
                 textField.isSecure = true
             case .price:
                 if case .price = textField.type { break }
                 textField.type = .price(data.maximumPrice, 2)
             case .url:
                 if case .url = textField.type { break }
-                textField.type = .url(data.label, data.required ? 1 : 0)
+                textField.type = .url(data.label, data.required ? data.minimumLength : 0)
             case .username:
                 if case .username = textField.type { break }
-                textField.type = .username(data.required ? 1 : 0, data.maximumLength)
+                textField.type = .username(data.required ? data.minimumLength : 0,
+                                           data.maximumLength)
             }
             textField.placeholder = data.placeholder + " (\(data.languageCode))"
             
