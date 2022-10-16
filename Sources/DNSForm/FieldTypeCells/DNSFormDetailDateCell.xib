@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,9 +37,12 @@
                                     <constraint firstAttribute="height" constant="76" id="jPx-i4-cfN"/>
                                 </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="ala-U9-OFA">
-                                <rect key="frame" x="24" y="0.0" width="336" height="76"/>
+                            <datePicker contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="ala-U9-OFA">
+                                <rect key="frame" x="24" y="0.0" width="200" height="76"/>
                                 <color key="tintColor" name="TitleDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="cOJ-CF-fsX"/>
+                                </constraints>
                                 <connections>
                                     <action selector="dateValueChangedActionWithSender:" destination="gTV-IL-0wX" eventType="valueChanged" id="Ze9-M6-5Bs"/>
                                 </connections>
@@ -69,7 +72,6 @@
                             <constraint firstItem="9zh-Qd-KcT" firstAttribute="top" secondItem="njb-EG-v3S" secondAttribute="top" constant="-6" id="i6e-YU-8e6"/>
                             <constraint firstItem="ala-U9-OFA" firstAttribute="bottom" secondItem="9zh-Qd-KcT" secondAttribute="bottom" id="kJ4-fc-e7H"/>
                             <constraint firstItem="UXn-gT-llh" firstAttribute="trailing" secondItem="fyx-Nc-3jh" secondAttribute="trailing" id="phB-gG-JTU"/>
-                            <constraint firstItem="ala-U9-OFA" firstAttribute="trailing" secondItem="9zh-Qd-KcT" secondAttribute="trailing" id="qS7-Uc-g97"/>
                             <constraint firstItem="ala-U9-OFA" firstAttribute="top" secondItem="9zh-Qd-KcT" secondAttribute="top" id="slj-yL-eKJ"/>
                         </constraints>
                     </view>
@@ -92,7 +94,7 @@
                 <outlet property="datePickerLineView" destination="fyx-Nc-3jh" id="zxe-rd-nPE"/>
                 <outlet property="dateTextField" destination="9zh-Qd-KcT" id="Ndi-G9-WJz"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="143.63839285714286"/>
+            <point key="canvasLocation" x="136.92307692307691" y="143.60189573459715"/>
         </collectionViewCell>
     </objects>
     <designables>
