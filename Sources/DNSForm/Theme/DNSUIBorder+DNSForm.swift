@@ -43,6 +43,8 @@ public extension DNSUIBorder {
                             width: 1)
             public static var preview = DNSUIBorder(color: DNSUIColor.DNSForm.Button.Preview.border,
                                                     cornerRadius: 10)
+            public static var search = DNSUIBorder(color: DNSUIColor.DNSForm.Button.Search.border,
+                                                    cornerRadius: 10)
             public static var square = DNSUIBorder(color: DNSUIColor.DNSForm.Button.Square.border,
                                                    cornerRadius: 0,
                                                    width: 1)
@@ -108,6 +110,14 @@ public extension DNSUIBorder {
                                 cornerRadius: 0)
                 public static var title =
                     DNSUIBorder(color: DNSUIColor.DNSForm.Button.Preview.Title.border,
+                                cornerRadius: 0)
+            }
+            public enum Search {
+                public static var subtitle =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Search.Subtitle.border,
+                                cornerRadius: 0)
+                public static var title =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Search.Title.border,
                                 cornerRadius: 0)
             }
             public enum Square {

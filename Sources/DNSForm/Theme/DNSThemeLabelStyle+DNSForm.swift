@@ -41,6 +41,8 @@ public extension DNSThemeLabelStyle {
             _ = Self.Button.IndexTab.title
             _ = Self.Button.Preview.subtitle
             _ = Self.Button.Preview.title
+            _ = Self.Button.Search.subtitle
+            _ = Self.Button.Search.title
             _ = Self.Button.Square.subtitle
             _ = Self.Button.Square.title
             _ = Self.Field.Default.alert
@@ -267,6 +269,28 @@ public extension DNSThemeLabelStyle {
                                        backgroundColor: DNSUIColor.DNSForm.Button.Preview.Title.background,
                                        border: DNSUIBorder.DNSForm.Button.Preview.title,
                                        tintColor: DNSUIColor.DNSForm.Button.Preview.Title.tint)
+            }
+            public enum Search {
+                public static var subtitle =
+                    DNSThemeLabelStyle(styleName: "Button.Search.subtitle",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Button.Search.Subtitle.text,
+                                       font: DNSUIFont.DNSForm.Button.Search.subtitle,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Button.Search.subtitle,
+                                       shadow: DNSUIShadow.DNSForm.Button.Search.subtitle,
+                                       backgroundColor: DNSUIColor.DNSForm.Button.Search.Subtitle.background,
+                                       border: DNSUIBorder.DNSForm.Button.Search.subtitle,
+                                       tintColor: DNSUIColor.DNSForm.Button.Search.Subtitle.tint)
+                public static var title =
+                    DNSThemeLabelStyle(styleName: "Button.Search.title",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Button.Search.Title.text,
+                                       font: DNSUIFont.DNSForm.Button.Search.title,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Button.Search.title,
+                                       shadow: DNSUIShadow.DNSForm.Button.Search.title,
+                                       backgroundColor: DNSUIColor.DNSForm.Button.Search.Title.background,
+                                       border: DNSUIBorder.DNSForm.Button.Search.title,
+                                       tintColor: DNSUIColor.DNSForm.Button.Search.Title.tint)
             }
             public enum Square {
                 public static var subtitle =

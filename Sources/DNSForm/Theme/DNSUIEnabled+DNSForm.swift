@@ -44,6 +44,10 @@ public extension DNSUIEnabled {
                 public static var subtitle = DNSUIEnabled(false)
                 public static var title = DNSUIEnabled(false)
             }
+            public enum Search {
+                public static var subtitle = DNSUIEnabled(false)
+                public static var title = DNSUIEnabled(false)
+            }
             public enum Square {
                 public static var subtitle = DNSUIEnabled(false)
                 public static var title = DNSUIEnabled(false)

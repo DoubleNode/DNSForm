@@ -24,6 +24,7 @@ public extension DNSThemeButtonStyle {
             _ = Self.destructive
             _ = Self.indexTab
             _ = Self.preview
+            _ = Self.search
             _ = Self.square
         }
         public static var `default` =
@@ -98,6 +99,15 @@ public extension DNSThemeButtonStyle {
                                 border: DNSUIBorder.DNSForm.Button.preview,
                                 shadow: DNSUIShadow.DNSForm.Button.preview,
                                 tintColor: DNSUIColor.DNSForm.Button.Preview.tint)
+        public static var search =
+            DNSThemeButtonStyle(styleName: "search",
+                                styleSetName: "DNSForm",
+                                titleStyle: DNSThemeLabelStyle.DNSForm.Button.Search.title,
+                                subtitleStyle: DNSThemeLabelStyle.DNSForm.Button.Search.subtitle,
+                                backgroundColor: DNSUIColor.DNSForm.Button.Search.background,
+                                border: DNSUIBorder.DNSForm.Button.search,
+                                shadow: DNSUIShadow.DNSForm.Button.search,
+                                tintColor: DNSUIColor.DNSForm.Button.Search.tint)
         public static var square =
             DNSThemeButtonStyle(styleName: "square",
                                 styleSetName: "DNSForm",

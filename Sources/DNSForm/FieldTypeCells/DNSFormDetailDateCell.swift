@@ -37,6 +37,8 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         public var datePlaceholder: String
         public var field: String
         public var languageCode: String
+        public var minimumDate: Date?
+        public var maximumDate: Date?
         public var readonly: Bool
         public var required: Bool
 
@@ -61,6 +63,9 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
             self.datePicker.isEnabled = !data.readonly
             self.dateTextField.placeholder = data.datePlaceholder
             self.dateTextField.text = dateFormatter.string(from: data.date)
+            self.dateTextField.type = .datepicker(.date, datePicker.date, data.minimumDate,
+                                                  data.maximumDate, data.datePlaceholder,
+                                                  dateFormatter.dateFormat)
         }
     }
 
