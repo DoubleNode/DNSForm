@@ -107,6 +107,19 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
     }
 
     // MARK: - AnimatedFieldDelegate methods
+//    public func animatedFieldDidChange(_ animatedField: AnimatedField) {
+//        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+//        guard let data = self.data else { return }
+//        let origText = data.weblink?.absoluteString ?? ""
+//        guard textField.text != origText else { return }
+//        let text = textField.text
+//        let request = Stage.Models.Field.Request(field: data.field,
+//                                                 languageCode: data.languageCode,
+//                                                 value: text)
+//        DNSThread.run {
+//            self.changeTextPublisher.send(request)
+//        }
+//    }
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
