@@ -11,23 +11,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DNSFormDetailSectionHeaderCell" id="gTV-IL-0wX" customClass="DNSFormDetailSectionHeaderCell" customModule="DNSForm">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="42"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="42"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyP-bB-mz5" userLabel="Content View">
-                        <rect key="frame" x="0.0" y="14" width="414" height="16"/>
+                        <rect key="frame" x="0.0" y="14" width="414" height="28"/>
                         <subviews>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pR5-gM-3yX" customClass="DNSUIView" customModule="DNSBaseTheme">
-                                <rect key="frame" x="14" y="0.0" width="386" height="216"/>
+                                <rect key="frame" x="14" y="0.0" width="386" height="228"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOc-ku-bUq" userLabel="Title View" customClass="DNSUIView" customModule="DNSBaseTheme">
                                         <rect key="frame" x="221" y="0.0" width="165" height="16"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMAGE URLS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pX-XK-23v" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                                                <rect key="frame" x="10" y="2" width="64.5" height="12"/>
+                                                <rect key="frame" x="10" y="2" width="145" height="12"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                             <constraint firstItem="1pX-XK-23v" firstAttribute="leading" secondItem="pOc-ku-bUq" secondAttribute="leading" constant="10" id="8Ma-vR-57N"/>
                                             <constraint firstAttribute="height" constant="16" id="Pio-nh-R7n"/>
                                             <constraint firstItem="1pX-XK-23v" firstAttribute="centerY" secondItem="pOc-ku-bUq" secondAttribute="centerY" id="mEN-au-IyW"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1pX-XK-23v" secondAttribute="trailing" constant="10" id="vk1-eD-Uq6"/>
+                                            <constraint firstAttribute="trailing" secondItem="1pX-XK-23v" secondAttribute="trailing" constant="10" id="vk1-eD-Uq6"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusMulti" value="YES"/>

@@ -37,12 +37,9 @@
                                     <constraint firstAttribute="height" constant="76" id="jPx-i4-cfN"/>
                                 </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="ala-U9-OFA">
-                                <rect key="frame" x="24" y="0.0" width="200" height="76"/>
+                            <datePicker contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="ala-U9-OFA">
+                                <rect key="frame" x="24" y="0.0" width="336" height="76"/>
                                 <color key="tintColor" name="TitleDark"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="cOJ-CF-fsX"/>
-                                </constraints>
                                 <connections>
                                     <action selector="dateValueChangedActionWithSender:" destination="gTV-IL-0wX" eventType="valueChanged" id="Ze9-M6-5Bs"/>
                                 </connections>
@@ -65,6 +62,7 @@
                             <constraint firstAttribute="bottom" secondItem="9zh-Qd-KcT" secondAttribute="bottom" id="Bvg-Rz-vnG"/>
                             <constraint firstAttribute="bottom" secondItem="fyx-Nc-3jh" secondAttribute="bottom" constant="22" id="Ju3-zB-D1g"/>
                             <constraint firstItem="UXn-gT-llh" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="trailing" constant="10" id="K7H-pP-zk3"/>
+                            <constraint firstItem="ala-U9-OFA" firstAttribute="trailing" secondItem="9zh-Qd-KcT" secondAttribute="trailing" id="N7K-Ae-MpG"/>
                             <constraint firstItem="fyx-Nc-3jh" firstAttribute="top" secondItem="UXn-gT-llh" secondAttribute="bottom" constant="9" id="PRr-P8-UY9"/>
                             <constraint firstItem="fyx-Nc-3jh" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="leading" id="T16-JQ-t3J"/>
                             <constraint firstItem="9zh-Qd-KcT" firstAttribute="leading" secondItem="KuD-TU-KgD" secondAttribute="leading" constant="24" id="VyL-sm-yf9"/>

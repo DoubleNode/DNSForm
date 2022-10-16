@@ -75,17 +75,23 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
             textField.uppercased = data.uppercaseOnly
             switch data.type {
             case .none, .text:
+                if case .text = textField.type { break }
                 textField.type = .text(data.label, data.required ? 1 : 0, data.maximumLength)
             case .email:
+                if case .email = textField.type { break }
                 textField.type = .email
             case .password:
+                if case .password = textField.type { break }
                 textField.type = .password(data.required ? 1 : 0, data.maximumLength)
                 textField.isSecure = true
             case .price:
+                if case .price = textField.type { break }
                 textField.type = .price(data.maximumPrice, 2)
             case .url:
+                if case .url = textField.type { break }
                 textField.type = .url(data.label, data.required ? 1 : 0)
             case .username:
+                if case .username = textField.type { break }
                 textField.type = .username(data.required ? 1 : 0, data.maximumLength)
             }
             textField.placeholder = data.placeholder + " (\(data.languageCode))"
@@ -126,6 +132,18 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
     }
 
     // MARK: - AnimatedFieldDelegate methods
+    public func animatedFieldDidChange(_ animatedField: AnimatedField) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        guard let data = self.data else { return }
+        guard textField.text != data.text else { return }
+        let text = textField.text
+        let request = Stage.Models.Field.Request(field: data.field,
+                                                 languageCode: data.languageCode,
+                                                 value: text)
+        DNSThread.run {
+            self.changeTextPublisher.send(request)
+        }
+    }
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }

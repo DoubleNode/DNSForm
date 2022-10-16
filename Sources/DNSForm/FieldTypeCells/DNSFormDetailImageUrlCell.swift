@@ -123,6 +123,19 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
     }
 
     // MARK: - AnimatedFieldDelegate methods
+    public func animatedFieldDidChange(_ animatedField: AnimatedField) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        guard let data = self.data else { return }
+        let string = data.url?.absoluteString ?? ""
+        guard textField.text != string else { return }
+        let url = URL(string: textField.text ?? "")
+        let request = Stage.Models.Field.Request(field: data.field,
+                                                 languageCode: data.languageCode,
+                                                 value: url)
+        DNSThread.run {
+            self.changeTextPublisher.send(request)
+        }
+    }
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
