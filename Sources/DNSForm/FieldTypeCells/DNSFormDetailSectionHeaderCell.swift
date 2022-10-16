@@ -42,11 +42,17 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
             guard let data = self.data else {
                 lineViewBottomConstraint.constant = 0
                 sectionLabel.text = ""
+                sectionLabelWidthConstraint.isActive = true
                 return
             }
             lineViewBottomConstraint.constant = data.lineBottomOffset
             sectionLabel.text = data.label
-            sectionLabelWidthConstraint.constant = data.sectionLabelWidth
+            if data.sectionLabelWidth == -1 {
+                sectionLabelWidthConstraint.isActive = true
+            } else {
+                sectionLabelWidthConstraint.isActive = true
+                sectionLabelWidthConstraint.constant = data.sectionLabelWidth
+            }
         }
     }
     

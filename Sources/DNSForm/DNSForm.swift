@@ -8,3 +8,13 @@
 
 import DNSError
 import Foundation
+
+public enum DNSFormFieldType: String, CaseIterable {
+    case none = ""
+    case email
+    case password
+    case price
+    case text
+    case url
+    case username
+}
