@@ -1287,7 +1287,7 @@ public extension UIColor {
                 public static var tint = UIColor.systemBlue
             }
             public enum SectionFrame {
-                public static var background = UIColor.clear
+                public static var background = UIColor.white
                 public static var border = UIColor.darkGray
                 public static var tint = UIColor.darkGray
             }
