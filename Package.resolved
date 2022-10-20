@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseStage.git",
       "state" : {
-        "revision" : "2300a0cf3427279aa6166ddfe9e4a3204329d00a",
-        "version" : "1.10.0"
+        "revision" : "eab5024e6795b7ee22bb571983c2f7c7ebee6cc1",
+        "version" : "1.10.2"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "169469a1fda09d96313a8f03391c4e55d39df4f2",
-        "version" : "1.10.5"
+        "revision" : "c9bd13ac252c9e423318165771b55fe46e9d42d5",
+        "version" : "1.10.6"
       }
     },
     {
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashWorkers.git",
       "state" : {
-        "revision" : "1596c76be9b3bc4756f07c2da7006faf5ee87a50",
-        "version" : "1.10.0"
+        "revision" : "fd15f0db327725154e8c57b9f96d83768d0719da",
+        "version" : "1.10.3"
       }
     },
     {
@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSProtocols.git",
       "state" : {
-        "revision" : "4b959b373d7c59264dc500903dbdc8fca9155673",
-        "version" : "1.10.11"
+        "revision" : "d2f64b44bc9edbec0643e44e44f9fed902634702",
+        "version" : "1.10.12"
       }
     },
     {
