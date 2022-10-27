@@ -59,6 +59,7 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
             guard let data = self.data else {
                 textField.isEnabled = false
                 textField.type = .text("field", 0, 64)
+                textField.title = ""
                 textField.placeholder = ""
                 textField.text = ""
                 self.progressView.setProgress(0.0, animated: false)
@@ -67,12 +68,13 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
                 self.selectModeView?.backgroundColor = UIColor.clear
                 return
             }
-
+            let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
             self.selectModeView.isSelected = self.selectMode
 
             textField.isEnabled = false
             textField.type = .text(data.label, data.required ? 1 : 0, 64)
-            textField.placeholder = data.placeholder + " (\(data.languageCode))"
+            textField.title = data.label + languageLabel
+            textField.placeholder = data.placeholder + languageLabel
 
             textField.text = data.appAction?.title.asString(for: data.languageCode)
 
@@ -108,6 +110,7 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
         super.awakeFromNib()
         textField.type = .url("field", 0)
         textField.placeholder = "field"
+        textField.title = "field"
         textField.keyboardType = .URL
         textField.isSecure = false
         textField.dataSource = self

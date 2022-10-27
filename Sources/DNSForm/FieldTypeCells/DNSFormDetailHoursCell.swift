@@ -71,6 +71,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             self.openPicker.date = openTimeOfDay.today
             self.openPicker.isEnabled = !data.readonly
             self.openTextField.placeholder = data.openPlaceholder
+            self.openTextField.title = data.openLabel
             self.openTextField.text = timeFormatter.string(from: openTimeOfDay.today)
 
             let closeTimeOfDay = data.hours.close ?? DNSTimeOfDay()
@@ -78,6 +79,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             self.closePicker.date = closeTimeOfDay.today
             self.closePicker.isEnabled = !data.readonly
             self.closeTextField.placeholder = data.closePlaceholder
+            self.closeTextField.title = data.closeLabel
             self.closeTextField.text = timeFormatter.string(from: closeTimeOfDay.today)
         }
     }
@@ -110,6 +112,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             openPickerLineView.alpha = 0
             openTextField.alpha = 1
             openTextField.placeholder = "SELECT OPEN TIME"   // TODO: Localize
+            openTextField.title = "OPEN TIME"   // TODO: Localize
             openTextField.dataSource = self
             openTextField.delegate = self
         }
@@ -124,6 +127,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             closePickerLineView.alpha = 0
             closeTextField.alpha = 1
             closeTextField.placeholder = "SELECT CLOSE TIME"   // TODO: Localize
+            closeTextField.title = "CLOSE TIME"   // TODO: Localize
             closeTextField.dataSource = self
             closeTextField.delegate = self
         }

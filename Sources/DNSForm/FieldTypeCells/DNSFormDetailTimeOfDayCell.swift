@@ -61,6 +61,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
             self.timePicker.date = data.timeOfDay.today
             self.timePicker.isEnabled = !data.readonly
             self.timeTextField.placeholder = data.timePlaceholder
+            self.timeTextField.title = data.timeLabel
 
             let timeOfDay = DNSTimeOfDay(hour: data.timeOfDay.hour,
                                          minute: data.timeOfDay.minute)
@@ -92,6 +93,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
             timePickerLineView.alpha = 0
             timeTextField.alpha = 1
             timeTextField.placeholder = "SELECT TIME"   // TODO: Localize
+            timeTextField.title = "TIME"   // TODO: Localize
             timeTextField.dataSource = self
             timeTextField.delegate = self
         }

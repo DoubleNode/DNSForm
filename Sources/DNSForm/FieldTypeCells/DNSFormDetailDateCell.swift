@@ -62,6 +62,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
             self.datePicker.date = data.date
             self.datePicker.isEnabled = !data.readonly
             self.dateTextField.placeholder = data.datePlaceholder
+            self.dateTextField.title = data.dateLabel
             self.dateTextField.text = dateFormatter.string(from: data.date)
             self.dateTextField.type = .datepicker(.date, datePicker.date, data.minimumDate,
                                                   data.maximumDate, data.datePlaceholder,
@@ -91,6 +92,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
             datePickerLineView.alpha = 0
             dateTextField.alpha = 1
             dateTextField.placeholder = "SELECT DATE"   // TODO: Localize
+            dateTextField.title = "DATE"   // TODO: Localize
             dateTextField.dataSource = self
             dateTextField.delegate = self
         }

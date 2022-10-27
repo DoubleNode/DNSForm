@@ -44,11 +44,14 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
         didSet {
             guard let data = self.data else {
                 textView.placeholder = ""
+                textView.title = ""
                 textView.text = ""
                 return
             }
+            let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
 
-            textView.placeholder = data.placeholder + " (\(data.languageCode))"
+            textView.placeholder = data.placeholder + languageLabel
+            textView.title = data.label + languageLabel
             if textView.text != data.text {
                 textView.text = data.text
                 if !textView.isValid {
@@ -68,6 +71,7 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
         super.awakeFromNib()
         textView.type = .multiline
         textView.placeholder = ""
+        textView.title = ""
         textView.keyboardType = .default
         textView.isSecure = false
         textView.dataSource = self

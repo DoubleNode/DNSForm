@@ -52,12 +52,14 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
                 textField.isEnabled = false
                 textField.type = .stringpicker("", [], "")
                 textField.placeholder = ""
+                textField.title = ""
                 textField.text = ""
                 return
             }
             textField.isEnabled = !data.readonly
             textField.type = .stringpicker(data.text, data.selectionStrings, data.label)
             textField.placeholder = data.placeholder
+            textField.title = data.label
 
             if textField.text != data.text {
                 textField.text = data.text

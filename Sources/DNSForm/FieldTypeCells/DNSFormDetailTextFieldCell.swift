@@ -64,9 +64,12 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
                 textField.returnKeyType = .next
                 textField.type = .text("field", 0, 128)
                 textField.placeholder = ""
+                textField.title = ""
                 textField.text = ""
                 return
             }
+            let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
+
             textField.isEnabled = !data.readonly
             textField.isSecure = false
             textField.formatPattern = data.formatPattern
@@ -98,8 +101,9 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
                 textField.type = .username(data.required ? data.minimumLength : 0,
                                            data.maximumLength)
             }
-            textField.placeholder = data.placeholder + " (\(data.languageCode))"
-            
+            textField.placeholder = data.placeholder + languageLabel
+            textField.title = data.label + languageLabel
+
             if textField.text != data.text {
                 textField.text = data.text
                 if !textField.isValid {
@@ -118,6 +122,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
         super.awakeFromNib()
         textField.type = .text("field", 0, 128)
         textField.placeholder = "field"
+        textField.title = "field"
         textField.keyboardType = .default
         textField.isSecure = false
         textField.dataSource = self

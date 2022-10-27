@@ -53,6 +53,7 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
                 textField.isEnabled = false
                 textField.type = .url("field", 0)
                 textField.placeholder = ""
+                textField.title = ""
                 textField.text = ""
                 self.progressView.setProgress(0.0, animated: false)
                 self.progressView.isHidden = true
@@ -60,9 +61,12 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
                 self.lastURL = nil
                 return
             }
+            let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
+
             textField.isEnabled = !data.readonly
             textField.type = .url(data.label, data.required ? 1 : 0)
-            textField.placeholder = data.placeholder + " (\(data.languageCode))"
+            textField.placeholder = data.placeholder + languageLabel
+            textField.title = data.label + languageLabel
 
             let lastString = self.lastURL?.absoluteString ?? ""
             let string = data.url?.absoluteString ?? ""
@@ -105,6 +109,7 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
         super.awakeFromNib()
         textField.type = .url("field", 0)
         textField.placeholder = "field"
+        textField.title = "field"
         textField.keyboardType = .URL
         textField.isSecure = false
         textField.dataSource = self

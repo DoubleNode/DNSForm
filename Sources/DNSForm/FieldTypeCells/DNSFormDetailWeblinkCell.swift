@@ -51,14 +51,18 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
                 textField.isEnabled = false
                 textField.type = .text("field", 0, 64)
                 textField.placeholder = ""
+                textField.title = ""
                 textField.text = ""
                 previewButton.isHidden = true
                 previewImageView.isHidden = true
                 return
             }
+            let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
+
             textField.isEnabled = !data.readonly
             textField.type = .text(data.label, data.required ? 1 : 0, 64)
-            textField.placeholder = data.placeholder + " (\(data.languageCode))"
+            textField.placeholder = data.placeholder + languageLabel
+            textField.title = data.label + languageLabel
 
             let text = data.weblink?.absoluteString ?? ""
             previewButton.isHidden = !text.contains("https://")
@@ -85,6 +89,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
         super.awakeFromNib()
         textField.type = .text("field", 0, 64)
         textField.placeholder = "field"
+        textField.title = "field"
         textField.keyboardType = .URL
         textField.isSecure = false
 

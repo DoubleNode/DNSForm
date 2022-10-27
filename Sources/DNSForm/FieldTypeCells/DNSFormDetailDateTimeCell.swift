@@ -73,6 +73,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
             self.datePicker.date = data.date
             self.datePicker.isEnabled = !data.readonly
             self.dateTextField.placeholder = data.datePlaceholder
+            self.dateTextField.title = data.dateLabel
             self.dateTextField.text = dateFormatter.string(from: data.date)
             self.dateTextField.type = .datepicker(.date, datePicker.date, data.minimumDate,
                                                   data.maximumDate, data.datePlaceholder,
@@ -82,6 +83,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
             self.timePicker.date = data.date
             self.timePicker.isEnabled = !data.readonly
             self.timeTextField.placeholder = data.timePlaceholder
+            self.timeTextField.title = data.timeLabel
 
             let timeOfDay = DNSTimeOfDay(hour: data.date.dnsHour,
                                          minute: data.date.dnsMinute)
@@ -117,6 +119,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
             datePickerLineView.alpha = 0
             dateTextField.alpha = 1
             dateTextField.placeholder = "SELECT DATE"   // TODO: Localize
+            dateTextField.title = "DATE"   // TODO: Localize
             dateTextField.dataSource = self
             dateTextField.delegate = self
         }
@@ -129,6 +132,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
             timePickerLineView.alpha = 0
             timeTextField.alpha = 1
             timeTextField.placeholder = "SELECT TIME"   // TODO: Localize
+            timeTextField.title = "TIME"   // TODO: Localize
             timeTextField.dataSource = self
             timeTextField.delegate = self
         }
