@@ -11,22 +11,20 @@ import DNSBaseStage
 import Foundation
 
 public protocol DNSFormStageDisplayLogic: DNSBaseStageDisplayLogic {
-    typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines
-    var fieldChangedPublisher: PassthroughSubject<Stage.Models.Field.Request, Never> { get }
-    var saveActionPublisher: PassthroughSubject<Stage.Models.Base.Request, Never> { get }
+    var fieldChangedPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
+    var saveActionPublisher: PassthroughSubject<DNSFormStage.Models.Base.Request, Never> { get }
 }
-public class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageDisplayLogic {
-    public typealias Stage = DNSFormStage
-    public var fieldChangedPublisher = PassthroughSubject<Stage.Models.Field.Request, Never>()
-    public var saveActionPublisher = PassthroughSubject<Stage.Models.Base.Request, Never>()
+open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageDisplayLogic {
+    public var fieldChangedPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
+    public var saveActionPublisher = PassthroughSubject<DNSFormStage.Models.Base.Request, Never>()
 
     // MARK: - Incoming Pipelines
     var subscribers: [AnyCancellable] = []
     override open func subscribe(to basePresenter: BaseStage.Logic.Presentation) {
         super.subscribe(to: basePresenter)
         // swiftlint:disable:next force_cast
-        let presenter = basePresenter as! Stage.Logic.Presentation
+        let presenter = basePresenter as! DNSFormStage.Logic.Presentation
 
         weak var weakSelf = self
         subscribers.removeAll()
@@ -35,12 +33,12 @@ public class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStag
     }
 
     // MARK: - Display Logic
-    func displayFieldAlert(_ viewModel: Stage.Models.Field.ViewModel) {
+    open func displayFieldAlert(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
     }
 
     // MARK: - Action methods -
-    func fieldChangedAction(request: Stage.Models.Field.Request) {
+    open func fieldChangedAction(request: DNSFormStage.Models.Field.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         self.fieldChangedPublisher.send(request)
     }

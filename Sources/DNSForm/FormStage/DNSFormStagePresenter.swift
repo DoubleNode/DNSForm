@@ -32,7 +32,7 @@ open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentatio
     }
 
     // MARK: - Presentation Logic
-    func presentFieldAlert(_ response: DNSFormStage.Models.Field.Response) {
+    open func presentFieldAlert(_ response: DNSFormStage.Models.Field.Response) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         let viewModel = DNSFormStage.Models.Field
             .ViewModel(field: response.field,
