@@ -21,6 +21,9 @@ public enum DNSFormDetailStage {
         case removing
         case selectAppAction
         case updated
+        case updating
+        case verified
+        case verifying
     }
 
     static public func register(to collectionView: UICollectionView) {
