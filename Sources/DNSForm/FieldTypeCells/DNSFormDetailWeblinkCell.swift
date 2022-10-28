@@ -34,6 +34,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
         public var weblink: URL?
+        public var alertMessage: String = ""
 
         public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool, required: Bool, weblink: URL? = nil) {
             self.field = field
@@ -48,6 +49,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
+                textField.hideAlert()
                 textField.isEnabled = false
                 textField.type = .none
                 textField.placeholder = ""
@@ -57,6 +59,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
                 previewImageView.isHidden = true
                 return
             }
+            self.utilityDisplayAlert(data.alertMessage, for: textField)
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
 
             textField.isEnabled = !data.readonly
@@ -114,19 +117,6 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
     }
 
     // MARK: - AnimatedFieldDelegate methods
-//    public func animatedFieldDidChange(_ animatedField: AnimatedField) {
-//        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-//        guard let data = self.data else { return }
-//        let origText = data.weblink?.absoluteString ?? ""
-//        guard textField.text != origText else { return }
-//        let text = textField.text
-//        let request = Stage.Models.Field.Request(field: data.field,
-//                                                 languageCode: data.languageCode,
-//                                                 value: text)
-//        DNSThread.run {
-//            self.changeTextPublisher.send(request)
-//        }
-//    }
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
@@ -157,5 +147,15 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
         weblinkActionPublisher
             .send(Stage.Models.Weblink.Request(field: data.field,
                                                weblink: weblink))
+    }
+    
+    // MARK: - Utility methods -
+    func utilityDisplayAlert(_ alertMessage: String,
+                             for field: DNSUIAnimatedField) {
+        if alertMessage.isEmpty {
+            if textField.isValid { field.hideAlert() }
+        } else {
+            field.showAlert(alertMessage)
+        }
     }
 }

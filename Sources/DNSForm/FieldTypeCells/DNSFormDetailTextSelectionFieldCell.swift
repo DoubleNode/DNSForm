@@ -34,6 +34,7 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
         public var required: Bool
         public var selectionStrings: [String]
         public var text: String
+        public var alertMessage: String = ""
 
         public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool, required: Bool, selectionStrings: [String], text: String) {
             self.field = field
@@ -49,6 +50,7 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
+                textField.hideAlert()
                 textField.isEnabled = false
                 textField.type = .none
                 textField.placeholder = ""
@@ -56,6 +58,7 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
                 textField.text = ""
                 return
             }
+            self.utilityDisplayAlert(data.alertMessage, for: textField)
             textField.isEnabled = !data.readonly
             textField.type = .stringpicker(data.text, data.selectionStrings, data.label)
             textField.placeholder = data.placeholder
@@ -122,5 +125,15 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
                               didChangePickerValue value: String) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
 //        self.textField.text = value
+    }
+    
+    // MARK: - Utility methods -
+    func utilityDisplayAlert(_ alertMessage: String,
+                             for field: DNSUIAnimatedField) {
+        if alertMessage.isEmpty {
+            if textField.isValid { field.hideAlert() }
+        } else {
+            field.showAlert(alertMessage)
+        }
     }
 }

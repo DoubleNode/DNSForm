@@ -24,10 +24,10 @@ public protocol DNSFormDetailAppActionCellLogic: DNSBaseStageCellLogic {
     var selectActionPublisher: PassthroughSubject<Stage.Models.AppAction.Request, Never> { get }
 }
 open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
-    DNSFormDetailAppActionCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
+                                       DNSFormDetailAppActionCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormDetailStage
     static public let recommendedContentSize = CGSize(width: 414, height: 80)
-
+    
     public struct Data: Hashable {
         public var field: String
         public var label: String
@@ -37,7 +37,8 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
         public var required: Bool
         public var selectMode: Bool
         public var appAction: DAOAppAction?
-
+        public var alertMessage: String = ""
+        
         public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool, required: Bool, selectMode: Bool, appAction: DAOAppAction? = nil) {
             self.field = field
             self.label = label
@@ -57,6 +58,7 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
+                textField.hideAlert()
                 textField.isEnabled = false
                 textField.type = .none
                 textField.title = ""
@@ -68,16 +70,17 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
                 self.selectModeView?.backgroundColor = UIColor.clear
                 return
             }
+            self.utilityDisplayAlert(data.alertMessage, for: textField)
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
             self.selectModeView.isSelected = self.selectMode
-
+            
             textField.isEnabled = false
             textField.type = .text(data.label, data.required ? 1 : 0, 64)
             textField.title = data.label + languageLabel
             textField.placeholder = data.placeholder + languageLabel
-
+            
             textField.text = data.appAction?.title.asString(for: data.languageCode)
-
+            
             self.progressView.setProgress(0.0, animated: false)
             self.progressView.isHidden = true
             self.imageView.image = nil
@@ -95,17 +98,17 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
             }
         }
     }
-
+    
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var progressView: UIProgressView!
     @IBOutlet var selectModeView: DNSUIView!
     @IBOutlet var textField: DNSUIAnimatedField!
-
+    
     // MARK: - Outgoing Pipelines -
     public var actionEditActionPublisher = PassthroughSubject<Stage.Models.AppAction.Request, Never>()
     public var changeTextPublisher = PassthroughSubject<Stage.Models.Field.Request, Never>()
     public var selectActionPublisher = PassthroughSubject<Stage.Models.AppAction.Request, Never>()
-
+    
     override open func awakeFromNib() {
         super.awakeFromNib()
         textField.type = .none
@@ -121,18 +124,18 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
         super.contentInit()
         data = nil
     }
-
+    
     // MARK: - AnimatedFieldDataSource methods
     public func animatedFieldShouldReturn(_ animatedField: AnimatedField) -> Bool {
         _ = animatedField.resignFirstResponder()
         return true
     }
-
+    
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
     }
-
+    
     // MARK: - Action Methods -
     @IBAction func actionEditButtonAction(_ sender: UIButton) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
@@ -147,5 +150,15 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
         actionEditActionPublisher
             .send(Stage.Models.AppAction.Request(field: data.field,
                                                  appAction: data.appAction))
+    }
+    
+    // MARK: - Utility methods -
+    func utilityDisplayAlert(_ alertMessage: String,
+                             for field: DNSUIAnimatedField) {
+        if alertMessage.isEmpty {
+            if textField.isValid { field.hideAlert() }
+        } else {
+            field.showAlert(alertMessage)
+        }
     }
 }

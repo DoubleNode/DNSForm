@@ -48,6 +48,8 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
         public var required: Bool
         public var timeLabel: String
         public var timePlaceholder: String
+        public var dateAlertMessage: String = ""
+        public var timeAlertMessage: String = ""
 
         public init(date: Date, dateLabel: String, datePlaceholder: String, field: String, languageCode: String, readonly: Bool, required: Bool, timeLabel: String, timePlaceholder: String) {
             self.date = date
@@ -64,11 +66,15 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
+                dateTextField.hideAlert()
+                timeTextField.hideAlert()
                 self.datePicker.date = Date()
                 self.timePicker.date = Date()
                 self.timeZeroLabel.isHidden = true
                 return
             }
+            self.utilityDisplayAlert(data.dateAlertMessage, for: dateTextField)
+            self.utilityDisplayAlert(data.timeAlertMessage, for: timeTextField)
             self.dateLabel.text = data.dateLabel
             self.datePicker.date = data.date
             self.datePicker.isEnabled = !data.readonly
@@ -198,5 +204,15 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
         changeDatePublisher.send(Stage.Models.Field.Request(field: data.field,
                                                             languageCode: "",
                                                             value: time))
+    }
+    
+    // MARK: - Utility methods -
+    func utilityDisplayAlert(_ alertMessage: String,
+                             for field: DNSUIAnimatedField) {
+        if alertMessage.isEmpty {
+            if field.isValid { field.hideAlert() }
+        } else {
+            field.showAlert(alertMessage)
+        }
     }
 }

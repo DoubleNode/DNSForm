@@ -39,6 +39,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
         public var timeOfDay: DNSTimeOfDay
         public var timeLabel: String
         public var timePlaceholder: String
+        public var alertMessage: String = ""
 
         public init(field: String, languageCode: String, readonly: Bool, required: Bool, timeOfDay: DNSTimeOfDay, timeLabel: String, timePlaceholder: String) {
             self.field = field
@@ -53,10 +54,12 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
+                timeTextField.hideAlert()
                 self.timePicker.date = Date()
                 self.timeZeroLabel.isHidden = true
                 return
             }
+            self.utilityDisplayAlert(data.alertMessage, for: timeTextField)
             self.timeLabel.text = data.timeLabel
             self.timePicker.date = data.timeOfDay.today
             self.timePicker.isEnabled = !data.readonly
@@ -146,5 +149,15 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
         changePublisher.send(Stage.Models.Field.Request(field: data.field,
                                                         languageCode: "",
                                                         value: time))
+    }
+    
+    // MARK: - Utility methods -
+    func utilityDisplayAlert(_ alertMessage: String,
+                             for field: DNSUIAnimatedField) {
+        if alertMessage.isEmpty {
+            if field.isValid { field.hideAlert() }
+        } else {
+            field.showAlert(alertMessage)
+        }
     }
 }

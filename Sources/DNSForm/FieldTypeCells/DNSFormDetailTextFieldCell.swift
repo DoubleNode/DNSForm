@@ -42,6 +42,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
         public var text: String
         public var type: DNSFormFieldType = .none
         public var uppercaseOnly = false
+        public var alertMessage: String = ""
 
         public init(field: String, formatPattern: String = "", label: String, languageCode: String, placeholder: String, readonly: Bool, required: Bool, text: String, type: DNSFormFieldType = .none) {
             self.field = field
@@ -58,6 +59,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
+                textField.hideAlert()
                 textField.isEnabled = false
                 textField.formatPattern = ""
                 textField.keyboardType = .default
@@ -68,6 +70,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
                 textField.text = ""
                 return
             }
+            self.utilityDisplayAlert(data.alertMessage, for: textField)
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
 
             textField.isEnabled = !data.readonly
@@ -143,18 +146,6 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
     }
 
     // MARK: - AnimatedFieldDelegate methods
-//    public func animatedFieldDidChange(_ animatedField: AnimatedField) {
-//        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-//        guard let data = self.data else { return }
-//        guard textField.text != data.text else { return }
-//        let text = textField.text
-//        let request = Stage.Models.Field.Request(field: data.field,
-//                                                 languageCode: data.languageCode,
-//                                                 value: text)
-//        DNSThread.run {
-//            self.changeTextPublisher.send(request)
-//        }
-//    }
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
@@ -174,5 +165,15 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
                                                  languageCode: data.languageCode,
                                                  value: text)
         changeTextPublisher.send(request)
+    }
+    
+    // MARK: - Utility methods -
+    func utilityDisplayAlert(_ alertMessage: String,
+                             for field: DNSUIAnimatedField) {
+        if alertMessage.isEmpty {
+            if textField.isValid { field.hideAlert() }
+        } else {
+            field.showAlert(alertMessage)
+        }
     }
 }

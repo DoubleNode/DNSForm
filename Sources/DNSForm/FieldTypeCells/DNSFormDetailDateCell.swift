@@ -41,6 +41,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         public var maximumDate: Date?
         public var readonly: Bool
         public var required: Bool
+        public var alertMessage: String = ""
 
         public init(date: Date, dateLabel: String, datePlaceholder: String, field: String, languageCode: String, readonly: Bool, required: Bool) {
             self.date = date
@@ -55,9 +56,11 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
+                dateTextField.hideAlert()
                 self.datePicker.date = Date()
                 return
             }
+            self.utilityDisplayAlert(data.alertMessage, for: dateTextField)
             self.dateLabel.text = data.dateLabel
             self.datePicker.date = data.date
             self.datePicker.isEnabled = !data.readonly
@@ -139,5 +142,15 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         changeDatePublisher.send(Stage.Models.Field.Request(field: data.field,
                                                             languageCode: "",
                                                             value: date))
+    }
+    
+    // MARK: - Utility methods -
+    func utilityDisplayAlert(_ alertMessage: String,
+                             for field: DNSUIAnimatedField) {
+        if alertMessage.isEmpty {
+            if field.isValid { field.hideAlert() }
+        } else {
+            field.showAlert(alertMessage)
+        }
     }
 }

@@ -43,6 +43,8 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         public var openPlaceholder: String
         public var readonly: Bool
         public var required: Bool
+        public var closeAlertMessage: String = ""
+        public var openAlertMessage: String = ""
 
         public init(closeLabel: String, closePlaceholder: String, field: String, hours: DNSDailyHours, hoursLabel: String, languageCode: String, openLabel: String, openPlaceholder: String, readonly: Bool, required: Bool) {
             self.closeLabel = closeLabel
@@ -60,10 +62,14 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
+                closeTextField.hideAlert()
+                openTextField.hideAlert()
                 self.closePicker.date = Date()
                 self.openPicker.date = Date()
                 return
             }
+            self.utilityDisplayAlert(data.closeAlertMessage, for: closeTextField)
+            self.utilityDisplayAlert(data.openAlertMessage, for: openTextField)
             self.hoursLabel.text = data.hoursLabel
 
             let openTimeOfDay = data.hours.open ?? DNSTimeOfDay()
@@ -199,5 +205,15 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         changePublisher.send(Stage.Models.Field.Request(field: data.field,
                                                         languageCode: "",
                                                         value: hours))
+    }
+    
+    // MARK: - Utility methods -
+    func utilityDisplayAlert(_ alertMessage: String,
+                             for field: DNSUIAnimatedField) {
+        if alertMessage.isEmpty {
+            if field.isValid { field.hideAlert() }
+        } else {
+            field.showAlert(alertMessage)
+        }
     }
 }

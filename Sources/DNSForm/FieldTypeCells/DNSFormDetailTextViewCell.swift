@@ -31,6 +31,7 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
         public var languageCode: String
         public var placeholder: String
         public var text: String
+        public var alertMessage: String = ""
 
         public init(field: String, label: String, languageCode: String, placeholder: String, text: String) {
             self.field = field
@@ -43,11 +44,13 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
+                textView.hideAlert()
                 textView.placeholder = ""
                 textView.title = ""
                 textView.text = ""
                 return
             }
+            self.utilityDisplayAlert(data.alertMessage, for: textView)
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
 
             textView.placeholder = data.placeholder + languageLabel
@@ -100,19 +103,6 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         lineView.backgroundColor = textView.format.lineColor
     }
-//    public func animatedFieldDidChange(_ animatedField: AnimatedField) {
-//        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-//        lineView.backgroundColor = textView.format.lineColor
-//        guard let data = self.data else { return }
-//        guard textView.text != data.text else { return }
-//        let text = textView.text
-//        let request = Stage.Models.Field.Request(field: data.field,
-//                                                 languageCode: data.languageCode,
-//                                                 value: text)
-//        DNSThread.run {
-//            self.changeTextPublisher.send(request)
-//        }
-//    }
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         lineView.backgroundColor = textView.format.lineColor
@@ -133,5 +123,15 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
                                                  languageCode: data.languageCode,
                                                  value: text)
         changeTextPublisher.send(request)
+    }
+    
+    // MARK: - Utility methods -
+    func utilityDisplayAlert(_ alertMessage: String,
+                             for field: DNSUIAnimatedField) {
+        if alertMessage.isEmpty {
+            if field.isValid { field.hideAlert() }
+        } else {
+            field.showAlert(alertMessage)
+        }
     }
 }
