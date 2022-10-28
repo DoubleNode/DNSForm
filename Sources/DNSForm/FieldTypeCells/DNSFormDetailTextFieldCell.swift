@@ -108,6 +108,8 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
                 textField.text = data.text
                 if !textField.isValid {
                     textField.showAlert()
+                } else {
+                    textField.hideAlert()
                 }
             }
         }
@@ -165,6 +167,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
             changeTextPublisher.send(request)
             return
         }
+        textField.hideAlert()
         guard textField.text != data.text else { return }
         let text = textField.text
         let request = Stage.Models.Field.Request(field: data.field,

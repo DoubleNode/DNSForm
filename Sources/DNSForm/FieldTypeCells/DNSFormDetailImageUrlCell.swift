@@ -74,6 +74,8 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
                 textField.text = string
                 if !textField.isValid {
                     textField.showAlert()
+                } else {
+                    textField.hideAlert()
                 }
 
                 self.progressView.setProgress(0.0, animated: false)
@@ -153,6 +155,7 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
             changeTextPublisher.send(request)
             return
         }
+        textField.hideAlert()
         let string = data.url?.absoluteString ?? ""
         guard textField.text != string else { return }
         let url = URL(string: textField.text ?? "")

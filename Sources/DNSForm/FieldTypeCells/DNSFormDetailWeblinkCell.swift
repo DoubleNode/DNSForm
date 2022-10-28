@@ -72,6 +72,8 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
                 textField.text = text
                 if !textField.isValid {
                     textField.showAlert()
+                } else {
+                    textField.hideAlert()
                 }
             }
         }
@@ -137,6 +139,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
             changeTextPublisher.send(request)
             return
         }
+        textField.hideAlert()
         let origText = data.weblink?.absoluteString ?? ""
         guard textField.text != origText else { return }
         let text = textField.text
