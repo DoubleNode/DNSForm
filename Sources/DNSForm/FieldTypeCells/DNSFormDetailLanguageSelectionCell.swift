@@ -15,13 +15,13 @@ import SFSymbol
 import UIKit
 
 public protocol DNSFormDetailLanguageSelectionCellLogic: DNSBaseStageCellLogic {
-    typealias Stage = DNSFormDetailStage
+    typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines -
     var selectedPublisher: PassthroughSubject<Stage.Models.Language.Request, Never> { get }
 }
 open class DNSFormDetailLanguageSelectionCell: DNSBaseStageCollectionViewCell,
                                                DNSFormDetailLanguageSelectionCellLogic {
-    public typealias Stage = DNSFormDetailStage
+    public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 60)
 
     public struct Data: Hashable {

@@ -15,13 +15,13 @@ import SFSymbol
 import UIKit
 
 public protocol DNSFormDetailCheckboxCellLogic: DNSBaseStageCellLogic {
-    typealias Stage = DNSFormDetailStage
+    typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines -
     var selectedPublisher: PassthroughSubject<Stage.Models.Field.Request, Never> { get }
 }
 open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
                                       DNSFormDetailCheckboxCellLogic {
-    public typealias Stage = DNSFormDetailStage
+    public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 52)
 
     public struct Data: Hashable {

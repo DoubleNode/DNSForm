@@ -16,13 +16,13 @@ import SFSymbol
 import UIKit
 
 public protocol DNSFormDetailDayOfWeekCellLogic: DNSBaseStageCellLogic {
-    typealias Stage = DNSFormDetailStage
+    typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines -
     var changePublisher: PassthroughSubject<Stage.Models.Field.Request, Never> { get }
 }
 open class DNSFormDetailDayOfWeekCell: DNSBaseStageCollectionViewCell,
                                        DNSFormDetailDayOfWeekCellLogic {
-    public typealias Stage = DNSFormDetailStage
+    public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 67)
 
     public struct Data: Hashable {

@@ -1,5 +1,5 @@
 //
-//  DNSFormDetailModels.swift
+//  DNSFormStageModels.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSForm
 //
 //  Created by Darren Ehlers.
@@ -8,9 +8,10 @@
 
 import DNSBaseStage
 import DNSDataObjects
+import DNSError
 import UIKit
 
-open class DNSFormDetailModels: DNSBaseStageModels {
+open class DNSFormStageModels: DNSBaseStageModels {
     public enum AppAction {
         public struct Request: DNSBaseStageBaseRequest {
             public var field: String
@@ -32,6 +33,24 @@ open class DNSFormDetailModels: DNSBaseStageModels {
                 self.field = field
                 self.languageCode = languageCode
                 self.value = value
+            }
+        }
+        public struct Response: DNSBaseStageBaseResponse {
+            public var field: String
+            public var error: DNSError?
+
+            public init(field: String, error: DNSError? = nil) {
+                self.field = field
+                self.error = error
+            }
+        }
+        public struct ViewModel: DNSBaseStageBaseViewModel {
+            public var field: String
+            public var alertMessage: String
+
+            public init(field: String, alertMessage: String = "") {
+                self.field = field
+                self.alertMessage = alertMessage
             }
         }
     }

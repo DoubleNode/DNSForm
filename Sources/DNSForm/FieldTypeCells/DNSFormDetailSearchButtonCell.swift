@@ -13,12 +13,12 @@ import DNSCoreThreading
 import UIKit
 
 public protocol DNSFormDetailSearchButtonCellLogic: DNSBaseStageCellLogic {
-    typealias Stage = DNSFormDetailStage
+    typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines -
     var pushActionPublisher: PassthroughSubject<Stage.Models.Base.Request, Never> { get }
 }
 open class DNSFormDetailSearchButtonCell: DNSBaseStageCollectionViewCell, DNSFormDetailSearchButtonCellLogic {
-    public typealias Stage = DNSFormDetailStage
+    public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 72)
 
     public struct Data: Hashable {
