@@ -62,7 +62,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
                 textField.formatPattern = ""
                 textField.keyboardType = .default
                 textField.returnKeyType = .next
-                textField.type = .text("field", 0, 128)
+                textField.type = .none
                 textField.placeholder = ""
                 textField.title = ""
                 textField.text = ""
@@ -120,7 +120,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        textField.type = .text("field", 0, 128)
+        textField.type = .none
         textField.placeholder = "field"
         textField.title = "field"
         textField.keyboardType = .default

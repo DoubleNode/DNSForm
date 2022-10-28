@@ -150,7 +150,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
         datePicker.tintColor = dateTextField.format.highlightColor
 
         dateTextField.keyboardAppearance = .dark
-        dateTextField.type = .datepicker(.date, datePicker.date, nil, nil, "", dateFormatter.dateFormat)
+        dateTextField.type = .none
     }
     func contentInitTimePicker() {
         timePicker.contentHorizontalAlignment = .left
@@ -159,7 +159,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
         timePicker.tintColor = timeTextField.format.highlightColor
 
         timeTextField.keyboardAppearance = .dark
-        timeTextField.type = .datepicker(.time, timePicker.date, nil, nil, "", timeFormatter.dateFormat)
+        timeTextField.type = .none
     }
 
     // MARK: - Workers -

@@ -49,7 +49,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
         didSet {
             guard let data = self.data else {
                 textField.isEnabled = false
-                textField.type = .text("field", 0, 64)
+                textField.type = .none
                 textField.placeholder = ""
                 textField.title = ""
                 textField.text = ""
@@ -87,7 +87,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        textField.type = .text("field", 0, 64)
+        textField.type = .none
         textField.placeholder = "field"
         textField.title = "field"
         textField.keyboardType = .URL

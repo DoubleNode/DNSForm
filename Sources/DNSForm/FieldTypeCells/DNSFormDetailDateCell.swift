@@ -109,7 +109,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         datePicker.tintColor = dateTextField.format.highlightColor
 
         dateTextField.keyboardAppearance = .dark
-        dateTextField.type = .datepicker(.date, datePicker.date, nil, nil, "", dateFormatter.dateFormat)
+        dateTextField.type = .none
     }
 
     // MARK: - Workers -

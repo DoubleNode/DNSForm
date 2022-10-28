@@ -50,7 +50,7 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
         didSet {
             guard let data = self.data else {
                 textField.isEnabled = false
-                textField.type = .stringpicker("", [], "")
+                textField.type = .none
                 textField.placeholder = ""
                 textField.title = ""
                 textField.text = ""
