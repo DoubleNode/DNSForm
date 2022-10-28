@@ -1,18 +1,27 @@
 //
-//  DNSFormDetailCommon.swift
+//  DNSFormStageCommon.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSForm
 //
 //  Created by Darren Ehlers.
 //  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
-import DNSBaseTheme
 import DNSCore
-import SFSymbol
 import UIKit
 
-public enum DNSFormDetailStage {
-    public typealias Models = DNSFormDetailModels
+public enum DNSFormStage {
+    public typealias Configurator = DNSFormStageConfigurator
+    public typealias Interactor = DNSFormStageInteractor
+    public enum Logic {
+        public typealias Business = DNSFormStageBusinessLogic
+        public typealias Display = DNSFormStageDisplayLogic
+        public typealias Presentation = DNSFormStagePresentationLogic
+    }
+    public typealias Form = DNSFormStage
+    public typealias Models = DNSFormStageModels
+    public typealias Presenter = DNSFormStagePresenter
+    public typealias ViewController = DNSFormStageViewController
+
     public enum FormState {
         case none
         case cancelling

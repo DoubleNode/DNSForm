@@ -13,7 +13,7 @@ import DNSProtocols
 import UIKit
 
 open class DNSFormDetailHeaderView: DNSBaseStageCollectionReusableView {
-    public typealias Stage = DNSFormDetailStage
+    public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 90)
 
     public struct Data: Hashable {

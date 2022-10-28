@@ -16,14 +16,14 @@ import DNSProtocols
 import UIKit
 
 public protocol DNSFormDetailImageUrlCellLogic: DNSBaseStageCellLogic {
-    typealias Stage = DNSFormDetailStage
+    typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines -
     var changeTextPublisher: PassthroughSubject<Stage.Models.Field.Request, Never> { get }
     var imagePopupActionPublisher: PassthroughSubject<Stage.Models.Image.Request, Never> { get }
 }
 open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
     DNSFormDetailImageUrlCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
-    public typealias Stage = DNSFormDetailStage
+    public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 80)
 
     var lastURL: URL?

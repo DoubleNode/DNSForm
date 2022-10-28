@@ -17,7 +17,7 @@ import DNSProtocols
 import UIKit
 
 public protocol DNSFormDetailAppActionCellLogic: DNSBaseStageCellLogic {
-    typealias Stage = DNSFormDetailStage
+    typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines -
     var actionEditActionPublisher: PassthroughSubject<Stage.Models.AppAction.Request, Never> { get }
     var changeTextPublisher: PassthroughSubject<Stage.Models.Field.Request, Never> { get }
@@ -25,7 +25,7 @@ public protocol DNSFormDetailAppActionCellLogic: DNSBaseStageCellLogic {
 }
 open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
                                        DNSFormDetailAppActionCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
-    public typealias Stage = DNSFormDetailStage
+    public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 80)
     
     public struct Data: Hashable {

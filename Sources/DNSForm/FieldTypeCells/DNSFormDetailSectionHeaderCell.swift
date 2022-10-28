@@ -15,12 +15,12 @@ import SFSymbol
 import UIKit
 
 public protocol DNSFormDetailSectionHeaderCellLogic: DNSBaseStageCellLogic {
-    typealias Stage = DNSFormDetailStage
+    typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines -
 }
 open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
                                            DNSFormDetailSectionHeaderCellLogic {
-    public typealias Stage = DNSFormDetailStage
+    public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 42)
     
     public struct Data: Hashable {

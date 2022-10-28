@@ -14,13 +14,13 @@ import SFSymbol
 import UIKit
 
 public protocol DNSFormDetailActionButtonCellLogic: DNSBaseStageCellLogic {
-    typealias Stage = DNSFormDetailStage
+    typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines -
     var pushActionPublisher: PassthroughSubject<Stage.Models.Base.Request, Never> { get }
 }
 
 open class DNSFormDetailActionButtonCell: DNSBaseStageCollectionViewCell, DNSFormDetailActionButtonCellLogic {
-    public typealias Stage = DNSFormDetailStage
+    public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 72)
 
     public struct Data: Hashable {

@@ -16,13 +16,13 @@ import DNSProtocols
 import UIKit
 
 public protocol DNSFormDetailTimeOfDayCellLogic: DNSBaseStageCellLogic {
-    typealias Stage = DNSFormDetailStage
+    typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines -
     var changePublisher: PassthroughSubject<Stage.Models.Field.Request, Never> { get }
 }
 open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
     DNSFormDetailTimeOfDayCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
-    public typealias Stage = DNSFormDetailStage
+    public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 76)
 
     public lazy var timeFormatter: DateFormatter = {
