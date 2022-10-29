@@ -1190,8 +1190,8 @@ public extension UIColor {
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.systemRed
-                    public static var text = UIColor.darkText
-                    public static var tint = UIColor.systemPurple
+                    public static var text = UIColor.systemRed
+                    public static var tint = UIColor.systemRed
                 }
                 public enum Counter {
                     public static var background = UIColor.clear
@@ -1229,8 +1229,8 @@ public extension UIColor {
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.systemRed
-                    public static var text = UIColor.darkText
-                    public static var tint = UIColor.systemPurple
+                    public static var text = UIColor.systemRed
+                    public static var tint = UIColor.systemRed
                 }
                 public enum Counter {
                     public static var background = UIColor.systemBackground
