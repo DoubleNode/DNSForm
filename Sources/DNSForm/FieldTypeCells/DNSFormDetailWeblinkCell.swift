@@ -33,6 +33,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
         public var placeholder: String
         public var readonly: Bool
         public var required: Bool
+        public var style: DNSThemeFieldStyle = .DNSForm.default
         public var weblink: URL?
         public var alertMessage: String = ""
 
@@ -62,6 +63,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
             self.utilityDisplayAlert(data.alertMessage, for: textField)
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
 
+            textField.style = data.style
             textField.isEnabled = !data.readonly
             textField.type = .text(data.label, data.required ? 1 : 0, 64)
             textField.placeholder = data.placeholder + languageLabel

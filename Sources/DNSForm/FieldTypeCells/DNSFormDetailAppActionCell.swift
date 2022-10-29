@@ -36,6 +36,7 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
         public var selectMode: Bool
+        public var style: DNSThemeFieldStyle = .DNSForm.default
         public var appAction: DAOAppAction?
         public var alertMessage: String = ""
         
@@ -74,6 +75,7 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
             self.selectModeView.isSelected = self.selectMode
             
+            textField.style = data.style
             textField.isEnabled = false
             textField.type = .text(data.label, data.required ? 1 : 0, 64)
             textField.title = data.label + languageLabel

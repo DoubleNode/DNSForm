@@ -33,6 +33,7 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
         public var selectionStrings: [String]
+        public var style: DNSThemeFieldStyle = .DNSForm.default
         public var text: String
         public var alertMessage: String = ""
 
@@ -59,6 +60,7 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
                 return
             }
             self.utilityDisplayAlert(data.alertMessage, for: textField)
+            textField.style = data.style
             textField.isEnabled = !data.readonly
             textField.type = .stringpicker(data.text, data.selectionStrings, data.label)
             textField.placeholder = data.placeholder

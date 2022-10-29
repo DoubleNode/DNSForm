@@ -30,6 +30,7 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
         public var label: String
         public var languageCode: String
         public var placeholder: String
+        public var style: DNSThemeFieldStyle = .DNSForm.default
         public var text: String
         public var alertMessage: String = ""
 
@@ -53,6 +54,7 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
             self.utilityDisplayAlert(data.alertMessage, for: textView)
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
 
+            textView.style = data.style
             textView.placeholder = data.placeholder + languageLabel
             textView.title = data.label + languageLabel
             if textView.text != data.text {

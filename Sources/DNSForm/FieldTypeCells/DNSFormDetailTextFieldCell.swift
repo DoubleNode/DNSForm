@@ -39,6 +39,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
         public var returnKeyType: UIReturnKeyType = .next
+        public var style: DNSThemeFieldStyle = .DNSForm.default
         public var text: String
         public var type: DNSFormFieldType = .none
         public var uppercaseOnly = false
@@ -73,6 +74,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
             self.utilityDisplayAlert(data.alertMessage, for: textField)
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
 
+            textField.style = data.style
             textField.isEnabled = !data.readonly
             textField.isSecure = false
             textField.formatPattern = data.formatPattern

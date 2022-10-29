@@ -41,6 +41,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         public var maximumDate: Date?
         public var readonly: Bool
         public var required: Bool
+        public var style: DNSThemeFieldStyle = .DNSForm.default
         public var alertMessage: String = ""
 
         public init(date: Date, dateLabel: String, datePlaceholder: String, field: String, languageCode: String, readonly: Bool, required: Bool) {
@@ -61,6 +62,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
                 return
             }
             self.utilityDisplayAlert(data.alertMessage, for: dateTextField)
+            dateTextField.style = data.style
             self.dateLabel.text = data.dateLabel
             self.datePicker.date = data.date
             self.datePicker.isEnabled = !data.readonly
