@@ -76,11 +76,7 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
             let string = data.url?.absoluteString ?? ""
             if string != lastString {
                 textField.text = string
-                if !textField.isValid {
-                    textField.showAlert()
-                } else {
-                    textField.hideAlert()
-                }
+                self.utilityDisplayAlert(data.alertMessage, for: textField)
 
                 self.progressView.setProgress(0.0, animated: false)
                 self.progressView.isHidden = true

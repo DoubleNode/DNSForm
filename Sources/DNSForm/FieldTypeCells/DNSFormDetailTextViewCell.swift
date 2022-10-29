@@ -58,11 +58,7 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
             textView.title = data.label + languageLabel
             if textView.text != data.text {
                 textView.text = data.text
-                if !textView.isValid {
-                    textView.showAlert()
-                } else {
-                    textView.hideAlert()
-                }
+                self.utilityDisplayAlert(data.alertMessage, for: textView)
             }
         }
     }

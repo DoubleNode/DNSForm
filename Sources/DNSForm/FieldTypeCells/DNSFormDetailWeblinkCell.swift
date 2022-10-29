@@ -74,11 +74,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
 
             if textField.text != text {
                 textField.text = text
-                if !textField.isValid {
-                    textField.showAlert()
-                } else {
-                    textField.hideAlert()
-                }
+                self.utilityDisplayAlert(data.alertMessage, for: textField)
             }
         }
     }
