@@ -43,6 +43,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         public var openPlaceholder: String
         public var readonly: Bool
         public var required: Bool
+        public var style: DNSThemeFieldStyle = .DNSForm.default
         public var closeAlertMessage: String = ""
         public var openAlertMessage: String = ""
 
@@ -68,6 +69,8 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
                 self.openPicker.date = Date()
                 return
             }
+            closeTextField.style = data.style
+            openTextField.style = data.style
             self.utilityDisplayAlert(data.closeAlertMessage, for: closeTextField)
             self.utilityDisplayAlert(data.openAlertMessage, for: openTextField)
             self.hoursLabel.text = data.hoursLabel

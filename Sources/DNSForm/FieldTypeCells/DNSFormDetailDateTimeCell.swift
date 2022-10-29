@@ -46,6 +46,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
         public var maximumDate: Date?
         public var readonly: Bool
         public var required: Bool
+        public var style: DNSThemeFieldStyle = .DNSForm.default
         public var timeLabel: String
         public var timePlaceholder: String
         public var dateAlertMessage: String = ""
@@ -73,6 +74,8 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
                 self.timeZeroLabel.isHidden = true
                 return
             }
+            dateTextField.style = data.style
+            timeTextField.style = data.style
             self.utilityDisplayAlert(data.dateAlertMessage, for: dateTextField)
             self.utilityDisplayAlert(data.timeAlertMessage, for: timeTextField)
             self.dateLabel.text = data.dateLabel

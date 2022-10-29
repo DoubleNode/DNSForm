@@ -36,6 +36,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
         public var languageCode: String
         public var readonly: Bool
         public var required: Bool
+        public var style: DNSThemeFieldStyle = .DNSForm.default
         public var timeOfDay: DNSTimeOfDay
         public var timeLabel: String
         public var timePlaceholder: String
@@ -59,6 +60,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
                 self.timeZeroLabel.isHidden = true
                 return
             }
+            timeTextField.style = data.style
             self.utilityDisplayAlert(data.alertMessage, for: timeTextField)
             self.timeLabel.text = data.timeLabel
             self.timePicker.date = data.timeOfDay.today
