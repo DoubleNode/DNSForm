@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseStage.git",
       "state" : {
-        "revision" : "7a6d407c9cc161d79028968b8a50a63849d08b52",
-        "version" : "1.10.3"
+        "revision" : "9a228a3c9f242b0882bc963ec63133a5ab25246a",
+        "version" : "1.10.4"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "390a208a4b0acdc28cba5fb491b9cbf65aaf0b8b",
-        "version" : "1.10.10"
+        "revision" : "099e74ac706e2a52fb7bfacc0c5721db6ceb9672",
+        "version" : "1.10.13"
       }
     },
     {
@@ -104,8 +104,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCore.git",
       "state" : {
-        "revision" : "79a1e35fed7acccbed23dac597c262d221925391",
-        "version" : "1.10.3"
+        "revision" : "a032e1627635edb877d0f836c26b7e93b2e0e39f",
+        "version" : "1.10.4"
       }
     },
     {
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashWorkers.git",
       "state" : {
-        "revision" : "fd15f0db327725154e8c57b9f96d83768d0719da",
-        "version" : "1.10.3"
+        "revision" : "17bc8b436b62d1cbeae5effc687649cef3f78f21",
+        "version" : "1.10.8"
       }
     },
     {
@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSDataObjects.git",
       "state" : {
-        "revision" : "ff4d5967734d806afcb59403fb9724f8942c1c14",
-        "version" : "1.10.15"
+        "revision" : "a72f777ab37fcb62a62bc1bae56a96f67e1d6901",
+        "version" : "1.10.20"
       }
     },
     {
@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSProtocols.git",
       "state" : {
-        "revision" : "056b6ce5db13457725e7493e76f9958f7ee11d92",
-        "version" : "1.10.18"
+        "revision" : "def9e006e287c8d802c5525c412f933a2531ce48",
+        "version" : "1.10.20"
       }
     },
     {
