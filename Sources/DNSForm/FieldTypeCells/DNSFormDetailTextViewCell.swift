@@ -26,6 +26,7 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
     static public let recommendedContentSize = CGSize(width: 414, height: 241)
 
     public struct Data: Hashable {
+        public var autocapitalizationType: UITextAutocapitalizationType = .none
         public var field: String
         public var label: String
         public var languageCode: String
@@ -56,6 +57,7 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
             textView.placeholder = data.placeholder + languageLabel
             textView.title = data.label + languageLabel
+            textView.autocapitalizationType = data.autocapitalizationType
             if textView.text != data.text {
                 textView.text = data.text
                 self.utilityDisplayAlert(data.alertMessage, for: textView)

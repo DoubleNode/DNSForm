@@ -26,6 +26,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
     static public let recommendedContentSize = CGSize(width: 414, height: 64)
 
     public struct Data: Hashable {
+        public var autocapitalizationType: UITextAutocapitalizationType = .none
         public var field: String
         public var formatPattern: String
         public var keyboardType: UIKeyboardType = .default
@@ -81,6 +82,7 @@ open class DNSFormDetailTextFieldCell: DNSBaseStageCollectionViewCell,
             textField.returnKeyType = data.returnKeyType
             textField.lowercased = data.lowercaseOnly
             textField.uppercased = data.uppercaseOnly
+            textField.autocapitalizationType = data.autocapitalizationType
             switch data.type {
             case .none, .text:
                 if case .text = textField.type { break }
