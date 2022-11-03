@@ -199,6 +199,8 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
     @IBAction func dateValueChangedAction(sender: UIDatePicker) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
+        _ = dateTextField.becomeFirstResponder()
+        _ = dateTextField.resignFirstResponder()
         let date = datePicker.date
         var time = timePicker.date
         let timeOfDay = DNSTimeOfDay(hour: time.dnsHour,
@@ -208,7 +210,21 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
                                                             languageCode: "",
                                                             value: time))
     }
-    
+    @IBAction func timeValueChangedAction(sender: UIDatePicker) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        guard let data = self.data else { return }
+        _ = timeTextField.becomeFirstResponder()
+        _ = timeTextField.resignFirstResponder()
+        let date = datePicker.date
+        var time = timePicker.date
+        let timeOfDay = DNSTimeOfDay(hour: time.dnsHour,
+                                     minute: time.dnsMinute)
+        time = timeOfDay.time(on: date)
+        changeDatePublisher.send(Stage.Models.Field.Request(field: data.field,
+                                                            languageCode: "",
+                                                            value: time))
+    }
+
     // MARK: - Utility methods -
     func utilityDisplayAlert(_ alertMessage: String,
                              for field: DNSUIAnimatedField) {

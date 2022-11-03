@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -55,7 +55,7 @@
                                 <rect key="frame" x="24" y="19" width="146" height="76"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <connections>
-                                    <action selector="dateValueChangedActionWithSender:" destination="gTV-IL-0wX" eventType="valueChanged" id="Ze9-M6-5Bs"/>
+                                    <action selector="openValueChangedActionWithSender:" destination="gTV-IL-0wX" eventType="valueChanged" id="MGH-dF-GCw"/>
                                 </connections>
                             </datePicker>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UXn-gT-llh">
@@ -89,7 +89,7 @@
                                 <rect key="frame" x="214" y="19" width="146" height="76"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <connections>
-                                    <action selector="dateValueChangedActionWithSender:" destination="gTV-IL-0wX" eventType="valueChanged" id="W1L-rO-q3L"/>
+                                    <action selector="closeValueChangedActionWithSender:" destination="gTV-IL-0wX" eventType="valueChanged" id="lFh-5a-dNQ"/>
                                 </connections>
                             </datePicker>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7hz-cO-IB0" userLabel="clock">

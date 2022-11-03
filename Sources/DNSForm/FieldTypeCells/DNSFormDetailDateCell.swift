@@ -140,6 +140,8 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
     @IBAction func dateValueChangedAction(sender: UIDatePicker) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
+        _ = dateTextField.becomeFirstResponder()
+        _ = dateTextField.resignFirstResponder()
         let date = datePicker.date
         changeDatePublisher.send(Stage.Models.Field.Request(field: data.field,
                                                             languageCode: "",

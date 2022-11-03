@@ -144,6 +144,8 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
     @IBAction func dateValueChangedAction(sender: UIDatePicker) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
+        _ = timeTextField.becomeFirstResponder()
+        _ = timeTextField.resignFirstResponder()
         var time = timePicker.date
         let timeOfDay = DNSTimeOfDay(hour: time.dnsHour,
                                      minute: time.dnsMinute)
