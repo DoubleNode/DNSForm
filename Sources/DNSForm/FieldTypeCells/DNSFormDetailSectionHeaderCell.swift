@@ -24,8 +24,10 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
     static public let recommendedContentSize = CGSize(width: 414, height: 42)
     
     public struct Data: Hashable {
+        public var errored = false
         public var label: String
         public var lineBottomOffset: Double
+        public var readonly = false
         public var section: Int
         public var sectionLabelWidth: Double
 
@@ -40,10 +42,30 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
+                lineView.layer.borderColor = UIColor.DNSForm.Field.Default.line.cgColor
                 lineViewBottomConstraint.constant = 0
                 sectionLabel.text = ""
+                sectionLabel.textColor = UIColor.white
                 sectionLabelWidthConstraint.isActive = true
+                titleView.backgroundColor = UIColor.DNSForm.Field.Default.line
+                titleView.layer.borderColor = UIColor.DNSForm.Field.Default.line.cgColor
                 return
+            }
+            if data.readonly {
+                lineView.layer.borderColor = UIColor(white: 0.8, alpha: 1.0).cgColor
+                sectionLabel.textColor = UIColor.systemGray
+                titleView.backgroundColor =  UIColor(white: 0.8, alpha: 1.0)
+                titleView.layer.borderColor =  UIColor(white: 0.8, alpha: 1.0).cgColor
+            } else {
+                lineView.layer.borderColor = UIColor.DNSForm.Field.Default.line.cgColor
+                sectionLabel.textColor = UIColor.white
+                titleView.backgroundColor = UIColor.DNSForm.Field.Default.line
+                titleView.layer.borderColor = UIColor.DNSForm.Field.Default.line.cgColor
+            }
+            if data.errored {
+                lineView.layer.borderColor = UIColor.DNSForm.Field.Default.Alert.text.cgColor
+                titleView.backgroundColor = UIColor.DNSForm.Field.Default.Alert.text
+                titleView.layer.borderColor = UIColor.DNSForm.Field.Default.Alert.text.cgColor
             }
             lineViewBottomConstraint.constant = data.lineBottomOffset
             sectionLabel.text = data.label
@@ -60,6 +82,7 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
     @IBOutlet var lineViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var sectionLabel: DNSUILabel!
     @IBOutlet var sectionLabelWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var titleView: UIView!
 
     override open func contentInit() {
         super.contentInit()
