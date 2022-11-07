@@ -110,6 +110,7 @@
                 <outlet property="lineViewBottomConstraint" destination="09B-tF-vF5" id="Wlh-tc-gXy"/>
                 <outlet property="sectionLabel" destination="1pX-XK-23v" id="t3m-Pr-II3"/>
                 <outlet property="sectionLabelWidthConstraint" destination="0mF-3U-0FD" id="3zt-at-lgO"/>
+                <outlet property="titleView" destination="pOc-ku-bUq" id="g97-Ch-a2L"/>
             </connections>
             <point key="canvasLocation" x="195.6521739130435" y="194.86607142857142"/>
         </collectionViewCell>
