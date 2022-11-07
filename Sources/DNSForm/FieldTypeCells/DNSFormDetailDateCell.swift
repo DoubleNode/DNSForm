@@ -64,6 +64,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
             dateTextField.style = data.style
             self.utilityDisplayAlert(data.alertMessage, for: dateTextField)
             self.dateLabel.text = data.dateLabel
+            self.dateLabel.isEnabled = !data.readonly
             self.datePicker.date = data.date
             self.datePicker.isEnabled = !data.readonly
             self.dateTextField.placeholder = data.datePlaceholder

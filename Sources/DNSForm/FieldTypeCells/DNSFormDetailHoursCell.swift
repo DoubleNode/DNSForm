@@ -74,9 +74,11 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             self.utilityDisplayAlert(data.closeAlertMessage, for: closeTextField)
             self.utilityDisplayAlert(data.openAlertMessage, for: openTextField)
             self.hoursLabel.text = data.hoursLabel
+            self.hoursLabel.isEnabled = !data.readonly
 
             let openTimeOfDay = data.hours.open ?? DNSTimeOfDay()
             self.openLabel.text = data.openLabel
+            self.openLabel.isEnabled = !data.readonly
             self.openPicker.date = openTimeOfDay.today
             self.openPicker.isEnabled = !data.readonly
             self.openTextField.placeholder = data.openPlaceholder
@@ -85,6 +87,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
 
             let closeTimeOfDay = data.hours.close ?? DNSTimeOfDay()
             self.closeLabel.text = data.closeLabel
+            self.closeLabel.isEnabled = !data.readonly
             self.closePicker.date = closeTimeOfDay.today
             self.closePicker.isEnabled = !data.readonly
             self.closeTextField.placeholder = data.closePlaceholder

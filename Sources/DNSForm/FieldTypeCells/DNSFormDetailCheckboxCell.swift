@@ -28,12 +28,16 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
         public var checked: Bool
         public var detailText: String
         public var field: String
+        public var readonly: Bool
+        public var required: Bool
         public var titleText: String
 
-        public init(checked: Bool, detailText: String, field: String, titleText: String) {
+        public init(checked: Bool, detailText: String, field: String, readonly: Bool, required: Bool, titleText: String) {
             self.checked = checked
             self.detailText = detailText
             self.field = field
+            self.readonly = readonly
+            self.required = required
             self.titleText = titleText
         }
     }
@@ -45,7 +49,9 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
             }
             let symbol = data.checked ? SFSymbol.checkmarkSquareFill : SFSymbol.square
             self.checkImageView.image = UIImage(dnsSystemSymbol: symbol)
+            self.detailLabel.isEnabled = !data.readonly
             self.detailLabel.text = data.detailText
+            self.titleLabel.isEnabled = !data.readonly
             self.titleLabel.text = data.titleText
         }
     }

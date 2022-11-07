@@ -63,6 +63,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
             timeTextField.style = data.style
             self.utilityDisplayAlert(data.alertMessage, for: timeTextField)
             self.timeLabel.text = data.timeLabel
+            self.timeLabel.isEnabled = !data.readonly
             self.timePicker.date = data.timeOfDay.today
             self.timePicker.isEnabled = !data.readonly
             self.timeTextField.placeholder = data.timePlaceholder
