@@ -32,19 +32,23 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
         public var placeholder: String
         public var readonly: Bool
         public var required: Bool
+        public var resultStrings: [String: String]
         public var selectionStrings: [String]
         public var style: DNSThemeFieldStyle = .DNSForm.default
         public var text: String
+        public var selectedText = ""
         public var alertMessage: String = ""
 
-        public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool, required: Bool, selectionStrings: [String], text: String) {
+        public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool, required: Bool, resultStrings: [String: String], text: String) {
             self.field = field
             self.label = label
             self.languageCode = languageCode
             self.placeholder = placeholder
             self.readonly = readonly
             self.required = required
-            self.selectionStrings = selectionStrings
+            self.resultStrings = resultStrings
+            self.selectionStrings = resultStrings.values.map { $0 }
+            self.selectedText = resultStrings[text] ?? text
             self.text = text
         }
     }
@@ -62,12 +66,14 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
             textField.style = data.style
             self.utilityDisplayAlert(data.alertMessage, for: textField)
             textField.isEnabled = !data.readonly
-            textField.type = .stringpicker(data.text, data.selectionStrings, data.label)
+            textField.type = .stringpicker(data.selectedText,
+                                           data.selectionStrings,
+                                           data.label)
             textField.placeholder = data.placeholder
             textField.title = data.label
 
-            if textField.text != data.text {
-                textField.text = data.text
+            if textField.text != data.selectedText {
+                textField.text = data.selectedText
                 self.utilityDisplayAlert(data.alertMessage, for: textField)
             }
         }
@@ -104,7 +110,7 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
         guard let data = self.data else { return }
         guard textField.isValid else {
             textField.showAlert()
-            let text = textField.text
+            let text = data.resultStrings.keys.reduce("") { (textField.text == data.resultStrings[$1]) ? $1 : $0 }
             let request = Stage.Models.Field.Request(field: data.field,
                                                      languageCode: data.languageCode,
                                                      value: text)
@@ -112,8 +118,8 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
             return
         }
         textField.hideAlert()
-        guard textField.text != data.text else { return }
-        let text = textField.text
+        guard textField.text != data.selectedText else { return }
+        let text = data.resultStrings.keys.reduce("") { (textField.text == data.resultStrings[$1]) ? $1 : $0 }
         let request = Stage.Models.Field.Request(field: data.field,
                                                  languageCode: data.languageCode,
                                                  value: text)
