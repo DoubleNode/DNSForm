@@ -31,15 +31,19 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
         public var label: String
         public var languageCode: String
         public var placeholder: String
+        public var readonly: Bool
+        public var required: Bool
         public var style: DNSThemeFieldStyle = .DNSForm.default
         public var text: String
         public var alertMessage: String = ""
 
-        public init(field: String, label: String, languageCode: String, placeholder: String, text: String) {
+        public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool, required: Bool, text: String) {
             self.field = field
             self.label = label
             self.languageCode = languageCode
             self.placeholder = placeholder
+            self.readonly = readonly
+            self.required = required
             self.text = text
         }
     }
@@ -54,7 +58,9 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
             }
             textView.style = data.style
             self.utilityDisplayAlert(data.alertMessage, for: textView)
+            self.lineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
+            textView.isEnabled = !data.readonly
             textView.placeholder = data.placeholder + languageLabel
             textView.title = data.label + languageLabel
             textView.autocapitalizationType = data.autocapitalizationType

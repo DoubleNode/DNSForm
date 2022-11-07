@@ -154,11 +154,13 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.clear"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="closeIcon" destination="7hz-cO-IB0" id="5m0-KQ-nPm"/>
                 <outlet property="closeLabel" destination="i3e-20-2EJ" id="arz-u0-WQr"/>
                 <outlet property="closePicker" destination="vTS-EN-5KK" id="D7d-JH-Mrp"/>
                 <outlet property="closePickerLineView" destination="7DL-Eo-7yt" id="pNs-s1-DxT"/>
                 <outlet property="closeTextField" destination="I0J-MI-Xmn" id="dIj-65-Sul"/>
                 <outlet property="hoursLabel" destination="x8Z-e5-aHa" id="Ax8-EP-dWI"/>
+                <outlet property="openIcon" destination="UXn-gT-llh" id="YPK-Q0-kB6"/>
                 <outlet property="openLabel" destination="njb-EG-v3S" id="bXd-8c-bcF"/>
                 <outlet property="openPicker" destination="ala-U9-OFA" id="V0U-lj-aal"/>
                 <outlet property="openPickerLineView" destination="fyx-Nc-3jh" id="SSX-ik-bDL"/>

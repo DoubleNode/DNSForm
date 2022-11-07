@@ -62,19 +62,25 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
             }
             timeTextField.style = data.style
             self.utilityDisplayAlert(data.alertMessage, for: timeTextField)
+            self.timeIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.timeLabel.text = data.timeLabel
+            self.timeLabel.isEnabled = !data.readonly
             self.timePicker.date = data.timeOfDay.today
             self.timePicker.isEnabled = !data.readonly
+            self.timePickerLineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.timeTextField.placeholder = data.timePlaceholder
+            self.timeTextField.isEnabled = !data.readonly
             self.timeTextField.title = data.timeLabel
 
             let timeOfDay = DNSTimeOfDay(hour: data.timeOfDay.hour,
                                          minute: data.timeOfDay.minute)
             self.timeZeroLabel.isHidden = (timeOfDay != Date.zeroTime)
+            self.timeZeroLabel.isEnabled = !data.readonly
             self.timeTextField.text = timeFormatter.string(from: data.timeOfDay.today)
         }
     }
 
+    @IBOutlet var timeIcon: UIImageView!
     @IBOutlet var timeLabel: DNSUILabel!
     @IBOutlet var timeZeroLabel: UILabel!
     @IBOutlet var timePicker: UIDatePicker!

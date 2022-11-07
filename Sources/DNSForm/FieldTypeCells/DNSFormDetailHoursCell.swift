@@ -74,30 +74,41 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             self.utilityDisplayAlert(data.closeAlertMessage, for: closeTextField)
             self.utilityDisplayAlert(data.openAlertMessage, for: openTextField)
             self.hoursLabel.text = data.hoursLabel
+            self.hoursLabel.isEnabled = !data.readonly
 
             let openTimeOfDay = data.hours.open ?? DNSTimeOfDay()
+            self.openIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.openLabel.text = data.openLabel
+            self.openLabel.isEnabled = !data.readonly
             self.openPicker.date = openTimeOfDay.today
             self.openPicker.isEnabled = !data.readonly
+            self.openPickerLineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.openTextField.placeholder = data.openPlaceholder
+            self.openTextField.isEnabled = !data.readonly
             self.openTextField.title = data.openLabel
             self.openTextField.text = timeFormatter.string(from: openTimeOfDay.today)
 
             let closeTimeOfDay = data.hours.close ?? DNSTimeOfDay()
+            self.closeIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.closeLabel.text = data.closeLabel
+            self.closeLabel.isEnabled = !data.readonly
             self.closePicker.date = closeTimeOfDay.today
             self.closePicker.isEnabled = !data.readonly
+            self.closePickerLineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.closeTextField.placeholder = data.closePlaceholder
+            self.closeTextField.isEnabled = !data.readonly
             self.closeTextField.title = data.closeLabel
             self.closeTextField.text = timeFormatter.string(from: closeTimeOfDay.today)
         }
     }
 
+    @IBOutlet var closeIcon: UIImageView!
     @IBOutlet var closeLabel: DNSUILabel!
     @IBOutlet var closePicker: UIDatePicker!
     @IBOutlet var closePickerLineView: UIView!
     @IBOutlet var closeTextField: DNSUIAnimatedField!
     @IBOutlet var hoursLabel: DNSUILabel!
+    @IBOutlet var openIcon: UIImageView!
     @IBOutlet var openLabel: DNSUILabel!
     @IBOutlet var openPicker: UIDatePicker!
     @IBOutlet var openPickerLineView: UIView!
