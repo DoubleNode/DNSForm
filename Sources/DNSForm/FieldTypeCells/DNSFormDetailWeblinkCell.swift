@@ -63,9 +63,9 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
             textField.style = data.style
             self.utilityDisplayAlert(data.alertMessage, for: textField)
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
-            textField.isEnabled = !data.readonly
             textField.type = .text(data.label, data.required ? 1 : 0, 64)
             textField.placeholder = data.placeholder + languageLabel
+            textField.isEnabled = !data.readonly
             textField.title = data.label + languageLabel
 
             let text = data.weblink?.absoluteString ?? ""

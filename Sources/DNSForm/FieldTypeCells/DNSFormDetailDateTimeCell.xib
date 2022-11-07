@@ -155,10 +155,12 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.clear"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="dateIcon" destination="UXn-gT-llh" id="mJW-gm-7um"/>
                 <outlet property="dateLabel" destination="njb-EG-v3S" id="vce-pn-m6B"/>
                 <outlet property="datePicker" destination="ala-U9-OFA" id="zgd-c6-nDL"/>
                 <outlet property="datePickerLineView" destination="fyx-Nc-3jh" id="RCQ-yz-Bdv"/>
                 <outlet property="dateTextField" destination="9zh-Qd-KcT" id="zcE-2i-PH1"/>
+                <outlet property="timeIcon" destination="7hz-cO-IB0" id="pM6-SR-azU"/>
                 <outlet property="timeLabel" destination="i3e-20-2EJ" id="uLw-L6-IIw"/>
                 <outlet property="timePicker" destination="vTS-EN-5KK" id="8iS-d8-ofB"/>
                 <outlet property="timePickerLineView" destination="7DL-Eo-7yt" id="gGR-cr-rhd"/>

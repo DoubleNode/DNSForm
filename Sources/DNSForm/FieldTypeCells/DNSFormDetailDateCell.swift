@@ -63,10 +63,13 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
             }
             dateTextField.style = data.style
             self.utilityDisplayAlert(data.alertMessage, for: dateTextField)
+            self.dateIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.dateLabel.text = data.dateLabel
+            self.dateLabel.isEnabled = !data.readonly
             self.datePicker.date = data.date
             self.datePicker.isEnabled = !data.readonly
             self.dateTextField.placeholder = data.datePlaceholder
+            self.dateTextField.isEnabled = !data.readonly
             self.dateTextField.title = data.dateLabel
             self.dateTextField.text = dateFormatter.string(from: data.date)
             self.dateTextField.type = .datepicker(.date, datePicker.date, data.minimumDate,
@@ -75,6 +78,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         }
     }
 
+    @IBOutlet var dateIcon: UIImageView!
     @IBOutlet var dateLabel: DNSUILabel!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var datePickerLineView: UIView!
