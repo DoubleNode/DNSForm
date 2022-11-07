@@ -1182,7 +1182,13 @@ public extension UIColor {
             public enum Default {
                 public static var background = UIColor.clear
                 public static var border = UIColor.clear
-                public static var line = UIColor.darkText
+                public enum Line {
+                    public static var disabled = UIColor.lightGray
+                    public static var focused = UIColor.darkText
+                    public static var highlighted = UIColor.darkText
+                    public static var normal = UIColor.darkText
+                    public static var selected = UIColor.darkText
+                }
                 public static var shadow = UIColor.clear
                 public static var tint = UIColor.systemPurple
                 public enum Alert {
@@ -1198,7 +1204,13 @@ public extension UIColor {
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.darkText
-                    public static var text = UIColor.darkText
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
                     public static var tint = UIColor.systemPurple
                 }
                 public enum Text {
@@ -1206,7 +1218,13 @@ public extension UIColor {
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.label
-                    public static var text = UIColor.darkText
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
                     public static var tint = UIColor.systemPurple
                 }
                 public enum Title {
@@ -1214,7 +1232,13 @@ public extension UIColor {
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.darkText
-                    public static var text = UIColor.darkText
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
                     public static var tint = UIColor.systemPurple
                 }
             }
@@ -1237,7 +1261,13 @@ public extension UIColor {
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.darkText
-                    public static var text = UIColor.darkText
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
                     public static var tint = UIColor.systemPurple
                 }
                 public enum Text {
@@ -1245,7 +1275,13 @@ public extension UIColor {
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.label
-                    public static var text = UIColor.darkText
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
                     public static var tint = UIColor.systemPurple
                 }
                 public enum Title {
@@ -1253,7 +1289,13 @@ public extension UIColor {
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.darkText
-                    public static var text = UIColor.darkText
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
                     public static var tint = UIColor.systemPurple
                 }
             }
@@ -1262,12 +1304,21 @@ public extension UIColor {
             public static var `default` = UIColor.darkText
             public static var body = UIColor.darkText
             public static var bodyTight = UIColor.darkText
-            public static var field = UIColor.darkText
-            public static var fieldHeader = UIColor.darkText
+            public enum Field {
+                public static var normal = UIColor.darkText
+                public static var disabled = UIColor.lightGray
+            }
+            public enum FieldHeader {
+                public static var normal = UIColor.darkText
+                public static var disabled = UIColor.lightGray
+            }
             public static var header = UIColor.darkText
             public static var sectionFrameTitle = UIColor.white
             public static var tag = UIColor.darkText
-            public static var title = UIColor.darkText
+            public enum Title {
+                public static var normal = UIColor.darkText
+                public static var disabled = UIColor.lightGray
+            }
         }
         public enum View {
             public enum Default {

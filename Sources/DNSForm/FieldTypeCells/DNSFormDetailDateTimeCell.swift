@@ -78,33 +78,42 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
             timeTextField.style = data.style
             self.utilityDisplayAlert(data.dateAlertMessage, for: dateTextField)
             self.utilityDisplayAlert(data.timeAlertMessage, for: timeTextField)
+            self.dateIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.dateLabel.text = data.dateLabel
+            self.dateLabel.isEnabled = !data.readonly
             self.datePicker.date = data.date
             self.datePicker.isEnabled = !data.readonly
             self.dateTextField.placeholder = data.datePlaceholder
+            self.dateTextField.isEnabled = !data.readonly
             self.dateTextField.title = data.dateLabel
             self.dateTextField.text = dateFormatter.string(from: data.date)
             self.dateTextField.type = .datepicker(.date, datePicker.date, data.minimumDate,
                                                   data.maximumDate, data.datePlaceholder,
                                                   dateFormatter.dateFormat)
 
+            self.timeIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.timeLabel.text = data.timeLabel
+            self.timeLabel.isEnabled = !data.readonly
             self.timePicker.date = data.date
             self.timePicker.isEnabled = !data.readonly
             self.timeTextField.placeholder = data.timePlaceholder
+            self.timeTextField.isEnabled = !data.readonly
             self.timeTextField.title = data.timeLabel
 
             let timeOfDay = DNSTimeOfDay(hour: data.date.dnsHour,
                                          minute: data.date.dnsMinute)
             self.timeZeroLabel.isHidden = (timeOfDay != Date.zeroTime)
+            self.timeZeroLabel.isEnabled = !data.readonly
             self.timeTextField.text = timeFormatter.string(from: data.date)
         }
     }
 
+    @IBOutlet var dateIcon: UIImageView!
     @IBOutlet var dateLabel: DNSUILabel!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var datePickerLineView: UIView!
     @IBOutlet var dateTextField: DNSUIAnimatedField!
+    @IBOutlet var timeIcon: UIImageView!
     @IBOutlet var timeLabel: DNSUILabel!
     @IBOutlet var timeZeroLabel: UILabel!
     @IBOutlet var timePicker: UIDatePicker!
