@@ -42,13 +42,13 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
-                lineView.layer.borderColor = UIColor.DNSForm.Field.Default.line.cgColor
+                lineView.layer.borderColor = UIColor.DNSForm.Field.Default.Line.normal.cgColor
                 lineViewBottomConstraint.constant = 0
                 sectionLabel.text = ""
                 sectionLabel.textColor = UIColor.white
                 sectionLabelWidthConstraint.isActive = true
-                titleView.backgroundColor = UIColor.DNSForm.Field.Default.line
-                titleView.layer.borderColor = UIColor.DNSForm.Field.Default.line.cgColor
+                titleView.backgroundColor = UIColor.DNSForm.Field.Default.Line.normal
+                titleView.layer.borderColor = UIColor.DNSForm.Field.Default.Line.normal.cgColor
                 return
             }
             if data.readonly {
@@ -57,10 +57,10 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
                 titleView.backgroundColor =  UIColor(white: 0.8, alpha: 1.0)
                 titleView.layer.borderColor =  UIColor(white: 0.8, alpha: 1.0).cgColor
             } else {
-                lineView.layer.borderColor = UIColor.DNSForm.Field.Default.line.cgColor
+                lineView.layer.borderColor = UIColor.DNSForm.Field.Default.Line.normal.cgColor
                 sectionLabel.textColor = UIColor.white
-                titleView.backgroundColor = UIColor.DNSForm.Field.Default.line
-                titleView.layer.borderColor = UIColor.DNSForm.Field.Default.line.cgColor
+                titleView.backgroundColor = UIColor.DNSForm.Field.Default.Line.normal
+                titleView.layer.borderColor = UIColor.DNSForm.Field.Default.Line.normal.cgColor
             }
             if data.errored {
                 lineView.layer.borderColor = UIColor.DNSForm.Field.Default.Alert.text.cgColor
