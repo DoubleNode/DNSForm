@@ -9,6 +9,7 @@
 import Combine
 import DNSBaseStage
 import DNSCore
+import DNSCoreThreading
 import DNSDataObjects
 import DNSError
 import DNSProtocols
@@ -17,14 +18,17 @@ import Foundation
 public protocol DNSFormStageBusinessLogic: DNSBaseStageBusinessLogic {
     // MARK: - Outgoing Pipelines
     var fieldAlertPublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
+    var languagePublisher: PassthroughSubject<DNSFormStage.Models.Language.Response, Never> { get }
 }
 open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessLogic {
-    static let xlt = DNSDataTranslation()
+    static public let xlt = DNSDataTranslation()
 
-    var formState: DNSFormStage.Form.FormState = .none
+    open var formState: DNSFormStage.Form.FormState = .none
+    open var selectedLanguage = DNSCore.languageCode { didSet { self.utilityUpdateLanguage() } }
 
     // MARK: - Outgoing Pipelines
     public let fieldAlertPublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
+    public let languagePublisher = PassthroughSubject<DNSFormStage.Models.Language.Response, Never>()
 
     // MARK: - Incoming Pipelines
     var subscribers: [AnyCancellable] = []
@@ -55,4 +59,26 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
     open func doFieldChanged(_ request: DNSFormStage.Models.Field.Request) { }
 
     open func doSave(_ request: DNSFormStage.Models.Base.Request) { }
+    
+    // MARK: - Utility methods
+    open func utilityAnyChanges() -> Bool {
+        let anyChanges = false
+        return anyChanges
+    }
+    open func utilityClearState() {
+        self.formState = .none
+        selectedLanguage = DNSCore.languageCode
+    }
+    open func utilityIsValid() -> Bool {
+        let isValid = true
+        return isValid
+    }
+    open func utilityRefreshForm() {
+    }
+    open func utilityUpdateLanguage() {
+        DNSLowThread.run {
+            let request = DNSFormStage.Models.Language.Response(languageCode: self.selectedLanguage)
+            self.languagePublisher.send(request)
+        }
+    }
 }
