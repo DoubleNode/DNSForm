@@ -97,9 +97,10 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     }
 
     // MARK: - DNSFormStageViewController methods
+    static public var baseFormContentInset = UIEdgeInsets(top: 44, left: 0, bottom: 64, right: 0)
     open func baseConfigureFormCollectionView() {
         self.formCollectionView.collectionViewLayout = self.baseGenerateFormLayout()
-        self.formCollectionView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 64, right: 0)
+        self.formCollectionView.contentInset = Self.baseFormContentInset
         self.formCollectionView.contentInsetAdjustmentBehavior = .never
         DNSFormStage.register(to: self.formCollectionView)
     }
