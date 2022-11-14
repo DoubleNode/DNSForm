@@ -45,7 +45,7 @@ dependencies: [
 -   DNSBaseStage v1.10.7+
 -   DNSBaseTheme v1.10.1+
 -   DNSBlankWorkers v1.10.20+
--   DNSCore v1.10.5+
+-   DNSCore v1.10.6+
 -   DNSCoreThreading v1.10.0+
 -   DNSCrashNetwork v1.10.0+
 -   DNSCrashSystems v1.10.0+

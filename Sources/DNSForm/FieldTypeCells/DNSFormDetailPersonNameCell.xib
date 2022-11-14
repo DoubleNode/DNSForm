@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DNSFormDetailPersonNameCell" customModule="DNSForm">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-oh-Ee1" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
+                                <rect key="frame" x="24" y="0.0" width="366" height="64"/>
+                                <color key="tintColor" name="TitleDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Aew-Xl-w2x"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7LT-83-TJW" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
+                                <rect key="frame" x="24" y="64" width="366" height="64"/>
+                                <color key="tintColor" name="TitleDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="m1U-8I-jMF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDn-9D-VaM" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
+                                <rect key="frame" x="24" y="128" width="366" height="64"/>
+                                <color key="tintColor" name="TitleDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="1D8-Za-3WV"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOd-HE-WAU" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
+                                <rect key="frame" x="24" y="192" width="366" height="64"/>
+                                <color key="tintColor" name="TitleDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="gXH-hb-cq8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="LDn-9D-VaM" firstAttribute="top" secondItem="7LT-83-TJW" secondAttribute="bottom" id="5AU-Bk-3Do"/>
+                            <constraint firstItem="7LT-83-TJW" firstAttribute="leading" secondItem="aUe-oh-Ee1" secondAttribute="leading" id="6vY-Kl-RbH"/>
+                            <constraint firstItem="aUe-oh-Ee1" firstAttribute="top" secondItem="KuD-TU-KgD" secondAttribute="top" id="78d-dL-hQy"/>
+                            <constraint firstItem="aUe-oh-Ee1" firstAttribute="leading" secondItem="KuD-TU-KgD" secondAttribute="leading" constant="24" id="EGm-Gu-5F6"/>
+                            <constraint firstItem="FOd-HE-WAU" firstAttribute="trailing" secondItem="aUe-oh-Ee1" secondAttribute="trailing" id="F3O-dc-W6W"/>
+                            <constraint firstItem="FOd-HE-WAU" firstAttribute="top" secondItem="LDn-9D-VaM" secondAttribute="bottom" id="HZo-Xr-yvN"/>
+                            <constraint firstItem="7LT-83-TJW" firstAttribute="top" secondItem="aUe-oh-Ee1" secondAttribute="bottom" id="RLL-G1-VQh"/>
+                            <constraint firstItem="LDn-9D-VaM" firstAttribute="trailing" secondItem="aUe-oh-Ee1" secondAttribute="trailing" id="dvL-bO-yuS"/>
+                            <constraint firstItem="LDn-9D-VaM" firstAttribute="leading" secondItem="aUe-oh-Ee1" secondAttribute="leading" id="fod-OH-eKA"/>
+                            <constraint firstItem="FOd-HE-WAU" firstAttribute="leading" secondItem="aUe-oh-Ee1" secondAttribute="leading" id="lQc-mc-7su"/>
+                            <constraint firstAttribute="bottom" secondItem="FOd-HE-WAU" secondAttribute="bottom" id="rVC-bo-S2G"/>
+                            <constraint firstItem="7LT-83-TJW" firstAttribute="trailing" secondItem="aUe-oh-Ee1" secondAttribute="trailing" id="rrg-zu-djm"/>
+                            <constraint firstAttribute="trailing" secondItem="aUe-oh-Ee1" secondAttribute="trailing" constant="24" id="yz3-SK-UQT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="KuD-TU-KgD" secondAttribute="trailing" id="9v4-Eu-ZbX"/>
+                <constraint firstItem="KuD-TU-KgD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eGb-qL-iLr"/>
+                <constraint firstAttribute="bottom" secondItem="KuD-TU-KgD" secondAttribute="bottom" id="fvc-qh-f4V"/>
+                <constraint firstItem="KuD-TU-KgD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yEI-ee-ByT"/>
+            </constraints>
+            <size key="customSize" width="414" height="413"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.clear"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="familyNameTextField" destination="7LT-83-TJW" id="uc8-bd-J00"/>
+                <outlet property="givenNameTextField" destination="aUe-oh-Ee1" id="eLa-g6-qhD"/>
+                <outlet property="middleNameTextField" destination="LDn-9D-VaM" id="rXG-LG-Tk9"/>
+                <outlet property="nicknameTextField" destination="FOd-HE-WAU" id="bqb-5d-2ug"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="143.63839285714286"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="TitleDark">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

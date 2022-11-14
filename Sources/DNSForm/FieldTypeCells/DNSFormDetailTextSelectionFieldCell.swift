@@ -135,7 +135,7 @@ open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
     func utilityDisplayAlert(_ alertMessage: String,
                              for field: DNSUIAnimatedField) {
         if alertMessage.isEmpty {
-            if textField.isValid { field.hideAlert() }
+            if field.isValid { field.hideAlert() }
         } else {
             field.showAlert(alertMessage)
         }
