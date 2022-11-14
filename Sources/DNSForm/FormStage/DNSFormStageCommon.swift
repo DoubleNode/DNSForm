@@ -47,6 +47,7 @@ public enum DNSFormStage {
         DNSFormDetailImageUrlCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailLanguageSelectionCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailPersonNameCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailPostalAddressCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailPreviewButtonCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailSaveButtonCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailSearchButtonCell.register(to: collectionView, from: Bundle.module)
