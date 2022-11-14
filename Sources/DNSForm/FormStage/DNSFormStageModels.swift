@@ -7,6 +7,7 @@
 //
 
 import DNSBaseStage
+import DNSCore
 import DNSDataObjects
 import DNSError
 import UIKit
