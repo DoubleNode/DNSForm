@@ -143,15 +143,15 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data,
               let oldValue = data.value as? DNSPostalAddress else { return }
-        var newValue = oldValue
+        let newValue = oldValue
         if animatedField == self.cityTextField {
-            newValue.city = animatedField.text ?? ""
+            newValue.city = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
         } else if animatedField == self.postalCodeTextField {
-            newValue.postalCode = animatedField.text ?? ""
+            newValue.postalCode = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
         } else if animatedField == self.stateTextField {
-            newValue.state = animatedField.text ?? ""
+            newValue.state = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
         } else if animatedField == self.streetTextField {
-            newValue.street = animatedField.text ?? ""
+            newValue.street = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
         }
         guard animatedField.isValid else {
             animatedField.showAlert()

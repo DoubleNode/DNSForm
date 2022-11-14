@@ -145,13 +145,13 @@ open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
               let oldValue = data.value as? PersonNameComponents else { return }
         var newValue = oldValue
         if animatedField == self.familyNameTextField {
-            newValue.familyName = animatedField.text
+            newValue.familyName = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
         } else if animatedField == self.givenNameTextField {
-            newValue.givenName = animatedField.text
+            newValue.givenName = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
         } else if animatedField == self.middleNameTextField {
-            newValue.middleName = animatedField.text
+            newValue.middleName = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
         } else if animatedField == self.nicknameTextField {
-            newValue.nickname = animatedField.text
+            newValue.nickname = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
         }
         guard animatedField.isValid else {
             animatedField.showAlert()
