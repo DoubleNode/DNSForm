@@ -44,7 +44,7 @@
                                 </constraints>
                             </view>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="time" translatesAutoresizingMaskIntoConstraints="NO" id="vTS-EN-5KK">
-                                <rect key="frame" x="24" y="0.0" width="336" height="76"/>
+                                <rect key="frame" x="53" y="0.0" width="307" height="76"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <connections>
                                     <action selector="dateValueChangedActionWithSender:" destination="gTV-IL-0wX" eventType="valueChanged" id="W1L-rO-q3L"/>
@@ -72,7 +72,6 @@
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="leading" secondItem="7DL-Eo-7yt" secondAttribute="leading" id="1cs-wR-fz1"/>
                             <constraint firstAttribute="bottom" secondItem="7DL-Eo-7yt" secondAttribute="bottom" constant="22" id="90h-37-UMO"/>
                             <constraint firstItem="7DL-Eo-7yt" firstAttribute="top" secondItem="7hz-cO-IB0" secondAttribute="bottom" constant="9" id="BIy-DV-1Ms"/>
-                            <constraint firstItem="I0J-MI-Xmn" firstAttribute="leading" secondItem="vTS-EN-5KK" secondAttribute="leading" id="C6N-IX-66r"/>
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="top" secondItem="vTS-EN-5KK" secondAttribute="top" id="C7X-MJ-06r"/>
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="leading" secondItem="i3e-20-2EJ" secondAttribute="leading" id="Gyz-MT-d5D"/>
                             <constraint firstItem="yuv-KN-cy3" firstAttribute="top" secondItem="I0J-MI-Xmn" secondAttribute="top" id="LMv-5k-g4y"/>
@@ -86,6 +85,7 @@
                             <constraint firstAttribute="bottom" secondItem="I0J-MI-Xmn" secondAttribute="bottom" id="llz-Ed-5eu"/>
                             <constraint firstItem="i3e-20-2EJ" firstAttribute="top" secondItem="I0J-MI-Xmn" secondAttribute="top" constant="6" id="npf-zn-cuB"/>
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="trailing" secondItem="vTS-EN-5KK" secondAttribute="trailing" id="xLh-KT-2cN"/>
+                            <constraint firstItem="vTS-EN-5KK" firstAttribute="leading" secondItem="yuv-KN-cy3" secondAttribute="trailing" constant="4" id="xXO-9W-hzS"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -109,7 +109,7 @@
                 <outlet property="timeTextField" destination="I0J-MI-Xmn" id="uCs-LO-sU1"/>
                 <outlet property="timeZeroLabel" destination="yuv-KN-cy3" id="Qz1-Af-aME"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="143.63839285714286"/>
+            <point key="canvasLocation" x="137.68115942028987" y="143.30357142857142"/>
         </collectionViewCell>
     </objects>
     <designables>
