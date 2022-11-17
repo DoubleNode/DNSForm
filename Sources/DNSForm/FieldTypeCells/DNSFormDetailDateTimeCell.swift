@@ -83,6 +83,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
             self.dateLabel.isEnabled = !data.readonly
             self.datePicker.date = data.date
             self.datePicker.isEnabled = !data.readonly
+            self.datePicker.tintColor = data.readonly ? data.style.textStyle.color.disabled : data.style.textStyle.color.normal
             self.datePickerLineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.dateTextField.placeholder = data.datePlaceholder
             self.dateTextField.isEnabled = !data.readonly
@@ -97,6 +98,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
             self.timeLabel.isEnabled = !data.readonly
             self.timePicker.date = data.date
             self.timePicker.isEnabled = !data.readonly
+            self.timePicker.tintColor = data.readonly ? data.style.textStyle.color.disabled : data.style.textStyle.color.normal
             self.timePickerLineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.timeTextField.placeholder = data.timePlaceholder
             self.timeTextField.isEnabled = !data.readonly
