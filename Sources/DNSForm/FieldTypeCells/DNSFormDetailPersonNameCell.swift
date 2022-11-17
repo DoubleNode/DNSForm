@@ -34,6 +34,7 @@ open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
         public var placeholders: [CodingKeys: String]
         public var readonly: Bool
         public var required: Bool
+        public var returnKeyType: UIReturnKeyType = .next
         public var style: DNSThemeFieldStyle = .DNSForm.default
         public var value: AnyHashable
         public var alertMessages: [CodingKeys: String] = [
@@ -70,6 +71,9 @@ open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
             self.utilityDisplayAlert(data.alertMessages[.middleName], for: middleNameTextField)
             self.utilityDisplayAlert(data.alertMessages[.nickname], for: nicknameTextField)
 
+            familyNameTextField.keyboardType = .namePhonePad
+            familyNameTextField.returnKeyType = .next
+            familyNameTextField.autocapitalizationType = .words
             familyNameTextField.isEnabled = !data.readonly
             familyNameTextField.type = .text(data.labels[.familyName] ?? "", data.required ? 1 : 0, 128)
             familyNameTextField.placeholder = data.placeholders[.familyName] ?? ""
@@ -79,6 +83,9 @@ open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
                 self.utilityDisplayAlert(data.alertMessages[.familyName], for: familyNameTextField)
             }
 
+            givenNameTextField.keyboardType = .namePhonePad
+            givenNameTextField.returnKeyType = .next
+            givenNameTextField.autocapitalizationType = .words
             givenNameTextField.isEnabled = !data.readonly
             givenNameTextField.type = .text(data.labels[.givenName] ?? "", data.required ? 1 : 0, 128)
             givenNameTextField.placeholder = data.placeholders[.givenName] ?? ""
@@ -88,6 +95,9 @@ open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
                 self.utilityDisplayAlert(data.alertMessages[.givenName], for: givenNameTextField)
             }
 
+            middleNameTextField.keyboardType = .namePhonePad
+            middleNameTextField.returnKeyType = .next
+            middleNameTextField.autocapitalizationType = .words
             middleNameTextField.isEnabled = !data.readonly
             middleNameTextField.type = .text(data.labels[.middleName] ?? "", 0, 128)
             middleNameTextField.placeholder = data.placeholders[.middleName] ?? ""
@@ -97,6 +107,9 @@ open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
                 self.utilityDisplayAlert(data.alertMessages[.middleName], for: middleNameTextField)
             }
 
+            nicknameTextField.keyboardType = .namePhonePad
+            nicknameTextField.returnKeyType = data.returnKeyType
+            nicknameTextField.autocapitalizationType = .words
             nicknameTextField.isEnabled = !data.readonly
             nicknameTextField.type = .text(data.labels[.nickname] ?? "", 0, 128)
             nicknameTextField.placeholder = data.placeholders[.nickname] ?? ""

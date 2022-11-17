@@ -34,6 +34,7 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
         public var placeholders: [CodingKeys: String]
         public var readonly: Bool
         public var required: Bool
+        public var returnKeyType: UIReturnKeyType = .next
         public var style: DNSThemeFieldStyle = .DNSForm.default
         public var value: AnyHashable
         public var alertMessages: [CodingKeys: String] = [
@@ -70,6 +71,9 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
             self.utilityDisplayAlert(data.alertMessages[.state], for: stateTextField)
             self.utilityDisplayAlert(data.alertMessages[.street], for: streetTextField)
 
+            cityTextField.keyboardType = .namePhonePad
+            cityTextField.returnKeyType = .next
+            cityTextField.autocapitalizationType = .words
             cityTextField.isEnabled = !data.readonly
             cityTextField.type = .text(data.labels[.city] ?? "", data.required ? 1 : 0, 128)
             cityTextField.placeholder = data.placeholders[.city] ?? ""
@@ -79,6 +83,9 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
                 self.utilityDisplayAlert(data.alertMessages[.city], for: cityTextField)
             }
 
+            postalCodeTextField.keyboardType = .namePhonePad
+            postalCodeTextField.returnKeyType = data.returnKeyType
+            postalCodeTextField.uppercased = true
             postalCodeTextField.isEnabled = !data.readonly
             postalCodeTextField.type = .text(data.labels[.postalCode] ?? "", data.required ? 1 : 0, 16)
             postalCodeTextField.placeholder = data.placeholders[.postalCode] ?? ""
@@ -88,6 +95,9 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
                 self.utilityDisplayAlert(data.alertMessages[.postalCode], for: postalCodeTextField)
             }
 
+            stateTextField.keyboardType = .namePhonePad
+            stateTextField.returnKeyType = .next
+            stateTextField.uppercased = true
             stateTextField.isEnabled = !data.readonly
             stateTextField.type = .text(data.labels[.state] ?? "", data.required ? 1 : 0, 32)
             stateTextField.placeholder = data.placeholders[.state] ?? ""
@@ -97,6 +107,9 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
                 self.utilityDisplayAlert(data.alertMessages[.state], for: stateTextField)
             }
 
+            streetTextField.keyboardType = .default
+            streetTextField.returnKeyType = .next
+            streetTextField.autocapitalizationType = .words
             streetTextField.isEnabled = !data.readonly
             streetTextField.type = .text(data.labels[.street] ?? "", 0, 128)
             streetTextField.placeholder = data.placeholders[.street] ?? ""
