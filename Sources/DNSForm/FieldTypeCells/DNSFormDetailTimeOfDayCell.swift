@@ -67,6 +67,8 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
             self.timeLabel.isEnabled = !data.readonly
             self.timePicker.date = data.timeOfDay.today
             self.timePicker.isEnabled = !data.readonly
+            let timePickerColor = data.readonly ? data.style.textStyle.color.disabled : data.style.textStyle.color.normal
+            self.timePicker.setValue(timePickerColor, forKey: "textColor")
             self.timePickerLineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.timeTextField.placeholder = data.timePlaceholder
             self.timeTextField.isEnabled = !data.readonly

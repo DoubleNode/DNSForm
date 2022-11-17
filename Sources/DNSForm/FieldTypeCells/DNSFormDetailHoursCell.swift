@@ -82,6 +82,8 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             self.openLabel.isEnabled = !data.readonly
             self.openPicker.date = openTimeOfDay.today
             self.openPicker.isEnabled = !data.readonly
+            let openPickerColor = data.readonly ? data.style.textStyle.color.disabled : data.style.textStyle.color.normal
+            self.openPicker.setValue(openPickerColor, forKey: "textColor")
             self.openPickerLineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.openTextField.placeholder = data.openPlaceholder
             self.openTextField.isEnabled = !data.readonly
@@ -94,6 +96,8 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             self.closeLabel.isEnabled = !data.readonly
             self.closePicker.date = closeTimeOfDay.today
             self.closePicker.isEnabled = !data.readonly
+            let closePickerColor = data.readonly ? data.style.textStyle.color.disabled : data.style.textStyle.color.normal
+            self.closePicker.setValue(closePickerColor, forKey: "textColor")
             self.closePickerLineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.closeTextField.placeholder = data.closePlaceholder
             self.closeTextField.isEnabled = !data.readonly

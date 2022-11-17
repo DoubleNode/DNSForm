@@ -68,6 +68,8 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
             self.dateLabel.isEnabled = !data.readonly
             self.datePicker.date = data.date
             self.datePicker.isEnabled = !data.readonly
+            let datePickerColor = data.readonly ? data.style.textStyle.color.disabled : data.style.textStyle.color.normal
+            self.datePicker.setValue(datePickerColor, forKey: "textColor")
             self.datePickerLineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.dateTextField.placeholder = data.datePlaceholder
             self.dateTextField.isEnabled = !data.readonly
@@ -117,6 +119,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         datePicker.date = Date()
         datePicker.timeZone = NSTimeZone.local
         datePicker.tintColor = dateTextField.format.highlightColor
+        datePicker.setValue(dateTextField.format.textColor, forKey: "textColor")
 
         dateTextField.keyboardAppearance = .dark
         dateTextField.type = .none
