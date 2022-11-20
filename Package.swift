@@ -30,12 +30,12 @@ let package = Package(
         .package(url: "https://github.com/DoubleNode/DNSAppCore.git", from: "1.10.2"),
         .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.10.7"),
         .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.10.1"),
-        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.10.21"),
+        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.10.22"),
         .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.10.11"),
         .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", from: "1.10.0"),
         .package(url: "https://github.com/DoubleNode/DNSCrashNetwork.git", from: "1.10.0"),
         .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", from: "1.10.0"),
-        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.10.28"),
+        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.10.30"),
         .package(url: "https://github.com/Nirma/SFSymbol", from: "1.1.0")
     ],
     targets: [
