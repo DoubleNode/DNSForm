@@ -27,11 +27,13 @@ open class DNSFormStageModels: DNSBaseStageModels {
     public enum Field {
         public struct Request: DNSBaseStageBaseRequest {
             public var field: String
+            public var subfield: String
             public var languageCode: String
             public var value: Any?
 
-            public init(field: String, languageCode: String, value: Any? = nil) {
+            public init(field: String, subfield: String = "", languageCode: String, value: Any? = nil) {
                 self.field = field
+                self.subfield = subfield
                 self.languageCode = languageCode
                 self.value = value
             }

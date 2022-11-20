@@ -30,6 +30,7 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
 
     public struct Data: Hashable {
         public var field: String
+        public var subfield: String = ""
         public var labels: [CodingKeys: String]
         public var placeholders: [CodingKeys: String]
         public var readonly: Bool
@@ -55,58 +56,30 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
         didSet {
             guard let data = self.data,
                   let value = data.value as? DNSPostalAddress else {
-                utilityClearTextField(cityTextField)
-                utilityClearTextField(postalCodeTextField)
-                utilityClearTextField(stateTextField)
+                streetTextField.hideAlert()
+                cityTextField.hideAlert()
+                stateTextField.hideAlert()
+                postalCodeTextField.hideAlert()
                 utilityClearTextField(streetTextField)
+                utilityClearTextField(cityTextField)
+                utilityClearTextField(stateTextField)
+                utilityClearTextField(postalCodeTextField)
                 return
             }
-            cityTextField.style = data.style
-            postalCodeTextField.style = data.style
-            stateTextField.style = data.style
-            streetTextField.style = data.style
-
-            self.utilityDisplayAlert(data.alertMessages[.city], for: cityTextField)
-            self.utilityDisplayAlert(data.alertMessages[.postalCode], for: postalCodeTextField)
-            self.utilityDisplayAlert(data.alertMessages[.state], for: stateTextField)
-            self.utilityDisplayAlert(data.alertMessages[.street], for: streetTextField)
-
-            cityTextField.keyboardType = .namePhonePad
-            cityTextField.returnKeyType = .next
-            cityTextField.autocapitalizationType = .words
-            cityTextField.isEnabled = !data.readonly
-            cityTextField.type = .text(data.labels[.city] ?? "", data.required ? 1 : 0, 128)
-            cityTextField.placeholder = data.placeholders[.city] ?? ""
-            cityTextField.title = data.labels[.city] ?? ""
-            if cityTextField.text != value.city {
-                cityTextField.text = value.city
-                self.utilityDisplayAlert(data.alertMessages[.city], for: cityTextField)
+            if streetTextField.style != data.style {
+                streetTextField.style = data.style
+            }
+            if cityTextField.style != data.style {
+                cityTextField.style = data.style
+            }
+            if stateTextField.style != data.style {
+                stateTextField.style = data.style
+            }
+            if postalCodeTextField.style != data.style {
+                postalCodeTextField.style = data.style
             }
 
-            postalCodeTextField.keyboardType = .namePhonePad
-            postalCodeTextField.returnKeyType = data.returnKeyType
-            postalCodeTextField.uppercased = true
-            postalCodeTextField.isEnabled = !data.readonly
-            postalCodeTextField.type = .text(data.labels[.postalCode] ?? "", data.required ? 1 : 0, 16)
-            postalCodeTextField.placeholder = data.placeholders[.postalCode] ?? ""
-            postalCodeTextField.title = data.labels[.postalCode] ?? ""
-            if postalCodeTextField.text != value.postalCode {
-                postalCodeTextField.text = value.postalCode
-                self.utilityDisplayAlert(data.alertMessages[.postalCode], for: postalCodeTextField)
-            }
-
-            stateTextField.keyboardType = .namePhonePad
-            stateTextField.returnKeyType = .next
-            stateTextField.uppercased = true
-            stateTextField.isEnabled = !data.readonly
-            stateTextField.type = .text(data.labels[.state] ?? "", data.required ? 1 : 0, 32)
-            stateTextField.placeholder = data.placeholders[.state] ?? ""
-            stateTextField.title = data.labels[.state] ?? ""
-            if stateTextField.text != value.state {
-                stateTextField.text = value.state
-                self.utilityDisplayAlert(data.alertMessages[.state], for: stateTextField)
-            }
-
+            streetTextField.autocapitalizationType = .words
             streetTextField.keyboardType = .default
             streetTextField.returnKeyType = .next
             streetTextField.autocapitalizationType = .words
@@ -114,31 +87,75 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
             streetTextField.type = .text(data.labels[.street] ?? "", 0, 128)
             streetTextField.placeholder = data.placeholders[.street] ?? ""
             streetTextField.title = data.labels[.street] ?? ""
-            if streetTextField.text != value.street {
-                streetTextField.text = value.street
-                self.utilityDisplayAlert(data.alertMessages[.street], for: streetTextField)
+
+            cityTextField.autocapitalizationType = .words
+            cityTextField.keyboardType = .namePhonePad
+            cityTextField.returnKeyType = .next
+            cityTextField.isEnabled = !data.readonly
+            cityTextField.type = .text(data.labels[.city] ?? "", data.required ? 1 : 0, 128)
+            cityTextField.placeholder = data.placeholders[.city] ?? ""
+            cityTextField.title = data.labels[.city] ?? ""
+
+            stateTextField.autocapitalizationType = .words
+            stateTextField.keyboardType = .namePhonePad
+            stateTextField.returnKeyType = .next
+            stateTextField.uppercased = true
+            stateTextField.isEnabled = !data.readonly
+            stateTextField.type = .text(data.labels[.state] ?? "", data.required ? 1 : 0, 32)
+            stateTextField.placeholder = data.placeholders[.state] ?? ""
+            stateTextField.title = data.labels[.state] ?? ""
+
+            postalCodeTextField.autocapitalizationType = .words
+            postalCodeTextField.keyboardType = .namePhonePad
+            postalCodeTextField.returnKeyType = data.returnKeyType
+            postalCodeTextField.uppercased = true
+            postalCodeTextField.isEnabled = !data.readonly
+            postalCodeTextField.type = .text(data.labels[.postalCode] ?? "", data.required ? 1 : 0, 16)
+            postalCodeTextField.placeholder = data.placeholders[.postalCode] ?? ""
+            postalCodeTextField.title = data.labels[.postalCode] ?? ""
+
+            if data.subfield == CodingKeys.street.rawValue {
+                self.utilityUpdateText(value.city, for: .city, and: cityTextField)
+                self.utilityUpdateText(value.state, for: .state, and: stateTextField)
+                self.utilityUpdateText(value.postalCode, for: .postalCode, and: postalCodeTextField)
+                self.utilityUpdateText(value.street, for: .street, and: streetTextField)
+            } else if data.subfield == CodingKeys.city.rawValue {
+                self.utilityUpdateText(value.street, for: .street, and: streetTextField)
+                self.utilityUpdateText(value.state, for: .state, and: stateTextField)
+                self.utilityUpdateText(value.postalCode, for: .postalCode, and: postalCodeTextField)
+                self.utilityUpdateText(value.city, for: .city, and: cityTextField)
+            } else if data.subfield == CodingKeys.state.rawValue {
+                self.utilityUpdateText(value.street, for: .street, and: streetTextField)
+                self.utilityUpdateText(value.city, for: .city, and: cityTextField)
+                self.utilityUpdateText(value.postalCode, for: .postalCode, and: postalCodeTextField)
+                self.utilityUpdateText(value.state, for: .state, and: stateTextField)
+            } else /* if data.subfield == CodingKeys.postalCode.rawValue */ {
+                self.utilityUpdateText(value.street, for: .street, and: streetTextField)
+                self.utilityUpdateText(value.city, for: .city, and: cityTextField)
+                self.utilityUpdateText(value.state, for: .state, and: stateTextField)
+                self.utilityUpdateText(value.postalCode, for: .postalCode, and: postalCodeTextField)
             }
         }
     }
 
-    @IBOutlet var cityTextField: DNSUIAnimatedField!
-    @IBOutlet var postalCodeTextField: DNSUIAnimatedField!
-    @IBOutlet var stateTextField: DNSUIAnimatedField!
     @IBOutlet var streetTextField: DNSUIAnimatedField!
+    @IBOutlet var cityTextField: DNSUIAnimatedField!
+    @IBOutlet var stateTextField: DNSUIAnimatedField!
+    @IBOutlet var postalCodeTextField: DNSUIAnimatedField!
 
     // MARK: - Outgoing Pipelines -
     public var changeValuePublisher = PassthroughSubject<Stage.Models.Field.Request, Never>()
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        cityTextField.dataSource = self
-        cityTextField.delegate = self
-        postalCodeTextField.dataSource = self
-        postalCodeTextField.delegate = self
-        stateTextField.dataSource = self
-        stateTextField.delegate = self
         streetTextField.dataSource = self
         streetTextField.delegate = self
+        cityTextField.dataSource = self
+        cityTextField.delegate = self
+        stateTextField.dataSource = self
+        stateTextField.delegate = self
+        postalCodeTextField.dataSource = self
+        postalCodeTextField.delegate = self
     }
     override open func contentInit() {
         super.contentInit()
@@ -147,48 +164,93 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - AnimatedFieldDataSource methods
     public func animatedFieldShouldReturn(_ animatedField: AnimatedField) -> Bool {
-        _ = animatedField.resignFirstResponder()
-        return true
+//        if animatedField.returnKeyType == .done {
+            _ = animatedField.resignFirstResponder()
+            return true
+//        }
+//        if animatedField.returnKeyType == .next {
+//            if animatedField == streetTextField {
+//                _ = cityTextField.becomeFirstResponder()
+//            } else if animatedField == cityTextField {
+//                _ = stateTextField.becomeFirstResponder()
+//            } else if animatedField == stateTextField {
+//                _ = postalCodeTextField.becomeFirstResponder()
+//            } else if animatedField == postalCodeTextField {
+//                _ = animatedField.resignFirstResponder()
+//            }
+//            return true
+//        }
+//        return true
     }
 
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        if animatedField == streetTextField {
+            streetAnimatedFieldDidEndEditing(animatedField)
+        } else if animatedField == cityTextField {
+            cityAnimatedFieldDidEndEditing(animatedField)
+        } else if animatedField == stateTextField {
+            stateAnimatedFieldDidEndEditing(animatedField)
+        } else if animatedField == postalCodeTextField {
+            postalCodeAnimatedFieldDidEndEditing(animatedField)
+        }
+    }
+    public func streetAnimatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         guard let data = self.data,
               let oldValue = data.value as? DNSPostalAddress else { return }
         let newValue = oldValue.copy() as! DNSPostalAddress
-        if animatedField == self.cityTextField {
-            newValue.city = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        } else if animatedField == self.postalCodeTextField {
-            newValue.postalCode = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        } else if animatedField == self.stateTextField {
-            newValue.state = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        } else if animatedField == self.streetTextField {
-            newValue.street = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        }
-        guard animatedField.isValid else {
-            animatedField.showAlert()
-            let request = Stage.Models.Field.Request(field: data.field,
-                                                     languageCode: DNSCore.languageCode,
-                                                     value: newValue)
-            self.changeValuePublisher.send(request)
-            return
-        }
-        animatedField.hideAlert()
+        newValue.street = streetTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        if streetTextField.isValid { streetTextField.hideAlert() } else { streetTextField.showAlert() }
         guard newValue != oldValue else { return }
-        let request = Stage.Models.Field.Request(field: data.field,
-                                                 languageCode: DNSCore.languageCode,
-                                                 value: newValue)
+        var request = Stage.Models.Field
+            .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
+        request.subfield = CodingKeys.street.rawValue
+        changeValuePublisher.send(request)
+    }
+    public func cityAnimatedFieldDidEndEditing(_ animatedField: AnimatedField) {
+        guard let data = self.data,
+              let oldValue = data.value as? DNSPostalAddress else { return }
+        let newValue = oldValue.copy() as! DNSPostalAddress
+        newValue.city = cityTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        if cityTextField.isValid { cityTextField.hideAlert() } else { cityTextField.showAlert() }
+        guard newValue != oldValue else { return }
+        var request = Stage.Models.Field
+            .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
+        request.subfield = CodingKeys.city.rawValue
+        changeValuePublisher.send(request)
+    }
+    public func stateAnimatedFieldDidEndEditing(_ animatedField: AnimatedField) {
+        guard let data = self.data,
+              let oldValue = data.value as? DNSPostalAddress else { return }
+        let newValue = oldValue.copy() as! DNSPostalAddress
+        newValue.state = stateTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        if stateTextField.isValid { stateTextField.hideAlert() } else { stateTextField.showAlert() }
+        guard newValue != oldValue else { return }
+        var request = Stage.Models.Field
+            .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
+        request.subfield = CodingKeys.state.rawValue
+        changeValuePublisher.send(request)
+    }
+    public func postalCodeAnimatedFieldDidEndEditing(_ animatedField: AnimatedField) {
+        guard let data = self.data,
+              let oldValue = data.value as? DNSPostalAddress else { return }
+        let newValue = oldValue.copy() as! DNSPostalAddress
+        newValue.postalCode = stateTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        if postalCodeTextField.isValid { postalCodeTextField.hideAlert() } else { postalCodeTextField.showAlert() }
+        guard newValue != oldValue else { return }
+        var request = Stage.Models.Field
+            .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
+        request.subfield = CodingKeys.postalCode.rawValue
         changeValuePublisher.send(request)
     }
 
     // MARK: - Utility methods -
     func utilityClearTextField(_ textField: DNSUIAnimatedField) {
-        textField.hideAlert()
         textField.isEnabled = false
         textField.isSecure = false
         textField.formatPattern = ""
-        textField.keyboardType = .default
+        textField.keyboardType = .namePhonePad
         textField.returnKeyType = .next
         textField.lowercased = false
         textField.uppercased = false
@@ -198,7 +260,6 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
         textField.title = ""
         textField.text = ""
     }
-
     func utilityDisplayAlert(_ alertMessage: String?,
                              for field: DNSUIAnimatedField) {
         let alertMessage = alertMessage ?? ""
@@ -206,6 +267,13 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
             if field.isValid { field.hideAlert() }
         } else {
             field.showAlert(alertMessage)
+        }
+    }
+    func utilityUpdateText(_ text: String?, for field: CodingKeys, and textField: DNSUIAnimatedField) {
+        if textField.text != text {
+            textField.text = text ?? ""
+            guard let data else { return }
+            self.utilityDisplayAlert(data.alertMessages[field], for: textField)
         }
     }
 }

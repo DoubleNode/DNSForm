@@ -26,10 +26,11 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     public var fieldChangedPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
     public var languageChangedPublisher = PassthroughSubject<DNSFormStage.Models.Language.Request, Never>()
     public var saveActionPublisher = PassthroughSubject<DNSFormStage.Models.Base.Request, Never>()
-    
+
     public var anyChanges = false
     public var enableSave = false
     public var fieldAlertMessages: [String: String] = [:]
+    public var lastFieldChanged: (field: String, subfield: String)? = nil
     public var selectedLanguage: String = DNSCore.languageCode { didSet { self.formRefresh() } }
 
     // MARK: - Incoming Pipelines
@@ -70,13 +71,17 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         self.anyChanges = false
         self.enableSave = false
         self.fieldAlertMessages = [:]
+        self.lastFieldChanged = nil
         self.formRefresh()
     }
     
     // MARK: - Action methods -
     open func fieldChangedAction(request: DNSFormStage.Models.Field.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.fieldChangedPublisher.send(request)
+        self.lastFieldChanged = (request.field, request.subfield)
+        DNSThread.run(after: 0.1) {
+            self.fieldChangedPublisher.send(request)
+        }
     }
     open func languageChangedAction(request: DNSFormStage.Models.Language.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
@@ -88,11 +93,17 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     }
 
     // MARK: - Utility methods
-    open func formRefresh() {
+    open func formRefresh(fieldChangeRedraw: Bool = false,
+                          then block: DNSBlock? = nil) {
         DNSUIThread.run { [weak self] in
             guard let self else { return }
             let snapshot = self.baseSnapshotFormForCurrentState()
-            self.formDataSource.apply(snapshot)
+            self.formDataSource.apply(snapshot) {
+                block?()
+                if fieldChangeRedraw {
+                    self.lastFieldChanged = nil
+                }
+            }
         }
     }
 
