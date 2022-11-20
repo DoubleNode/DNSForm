@@ -157,28 +157,19 @@ open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
         guard let data = self.data,
               let oldValue = data.value as? PersonNameComponents else { return }
         var newValue = oldValue
-        if animatedField == self.familyNameTextField {
-            newValue.familyName = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        } else if animatedField == self.givenNameTextField {
-            newValue.givenName = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        } else if animatedField == self.middleNameTextField {
-            newValue.middleName = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        } else if animatedField == self.nicknameTextField {
-            newValue.nickname = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        }
-        guard animatedField.isValid else {
-            animatedField.showAlert()
-            let request = Stage.Models.Field.Request(field: data.field,
-                                                     languageCode: DNSCore.languageCode,
-                                                     value: newValue)
-            self.changeValuePublisher.send(request)
-            return
-        }
-        animatedField.hideAlert()
-        guard newValue != oldValue else { return }
-        let request = Stage.Models.Field.Request(field: data.field,
-                                                 languageCode: DNSCore.languageCode,
-                                                 value: newValue)
+        newValue.familyName = familyNameTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        newValue.givenName = givenNameTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        newValue.middleName = middleNameTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        newValue.nickname = nicknameTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        
+        var anyNotValid = false
+        if familyNameTextField.isValid { familyNameTextField.hideAlert() } else { anyNotValid = true; familyNameTextField.showAlert() }
+        if givenNameTextField.isValid { givenNameTextField.hideAlert() } else { anyNotValid = true; givenNameTextField.showAlert() }
+        if middleNameTextField.isValid { middleNameTextField.hideAlert() } else { anyNotValid = true; middleNameTextField.showAlert() }
+        if nicknameTextField.isValid { nicknameTextField.hideAlert() } else { anyNotValid = true; nicknameTextField.showAlert() }
+        guard anyNotValid || (newValue != oldValue) else { return }
+        let request = Stage.Models.Field
+            .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
         changeValuePublisher.send(request)
     }
 
