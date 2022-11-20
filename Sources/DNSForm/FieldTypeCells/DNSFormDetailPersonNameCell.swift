@@ -55,6 +55,10 @@ open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
         didSet {
             guard let data = self.data,
                   let value = data.value as? PersonNameComponents else {
+                familyNameTextField.hideAlert()
+                givenNameTextField.hideAlert()
+                middleNameTextField.hideAlert()
+                nicknameTextField.hideAlert()
                 utilityClearTextField(familyNameTextField)
                 utilityClearTextField(givenNameTextField)
                 utilityClearTextField(middleNameTextField)
@@ -66,58 +70,58 @@ open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
             middleNameTextField.style = data.style
             nicknameTextField.style = data.style
 
-            self.utilityDisplayAlert(data.alertMessages[.familyName], for: familyNameTextField)
-            self.utilityDisplayAlert(data.alertMessages[.givenName], for: givenNameTextField)
-            self.utilityDisplayAlert(data.alertMessages[.middleName], for: middleNameTextField)
-            self.utilityDisplayAlert(data.alertMessages[.nickname], for: nicknameTextField)
-
+            familyNameTextField.autocapitalizationType = .words
             familyNameTextField.keyboardType = .namePhonePad
             familyNameTextField.returnKeyType = .next
-            familyNameTextField.autocapitalizationType = .words
             familyNameTextField.isEnabled = !data.readonly
             familyNameTextField.type = .text(data.labels[.familyName] ?? "", data.required ? 1 : 0, 128)
             familyNameTextField.placeholder = data.placeholders[.familyName] ?? ""
             familyNameTextField.title = data.labels[.familyName] ?? ""
             if familyNameTextField.text != value.familyName {
                 familyNameTextField.text = value.familyName ?? ""
-                self.utilityDisplayAlert(data.alertMessages[.familyName], for: familyNameTextField)
+//                self.utilityDisplayAlert(data.alertMessages[.familyName], for: familyNameTextField)
             }
 
+            givenNameTextField.autocapitalizationType = .words
             givenNameTextField.keyboardType = .namePhonePad
             givenNameTextField.returnKeyType = .next
-            givenNameTextField.autocapitalizationType = .words
             givenNameTextField.isEnabled = !data.readonly
             givenNameTextField.type = .text(data.labels[.givenName] ?? "", data.required ? 1 : 0, 128)
             givenNameTextField.placeholder = data.placeholders[.givenName] ?? ""
             givenNameTextField.title = data.labels[.givenName] ?? ""
             if givenNameTextField.text != value.givenName {
                 givenNameTextField.text = value.givenName ?? ""
-                self.utilityDisplayAlert(data.alertMessages[.givenName], for: givenNameTextField)
+//                self.utilityDisplayAlert(data.alertMessages[.givenName], for: givenNameTextField)
             }
 
+            middleNameTextField.autocapitalizationType = .words
             middleNameTextField.keyboardType = .namePhonePad
             middleNameTextField.returnKeyType = .next
-            middleNameTextField.autocapitalizationType = .words
             middleNameTextField.isEnabled = !data.readonly
             middleNameTextField.type = .text(data.labels[.middleName] ?? "", 0, 128)
             middleNameTextField.placeholder = data.placeholders[.middleName] ?? ""
             middleNameTextField.title = data.labels[.middleName] ?? ""
             if middleNameTextField.text != value.middleName {
                 middleNameTextField.text = value.middleName ?? ""
-                self.utilityDisplayAlert(data.alertMessages[.middleName], for: middleNameTextField)
+//                self.utilityDisplayAlert(data.alertMessages[.middleName], for: middleNameTextField)
             }
 
+            nicknameTextField.autocapitalizationType = .words
             nicknameTextField.keyboardType = .namePhonePad
             nicknameTextField.returnKeyType = data.returnKeyType
-            nicknameTextField.autocapitalizationType = .words
             nicknameTextField.isEnabled = !data.readonly
             nicknameTextField.type = .text(data.labels[.nickname] ?? "", 0, 128)
             nicknameTextField.placeholder = data.placeholders[.nickname] ?? ""
             nicknameTextField.title = data.labels[.nickname] ?? ""
             if nicknameTextField.text != value.nickname {
                 nicknameTextField.text = value.nickname ?? ""
-                self.utilityDisplayAlert(data.alertMessages[.nickname], for: nicknameTextField)
+//                self.utilityDisplayAlert(data.alertMessages[.nickname], for: nicknameTextField)
             }
+
+//            self.utilityDisplayAlert(data.alertMessages[.familyName], for: familyNameTextField)
+//            self.utilityDisplayAlert(data.alertMessages[.givenName], for: givenNameTextField)
+//            self.utilityDisplayAlert(data.alertMessages[.middleName], for: middleNameTextField)
+//            self.utilityDisplayAlert(data.alertMessages[.nickname], for: nicknameTextField)
         }
     }
 
@@ -147,44 +151,105 @@ open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - AnimatedFieldDataSource methods
     public func animatedFieldShouldReturn(_ animatedField: AnimatedField) -> Bool {
-        _ = animatedField.resignFirstResponder()
+        if animatedField.returnKeyType == .done {
+            _ = animatedField.resignFirstResponder()
+            return true
+        }
+        if animatedField.returnKeyType == .next {
+            if animatedField == givenNameTextField {
+                _ = familyNameTextField.becomeFirstResponder()
+            } else if animatedField == familyNameTextField {
+                _ = middleNameTextField.becomeFirstResponder()
+            } else if animatedField == middleNameTextField {
+                _ = nicknameTextField.becomeFirstResponder()
+            } else if animatedField == nicknameTextField {
+                _ = animatedField.resignFirstResponder()
+            }
+            return true
+        }
         return true
     }
 
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        if animatedField == familyNameTextField {
+            familyNameAnimatedFieldDidEndEditing(animatedField)
+        } else if animatedField == givenNameTextField {
+            givenNameAnimatedFieldDidEndEditing(animatedField)
+        } else if animatedField == middleNameTextField {
+            middleNameAnimatedFieldDidEndEditing(animatedField)
+        } else if animatedField == nicknameTextField {
+            nicknameAnimatedFieldDidEndEditing(animatedField)
+        }
+//        guard let data = self.data,
+//              let oldValue = data.value as? PersonNameComponents else { return }
+//        var newValue = oldValue
+//        newValue.familyName = familyNameTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+//        newValue.givenName = givenNameTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+//        newValue.middleName = middleNameTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+//        newValue.nickname = nicknameTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+//
+//        if familyNameTextField.isValid { familyNameTextField.hideAlert() } else { familyNameTextField.showAlert() }
+//        if givenNameTextField.isValid { givenNameTextField.hideAlert() } else { givenNameTextField.showAlert() }
+//        if middleNameTextField.isValid { middleNameTextField.hideAlert() } else { middleNameTextField.showAlert() }
+//        if nicknameTextField.isValid { nicknameTextField.hideAlert() } else { nicknameTextField.showAlert() }
+//        guard newValue != oldValue else { return }
+//        let request = Stage.Models.Field
+//            .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
+//        changeValuePublisher.send(request)
+    }
+    public func familyNameAnimatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         guard let data = self.data,
               let oldValue = data.value as? PersonNameComponents else { return }
         var newValue = oldValue
-        if animatedField == self.familyNameTextField {
-            newValue.familyName = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        } else if animatedField == self.givenNameTextField {
-            newValue.givenName = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        } else if animatedField == self.middleNameTextField {
-            newValue.middleName = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        } else if animatedField == self.nicknameTextField {
-            newValue.nickname = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        }
-        guard animatedField.isValid else {
-            animatedField.showAlert()
-            let request = Stage.Models.Field.Request(field: data.field,
-                                                     languageCode: DNSCore.languageCode,
-                                                     value: newValue)
-            self.changeValuePublisher.send(request)
-            return
-        }
-        animatedField.hideAlert()
+        newValue.familyName = familyNameTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        print("**NAME** familyName nameLong = \(newValue.dnsFormatName())")
+//        if familyNameTextField.isValid { familyNameTextField.hideAlert() } else { familyNameTextField.showAlert() }
         guard newValue != oldValue else { return }
-        let request = Stage.Models.Field.Request(field: data.field,
-                                                 languageCode: DNSCore.languageCode,
-                                                 value: newValue)
+        let request = Stage.Models.Field
+            .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
+        changeValuePublisher.send(request)
+    }
+    public func givenNameAnimatedFieldDidEndEditing(_ animatedField: AnimatedField) {
+        guard let data = self.data,
+              let oldValue = data.value as? PersonNameComponents else { return }
+        var newValue = oldValue
+        newValue.givenName = givenNameTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        print("**NAME** givenName nameLong = \(newValue.dnsFormatName())")
+//        if givenNameTextField.isValid { givenNameTextField.hideAlert() } else { givenNameTextField.showAlert() }
+        guard newValue != oldValue else { return }
+        let request = Stage.Models.Field
+            .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
+        changeValuePublisher.send(request)
+    }
+    public func middleNameAnimatedFieldDidEndEditing(_ animatedField: AnimatedField) {
+        guard let data = self.data,
+              let oldValue = data.value as? PersonNameComponents else { return }
+        var newValue = oldValue
+        newValue.middleName = middleNameTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        print("**NAME** middleName nameLong = \(newValue.dnsFormatName())")
+//        if middleNameTextField.isValid { middleNameTextField.hideAlert() } else { middleNameTextField.showAlert() }
+        guard newValue != oldValue else { return }
+        let request = Stage.Models.Field
+            .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
+        changeValuePublisher.send(request)
+    }
+    public func nicknameAnimatedFieldDidEndEditing(_ animatedField: AnimatedField) {
+        guard let data = self.data,
+              let oldValue = data.value as? PersonNameComponents else { return }
+        var newValue = oldValue
+        newValue.nickname = nicknameTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        print("**NAME** nickname nameLong = \(newValue.dnsFormatName())")
+//        if nicknameTextField.isValid { nicknameTextField.hideAlert() } else { nicknameTextField.showAlert() }
+        guard newValue != oldValue else { return }
+        let request = Stage.Models.Field
+            .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
         changeValuePublisher.send(request)
     }
 
     // MARK: - Utility methods -
     func utilityClearTextField(_ textField: DNSUIAnimatedField) {
-        textField.hideAlert()
         textField.isEnabled = false
         textField.isSecure = false
         textField.formatPattern = ""
