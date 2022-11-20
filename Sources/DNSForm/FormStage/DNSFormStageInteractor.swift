@@ -69,7 +69,8 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         }
         super.doCloseAction(request)
     }
-    open func doFieldChanged(_ request: DNSFormStage.Models.Field.Request) { }
+    open func doFieldChanged(_ request: DNSFormStage.Models.Field.Request) {
+    }
     override open func doMessageDone(_ request: DNSFormStage.Models.Message.Request) {
         super.doMessageDone(request)
         switch self.formState {
