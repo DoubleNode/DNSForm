@@ -66,10 +66,10 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
             stateTextField.style = data.style
             streetTextField.style = data.style
 
-            self.utilityDisplayAlert(data.alertMessages[.city], for: cityTextField)
-            self.utilityDisplayAlert(data.alertMessages[.postalCode], for: postalCodeTextField)
-            self.utilityDisplayAlert(data.alertMessages[.state], for: stateTextField)
-            self.utilityDisplayAlert(data.alertMessages[.street], for: streetTextField)
+//            self.utilityDisplayAlert(data.alertMessages[.city], for: cityTextField)
+//            self.utilityDisplayAlert(data.alertMessages[.postalCode], for: postalCodeTextField)
+//            self.utilityDisplayAlert(data.alertMessages[.state], for: stateTextField)
+//            self.utilityDisplayAlert(data.alertMessages[.street], for: streetTextField)
 
             cityTextField.keyboardType = .namePhonePad
             cityTextField.returnKeyType = .next
@@ -82,6 +82,7 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
                 cityTextField.text = value.city
                 self.utilityDisplayAlert(data.alertMessages[.city], for: cityTextField)
             }
+            cityTextField.autocapitalizationType = .words
 
             postalCodeTextField.keyboardType = .namePhonePad
             postalCodeTextField.returnKeyType = data.returnKeyType
@@ -94,6 +95,7 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
                 postalCodeTextField.text = value.postalCode
                 self.utilityDisplayAlert(data.alertMessages[.postalCode], for: postalCodeTextField)
             }
+            postalCodeTextField.autocapitalizationType = .words
 
             stateTextField.keyboardType = .namePhonePad
             stateTextField.returnKeyType = .next
@@ -106,6 +108,7 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
                 stateTextField.text = value.state
                 self.utilityDisplayAlert(data.alertMessages[.state], for: stateTextField)
             }
+            stateTextField.autocapitalizationType = .words
 
             streetTextField.keyboardType = .default
             streetTextField.returnKeyType = .next
@@ -118,6 +121,7 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
                 streetTextField.text = value.street
                 self.utilityDisplayAlert(data.alertMessages[.street], for: streetTextField)
             }
+            streetTextField.autocapitalizationType = .words
         }
     }
 
@@ -147,7 +151,22 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - AnimatedFieldDataSource methods
     public func animatedFieldShouldReturn(_ animatedField: AnimatedField) -> Bool {
-        _ = animatedField.resignFirstResponder()
+        if animatedField.returnKeyType == .done {
+            _ = animatedField.resignFirstResponder()
+            return true
+        }
+        if animatedField.returnKeyType == .next {
+            if animatedField == streetTextField {
+                _ = cityTextField.becomeFirstResponder()
+            } else if animatedField == cityTextField {
+                _ = stateTextField.becomeFirstResponder()
+            } else if animatedField == stateTextField {
+                _ = postalCodeTextField.becomeFirstResponder()
+            } else if animatedField == postalCodeTextField {
+                _ = animatedField.resignFirstResponder()
+            }
+            return true
+        }
         return true
     }
 
@@ -157,28 +176,18 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
         guard let data = self.data,
               let oldValue = data.value as? DNSPostalAddress else { return }
         let newValue = oldValue.copy() as! DNSPostalAddress
-        if animatedField == self.cityTextField {
-            newValue.city = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        } else if animatedField == self.postalCodeTextField {
-            newValue.postalCode = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        } else if animatedField == self.stateTextField {
-            newValue.state = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        } else if animatedField == self.streetTextField {
-            newValue.street = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
-        }
-        guard animatedField.isValid else {
-            animatedField.showAlert()
-            let request = Stage.Models.Field.Request(field: data.field,
-                                                     languageCode: DNSCore.languageCode,
-                                                     value: newValue)
-            self.changeValuePublisher.send(request)
-            return
-        }
-        animatedField.hideAlert()
+        newValue.city = cityTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        newValue.postalCode = postalCodeTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        newValue.state = stateTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+        newValue.street = streetTextField.text?.trimmingCharacters(in: [" "]) ?? ""
+
+        if cityTextField.isValid { cityTextField.hideAlert() } else { cityTextField.showAlert() }
+        if postalCodeTextField.isValid { postalCodeTextField.hideAlert() } else { postalCodeTextField.showAlert() }
+        if stateTextField.isValid { stateTextField.hideAlert() } else { stateTextField.showAlert() }
+        if streetTextField.isValid { streetTextField.hideAlert() } else { streetTextField.showAlert() }
         guard newValue != oldValue else { return }
-        let request = Stage.Models.Field.Request(field: data.field,
-                                                 languageCode: DNSCore.languageCode,
-                                                 value: newValue)
+        let request = Stage.Models.Field
+            .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
         changeValuePublisher.send(request)
     }
 
