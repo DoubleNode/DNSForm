@@ -1243,7 +1243,7 @@ public extension UIColor {
                 }
             }
             public enum TextView {
-                public static var background = UIColor.systemBackground
+                public static var background = UIColor.systemGray4
                 public static var border = UIColor.clear
                 public static var line = UIColor.clear
                 public static var shadow = UIColor.clear

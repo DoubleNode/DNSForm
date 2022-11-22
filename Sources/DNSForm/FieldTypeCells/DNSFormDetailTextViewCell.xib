@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="241"/>
                         <subviews>
-                            <view opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbd-ae-TKK" userLabel="Background View">
+                            <view opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbd-ae-TKK" customClass="DNSUIView" customModule="DNSBaseTheme">
                                 <rect key="frame" x="24" y="24" width="366" height="201"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="201" id="4m5-jv-odz"/>
@@ -67,6 +67,7 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.clear"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="backView" destination="lbd-ae-TKK" id="q0G-Yg-HkH"/>
                 <outlet property="lineView" destination="2cS-ef-w78" id="Agi-Jc-uut"/>
                 <outlet property="textView" destination="aUe-oh-Ee1" id="PgG-5U-z6c"/>
             </connections>
