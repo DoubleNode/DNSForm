@@ -47,5 +47,12 @@ public extension DNSThemeViewStyle {
                               border: DNSUIBorder.DNSForm.View.sectionFrameTitle,
                               shadow: DNSUIShadow(),
                               tintColor: DNSUIColor.DNSForm.View.SectionFrameTitle.tint)
+        public static var textViewBackground =
+            DNSThemeViewStyle(styleName: "textViewBackground",
+                              styleSetName: "DNSForm",
+                              backgroundColor: DNSUIColor.DNSForm.View.TextViewBackground.background,
+                              border: DNSUIBorder(),
+                              shadow: DNSUIShadow(),
+                              tintColor: DNSUIColor.DNSForm.View.TextViewBackground.tint)
     }
 }

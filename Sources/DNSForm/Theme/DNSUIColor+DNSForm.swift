@@ -1089,9 +1089,9 @@ public extension DNSUIColor {
                     public static var border = DNSUIColor(UIColor.DNSForm.Field.TextView.Alert.border)
                     public static var shadow = DNSUIColor(UIColor.DNSForm.Field.TextView.Alert.shadow)
                     public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.TextView.Alert.strikeThru)
-                    public static var text = DNSUIColor(UIColor.DNSForm.Field.TextView.Title.Text.normal,
-                                                        disabled: UIColor.DNSForm.Field.TextView.Title.Text.disabled)
-                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.TextView.Title.tint)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.TextView.Alert.Text.normal,
+                                                        disabled: UIColor.DNSForm.Field.TextView.Alert.Text.disabled)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.TextView.Alert.tint)
                 }
                 public enum Counter {
                     public static var background = DNSUIColor(UIColor.DNSForm.Field.TextView.Counter.background)
@@ -1157,6 +1157,10 @@ public extension DNSUIColor {
                 public static var background = DNSUIColor(UIColor.DNSForm.View.SectionFrameTitle.background)
                 public static var border = DNSUIColor(UIColor.DNSForm.View.SectionFrameTitle.border)
                 public static var tint = DNSUIColor(UIColor.DNSForm.View.SectionFrameTitle.tint)
+            }
+            public enum TextViewBackground {
+                public static var background = DNSUIColor(UIColor.DNSForm.View.TextViewBackground.background)
+                public static var tint = DNSUIColor(UIColor.DNSForm.View.TextViewBackground.tint)
             }
         }
     }

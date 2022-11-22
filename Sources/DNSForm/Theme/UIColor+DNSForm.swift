@@ -1243,7 +1243,7 @@ public extension UIColor {
                 }
             }
             public enum TextView {
-                public static var background = UIColor.systemBackground
+                public static var background = UIColor.clear
                 public static var border = UIColor.clear
                 public static var line = UIColor.clear
                 public static var shadow = UIColor.clear
@@ -1253,7 +1253,13 @@ public extension UIColor {
                     public static var border = UIColor.clear
                     public static var shadow = UIColor.clear
                     public static var strikeThru = UIColor.systemRed
-                    public static var text = UIColor.systemRed
+                    public enum Text {
+                        public static var disabled = UIColor.darkGray
+                        public static var focused = UIColor.systemRed
+                        public static var highlighted = UIColor.systemRed
+                        public static var normal = UIColor.systemRed
+                        public static var selected = UIColor.systemRed
+                    }
                     public static var tint = UIColor.systemRed
                 }
                 public enum Counter {
@@ -1346,6 +1352,10 @@ public extension UIColor {
                 public static var background = UIColor.darkGray
                 public static var border = UIColor.darkGray
                 public static var tint = UIColor.darkGray
+            }
+            public enum TextViewBackground {
+                public static var background = UIColor.systemGray5
+                public static var tint = UIColor.clear
             }
         }
     }
