@@ -1158,6 +1158,10 @@ public extension DNSUIColor {
                 public static var border = DNSUIColor(UIColor.DNSForm.View.SectionFrameTitle.border)
                 public static var tint = DNSUIColor(UIColor.DNSForm.View.SectionFrameTitle.tint)
             }
+            public enum TextViewBackground {
+                public static var background = DNSUIColor(UIColor.DNSForm.View.TextViewBackground.background)
+                public static var tint = DNSUIColor(UIColor.DNSForm.View.TextViewBackground.tint)
+            }
         }
     }
 }   // swiftlint:disable:this file_length

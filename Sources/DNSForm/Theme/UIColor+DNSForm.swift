@@ -1243,7 +1243,7 @@ public extension UIColor {
                 }
             }
             public enum TextView {
-                public static var background = UIColor.systemBackground
+                public static var background = UIColor.clear
                 public static var border = UIColor.clear
                 public static var line = UIColor.clear
                 public static var shadow = UIColor.clear
@@ -1346,6 +1346,10 @@ public extension UIColor {
                 public static var background = UIColor.darkGray
                 public static var border = UIColor.darkGray
                 public static var tint = UIColor.darkGray
+            }
+            public enum TextViewBackground {
+                public static var background = UIColor.systemGray5
+                public static var tint = UIColor.clear
             }
         }
     }

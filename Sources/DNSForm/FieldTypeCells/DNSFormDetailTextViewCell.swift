@@ -23,7 +23,7 @@ public protocol DNSFormDetailTextViewCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
                                  DNSFormDetailTextViewCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormStage
-    static public let recommendedContentSize = CGSize(width: 414, height: 241)
+    static public let recommendedContentSize = CGSize(width: 414, height: 233)
 
     public struct Data: Hashable {
         public var autocapitalizationType: UITextAutocapitalizationType = .none
@@ -33,7 +33,8 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
         public var placeholder: String
         public var readonly: Bool
         public var required: Bool
-        public var style: DNSThemeFieldStyle = .DNSForm.default
+        public var style: DNSThemeFieldStyle = .DNSForm.textView
+        public var styleBackground: DNSThemeViewStyle = .DNSForm.textViewBackground
         public var text: String
         public var alertMessage: String = ""
 
@@ -56,6 +57,7 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
                 textView.text = ""
                 return
             }
+            backView.style = data.styleBackground
             textView.style = data.style
             self.utilityDisplayAlert(data.alertMessage, for: textView)
             self.lineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
@@ -71,7 +73,8 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
         }
     }
 
-    @IBOutlet var lineView: UIView!
+    @IBOutlet var backView: DNSUIView!
+    @IBOutlet var lineView: DNSUIView!
     @IBOutlet var textView: DNSUIAnimatedField!
 
     // MARK: - Outgoing Pipelines -
