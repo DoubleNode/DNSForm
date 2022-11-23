@@ -84,7 +84,7 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
             streetTextField.returnKeyType = .next
             streetTextField.autocapitalizationType = .words
             streetTextField.isEnabled = !data.readonly
-            streetTextField.type = .text(data.labels[.street] ?? "", 0, 128)
+            streetTextField.type = .text(data.labels[.street] ?? "", data.required ? 1 : 0, 128)
             streetTextField.placeholder = data.placeholders[.street] ?? ""
             streetTextField.title = data.labels[.street] ?? ""
 
@@ -200,8 +200,8 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
         guard let data = self.data,
               let oldValue = data.value as? DNSPostalAddress else { return }
         let newValue = oldValue.copy() as! DNSPostalAddress
-        newValue.street = streetTextField.text?.trimmingCharacters(in: [" "]) ?? ""
-        if streetTextField.isValid { streetTextField.hideAlert() } else { streetTextField.showAlert() }
+        newValue.street = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
+        if animatedField.isValid { animatedField.hideAlert() } else { animatedField.showAlert() }
         guard newValue != oldValue else { return }
         var request = Stage.Models.Field
             .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
@@ -212,8 +212,8 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
         guard let data = self.data,
               let oldValue = data.value as? DNSPostalAddress else { return }
         let newValue = oldValue.copy() as! DNSPostalAddress
-        newValue.city = cityTextField.text?.trimmingCharacters(in: [" "]) ?? ""
-        if cityTextField.isValid { cityTextField.hideAlert() } else { cityTextField.showAlert() }
+        newValue.city = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
+        if animatedField.isValid { animatedField.hideAlert() } else { animatedField.showAlert() }
         guard newValue != oldValue else { return }
         var request = Stage.Models.Field
             .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
@@ -224,8 +224,8 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
         guard let data = self.data,
               let oldValue = data.value as? DNSPostalAddress else { return }
         let newValue = oldValue.copy() as! DNSPostalAddress
-        newValue.state = stateTextField.text?.trimmingCharacters(in: [" "]) ?? ""
-        if stateTextField.isValid { stateTextField.hideAlert() } else { stateTextField.showAlert() }
+        newValue.state = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
+        if animatedField.isValid { animatedField.hideAlert() } else { animatedField.showAlert() }
         guard newValue != oldValue else { return }
         var request = Stage.Models.Field
             .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
@@ -236,8 +236,8 @@ open class DNSFormDetailPostalAddressCell: DNSBaseStageCollectionViewCell,
         guard let data = self.data,
               let oldValue = data.value as? DNSPostalAddress else { return }
         let newValue = oldValue.copy() as! DNSPostalAddress
-        newValue.postalCode = stateTextField.text?.trimmingCharacters(in: [" "]) ?? ""
-        if postalCodeTextField.isValid { postalCodeTextField.hideAlert() } else { postalCodeTextField.showAlert() }
+        newValue.postalCode = animatedField.text?.trimmingCharacters(in: [" "]) ?? ""
+        if animatedField.isValid { animatedField.hideAlert() } else { animatedField.showAlert() }
         guard newValue != oldValue else { return }
         var request = Stage.Models.Field
             .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
