@@ -1,0 +1,27 @@
+//
+//  DNSFormDetailSpacerCell.swift
+//  DoubleNode Swift Framework (DNSFramework) - DNSForm
+//
+//  Created by Darren Ehlers.
+//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
+//
+
+import Combine
+import DNSBaseStage
+import DNSBaseTheme
+import DNSCoreThreading
+import UIKit
+
+public protocol DNSFormDetailSpacerCellLogic: DNSBaseStageCellLogic {
+    typealias Stage = DNSFormStage
+    // MARK: - Outgoing Pipelines -
+}
+open class DNSFormDetailSpacerCell: DNSBaseStageCollectionViewCell, DNSFormDetailSpacerCellLogic {
+    public typealias Stage = DNSFormStage
+    static public let recommendedContentSize = CGSize(width: 414, height: 20)
+
+    public struct Data: Hashable {
+        public var id: UUID = UUID()
+    }
+    public var data: Data?
+}

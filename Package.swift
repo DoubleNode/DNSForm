@@ -63,6 +63,7 @@ let package = Package(
                 .process("FieldTypeCells/DNSFormDetailPreviewButtonCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailSaveButtonCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailSectionHeaderCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailSpacerCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailTextFieldCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailTextSelectionFieldCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailTextViewCell.xib"),
