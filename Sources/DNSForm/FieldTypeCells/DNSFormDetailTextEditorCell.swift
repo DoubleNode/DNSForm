@@ -6,7 +6,7 @@
 //  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
 //
 
-import AnimatedField
+//import AnimatedField
 import Combine
 import DNSBaseStage
 import DNSBaseTheme
@@ -21,8 +21,8 @@ public protocol DNSFormDetailTextEditorCellLogic: DNSBaseStageCellLogic {
     // MARK: - Outgoing Pipelines -
     var changeTextPublisher: PassthroughSubject<Stage.Models.Field.Request, Never> { get }
 }
-open class DNSFormDetailTextEditorCell: DNSBaseStageCollectionViewCell, DNSFormDetailTextEditorCellLogic,
-                                            AnimatedFieldDelegate, AnimatedFieldDataSource {
+open class DNSFormDetailTextEditorCell: DNSBaseStageCollectionViewCell, DNSFormDetailTextEditorCellLogic /*,
+                                            AnimatedFieldDelegate, AnimatedFieldDataSource */ {
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 257)
 
@@ -52,87 +52,91 @@ open class DNSFormDetailTextEditorCell: DNSBaseStageCollectionViewCell, DNSFormD
     public var data: Data? {
         didSet {
             guard let data = self.data else {
-                textView.hideAlert()
-                textView.placeholder = ""
-                textView.title = ""
-                textView.text = ""
+//                editorView.hideAlert()
+//                editorView.placeholder = ""
+//                editorView.title = ""
+                editorView?.attributedText = NSAttributedString(string: "")
                 return
             }
             backView.style = data.styleBackground
-            textView.style = data.style
-            self.utilityDisplayAlert(data.alertMessage, for: textView)
+//            editorView.style = data.style
+//            self.utilityDisplayAlert(data.alertMessage, for: editorView)
             self.lineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.black
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
-            textView.isEnabled = !data.readonly
-            textView.placeholder = data.placeholder + languageLabel
-            textView.title = data.label + languageLabel
-            textView.autocapitalizationType = data.autocapitalizationType
-            if textView.text != data.text {
-                textView.text = data.text
-                self.utilityDisplayAlert(data.alertMessage, for: textView)
-            }
+//            editorView.isEnabled = !data.readonly
+//            editorView.placeholder = data.placeholder + languageLabel
+//            editorView.title = data.label + languageLabel
+            editorView?.autocapitalizationType = data.autocapitalizationType
+//            if editorView.text != data.text {
+                editorView?.attributedText = NSAttributedString(string: data.text)
+//                self.utilityDisplayAlert(data.alertMessage, for: editorView)
+//            }
         }
     }
 
+    var editorView: EditorView?
+
     @IBOutlet var backView: DNSUIView!
     @IBOutlet var lineView: DNSUIView!
-    @IBOutlet var textView: DNSUIAnimatedField!
+    @IBOutlet var placeHolderView: DNSUIView!
 
     // MARK: - Outgoing Pipelines -
     public var changeTextPublisher = PassthroughSubject<Stage.Models.Field.Request, Never>()
 
     override open func awakeFromNib() {
         super.awakeFromNib()
-        textView.type = .multiline
-        textView.placeholder = ""
-        textView.title = ""
-        textView.keyboardType = .default
-        textView.isSecure = false
-        textView.dataSource = self
-        textView.delegate = self
-        textView.returnKeyType = UIReturnKeyType.done
+//        editorView.type = .multiline
+//        editorView.placeholder = ""
+//        editorView.title = ""
+        editorView?.keyboardType = .default
+//        editorView.isSecure = false
+//        editorView.dataSource = self
+//        editorView.delegate = self
+        editorView?.returnKeyType = UIReturnKeyType.done
     }
     override open func contentInit() {
         super.contentInit()
-        lineView.backgroundColor = textView.format.lineColor
+        editorView = EditorView(frame: placeHolderView.frame)
+        self.editorView?.setFocus()
+//        lineView.backgroundColor = editorView.format.lineColor
         data = nil
     }
 
-    // MARK: - AnimatedFieldDataSource methods
-    public func animatedFieldShouldReturn(_ animatedField: AnimatedField) -> Bool {
-        _ = animatedField.resignFirstResponder()
-        return true
-    }
-    public func animatedFieldLimit(_ animatedField: AnimatedField) -> Int? {
-        return 300
-    }
-
-    // MARK: - AnimatedFieldDelegate methods
-    public func animatedFieldDidBeginEditing(_ animatedField: AnimatedField) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        lineView.backgroundColor = textView.format.lineColor
-    }
-    public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        lineView.backgroundColor = textView.format.lineColor
-        guard let data = self.data else { return }
-        guard textView.isValid else {
-            textView.showAlert()
-            let text = textView.text
-            let request = Stage.Models.Field.Request(field: data.field,
-                                                     languageCode: data.languageCode,
-                                                     value: text)
-            changeTextPublisher.send(request)
-            return
-        }
-        textView.hideAlert()
-        guard textView.text != data.text else { return }
-        let text = textView.text
-        let request = Stage.Models.Field.Request(field: data.field,
-                                                 languageCode: data.languageCode,
-                                                 value: text)
-        changeTextPublisher.send(request)
-    }
+//    // MARK: - AnimatedFieldDataSource methods
+//    public func animatedFieldShouldReturn(_ animatedField: AnimatedField) -> Bool {
+//        _ = animatedField.resignFirstResponder()
+//        return true
+//    }
+//    public func animatedFieldLimit(_ animatedField: AnimatedField) -> Int? {
+//        return 300
+//    }
+//
+//    // MARK: - AnimatedFieldDelegate methods
+//    public func animatedFieldDidBeginEditing(_ animatedField: AnimatedField) {
+//        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+//        lineView.backgroundColor = editorView.format.lineColor
+//    }
+//    public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
+//        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+//        lineView.backgroundColor = editorView.format.lineColor
+//        guard let data = self.data else { return }
+//        guard editorView.isValid else {
+//            editorView.showAlert()
+//            let text = editorView.text
+//            let request = Stage.Models.Field.Request(field: data.field,
+//                                                     languageCode: data.languageCode,
+//                                                     value: text)
+//            changeTextPublisher.send(request)
+//            return
+//        }
+//        editorView.hideAlert()
+//        guard editorView.text != data.text else { return }
+//        let text = editorView.text
+//        let request = Stage.Models.Field.Request(field: data.field,
+//                                                 languageCode: data.languageCode,
+//                                                 value: text)
+//        changeTextPublisher.send(request)
+//    }
     
     // MARK: - Utility methods -
     func utilityDisplayAlert(_ alertMessage: String,
