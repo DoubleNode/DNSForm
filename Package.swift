@@ -36,6 +36,7 @@ let package = Package(
         .package(url: "https://github.com/DoubleNode/DNSCrashNetwork.git", from: "1.10.0"),
         .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", from: "1.10.0"),
         .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.10.30"),
+        .package(url: "https://github.com/rajdeep/proton.git", from: "0.6.1"),
         .package(url: "https://github.com/Nirma/SFSymbol", from: "1.1.0")
     ],
     targets: [
@@ -46,7 +47,8 @@ let package = Package(
             dependencies: [
                 "AnimatedField", "DNSAppCore", "DNSBaseStage", "DNSBaseTheme", "DNSBlankWorkers",
                 "DNSCore", "DNSCoreThreading", "DNSCrashNetwork", "DNSCrashSystems",
-                "DNSProtocols", "SFSymbol"
+                "DNSProtocols", "SFSymbol",
+                .product(name: "Proton", package: "proton")
             ],
             resources: [
                 .process("FieldTypeCells/DNSFormDetailActionButtonCell.xib"),
@@ -65,7 +67,7 @@ let package = Package(
                 .process("FieldTypeCells/DNSFormDetailSectionHeaderCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailSpacerCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailTextFieldCell.xib"),
-                .process("FieldTypeCells/DNSFormDetailTextSelectionFieldCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailTextSelectionCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailTextViewCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailTimeOfDayCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailWeblinkCell.xib"),

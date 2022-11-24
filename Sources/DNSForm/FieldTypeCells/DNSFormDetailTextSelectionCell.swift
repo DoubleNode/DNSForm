@@ -1,5 +1,5 @@
 //
-//  DNSFormDetailTextSelectionFieldCell.swift
+//  DNSFormDetailTextSelectionCell.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSForm
 //
 //  Created by Darren Ehlers.
@@ -15,13 +15,13 @@ import DNSCoreThreading
 import DNSProtocols
 import UIKit
 
-public protocol DNSFormDetailTextSelectionFieldCellLogic: DNSBaseStageCellLogic {
+public protocol DNSFormDetailTextSelectionCellLogic: DNSBaseStageCellLogic {
     typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines -
     var changeTextPublisher: PassthroughSubject<Stage.Models.Field.Request, Never> { get }
 }
-open class DNSFormDetailTextSelectionFieldCell: DNSBaseStageCollectionViewCell,
-    DNSFormDetailTextSelectionFieldCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
+open class DNSFormDetailTextSelectionCell: DNSBaseStageCollectionViewCell,
+    DNSFormDetailTextSelectionCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 64)
 

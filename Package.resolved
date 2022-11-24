@@ -253,6 +253,15 @@
       }
     },
     {
+      "identity" : "proton",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rajdeep/proton.git",
+      "state" : {
+        "revision" : "49039bbbc47f777460c3b9712979699df6e8808c",
+        "version" : "0.6.1"
+      }
+    },
+    {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core",
