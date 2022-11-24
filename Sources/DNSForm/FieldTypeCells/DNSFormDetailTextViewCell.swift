@@ -24,7 +24,7 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
                                  DNSFormDetailTextViewCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 241)
-    static public let defaultMaximumLength: Int = 300
+    static public let defaultMaximumLength: Int = 500
 
     public struct Data: Hashable {
         public var autocapitalizationType: UITextAutocapitalizationType = .none
