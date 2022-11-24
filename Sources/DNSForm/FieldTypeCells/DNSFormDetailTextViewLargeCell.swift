@@ -1,5 +1,5 @@
 //
-//  DNSFormDetailTextViewCell.swift
+//  DNSFormDetailTextViewLargeCell.swift
 //  DoubleNode Swift Framework (DNSFramework) - DNSForm
 //
 //  Created by Darren Ehlers.
@@ -15,23 +15,23 @@ import DNSCoreThreading
 import DNSProtocols
 import UIKit
 
-public protocol DNSFormDetailTextViewCellLogic: DNSBaseStageCellLogic {
+public protocol DNSFormDetailTextViewLargeCellLogic: DNSBaseStageCellLogic {
     typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines -
     var changeTextPublisher: PassthroughSubject<Stage.Models.Field.Request, Never> { get }
 }
-open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
-                                 DNSFormDetailTextViewCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
+open class DNSFormDetailTextViewLargeCell: DNSBaseStageCollectionViewCell,
+                                 DNSFormDetailTextViewLargeCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormStage
-    static public let recommendedContentSize = CGSize(width: 414, height: 257)
-    static public let defaultMaximumLength: Int = 300
+    static public let recommendedContentSize = CGSize(width: 414, height: 514)
+    static public let defaultMaximumLength: Int = 1000
 
     public struct Data: Hashable {
         public var autocapitalizationType: UITextAutocapitalizationType = .none
         public var field: String
         public var label: String
         public var languageCode: String
-        public var maximumLength: Int = DNSFormDetailTextViewCell.defaultMaximumLength
+        public var maximumLength: Int = DNSFormDetailTextViewLargeCell.defaultMaximumLength
         public var minimumLength: Int = 1
         public var placeholder: String
         public var readonly: Bool
