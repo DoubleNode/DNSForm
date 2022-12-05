@@ -154,6 +154,7 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.clear"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="alertLabel" destination="wVq-mI-DCM" id="e0c-vP-EYb"/>
                 <outlet property="deleteButton" destination="DTP-4Z-aCp" id="7QE-zX-we3"/>
                 <outlet property="imageView" destination="2Fe-WC-Oam" id="Gf9-Hi-2YU"/>
                 <outlet property="progressView" destination="zdv-7N-njv" id="1DR-W6-3zv"/>
