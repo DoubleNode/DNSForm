@@ -236,11 +236,11 @@ extension DNSFormStageViewController: PHPickerViewControllerDelegate {
     public func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true, completion: .none)
         results.forEach { result in
-            result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
-                guard error == nil else {
-                    return
-                }
-                result.itemProvider.loadFileRepresentation(forTypeIdentifier: "public.image") { [weak self] url, _ in
+//            result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
+//                guard error == nil else {
+//                    return
+//                }
+                result.itemProvider.loadFileRepresentation(forTypeIdentifier: "public.image") { [weak self] url, error in
                     guard let self else { return }
                     guard error == nil else {
                         return
@@ -249,12 +249,13 @@ extension DNSFormStageViewController: PHPickerViewControllerDelegate {
                         return
                     }
                     print("URL=\(url.absoluteString)")
-                    guard let fieldRequest = self.fieldRequest else {
+                    guard var fieldRequest = self.fieldRequest else {
                         return
                     }
+                    fieldRequest.value = url
                     self.fieldChangedAction(request: fieldRequest)
                 }
-            }
+//            }
         }
     }
     func openPHPicker() {
