@@ -101,6 +101,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.default"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="XTb-aL-kV8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTP-4Z-aCp" customClass="DNSUIButton" customModule="DNSBaseTheme">
                                 <rect key="frame" x="286" y="25" width="104" height="44"/>
@@ -112,6 +115,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.destructive"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="deleteButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="1kK-xa-FY5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[This is a note on content type and frequency]" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVq-mI-DCM" customClass="DNSUILabel" customModule="DNSBaseTheme">
                                 <rect key="frame" x="132" y="71" width="225" height="13"/>
