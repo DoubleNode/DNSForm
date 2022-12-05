@@ -10,11 +10,14 @@ import Combine
 import DNSBaseStage
 import DNSCore
 import DNSCoreThreading
+import Photos
+import PhotosUI
 import UIKit
 
 public protocol DNSFormStageDisplayLogic: DNSBaseStageDisplayLogic {
     // MARK: - Outgoing Pipelines
     var fieldChangedPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
+    var imageSelectPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
     var languageChangedPublisher: PassthroughSubject<DNSFormStage.Models.Language.Request, Never> { get }
     var saveActionPublisher: PassthroughSubject<DNSFormStage.Models.Base.Request, Never> { get }
 }
@@ -24,12 +27,14 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     @IBOutlet public var formCollectionView: UICollectionView!
 
     public var fieldChangedPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
+    public var imageSelectPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
     public var languageChangedPublisher = PassthroughSubject<DNSFormStage.Models.Language.Request, Never>()
     public var saveActionPublisher = PassthroughSubject<DNSFormStage.Models.Base.Request, Never>()
 
     public var anyChanges = false
     public var enableSave = false
     public var fieldAlertMessages: [String: String] = [:]
+    public var fieldRequest: DNSFormStage.Models.Field.Request?
     public var lastFieldChanged: (field: String, subfield: String)? = nil
     public var selectedLanguage: String = DNSCore.languageCode { didSet { self.formRefresh() } }
 
@@ -46,6 +51,8 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
             .sink { [weak self] viewModel in self?.displayFieldAlert(viewModel) })
         subscribers.append(presenter.languagePublisher
             .sink { [weak self] viewModel in self?.displayLanguage(viewModel) })
+        subscribers.append(presenter.selectImagePublisher
+            .sink { [weak self] viewModel in self?.displaySelectImage(viewModel) })
     }
     
     override open func viewDidLoad() {
@@ -74,7 +81,13 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         self.lastFieldChanged = nil
         self.formRefresh()
     }
-    
+    open func displaySelectImage(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
+                                                              languageCode: self.selectedLanguage)
+        self.openPHPicker()
+    }
+
     // MARK: - Action methods -
     open func fieldChangedAction(request: DNSFormStage.Models.Field.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
@@ -82,6 +95,10 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         DNSThread.run(after: 0.1) {
             self.fieldChangedPublisher.send(request)
         }
+    }
+    open func imageSelectAction(request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.imageSelectPublisher.send(request)
     }
     open func languageChangedAction(request: DNSFormStage.Models.Language.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
@@ -155,7 +172,99 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
             
             section.boundarySupplementaryItems = [sectionHeader]
         }
-        
         return section
+    }
+    open func subscribe(to fieldCell: DNSBaseStageCollectionViewCell) {
+        var cellSubscribers: [AnyCancellable] = []
+        if let fieldCell = fieldCell as? DNSFormDetailAppActionCell {
+            cellSubscribers.append(fieldCell.changeTextPublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailDateCell {
+            cellSubscribers.append(fieldCell.changeDatePublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailDateTimeCell {
+            cellSubscribers.append(fieldCell.changeDatePublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailDayOfWeekCell {
+            cellSubscribers.append(fieldCell.changePublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailHoursCell {
+            cellSubscribers.append(fieldCell.changePublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailImageSelectorCell {
+            cellSubscribers.append(fieldCell.imageSelectActionPublisher
+                .sink { [weak self] request in self?.imageSelectAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailImageUrlCell {
+            cellSubscribers.append(fieldCell.changeTextPublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailLanguageSelectionCell {
+            cellSubscribers.append(fieldCell.selectedPublisher
+                .sink { [weak self] request in self?.languageChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailPersonNameCell {
+            cellSubscribers.append(fieldCell.changeValuePublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailPostalAddressCell {
+            cellSubscribers.append(fieldCell.changeValuePublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailTextEditorCell {
+            cellSubscribers.append(fieldCell.changeTextPublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailTextFieldCell {
+            cellSubscribers.append(fieldCell.changeTextPublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailTextSelectionCell {
+            cellSubscribers.append(fieldCell.changeTextPublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailTextViewCell {
+            cellSubscribers.append(fieldCell.changeTextPublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailTextViewLargeCell {
+            cellSubscribers.append(fieldCell.changeTextPublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailTimeOfDayCell {
+            cellSubscribers.append(fieldCell.changePublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailWeblinkCell {
+            cellSubscribers.append(fieldCell.changeTextPublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        }
+        self.cellSubscribers[fieldCell] = cellSubscribers
+    }
+}
+// MARK: - PHPicker methods
+extension DNSFormStageViewController: PHPickerViewControllerDelegate {
+    public func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true, completion: .none)
+        results.forEach { result in
+            result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
+                guard error == nil else {
+                    return
+                }
+                result.itemProvider.loadFileRepresentation(forTypeIdentifier: "public.image") { [weak self] url, _ in
+                    guard let self else { return }
+                    guard error == nil else {
+                        return
+                    }
+                    guard let url else {
+                        return
+                    }
+                    print("URL=\(url.absoluteString)")
+                    guard let fieldRequest = self.fieldRequest else {
+                        return
+                    }
+                    self.fieldChangedAction(request: fieldRequest)
+                }
+            }
+        }
+    }
+    func openPHPicker() {
+        var phPickerConfig = PHPickerConfiguration(photoLibrary: .shared())
+        phPickerConfig.selectionLimit = 1
+        phPickerConfig.filter = PHPickerFilter.any(of: [.images, .livePhotos])
+        DNSUIThread.run {
+            let phPickerVC = PHPickerViewController(configuration: phPickerConfig)
+            phPickerVC.delegate = self
+            self.present(phPickerVC, animated: true)
+        }
     }
 }

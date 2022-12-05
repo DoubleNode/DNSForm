@@ -19,6 +19,7 @@ public protocol DNSFormStageBusinessLogic: DNSBaseStageBusinessLogic {
     // MARK: - Outgoing Pipelines
     var fieldAlertPublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
     var languagePublisher: PassthroughSubject<DNSFormStage.Models.Language.Response, Never> { get }
+    var selectImagePublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
 }
 open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessLogic {
     static public let xlt = DNSDataTranslation()
@@ -29,6 +30,7 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
     // MARK: - Outgoing Pipelines
     public let fieldAlertPublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
     public let languagePublisher = PassthroughSubject<DNSFormStage.Models.Language.Response, Never>()
+    public let selectImagePublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
 
     // MARK: - Incoming Pipelines
     open var subscribers: [AnyCancellable] = []
@@ -37,6 +39,8 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         // swiftlint:disable:next force_cast
         let viewController = baseViewController as! DNSFormStage.Logic.Display
         subscribers.removeAll()
+        subscribers.append(viewController.imageSelectPublisher
+            .sink { [weak self] request in self?.doSelectImage(request) })
         subscribers.append(viewController.fieldChangedPublisher
             .sink { [weak self] request in self?.doFieldChanged(request) })
         subscribers.append(viewController.languageChangedPublisher
@@ -86,7 +90,12 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         self.selectedLanguage = request.languageCode
     }
     open func doSave(_ request: DNSFormStage.Models.Base.Request) { }
-    
+    open func doSelectImage(_ request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        let response = DNSFormStage.Models.Field.Response(field: request.field)
+        self.selectImagePublisher.send(response)
+    }
+
     // MARK: - Message methods
     open func messageUnsavedChanges() { }
     

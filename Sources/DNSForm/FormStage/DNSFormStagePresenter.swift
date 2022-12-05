@@ -14,11 +14,13 @@ public protocol DNSFormStagePresentationLogic: DNSBaseStagePresentationLogic {
     // MARK: - Outgoing Pipelines
     var fieldAlertPublisher: PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never> { get }
     var languagePublisher: PassthroughSubject<DNSFormStage.Models.Language.ViewModel, Never> { get }
+    var selectImagePublisher: PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never> { get }
 }
 open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentationLogic {
     // MARK: - Outgoing Pipelines
     public let fieldAlertPublisher = PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never>()
     public let languagePublisher = PassthroughSubject<DNSFormStage.Models.Language.ViewModel, Never>()
+    public let selectImagePublisher = PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never>()
 
     // MARK: - Incoming Pipelines
     open var subscribers: [AnyCancellable] = []
@@ -31,6 +33,8 @@ open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentatio
             .sink { [weak self] response in self?.presentFieldAlert(response) })
         subscribers.append(interactor.languagePublisher
             .sink { [weak self] response in self?.presentLanguage(response) })
+        subscribers.append(interactor.selectImagePublisher
+            .sink { [weak self] response in self?.presentSelectImage(response) })
     }
 
     // MARK: - Presentation Logic
@@ -45,5 +49,11 @@ open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentatio
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         let viewModel = DNSFormStage.Models.Language.ViewModel(languageCode: response.languageCode)
         languagePublisher.send(viewModel)
+    }
+    open func presentSelectImage(_ response: DNSFormStage.Models.Field.Response) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        let viewModel = DNSFormStage.Models.Field.ViewModel(field: response.field,
+                                                            alertMessage: "")
+        selectImagePublisher.send(viewModel)
     }
 }
