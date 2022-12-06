@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashWorkers.git",
       "state" : {
-        "revision" : "554473c8c1b575d17a5aaaad1459bdd2556e5863",
-        "version" : "1.10.14"
+        "revision" : "b204295f607db395de13c581e417346cf3013f08",
+        "version" : "1.10.21"
       }
     },
     {

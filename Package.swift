@@ -35,6 +35,7 @@ let package = Package(
         .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", from: "1.10.0"),
         .package(url: "https://github.com/DoubleNode/DNSCrashNetwork.git", from: "1.10.0"),
         .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", from: "1.10.0"),
+        .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.10.21"),
         .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.10.37"),
         .package(url: "https://github.com/rajdeep/proton.git", from: "0.6.1"),
         .package(url: "https://github.com/Nirma/SFSymbol", from: "1.1.0")
@@ -47,7 +48,7 @@ let package = Package(
             dependencies: [
                 "AnimatedField", "DNSAppCore", "DNSBaseStage", "DNSBaseTheme", "DNSBlankWorkers",
                 "DNSCore", "DNSCoreThreading", "DNSCrashNetwork", "DNSCrashSystems",
-                "DNSProtocols", "SFSymbol",
+                "DNSCrashWorkers", "DNSProtocols", "SFSymbol",
                 .product(name: "Proton", package: "proton")
             ],
             resources: [

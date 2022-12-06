@@ -104,7 +104,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="ADD IMAGE"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.default"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.action"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="selectButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="XTb-aL-kV8"/>
