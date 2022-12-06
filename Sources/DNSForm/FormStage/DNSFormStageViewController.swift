@@ -20,6 +20,7 @@ public protocol DNSFormStageDisplayLogic: DNSBaseStageDisplayLogic {
     var imageSelectPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
     var languageChangedPublisher: PassthroughSubject<DNSFormStage.Models.Language.Request, Never> { get }
     var saveActionPublisher: PassthroughSubject<DNSFormStage.Models.Base.Request, Never> { get }
+    var uploadImagePublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
 }
 open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageDisplayLogic {
     public var formDataSource: UICollectionViewDiffableDataSource<AnyHashable, AnyHashable>! = nil
@@ -30,6 +31,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     public var imageSelectPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
     public var languageChangedPublisher = PassthroughSubject<DNSFormStage.Models.Language.Request, Never>()
     public var saveActionPublisher = PassthroughSubject<DNSFormStage.Models.Base.Request, Never>()
+    public var uploadImagePublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
 
     public var anyChanges = false
     public var enableSave = false
@@ -91,9 +93,11 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     // MARK: - Action methods -
     open func fieldChangedAction(request: DNSFormStage.Models.Field.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.lastFieldChanged = (request.field, request.subfield)
-        DNSThread.run(after: 0.1) {
-            self.fieldChangedPublisher.send(request)
+        DNSUIThread.run {
+            self.lastFieldChanged = (request.field, request.subfield)
+            DNSThread.run(after: 0.1) {
+                self.fieldChangedPublisher.send(request)
+            }
         }
     }
     open func imageSelectAction(request: DNSFormStage.Models.Field.Request) {
@@ -236,32 +240,39 @@ extension DNSFormStageViewController: PHPickerViewControllerDelegate {
     public func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true, completion: .none)
         results.forEach { result in
-//            result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
-//                guard error == nil else {
-//                    return
-//                }
-                result.itemProvider.loadFileRepresentation(forTypeIdentifier: "public.image") { [weak self] url, error in
-                    guard let self else { return }
-                    guard error == nil else {
-                        return
+            result.itemProvider.loadFileRepresentation(forTypeIdentifier: "public.image") { [weak self] url, error in
+                guard let self else { return }
+                guard error == nil else {
+                    return
+                }
+                guard let url else {
+                    return
+                }
+                let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+                guard let targetURL = documentsDirectory?.appendingPathComponent(url.lastPathComponent) else {
+                    return
+                }
+                do {
+                    if FileManager.default.fileExists(atPath: targetURL.path) {
+                        try FileManager.default.removeItem(at: targetURL)
                     }
-                    guard let url else {
-                        return
-                    }
-                    print("URL=\(url.absoluteString)")
+                    try FileManager.default.copyItem(at: url, to: targetURL)
                     guard var fieldRequest = self.fieldRequest else {
                         return
                     }
-                    fieldRequest.value = url
-                    self.fieldChangedAction(request: fieldRequest)
+                    fieldRequest.value = targetURL
+                    self.uploadImagePublisher.send(fieldRequest)
+                } catch {
+                    return
                 }
-//            }
+            }
         }
     }
     func openPHPicker() {
         var phPickerConfig = PHPickerConfiguration(photoLibrary: .shared())
         phPickerConfig.selectionLimit = 1
         phPickerConfig.filter = PHPickerFilter.any(of: [.images, .livePhotos])
+        phPickerConfig.preferredAssetRepresentationMode = .current
         DNSUIThread.run {
             let phPickerVC = PHPickerViewController(configuration: phPickerConfig)
             phPickerVC.delegate = self

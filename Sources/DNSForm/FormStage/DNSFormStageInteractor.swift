@@ -10,6 +10,7 @@ import Combine
 import DNSBaseStage
 import DNSCore
 import DNSCoreThreading
+import DNSCrashWorkers
 import DNSDataObjects
 import DNSError
 import DNSProtocols
@@ -47,7 +48,12 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
             .sink { [weak self] request in self?.doLanguageChanged(request) })
         subscribers.append(viewController.saveActionPublisher
             .sink { [weak self] request in self?.doSave(request) })
+        subscribers.append(viewController.uploadImagePublisher
+            .sink { [weak self] request in self?.doUploadImage(request) })
     }
+
+    // MARK: - Workers -
+    public var wkrMedia: WKRPTCLMedia = WKRCrashMedia()
 
     // MARK: - Stage Lifecycle -
     override open func startStage(with displayType: DNSBaseStage.Display.Mode,
@@ -94,6 +100,9 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         let response = DNSFormStage.Models.Field.Response(field: request.field)
         self.selectImagePublisher.send(response)
+    }
+    open func doUploadImage(_ request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
     }
 
     // MARK: - Message methods
