@@ -50,6 +50,7 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
     }
     public var data: Data? {
         didSet {
+            self.activityIndicator.stopAnimating()
             guard let data = self.data else {
                 self.progressView.setProgress(0.0, animated: false)
                 self.progressView.isHidden = true
@@ -91,6 +92,7 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
         }
     }
 
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var alertLabel: DNSUILabel!
     @IBOutlet var deleteButton: DNSUIButton!
     @IBOutlet var imageView: UIImageView!
@@ -130,6 +132,7 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
     @IBAction func selectButtonAction(_ sender: UIButton) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
+        self.activityIndicator.startAnimating()
         imageSelectActionPublisher
             .send(DNSFormStage.Models.Field.Request(field: data.field,
                                                     languageCode: data.languageCode))

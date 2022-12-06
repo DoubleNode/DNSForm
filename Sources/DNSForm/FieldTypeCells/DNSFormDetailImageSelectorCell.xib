@@ -44,6 +44,9 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Fe-WC-Oam">
                                         <rect key="frame" x="1" y="1" width="82" height="82"/>
                                     </imageView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="SLS-wY-v7i">
+                                        <rect key="frame" x="23.5" y="23.5" width="37" height="37"/>
+                                    </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-B1-HV1">
                                         <rect key="frame" x="1" y="1" width="82" height="82"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,6 +60,7 @@
                                 <constraints>
                                     <constraint firstItem="vfR-AG-nbV" firstAttribute="leading" secondItem="Jap-NZ-Uma" secondAttribute="leading" constant="1" id="3YX-NX-CkZ"/>
                                     <constraint firstItem="LHd-B1-HV1" firstAttribute="bottom" secondItem="2Fe-WC-Oam" secondAttribute="bottom" id="3dD-Wl-06E"/>
+                                    <constraint firstItem="SLS-wY-v7i" firstAttribute="centerY" secondItem="Jap-NZ-Uma" secondAttribute="centerY" id="8v3-Ns-uwN"/>
                                     <constraint firstItem="LHd-B1-HV1" firstAttribute="top" secondItem="2Fe-WC-Oam" secondAttribute="top" id="CUw-Ns-40m"/>
                                     <constraint firstItem="vfR-AG-nbV" firstAttribute="top" secondItem="Jap-NZ-Uma" secondAttribute="top" constant="1" id="Cl2-8w-4H8"/>
                                     <constraint firstAttribute="trailing" secondItem="2Fe-WC-Oam" secondAttribute="trailing" constant="1" id="Kh6-tV-aSm"/>
@@ -65,6 +69,7 @@
                                     <constraint firstAttribute="width" secondItem="Jap-NZ-Uma" secondAttribute="height" multiplier="1:1" id="RUp-AS-JcD"/>
                                     <constraint firstItem="LHd-B1-HV1" firstAttribute="leading" secondItem="2Fe-WC-Oam" secondAttribute="leading" id="SIZ-wL-jIf"/>
                                     <constraint firstAttribute="bottom" secondItem="2Fe-WC-Oam" secondAttribute="bottom" constant="1" id="Voz-Pk-bbg"/>
+                                    <constraint firstItem="SLS-wY-v7i" firstAttribute="centerX" secondItem="Jap-NZ-Uma" secondAttribute="centerX" id="ct9-CR-cCP"/>
                                     <constraint firstAttribute="trailing" secondItem="vfR-AG-nbV" secondAttribute="trailing" constant="1" id="egf-n1-Q65"/>
                                     <constraint firstItem="2Fe-WC-Oam" firstAttribute="leading" secondItem="Jap-NZ-Uma" secondAttribute="leading" constant="1" id="qxv-HL-7vw"/>
                                     <constraint firstItem="zdv-7N-njv" firstAttribute="top" secondItem="Jap-NZ-Uma" secondAttribute="top" id="rq8-Fw-T4O"/>
@@ -160,6 +165,7 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.clear"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="activityIndicator" destination="SLS-wY-v7i" id="ehW-BK-Utv"/>
                 <outlet property="alertLabel" destination="wVq-mI-DCM" id="e0c-vP-EYb"/>
                 <outlet property="deleteButton" destination="DTP-4Z-aCp" id="7QE-zX-we3"/>
                 <outlet property="imageView" destination="2Fe-WC-Oam" id="Gf9-Hi-2YU"/>
