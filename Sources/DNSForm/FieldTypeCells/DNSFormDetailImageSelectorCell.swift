@@ -68,21 +68,22 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
             self.titleLabel.style = data.style.titleStyle
             self.titleLabel.text = data.label + languageLabel
 
-            self.deleteButton.isEnabled = false
-            self.selectButton.isEnabled = false
+            if data.readonly {
+                self.deleteButton.isEnabled = false
+                self.selectButton.isEnabled = false
+            }
 
             let lastString = self.lastURL?.absoluteString ?? ""
             let string = data.url?.absoluteString ?? ""
-            if string != lastString {
-                self.progressView.setProgress(0.0, animated: false)
-                self.progressView.isHidden = true
-                self.imageView.image = nil
-                self.lastURL = nil
-                if let imageUrl = data.url {
-                    if !data.readonly {
-                        self.deleteButton.isEnabled = true
-                        self.selectButton.isEnabled = false
-                    }
+            if let imageUrl = data.url {
+                if !data.readonly {
+                    self.deleteButton.isEnabled = true
+                    self.selectButton.isEnabled = false
+                }
+                if string != lastString {
+                    self.progressView.setProgress(0.0, animated: false)
+                    self.progressView.isHidden = true
+                    self.imageView.image = nil
                     self.lastURL = imageUrl
                     self.progressView.isHidden = false
                     self.imageView.af
@@ -94,16 +95,6 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
                             self.progressView.isHidden = (progress.fractionCompleted >= 1.0)
                         },
                                   imageTransition: UIImageView.ImageTransition.crossDissolve(0.2))
-                } else {
-                    if !data.readonly {
-                        self.deleteButton.isEnabled = false
-                        self.selectButton.isEnabled = true
-                    }
-                }
-            } else {
-                if !data.readonly {
-                    self.deleteButton.isEnabled = false
-                    self.selectButton.isEnabled = true
                 }
             }
         }
