@@ -12,12 +12,14 @@ import DNSProtocols
 
 public protocol DNSFormStagePresentationLogic: DNSBaseStagePresentationLogic {
     // MARK: - Outgoing Pipelines
+    var deleteImagePublisher: PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never> { get }
     var fieldAlertPublisher: PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never> { get }
     var languagePublisher: PassthroughSubject<DNSFormStage.Models.Language.ViewModel, Never> { get }
     var selectImagePublisher: PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never> { get }
 }
 open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentationLogic {
     // MARK: - Outgoing Pipelines
+    public let deleteImagePublisher = PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never>()
     public let fieldAlertPublisher = PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never>()
     public let languagePublisher = PassthroughSubject<DNSFormStage.Models.Language.ViewModel, Never>()
     public let selectImagePublisher = PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never>()
@@ -29,6 +31,8 @@ open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentatio
         // swiftlint:disable:next force_cast
         let interactor = baseInteractor as! DNSFormStage.Logic.Business
         subscribers.removeAll()
+        subscribers.append(interactor.deleteImagePublisher
+            .sink { [weak self] response in self?.presentDeleteImage(response) })
         subscribers.append(interactor.fieldAlertPublisher
             .sink { [weak self] response in self?.presentFieldAlert(response) })
         subscribers.append(interactor.languagePublisher
@@ -38,6 +42,12 @@ open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentatio
     }
 
     // MARK: - Presentation Logic
+    open func presentDeleteImage(_ response: DNSFormStage.Models.Field.Response) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        let viewModel = DNSFormStage.Models.Field.ViewModel(field: response.field,
+                                                            alertMessage: "")
+        deleteImagePublisher.send(viewModel)
+    }
     open func presentFieldAlert(_ response: DNSFormStage.Models.Field.Response) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         let viewModel = DNSFormStage.Models.Field

@@ -18,6 +18,7 @@ import Foundation
 
 public protocol DNSFormStageBusinessLogic: DNSBaseStageBusinessLogic {
     // MARK: - Outgoing Pipelines
+    var deleteImagePublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
     var fieldAlertPublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
     var languagePublisher: PassthroughSubject<DNSFormStage.Models.Language.Response, Never> { get }
     var selectImagePublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
@@ -29,6 +30,7 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
     open var selectedLanguage = DNSCore.languageCode { didSet { self.formUpdateLanguage() } }
 
     // MARK: - Outgoing Pipelines
+    public let deleteImagePublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
     public let fieldAlertPublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
     public let languagePublisher = PassthroughSubject<DNSFormStage.Models.Language.Response, Never>()
     public let selectImagePublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
@@ -40,10 +42,12 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         // swiftlint:disable:next force_cast
         let viewController = baseViewController as! DNSFormStage.Logic.Display
         subscribers.removeAll()
-        subscribers.append(viewController.imageSelectPublisher
-            .sink { [weak self] request in self?.doSelectImage(request) })
         subscribers.append(viewController.fieldChangedPublisher
             .sink { [weak self] request in self?.doFieldChanged(request) })
+        subscribers.append(viewController.imageDeletePublisher
+            .sink { [weak self] request in self?.doDeleteImage(request) })
+        subscribers.append(viewController.imageSelectPublisher
+            .sink { [weak self] request in self?.doSelectImage(request) })
         subscribers.append(viewController.languageChangedPublisher
             .sink { [weak self] request in self?.doLanguageChanged(request) })
         subscribers.append(viewController.saveActionPublisher
@@ -78,6 +82,9 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
             return
         }
         super.doCloseAction(request)
+    }
+    open func doDeleteImage(_ request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
     }
     open func doFieldChanged(_ request: DNSFormStage.Models.Field.Request) {
     }
