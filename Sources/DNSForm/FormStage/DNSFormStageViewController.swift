@@ -165,8 +165,9 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     }
     open func generateFieldCellLayout(contentSize: CGSize,
                                         headerSize: CGSize = CGSize.zero) -> NSCollectionLayoutSection {
+        let numberOfColumns = (DNSDevice.screenWidthUnits > 1000) ? 2.0 : 1.0
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
+            widthDimension: .fractionalWidth(1.0 / numberOfColumns),
             heightDimension: .estimated(contentSize.height))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)

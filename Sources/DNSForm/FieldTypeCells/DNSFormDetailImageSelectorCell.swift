@@ -129,6 +129,7 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
     @IBAction func deleteButtonAction(_ sender: UIButton) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
+        self.activityIndicator.stopAnimating()
         imageDeleteActionPublisher
             .send(DNSFormStage.Models.Field.Request(field: data.field,
                                                     languageCode: data.languageCode))
