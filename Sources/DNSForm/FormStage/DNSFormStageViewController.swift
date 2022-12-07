@@ -17,6 +17,7 @@ import UIKit
 public protocol DNSFormStageDisplayLogic: DNSBaseStageDisplayLogic {
     // MARK: - Outgoing Pipelines
     var fieldChangedPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
+    var imageDeletePublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
     var imageSelectPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
     var languageChangedPublisher: PassthroughSubject<DNSFormStage.Models.Language.Request, Never> { get }
     var saveActionPublisher: PassthroughSubject<DNSFormStage.Models.Base.Request, Never> { get }
@@ -28,6 +29,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     @IBOutlet public var formCollectionView: UICollectionView!
 
     public var fieldChangedPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
+    public var imageDeletePublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
     public var imageSelectPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
     public var languageChangedPublisher = PassthroughSubject<DNSFormStage.Models.Language.Request, Never>()
     public var saveActionPublisher = PassthroughSubject<DNSFormStage.Models.Base.Request, Never>()
@@ -49,6 +51,8 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         // swiftlint:disable:next force_cast
         let presenter = basePresenter as! DNSFormStage.Logic.Presentation
         subscribers.removeAll()
+        subscribers.append(presenter.deleteImagePublisher
+            .sink { [weak self] viewModel in self?.displayDeleteImage(viewModel) })
         subscribers.append(presenter.fieldAlertPublisher
             .sink { [weak self] viewModel in self?.displayFieldAlert(viewModel) })
         subscribers.append(presenter.languagePublisher
@@ -66,6 +70,11 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     }
 
     // MARK: - Display Logic
+    open func displayDeleteImage(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
+                                                              languageCode: self.selectedLanguage)
+    }
     open func displayFieldAlert(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         self.fieldAlertMessages[viewModel.field] = viewModel.alertMessage
@@ -91,6 +100,10 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     }
 
     // MARK: - Action methods -
+    open func imageDeleteAction(request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.imageDeletePublisher.send(request)
+    }
     open func fieldChangedAction(request: DNSFormStage.Models.Field.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         DNSUIThread.run {
@@ -196,6 +209,8 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
             cellSubscribers.append(fieldCell.changePublisher
                 .sink { [weak self] request in self?.fieldChangedAction(request: request) })
         } else if let fieldCell = fieldCell as? DNSFormDetailImageSelectorCell {
+            cellSubscribers.append(fieldCell.imageDeleteActionPublisher
+                .sink { [weak self] request in self?.imageDeleteAction(request: request) })
             cellSubscribers.append(fieldCell.imageSelectActionPublisher
                 .sink { [weak self] request in self?.imageSelectAction(request: request) })
         } else if let fieldCell = fieldCell as? DNSFormDetailImageUrlCell {

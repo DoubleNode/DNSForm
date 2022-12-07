@@ -68,18 +68,15 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
             self.titleLabel.style = data.style.titleStyle
             self.titleLabel.text = data.label + languageLabel
 
-            if data.readonly {
-                self.deleteButton.isEnabled = false
-                self.selectButton.isEnabled = false
-            }
+            self.deleteButton.isEnabled = !data.readonly
+            self.selectButton.isEnabled = !data.readonly
 
             let lastString = self.lastURL?.absoluteString ?? ""
             let string = data.url?.absoluteString ?? ""
             if let imageUrl = data.url {
-                if !data.readonly {
-                    self.deleteButton.isEnabled = true
-                    self.selectButton.isEnabled = false
-                }
+                self.deleteButton.isEnabled = data.readonly ? false : true
+                self.selectButton.isEnabled = false
+
                 if string != lastString {
                     self.progressView.setProgress(0.0, animated: false)
                     self.progressView.isHidden = true
@@ -96,6 +93,9 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
                         },
                                   imageTransition: UIImageView.ImageTransition.crossDissolve(0.2))
                 }
+            } else {
+                self.deleteButton.isEnabled = false
+                self.selectButton.isEnabled = data.readonly ? false : true
             }
         }
     }
