@@ -697,11 +697,11 @@ public extension UIColor {
                         public static var selected = UIColor.white
                     }
                     public enum Tint {
-                        public static var disabled = UIColor.systemBlue
-                        public static var focused = UIColor.systemBlue
-                        public static var highlighted = UIColor.systemBlue
-                        public static var normal = UIColor.systemBlue
-                        public static var selected = UIColor.systemBlue
+                        public static var disabled = UIColor.white
+                        public static var focused = UIColor.white
+                        public static var highlighted = UIColor.white
+                        public static var normal = UIColor.white
+                        public static var selected = UIColor.white
                     }
                 }
             }
