@@ -116,7 +116,9 @@
                                     <constraint firstAttribute="height" constant="44" id="Knh-j3-Hoj"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="DELETE"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DELETE">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.destructive"/>
                                 </userDefinedRuntimeAttributes>
