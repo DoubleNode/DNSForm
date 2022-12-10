@@ -19,7 +19,7 @@ public protocol DNSFormDetailImageUrlCellLogic: DNSBaseStageCellLogic {
     typealias Stage = DNSFormStage
     // MARK: - Outgoing Pipelines -
     var changeTextPublisher: PassthroughSubject<Stage.Models.Field.Request, Never> { get }
-    var imagePopupActionPublisher: PassthroughSubject<Stage.Models.Image.Request, Never> { get }
+    var imagePopupActionPublisher: PassthroughSubject<Stage.Models.ImagePopup.Request, Never> { get }
 }
 open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
     DNSFormDetailImageUrlCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
@@ -105,7 +105,7 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Outgoing Pipelines -
     public var changeTextPublisher = PassthroughSubject<Stage.Models.Field.Request, Never>()
-    public var imagePopupActionPublisher = PassthroughSubject<Stage.Models.Image.Request, Never>()
+    public var imagePopupActionPublisher = PassthroughSubject<Stage.Models.ImagePopup.Request, Never>()
 
     override open func awakeFromNib() {
         super.awakeFromNib()
@@ -157,9 +157,11 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
         guard let image = self.imageView.image else { return }
-        imagePopupActionPublisher
-            .send(Stage.Models.Image.Request(field: data.field,
-                                             image: image))
+        let request = Stage.Models.ImagePopup.Request(field: data.field,
+                                                      image: image,
+                                                      message: data.placeholder,
+                                                      title: data.label)
+        imagePopupActionPublisher.send(request)
     }
     
     // MARK: - Utility methods -

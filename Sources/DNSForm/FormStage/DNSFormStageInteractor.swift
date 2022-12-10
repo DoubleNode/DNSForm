@@ -18,10 +18,12 @@ import Foundation
 
 public protocol DNSFormStageBusinessLogic: DNSBaseStageBusinessLogic {
     // MARK: - Outgoing Pipelines
-    var deleteImagePublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
     var fieldAlertPublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
+    var fileDeletePublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
+    var fileSelectPublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
+    var imageDeletePublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
+    var imageSelectPublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
     var languagePublisher: PassthroughSubject<DNSFormStage.Models.Language.Response, Never> { get }
-    var selectImagePublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
 }
 open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessLogic {
     static public let xlt = DNSDataTranslation()
@@ -30,10 +32,12 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
     open var selectedLanguage = DNSCore.languageCode { didSet { self.formUpdateLanguage() } }
 
     // MARK: - Outgoing Pipelines
-    public let deleteImagePublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
     public let fieldAlertPublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
+    public let fileDeletePublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
+    public let fileSelectPublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
+    public let imageDeletePublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
+    public let imageSelectPublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
     public let languagePublisher = PassthroughSubject<DNSFormStage.Models.Language.Response, Never>()
-    public let selectImagePublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
 
     // MARK: - Incoming Pipelines
     open var subscribers: [AnyCancellable] = []
@@ -44,16 +48,24 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         subscribers.removeAll()
         subscribers.append(viewController.fieldChangedPublisher
             .sink { [weak self] request in self?.doFieldChanged(request) })
+        subscribers.append(viewController.fileDeletePublisher
+            .sink { [weak self] request in self?.doFileDelete(request) })
+        subscribers.append(viewController.fileSelectPublisher
+            .sink { [weak self] request in self?.doFileSelect(request) })
+        subscribers.append(viewController.fileUploadPublisher
+            .sink { [weak self] request in self?.doFileUpload(request) })
         subscribers.append(viewController.imageDeletePublisher
-            .sink { [weak self] request in self?.doDeleteImage(request) })
+            .sink { [weak self] request in self?.doImageDelete(request) })
+        subscribers.append(viewController.imagePopupPublisher
+            .sink { [weak self] request in self?.doImagePopup(request) })
         subscribers.append(viewController.imageSelectPublisher
-            .sink { [weak self] request in self?.doSelectImage(request) })
+            .sink { [weak self] request in self?.doImageSelect(request) })
+        subscribers.append(viewController.imageUploadPublisher
+            .sink { [weak self] request in self?.doImageUpload(request) })
         subscribers.append(viewController.languageChangedPublisher
             .sink { [weak self] request in self?.doLanguageChanged(request) })
         subscribers.append(viewController.saveActionPublisher
             .sink { [weak self] request in self?.doSave(request) })
-        subscribers.append(viewController.uploadImagePublisher
-            .sink { [weak self] request in self?.doUploadImage(request) })
     }
 
     // MARK: - Workers -
@@ -83,10 +95,40 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         }
         super.doCloseAction(request)
     }
-    open func doDeleteImage(_ request: DNSFormStage.Models.Field.Request) {
+    open func doFieldChanged(_ request: DNSFormStage.Models.Field.Request) {
+    }
+    open func doFileDelete(_ request: DNSFormStage.Models.Field.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
     }
-    open func doFieldChanged(_ request: DNSFormStage.Models.Field.Request) {
+    open func doFileSelect(_ request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        let response = DNSFormStage.Models.Field.Response(field: request.field)
+        self.fileSelectPublisher.send(response)
+    }
+    open func doFileUpload(_ request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+    }
+    open func doImageDelete(_ request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+    }
+    open func doImagePopup(_ request: DNSFormStage.Models.ImagePopup.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        var response = DNSFormStage.Models.Message.Response(message: request.message,
+                                                            style: .popup,
+                                                            title: request.title)
+        response.image = request.image
+        response.nibName = "DNSFormDetailImagePopupViewController"
+        response.nibBundle = .init(identifier: "DNSForm-DNSForm-resources")
+        response.actionText = DNSFormStage.Form.Localizations.ImagePopup.closeButton
+        self.messagePublisher.send(response)
+    }
+    open func doImageSelect(_ request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        let response = DNSFormStage.Models.Field.Response(field: request.field)
+        self.imageSelectPublisher.send(response)
+    }
+    open func doImageUpload(_ request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
     }
     override open func doMessageDone(_ request: DNSFormStage.Models.Message.Request) {
         super.doMessageDone(request)
@@ -103,14 +145,6 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         self.selectedLanguage = request.languageCode
     }
     open func doSave(_ request: DNSFormStage.Models.Base.Request) { }
-    open func doSelectImage(_ request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        let response = DNSFormStage.Models.Field.Response(field: request.field)
-        self.selectImagePublisher.send(response)
-    }
-    open func doUploadImage(_ request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-    }
 
     // MARK: - Message methods
     open func messageUnsavedChanges() { }

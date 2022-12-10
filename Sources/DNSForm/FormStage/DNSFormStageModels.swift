@@ -57,14 +57,18 @@ open class DNSFormStageModels: DNSBaseStageModels {
             }
         }
     }
-    public enum Image {
+    public enum ImagePopup {
         public struct Request: DNSBaseStageBaseRequest {
             public var field: String
             public var image: UIImage
+            public var message: String
+            public var title: String
 
-            public init(field: String, image: UIImage) {
+            public init(field: String, image: UIImage, message: String, title: String) {
                 self.field = field
                 self.image = image
+                self.message = message
+                self.title = title
             }
         }
     }

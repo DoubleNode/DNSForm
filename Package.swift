@@ -36,7 +36,7 @@ let package = Package(
         .package(url: "https://github.com/DoubleNode/DNSCrashNetwork.git", from: "1.10.0"),
         .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", from: "1.10.0"),
         .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.10.21"),
-        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.10.37"),
+        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.10.38"),
         .package(url: "https://github.com/rajdeep/proton.git", from: "0.6.1"),
         .package(url: "https://github.com/Nirma/SFSymbol", from: "1.1.0")
     ],
@@ -63,6 +63,7 @@ let package = Package(
                 .process("FieldTypeCells/DNSFormDetailHeaderView.xib"),
                 .process("FieldTypeCells/DNSFormDetailHoursCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailImageSelectorCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailImageSelectorPlusCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailImageUrlCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailLanguageSelectionCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailPreviewButtonCell.xib"),

@@ -17,11 +17,15 @@ import UIKit
 public protocol DNSFormStageDisplayLogic: DNSBaseStageDisplayLogic {
     // MARK: - Outgoing Pipelines
     var fieldChangedPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
+    var fileDeletePublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
+    var fileSelectPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
+    var fileUploadPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
     var imageDeletePublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
+    var imagePopupPublisher: PassthroughSubject<DNSFormStage.Models.ImagePopup.Request, Never> { get }
     var imageSelectPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
+    var imageUploadPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
     var languageChangedPublisher: PassthroughSubject<DNSFormStage.Models.Language.Request, Never> { get }
     var saveActionPublisher: PassthroughSubject<DNSFormStage.Models.Base.Request, Never> { get }
-    var uploadImagePublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
 }
 open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageDisplayLogic {
     public var formDataSource: UICollectionViewDiffableDataSource<AnyHashable, AnyHashable>! = nil
@@ -29,11 +33,15 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     @IBOutlet public var formCollectionView: UICollectionView!
 
     public var fieldChangedPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
+    public var fileDeletePublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
+    public var fileSelectPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
+    public var fileUploadPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
     public var imageDeletePublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
+    public var imagePopupPublisher = PassthroughSubject<DNSFormStage.Models.ImagePopup.Request, Never>()
     public var imageSelectPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
+    public var imageUploadPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
     public var languageChangedPublisher = PassthroughSubject<DNSFormStage.Models.Language.Request, Never>()
     public var saveActionPublisher = PassthroughSubject<DNSFormStage.Models.Base.Request, Never>()
-    public var uploadImagePublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
 
     public var anyChanges = false
     public var enableSave = false
@@ -51,14 +59,18 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         // swiftlint:disable:next force_cast
         let presenter = basePresenter as! DNSFormStage.Logic.Presentation
         subscribers.removeAll()
-        subscribers.append(presenter.deleteImagePublisher
-            .sink { [weak self] viewModel in self?.displayDeleteImage(viewModel) })
         subscribers.append(presenter.fieldAlertPublisher
             .sink { [weak self] viewModel in self?.displayFieldAlert(viewModel) })
+        subscribers.append(presenter.fileDeletePublisher
+            .sink { [weak self] viewModel in self?.displayFileDelete(viewModel) })
+        subscribers.append(presenter.fileSelectPublisher
+            .sink { [weak self] viewModel in self?.displayFileSelect(viewModel) })
+        subscribers.append(presenter.imageDeletePublisher
+            .sink { [weak self] viewModel in self?.displayImageDelete(viewModel) })
+        subscribers.append(presenter.imageSelectPublisher
+            .sink { [weak self] viewModel in self?.displayImageSelect(viewModel) })
         subscribers.append(presenter.languagePublisher
             .sink { [weak self] viewModel in self?.displayLanguage(viewModel) })
-        subscribers.append(presenter.selectImagePublisher
-            .sink { [weak self] viewModel in self?.displaySelectImage(viewModel) })
     }
     
     override open func viewDidLoad() {
@@ -70,15 +82,32 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     }
 
     // MARK: - Display Logic
-    open func displayDeleteImage(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
-                                                              languageCode: self.selectedLanguage)
-    }
     open func displayFieldAlert(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         self.fieldAlertMessages[viewModel.field] = viewModel.alertMessage
         self.formRefresh()
+    }
+    open func displayFileDelete(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
+                                                              languageCode: self.selectedLanguage)
+    }
+    open func displayFileSelect(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
+                                                              languageCode: self.selectedLanguage)
+        self.openPHPicker()
+    }
+    open func displayImageDelete(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
+                                                              languageCode: self.selectedLanguage)
+    }
+    open func displayImageSelect(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
+                                                              languageCode: self.selectedLanguage)
+        self.openPHPicker()
     }
     open func displayLanguage(_ viewModel: DNSFormStage.Models.Language.ViewModel) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
@@ -92,18 +121,8 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         self.lastFieldChanged = nil
         self.formRefresh()
     }
-    open func displaySelectImage(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
-                                                              languageCode: self.selectedLanguage)
-        self.openPHPicker()
-    }
 
     // MARK: - Action methods -
-    open func imageDeleteAction(request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.imageDeletePublisher.send(request)
-    }
     open func fieldChangedAction(request: DNSFormStage.Models.Field.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         DNSUIThread.run {
@@ -112,6 +131,22 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
                 self.fieldChangedPublisher.send(request)
             }
         }
+    }
+    open func fileDeleteAction(request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.fileDeletePublisher.send(request)
+    }
+    open func fileSelectAction(request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.fileSelectPublisher.send(request)
+    }
+    open func imageDeleteAction(request: DNSFormStage.Models.Field.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.imageDeletePublisher.send(request)
+    }
+    open func imagePopupAction(request: DNSFormStage.Models.ImagePopup.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.imagePopupPublisher.send(request)
     }
     open func imageSelectAction(request: DNSFormStage.Models.Field.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
@@ -206,12 +241,28 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         } else if let fieldCell = fieldCell as? DNSFormDetailDayOfWeekCell {
             cellSubscribers.append(fieldCell.changePublisher
                 .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailFileSelectorCell {
+            cellSubscribers.append(fieldCell.fileDeleteActionPublisher
+                .sink { [weak self] request in self?.fileDeleteAction(request: request) })
+            cellSubscribers.append(fieldCell.fileSelectActionPublisher
+                .sink { [weak self] request in self?.fileSelectAction(request: request) })
         } else if let fieldCell = fieldCell as? DNSFormDetailHoursCell {
             cellSubscribers.append(fieldCell.changePublisher
                 .sink { [weak self] request in self?.fieldChangedAction(request: request) })
         } else if let fieldCell = fieldCell as? DNSFormDetailImageSelectorCell {
             cellSubscribers.append(fieldCell.imageDeleteActionPublisher
                 .sink { [weak self] request in self?.imageDeleteAction(request: request) })
+            cellSubscribers.append(fieldCell.imagePopupActionPublisher
+                .sink { [weak self] request in self?.imagePopupAction(request: request) })
+            cellSubscribers.append(fieldCell.imageSelectActionPublisher
+                .sink { [weak self] request in self?.imageSelectAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailImageSelectorPlusCell {
+            cellSubscribers.append(fieldCell.changeTextPublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+            cellSubscribers.append(fieldCell.imageDeleteActionPublisher
+                .sink { [weak self] request in self?.imageDeleteAction(request: request) })
+            cellSubscribers.append(fieldCell.imagePopupActionPublisher
+                .sink { [weak self] request in self?.imagePopupAction(request: request) })
             cellSubscribers.append(fieldCell.imageSelectActionPublisher
                 .sink { [weak self] request in self?.imageSelectAction(request: request) })
         } else if let fieldCell = fieldCell as? DNSFormDetailImageUrlCell {
@@ -260,38 +311,11 @@ extension DNSFormStageViewController: PHPickerViewControllerDelegate {
                 guard error == nil else {
                     return
                 }
-                
                 guard var fieldRequest = self.fieldRequest else {
                     return
                 }
                 fieldRequest.value = reading
-                self.uploadImagePublisher.send(fieldRequest)
-
-//                result.itemProvider.loadFileRepresentation(forTypeIdentifier: "public.image") { [weak self] url, error in
-//                guard let self else { return }
-//                guard error == nil else {
-//                    return
-//                }
-//                guard let url else {
-//                    return
-//                }
-//                let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-//                guard let targetURL = documentsDirectory?.appendingPathComponent(url.lastPathComponent) else {
-//                    return
-//                }
-//                do {
-//                    if FileManager.default.fileExists(atPath: targetURL.path) {
-//                        try FileManager.default.removeItem(at: targetURL)
-//                    }
-//                    try FileManager.default.copyItem(at: url, to: targetURL)
-//                    guard var fieldRequest = self.fieldRequest else {
-//                        return
-//                    }
-//                    fieldRequest.value = targetURL
-//                    self.uploadImagePublisher.send(fieldRequest)
-//                } catch {
-//                    return
-//                }
+                self.imageUploadPublisher.send(fieldRequest)
             }
         }
     }

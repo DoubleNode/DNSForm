@@ -62,7 +62,7 @@ open class DNSFormDetailTextEditorCell: DNSBaseStageCollectionViewCell, DNSFormD
 //            editorView.style = data.style
 //            self.utilityDisplayAlert(data.alertMessage, for: editorView)
             self.lineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.black
-            let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
+//            let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
 //            editorView.isEnabled = !data.readonly
 //            editorView.placeholder = data.placeholder + languageLabel
 //            editorView.title = data.label + languageLabel
