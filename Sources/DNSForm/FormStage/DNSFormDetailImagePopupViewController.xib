@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -29,20 +29,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkx-vf-edJ" customClass="DNSUIView" customModule="DNSBaseTheme">
-                    <rect key="frame" x="521.5" y="274.5" width="323" height="475.5"/>
+                    <rect key="frame" x="53.666666666666657" y="79" width="323" height="774"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="2tX-9z-kMd">
-                            <rect key="frame" x="6" y="6" width="311" height="311"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="2tX-9z-kMd" secondAttribute="height" multiplier="1:1" id="4RR-Rv-Jdg"/>
-                            </constraints>
+                            <rect key="frame" x="6" y="6" width="311" height="609.66666666666663"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bt9-KM-xKl" userLabel="Border View" customClass="DNSUIView" customModule="DNSBaseTheme">
-                            <rect key="frame" x="6" y="6" width="311" height="311"/>
+                            <rect key="frame" x="6" y="6" width="311" height="609.66666666666663"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -54,10 +51,10 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="9w1-K8-9bU">
-                            <rect key="frame" x="8" y="8" width="307" height="307"/>
+                            <rect key="frame" x="8" y="8" width="307" height="605.66666666666663"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="HOME HERO IMAGE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc3-5U-FjQ" userLabel="Title" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                            <rect key="frame" x="24" y="333" width="275" height="28"/>
+                            <rect key="frame" x="24" y="631.66666666666663" width="275" height="28"/>
                             <fontDescription key="fontDescription" name="URWDINCond-Bold" family="URW DIN Cond" pointSize="24"/>
                             <color key="textColor" name="blackBrand"/>
                             <nil key="highlightedColor"/>
@@ -66,7 +63,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Displayed at the bottom of the Home Screen." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yuz-DG-t3J" userLabel="Message" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                            <rect key="frame" x="20" y="377" width="283" height="16.5"/>
+                            <rect key="frame" x="20" y="675.66666666666663" width="283" height="16.333333333333371"/>
                             <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="14"/>
                             <color key="textColor" name="blackBrand"/>
                             <nil key="highlightedColor"/>
@@ -78,7 +75,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rl1-yx-ELo" customClass="DNSUIButton" customModule="DNSBaseTheme">
-                            <rect key="frame" x="16" y="409.5" width="291" height="50"/>
+                            <rect key="frame" x="16" y="708" width="291" height="50"/>
                             <color key="backgroundColor" name="ButtonBackgroundActive"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="rTM-tU-5at"/>
@@ -152,7 +149,7 @@
             <size key="intrinsicContentSize" width="227" height="28"/>
         </designable>
         <designable name="Yuz-DG-t3J">
-            <size key="intrinsicContentSize" width="283" height="16.5"/>
+            <size key="intrinsicContentSize" width="283" height="16.333333333333332"/>
         </designable>
         <designable name="rl1-yx-ELo">
             <size key="intrinsicContentSize" width="60" height="33"/>
