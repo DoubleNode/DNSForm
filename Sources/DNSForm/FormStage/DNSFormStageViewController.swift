@@ -10,6 +10,7 @@ import Combine
 import DNSBaseStage
 import DNSCore
 import DNSCoreThreading
+import DNSDataObjects
 import Photos
 import PhotosUI
 import UIKit
@@ -101,7 +102,8 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     open func displayImageDelete(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
-                                                              languageCode: self.selectedLanguage)
+                                                              languageCode: self.selectedLanguage,
+                                                              value: nil)
     }
     open func displayImageSelect(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
@@ -308,13 +310,13 @@ extension DNSFormStageViewController: PHPickerViewControllerDelegate {
         picker.dismiss(animated: true, completion: .none)
         results.forEach { result in
             result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
-                guard error == nil else {
-                    return
-                }
-                guard var fieldRequest = self.fieldRequest else {
-                    return
-                }
-                fieldRequest.value = reading
+                guard error == nil else { return }
+                guard var fieldRequest = self.fieldRequest else { return }
+                guard let url = reading as? URL else { return }
+
+                var media = fieldRequest.value as? DAOMedia ?? DAOMedia.createMedia()
+                media.url.replace(for: self.selectedLanguage, with: url)
+                fieldRequest.value = media
                 self.imageUploadPublisher.send(fieldRequest)
             }
         }
