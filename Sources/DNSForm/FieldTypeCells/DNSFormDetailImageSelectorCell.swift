@@ -12,6 +12,7 @@ import DNSBaseStage
 import DNSBaseTheme
 import DNSCore
 import DNSCoreThreading
+import DNSDataObjects
 import DNSProtocols
 import UIKit
 
@@ -27,27 +28,27 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 100)
 
-    var lastURL: URL?
+    var lastMedia: DAOMedia?
 
     public struct Data: Hashable {
         public var field: String
         public var label: String
         public var languageCode: String
+        public var media: DAOMedia?
         public var placeholder: String
         public var readonly: Bool
         public var required: Bool
         public var style: DNSThemeFieldStyle = .DNSForm.default
-        public var url: URL?
         public var alertMessage: String = ""
 
-        public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool, required: Bool, url: URL? = nil) {
+        public init(field: String, label: String, languageCode: String, media: DAOMedia? = nil, placeholder: String, readonly: Bool, required: Bool) {
             self.field = field
             self.label = label
             self.languageCode = languageCode
+            self.media = media
             self.placeholder = placeholder
             self.readonly = readonly
             self.required = required
-            self.url = url
         }
     }
     public var data: Data? {
@@ -56,11 +57,10 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
             guard let data = self.data else {
                 self.deleteButton.isEnabled = false
                 self.selectButton.isEnabled = false
-
                 self.progressView.setProgress(0.0, animated: false)
                 self.progressView.isHidden = true
                 self.imageView.image = nil
-                self.lastURL = nil
+                self.lastMedia = nil
                 return
             }
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
@@ -76,32 +76,29 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
             self.progressView.setProgress(0.0, animated: false)
             self.progressView.isHidden = true
 
-            let lastString = self.lastURL?.absoluteString ?? ""
-            let string = data.url?.absoluteString ?? ""
-            if let imageUrl = data.url {
+            let lastUrl = self.lastMedia?.url.asURL(for: data.languageCode)
+            let mediaUrl = data.media?.url.asURL(for: data.languageCode)
+            guard mediaUrl != lastUrl else {
+                return
+            }
+            self.lastMedia = data.media
+            self.imageView.image = nil
+            self.progressView.isHidden = false
+            if let mediaUrl {
                 self.deleteButton.isEnabled = data.readonly ? false : true
                 self.selectButton.isEnabled = false
-                if string != lastString {
-                    self.lastURL = imageUrl
-                    self.progressView.isHidden = false
-                    self.imageView.image = nil
-                    self.imageView.af
-                        .setImage(withURL: imageUrl,
-                                  cacheKey: imageUrl.absoluteString,
-                                  progress: { (progress) in
-                            self.progressView.setProgress(Float(progress.fractionCompleted),
-                                                          animated: true)
-                            self.progressView.isHidden = (progress.fractionCompleted >= 1.0)
-                        },
-                                  imageTransition: UIImageView.ImageTransition.crossDissolve(0.2))
-                }
+                self.imageView.af
+                    .setImage(withURL: mediaUrl,
+                              cacheKey: mediaUrl.absoluteString,
+                              progress: { (progress) in
+                        self.progressView.setProgress(Float(progress.fractionCompleted),
+                                                      animated: true)
+                        self.progressView.isHidden = (progress.fractionCompleted >= 1.0)
+                    },
+                              imageTransition: UIImageView.ImageTransition.crossDissolve(0.2))
             } else {
                 self.deleteButton.isEnabled = false
                 self.selectButton.isEnabled = data.readonly ? false : true
-                if string != lastString {
-                    self.lastURL = nil
-                    self.imageView.image = nil
-                }
             }
         }
     }
