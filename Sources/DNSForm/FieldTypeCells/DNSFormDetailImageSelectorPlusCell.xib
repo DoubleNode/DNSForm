@@ -18,14 +18,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DNSFormDetailImageSelectorPlusCell" customModule="DNSForm">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jap-NZ-Uma" userLabel="Image Container View" customClass="DNSUIView" customModule="DNSBaseTheme">
                                 <rect key="frame" x="24" y="0.0" width="84" height="84"/>
@@ -88,7 +88,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[This is a note on content type and frequency]" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgG-z5-9Dn" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                                <rect key="frame" x="120" y="6" width="225" height="13"/>
+                                <rect key="frame" x="120" y="22" width="225" height="13"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>
                                 <nil key="highlightedColor"/>
@@ -97,7 +97,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mP2-6q-Y9a" customClass="DNSUIButton" customModule="DNSBaseTheme">
-                                <rect key="frame" x="120" y="25" width="143.5" height="44"/>
+                                <rect key="frame" x="120" y="41" width="143.5" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ymQ-3U-6Ba"/>
                                 </constraints>
@@ -111,7 +111,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTP-4Z-aCp" customClass="DNSUIButton" customModule="DNSBaseTheme">
-                                <rect key="frame" x="275.5" y="25" width="114.5" height="44"/>
+                                <rect key="frame" x="275.5" y="41" width="114.5" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Knh-j3-Hoj"/>
                                 </constraints>
@@ -127,7 +127,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[This is a note on content type and frequency]" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVq-mI-DCM" customClass="DNSUILabel" customModule="DNSBaseTheme">
-                                <rect key="frame" x="120" y="71" width="225" height="13"/>
+                                <rect key="frame" x="120" y="87" width="225" height="13"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -136,7 +136,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgJ-ac-3E1" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
-                                <rect key="frame" x="24" y="84" width="366" height="64"/>
+                                <rect key="frame" x="24" y="100" width="366" height="64"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="kxN-ik-4Tv"/>
@@ -146,7 +146,7 @@
                         <constraints>
                             <constraint firstItem="DTP-4Z-aCp" firstAttribute="leading" secondItem="mP2-6q-Y9a" secondAttribute="trailing" constant="12" id="0Y2-qT-4CT"/>
                             <constraint firstItem="DTP-4Z-aCp" firstAttribute="bottom" secondItem="mP2-6q-Y9a" secondAttribute="bottom" id="7Ao-vi-Nlp"/>
-                            <constraint firstItem="FgJ-ac-3E1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Jap-NZ-Uma" secondAttribute="bottom" id="Bwr-bt-fZp"/>
+                            <constraint firstItem="FgJ-ac-3E1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Jap-NZ-Uma" secondAttribute="bottom" constant="16" id="Bwr-bt-fZp"/>
                             <constraint firstItem="mP2-6q-Y9a" firstAttribute="leading" secondItem="BgG-z5-9Dn" secondAttribute="leading" id="Byl-HO-BzR"/>
                             <constraint firstAttribute="trailing" secondItem="DTP-4Z-aCp" secondAttribute="trailing" constant="24" id="C76-hc-QG1"/>
                             <constraint firstAttribute="bottom" secondItem="FgJ-ac-3E1" secondAttribute="bottom" id="LKQ-V4-2q1"/>
