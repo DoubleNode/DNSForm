@@ -119,7 +119,9 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         response.image = request.image
         response.nibName = "DNSFormDetailImagePopupViewController"
         response.nibBundle = .init(identifier: "DNSForm-DNSForm-resources")
-        response.actionText = DNSFormStage.Form.Localizations.ImagePopup.closeButton
+        response.actions = [
+            DNSFormStage.Form.ActionCodes.close: DNSFormStage.Form.Localizations.ImagePopup.closeButton
+        ]
         self.messagePublisher.send(response)
     }
     open func doImageSelect(_ request: DNSFormStage.Models.Field.Request) {
