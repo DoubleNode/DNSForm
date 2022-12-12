@@ -22,6 +22,10 @@ public enum DNSFormStage {
     public typealias Presenter = DNSFormStagePresenter
     public typealias ViewController = DNSFormStageViewController
 
+    public enum ActionCodes {
+        static let close = "DNSFormStage_ActionCodes_close"
+    }
+    
     public enum FormState {
         case none
         case cancelling
