@@ -18,14 +18,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DNSFormDetailImageSelectorPlusCell" customModule="DNSForm">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jap-NZ-Uma" userLabel="Image Container View" customClass="DNSUIView" customModule="DNSBaseTheme">
                                 <rect key="frame" x="24" y="0.0" width="84" height="84"/>
@@ -136,7 +136,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgJ-ac-3E1" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
-                                <rect key="frame" x="24" y="84" width="366" height="64"/>
+                                <rect key="frame" x="24" y="100" width="366" height="64"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="kxN-ik-4Tv"/>
@@ -146,7 +146,7 @@
                         <constraints>
                             <constraint firstItem="DTP-4Z-aCp" firstAttribute="leading" secondItem="mP2-6q-Y9a" secondAttribute="trailing" constant="12" id="0Y2-qT-4CT"/>
                             <constraint firstItem="DTP-4Z-aCp" firstAttribute="bottom" secondItem="mP2-6q-Y9a" secondAttribute="bottom" id="7Ao-vi-Nlp"/>
-                            <constraint firstItem="FgJ-ac-3E1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Jap-NZ-Uma" secondAttribute="bottom" id="Bwr-bt-fZp"/>
+                            <constraint firstItem="FgJ-ac-3E1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Jap-NZ-Uma" secondAttribute="bottom" constant="16" id="Bwr-bt-fZp"/>
                             <constraint firstItem="mP2-6q-Y9a" firstAttribute="leading" secondItem="BgG-z5-9Dn" secondAttribute="leading" id="Byl-HO-BzR"/>
                             <constraint firstAttribute="trailing" secondItem="DTP-4Z-aCp" secondAttribute="trailing" constant="24" id="C76-hc-QG1"/>
                             <constraint firstAttribute="bottom" secondItem="FgJ-ac-3E1" secondAttribute="bottom" id="LKQ-V4-2q1"/>
@@ -156,7 +156,7 @@
                             <constraint firstItem="mP2-6q-Y9a" firstAttribute="leading" secondItem="wVq-mI-DCM" secondAttribute="leading" id="bCB-ZK-hHx"/>
                             <constraint firstItem="Jap-NZ-Uma" firstAttribute="top" secondItem="KuD-TU-KgD" secondAttribute="top" id="cRm-sY-MND"/>
                             <constraint firstItem="mP2-6q-Y9a" firstAttribute="top" secondItem="BgG-z5-9Dn" secondAttribute="bottom" constant="6" id="ko1-LW-ee4"/>
-                            <constraint firstItem="FgJ-ac-3E1" firstAttribute="top" secondItem="wVq-mI-DCM" secondAttribute="bottom" id="rC7-re-Lds"/>
+                            <constraint firstItem="FgJ-ac-3E1" firstAttribute="top" secondItem="wVq-mI-DCM" secondAttribute="bottom" constant="16" id="rC7-re-Lds"/>
                             <constraint firstItem="wVq-mI-DCM" firstAttribute="top" secondItem="mP2-6q-Y9a" secondAttribute="bottom" constant="2" id="vV4-k7-K23"/>
                             <constraint firstItem="FgJ-ac-3E1" firstAttribute="leading" secondItem="KuD-TU-KgD" secondAttribute="leading" constant="24" id="xaU-Cv-iBF"/>
                             <constraint firstItem="Jap-NZ-Uma" firstAttribute="leading" secondItem="KuD-TU-KgD" secondAttribute="leading" constant="24" id="yer-pf-zdg"/>
