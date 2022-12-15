@@ -23,7 +23,7 @@ public enum DNSFormStage {
     public typealias ViewController = DNSFormStageViewController
 
     public enum ActionCodes {
-        static let close = "DNSFormStage_ActionCodes_close"
+        static public let close = "DNSFormStage_ActionCodes_close"
     }
     
     public enum FormState {

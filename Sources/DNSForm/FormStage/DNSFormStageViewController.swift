@@ -97,7 +97,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
                                                               languageCode: self.selectedLanguage)
-        self.openPHPicker()
+        self.openFilePicker()
     }
     open func displayImageDelete(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
@@ -328,5 +328,50 @@ extension DNSFormStageViewController: PHPickerViewControllerDelegate {
             phPickerVC.delegate = self
             self.present(phPickerVC, animated: true)
         }
+    }
+}
+// MARK: - PHPicker methods
+extension DNSFormStageViewController: UIDocumentPickerDelegate {
+//    public func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+//        picker.dismiss(animated: true, completion: .none)
+//        results.forEach { result in
+//            result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
+//                guard error == nil else { return }
+//                guard var fieldRequest = self.fieldRequest else { return }
+//                guard let image = reading as? UIImage else { return }
+//                fieldRequest.value = image
+//                self.imageUploadPublisher.send(fieldRequest)
+//            }
+//        }
+//    }
+    public func documentPicker(_ picker: UIDocumentPickerViewController, didPickDocumentAt fileUrl: URL) {
+        picker.dismiss(animated: true, completion: .none)
+        guard fileUrl.startAccessingSecurityScopedResource() else { return }
+        defer {
+            fileUrl.stopAccessingSecurityScopedResource()
+        }
+
+        let documentsPathUrl = FileManager.default.temporaryDirectory
+        let localUrl = documentsPathUrl.appendingPathComponent(fileUrl.lastPathComponent)
+        do {
+            try FileManager.default.copyItem(at: fileUrl, to: localUrl)
+        } catch {
+        }
+
+        guard var fieldRequest = self.fieldRequest else { return }
+        fieldRequest.value = localUrl
+        self.fileUploadPublisher.send(fieldRequest)
+    }
+//    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+//    }
+    func openFilePicker() {
+        DNSUIThread.run {
+            let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [ .jpeg, .pdf, .png ])
+            documentPicker.modalPresentationStyle = .overFullScreen
+            documentPicker.delegate = self
+            documentPicker.allowsMultipleSelection = false
+            self.present(documentPicker, animated: true)
+        }
+
     }
 }
