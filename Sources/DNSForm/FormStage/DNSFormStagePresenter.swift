@@ -61,13 +61,13 @@ open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentatio
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         let viewModel = DNSFormStage.Models.Field.ViewModel(field: response.field,
                                                             alertMessage: "")
-        imageDeletePublisher.send(viewModel)
+        fileDeletePublisher.send(viewModel)
     }
     open func presentFileSelect(_ response: DNSFormStage.Models.Field.Response) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         let viewModel = DNSFormStage.Models.Field.ViewModel(field: response.field,
                                                             alertMessage: "")
-        imageSelectPublisher.send(viewModel)
+        fileSelectPublisher.send(viewModel)
     }
     open func presentImageDelete(_ response: DNSFormStage.Models.Field.Response) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
