@@ -77,8 +77,8 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
                                   and initialization: DNSBaseStageBaseInitialization?) {
         super.startStage(with: displayType, with: displayOptions, and: initialization)
     }
-    override open func updateStage(with initializationObject: DNSBaseStageBaseInitialization) {
-        super.updateStage(with: initializationObject)
+    override open func stageWasUpdated() {
+        super.stageWasUpdated()
     }
     override open func stageWillAppear(_ request: BaseStage.Models.Base.Request) {
         super.stageWillAppear(request)
