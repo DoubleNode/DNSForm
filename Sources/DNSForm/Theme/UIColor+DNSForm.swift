@@ -1354,7 +1354,7 @@ public extension UIColor {
                 public static var tint = UIColor.darkGray
             }
             public enum TextViewBackground {
-                public static var background = UIColor.systemGray5
+                public static var background = UIColor.lightGray
                 public static var tint = UIColor.clear
             }
         }
