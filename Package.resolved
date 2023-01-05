@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseStage.git",
       "state" : {
-        "revision" : "78916932331ee38140666c435d3ca5c5348ce57d",
-        "version" : "1.10.20"
+        "revision" : "be762bd0456bc628a8c33d78b3663902193041ff",
+        "version" : "1.10.21"
       }
     },
     {
@@ -259,24 +259,6 @@
       "state" : {
         "revision" : "49039bbbc47f777460c3b9712979699df6e8808c",
         "version" : "0.6.1"
-      }
-    },
-    {
-      "identity" : "realm-core",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/realm/realm-core",
-      "state" : {
-        "revision" : "2b8def17bb8e0cddbcc754db6b6466b8487feebf",
-        "version" : "12.5.0"
-      }
-    },
-    {
-      "identity" : "realm-swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/realm/realm-swift",
-      "state" : {
-        "revision" : "a107f5660b0b6067700923af7f107b6af73c546b",
-        "version" : "10.28.5"
       }
     },
     {
