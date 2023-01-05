@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseStage.git",
       "state" : {
-        "revision" : "78916932331ee38140666c435d3ca5c5348ce57d",
-        "version" : "1.10.20"
+        "revision" : "2302651bc4d00cf46b03e37fa2e9cdc53f832112",
+        "version" : "1.10.22"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "dae3d14d144bb910e0086a30eea157c3b975660e",
-        "version" : "1.10.31"
+        "revision" : "ad015f7bfbaed7db0ddc30f28d0ced6852524a52",
+        "version" : "1.10.35"
       }
     },
     {
@@ -104,8 +104,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCore.git",
       "state" : {
-        "revision" : "8eab908ad6d331552d0071ed14e40f4a627058a9",
-        "version" : "1.10.17"
+        "revision" : "ceede6439713d8510c5d023e22f2181b37ba124a",
+        "version" : "1.10.18"
       }
     },
     {
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashWorkers.git",
       "state" : {
-        "revision" : "0695856c137aa619997b22b64f7199fd9ff7704c",
-        "version" : "1.10.24"
+        "revision" : "84e7d492f97b013e5857f68d52e59fc988bff9a8",
+        "version" : "1.10.28"
       }
     },
     {
@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSDataObjects.git",
       "state" : {
-        "revision" : "4dc816d090feb41a6b1fcc7bb2b4def4eb7d263f",
-        "version" : "1.10.50"
+        "revision" : "ae50d28f28d84af454585808e1790872ee44abb5",
+        "version" : "1.10.55"
       }
     },
     {
@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSProtocols.git",
       "state" : {
-        "revision" : "ed64123c6c3f75a6c91d0bd06d5bd02306166bf0",
-        "version" : "1.10.45"
+        "revision" : "67fd0324302d1e8337c11c3e347f023082bf0ea3",
+        "version" : "1.10.49"
       }
     },
     {
@@ -259,24 +259,6 @@
       "state" : {
         "revision" : "49039bbbc47f777460c3b9712979699df6e8808c",
         "version" : "0.6.1"
-      }
-    },
-    {
-      "identity" : "realm-core",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/realm/realm-core",
-      "state" : {
-        "revision" : "2b8def17bb8e0cddbcc754db6b6466b8487feebf",
-        "version" : "12.5.0"
-      }
-    },
-    {
-      "identity" : "realm-swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/realm/realm-swift",
-      "state" : {
-        "revision" : "a107f5660b0b6067700923af7f107b6af73c546b",
-        "version" : "10.28.5"
       }
     },
     {
