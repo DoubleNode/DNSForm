@@ -44,11 +44,11 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
-                self.checkImageView.image = UIImage(dnsSystemSymbol: SFSymbol.square)
+                self.checkImageView.image = UIImage(dnsSymbol: SFSymbol.square)
                 return
             }
-            let symbol = data.checked ? SFSymbol.checkmarkSquareFill : SFSymbol.square
-            self.checkImageView.image = UIImage(dnsSystemSymbol: symbol)
+            self.checkImageView.image =
+                data.checked ? UIImage(dnsSymbol: SFSymbol.Checkmark.squareFill) : UIImage(dnsSymbol: SFSymbol.square)
             self.detailLabel.isEnabled = !data.readonly
             self.detailLabel.text = data.detailText
             self.titleLabel.isEnabled = !data.readonly
