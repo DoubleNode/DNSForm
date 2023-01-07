@@ -28,17 +28,17 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/DoubleNodeOpen/AnimatedField.git", from: "2.5.44"),
         .package(url: "https://github.com/DoubleNode/DNSAppCore.git", from: "1.10.2"),
-        .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.10.22"),
-        .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.10.1"),
-        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.10.35"),
-        .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.10.20"),
+        .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.10.24"),
+        .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.10.3"),
+        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.10.37"),
+        .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.10.28"),
         .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", from: "1.10.1"),
         .package(url: "https://github.com/DoubleNode/DNSCrashNetwork.git", from: "1.10.0"),
         .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", from: "1.10.0"),
-        .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.10.28"),
-        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.10.49"),
+        .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.10.30"),
+        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.10.53"),
         .package(url: "https://github.com/rajdeep/proton.git", from: "0.6.1"),
-        .package(url: "https://github.com/Nirma/SFSymbol", from: "1.1.0")
+        .package(url: "https://github.com/Nirma/SFSymbol", from: "2.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
