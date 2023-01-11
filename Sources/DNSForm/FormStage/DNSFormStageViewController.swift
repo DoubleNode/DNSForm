@@ -234,6 +234,9 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         if let fieldCell = fieldCell as? DNSFormDetailAppActionCell {
             cellSubscribers.append(fieldCell.changeTextPublisher
                 .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailCheckboxCell {
+            cellSubscribers.append(fieldCell.selectedPublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
         } else if let fieldCell = fieldCell as? DNSFormDetailDateCell {
             cellSubscribers.append(fieldCell.changeDatePublisher
                 .sink { [weak self] request in self?.fieldChangedAction(request: request) })
@@ -270,6 +273,8 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         } else if let fieldCell = fieldCell as? DNSFormDetailImageUrlCell {
             cellSubscribers.append(fieldCell.changeTextPublisher
                 .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+            cellSubscribers.append(fieldCell.imagePopupActionPublisher
+                .sink { [weak self] request in self?.imagePopupAction(request: request) })
         } else if let fieldCell = fieldCell as? DNSFormDetailLanguageSelectionCell {
             cellSubscribers.append(fieldCell.selectedPublisher
                 .sink { [weak self] request in self?.languageChangedAction(request: request) })
