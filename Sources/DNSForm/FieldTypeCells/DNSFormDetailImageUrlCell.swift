@@ -74,10 +74,10 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
 
             let lastString = self.lastURL?.absoluteString ?? ""
             let string = data.url?.absoluteString ?? ""
-            if string != lastString {
-                textField.text = string
-                self.utilityDisplayAlert(data.alertMessage, for: textField)
+            textField.text = string
+            self.utilityDisplayAlert(data.alertMessage, for: textField)
 
+            if string != lastString {
                 self.progressView.setProgress(0.0, animated: false)
                 self.progressView.isHidden = true
                 self.imageView.image = nil
