@@ -92,7 +92,8 @@ open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentatio
     }
     open func presentTab(_ response: DNSFormStage.Models.Tab.Response) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        let viewModel = DNSFormStage.Models.Tab.ViewModel(tabCode: response.tabCode)
+        let viewModel = DNSFormStage.Models.Tab.ViewModel(selectedTabCode: response.selectedTabCode,
+                                                          tabsCode: response.tabsCode)
         tabPublisher.send(viewModel)
     }
 }

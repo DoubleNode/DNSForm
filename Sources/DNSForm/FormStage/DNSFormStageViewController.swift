@@ -52,7 +52,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     public var fieldRequest: DNSFormStage.Models.Field.Request?
     public var lastFieldChanged: (field: String, subfield: String)? = nil
     public var selectedLanguage: String = DNSCore.languageCode { didSet { self.formRefresh() } }
-    public var selectedTab: String = "" { didSet { self.formRefresh() } }
+    public var selectedTabs: [String: String] = [:]
 
     // MARK: - Incoming Pipelines
     open var subscribers: [AnyCancellable] = []
@@ -130,7 +130,8 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     }
     open func displayTab(_ viewModel: DNSFormStage.Models.Tab.ViewModel) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.selectedTab = viewModel.tabCode
+        self.selectedTabs[viewModel.tabsCode] = viewModel.selectedTabCode
+        self.formRefresh()
     }
 
     // MARK: - Action methods -

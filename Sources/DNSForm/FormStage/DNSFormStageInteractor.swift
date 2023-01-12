@@ -31,7 +31,7 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
 
     open var formState: DNSFormStage.Form.FormState = .none { didSet { self.formRefresh() } }
     open var selectedLanguage = DNSCore.languageCode { didSet { self.formUpdateLanguage() } }
-    open var selectedTab = "" { didSet { self.formUpdateTab() } }
+    open var selectedTabs: [String: String] = [:]
 
     // MARK: - Outgoing Pipelines
     public let fieldAlertPublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
@@ -69,6 +69,8 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
             .sink { [weak self] request in self?.doLanguageChanged(request) })
         subscribers.append(viewController.saveActionPublisher
             .sink { [weak self] request in self?.doSave(request) })
+        subscribers.append(viewController.tabChangedPublisher
+            .sink { [weak self] request in self?.doTabChanged(request) })
     }
 
     // MARK: - Workers -
@@ -152,7 +154,8 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
     open func doSave(_ request: DNSFormStage.Models.Base.Request) { }
     open func doTabChanged(_ request: DNSFormStage.Models.Tab.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.selectedTab = request.tabCode
+        self.selectedTabs[request.tabsCode] = request.selectedTabCode
+        self.formUpdateTab(for: request.tabsCode)
     }
 
     // MARK: - Message methods
@@ -179,9 +182,10 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
             self.languagePublisher.send(request)
         }
     }
-    open func formUpdateTab() {
+    open func formUpdateTab(for tabsCode: String) {
         DNSLowThread.run {
-            let request = DNSFormStage.Models.Tab.Response(tabCode: self.selectedTab)
+            let request = DNSFormStage.Models.Tab.Response(selectedTabCode: self.selectedTabs[tabsCode] ?? "",
+                                                           tabsCode: tabsCode)
             self.tabPublisher.send(request)
         }
     }
