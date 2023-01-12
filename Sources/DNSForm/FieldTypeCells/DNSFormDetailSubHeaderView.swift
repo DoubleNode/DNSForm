@@ -14,7 +14,7 @@ import UIKit
 
 open class DNSFormDetailSubHeaderView: DNSBaseStageCollectionReusableView {
     public typealias Stage = DNSFormStage
-    static public let recommendedContentSize = CGSize(width: 414, height: 90)
+    static public let recommendedContentSize = CGSize(width: 414, height: 71)
 
     public struct Data: Hashable {
         public var section: Int
