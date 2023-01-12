@@ -41,6 +41,10 @@ open class DNSFormDetailTabSelectionCell: DNSBaseStageCollectionViewCell, DNSFor
             self.tabCode = tabCode
             self.tabs = tabs
             self.tabStrings = tabStrings
+            if tabCode.isEmpty && !tabs.isEmpty {
+                self.tabCode = tabs.first ?? ""
+            }
+
         }
     }
     public var data: Data? {
@@ -58,7 +62,7 @@ open class DNSFormDetailTabSelectionCell: DNSBaseStageCollectionViewCell, DNSFor
                 let index = self.tabButtons.firstIndex(of: $0) ?? 0
                 if data.tabs.count > index {
                     let tabCode = data.tabs[index]
-                    $0.setTitle(data.tabStrings[tabCode]?.asString, for: .normal)
+                    $0.setTitle(data.tabStrings[tabCode]?.asString(for: data.languageCode), for: .normal)
                     $0.isEnabled = data.tabCode != tabCode
                     $0.isHidden = false
                     $0.alpha = $0.isEnabled ? 0.3 : 1.0

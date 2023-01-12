@@ -1320,6 +1320,10 @@ public extension UIColor {
             }
             public static var header = UIColor.darkText
             public static var sectionFrameTitle = UIColor.white
+            public enum Subtitle {
+                public static var normal = UIColor.darkText
+                public static var disabled = UIColor.lightGray
+            }
             public static var tag = UIColor.darkText
             public enum Title {
                 public static var normal = UIColor.darkText

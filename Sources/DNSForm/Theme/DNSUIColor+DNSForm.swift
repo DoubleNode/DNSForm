@@ -1132,6 +1132,8 @@ public extension DNSUIColor {
                                                        disabled: UIColor.DNSForm.Label.FieldHeader.disabled)
             public static var header = DNSUIColor(UIColor.DNSForm.Label.header)
             public static var sectionFrameTitle = DNSUIColor(UIColor.DNSForm.Label.sectionFrameTitle)
+            public static var subtitle = DNSUIColor(UIColor.DNSForm.Label.Subtitle.normal,
+                                                    disabled: UIColor.DNSForm.Label.Subtitle.disabled)
             public static var tag = DNSUIColor(UIColor.DNSForm.Label.tag)
             public static var title = DNSUIColor(UIColor.DNSForm.Label.Title.normal,
                                                  disabled: UIColor.DNSForm.Label.Title.disabled)

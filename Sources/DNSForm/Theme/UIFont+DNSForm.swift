@@ -194,8 +194,9 @@ public extension UIFont {
             public static var fieldHeader = UIFont.systemFont(ofSize: 13, weight: .semibold)
             public static var header = UIFont.systemFont(ofSize: 28, weight: .bold)
             public static var sectionFrameTitle = UIFont.systemFont(ofSize: 10, weight: .semibold)
+            public static var subtitle = UIFont.systemFont(ofSize: 18, weight: .semibold)
             public static var tag = UIFont.systemFont(ofSize: 9, weight: .semibold)
-            public static var title = UIFont.systemFont(ofSize: 18, weight: .semibold)
+            public static var title = UIFont.systemFont(ofSize: 24, weight: .bold)
         }
     }
 }

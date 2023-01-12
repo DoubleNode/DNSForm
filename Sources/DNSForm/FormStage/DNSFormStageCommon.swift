@@ -60,6 +60,7 @@ public enum DNSFormStage {
         DNSFormDetailSearchButtonCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailSectionHeaderCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailSpacerCell.register(to: collectionView, from: Bundle.module)
+        DNSFormDetailTabSelectionCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailTextEditorCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailTextFieldCell.register(to: collectionView, from: Bundle.module)
         DNSFormDetailTextSelectionCell.register(to: collectionView, from: Bundle.module)
@@ -71,6 +72,9 @@ public enum DNSFormStage {
         DNSFormDetailHeaderView.register(to: collectionView,
                                          for: UICollectionView.elementKindSectionHeader,
                                          from: Bundle.module)
+        DNSFormDetailSubHeaderView.register(to: collectionView,
+                                            for: UICollectionView.elementKindSectionHeader,
+                                            from: Bundle.module)
     }
 
     // swiftlint:disable line_length
