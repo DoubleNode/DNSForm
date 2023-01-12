@@ -95,6 +95,26 @@ open class DNSFormStageModels: DNSBaseStageModels {
             }
         }
     }
+    public enum Tab {
+        public struct Request: DNSBaseStageBaseRequest {
+            public var tabCode: String
+            public init(tabCode: String) {
+                self.tabCode = tabCode
+            }
+        }
+        public struct Response: DNSBaseStageBaseResponse {
+            public var tabCode: String
+            public init(tabCode: String) {
+                self.tabCode = tabCode
+            }
+        }
+        public struct ViewModel: DNSBaseStageBaseViewModel {
+            public var tabCode: String
+            public init(tabCode: String) {
+                self.tabCode = tabCode
+            }
+        }
+    }
     public enum Weblink {
         public struct Request: DNSBaseStageBaseRequest {
             public var field: String

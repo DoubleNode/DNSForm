@@ -18,6 +18,7 @@ public protocol DNSFormStagePresentationLogic: DNSBaseStagePresentationLogic {
     var imageDeletePublisher: PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never> { get }
     var imageSelectPublisher: PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never> { get }
     var languagePublisher: PassthroughSubject<DNSFormStage.Models.Language.ViewModel, Never> { get }
+    var tabPublisher: PassthroughSubject<DNSFormStage.Models.Tab.ViewModel, Never> { get }
 }
 open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentationLogic {
     // MARK: - Outgoing Pipelines
@@ -27,6 +28,7 @@ open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentatio
     public let imageDeletePublisher = PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never>()
     public let imageSelectPublisher = PassthroughSubject<DNSFormStage.Models.Field.ViewModel, Never>()
     public let languagePublisher = PassthroughSubject<DNSFormStage.Models.Language.ViewModel, Never>()
+    public let tabPublisher = PassthroughSubject<DNSFormStage.Models.Tab.ViewModel, Never>()
 
     // MARK: - Incoming Pipelines
     open var subscribers: [AnyCancellable] = []
@@ -47,6 +49,8 @@ open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentatio
             .sink { [weak self] response in self?.presentImageSelect(response) })
         subscribers.append(interactor.languagePublisher
             .sink { [weak self] response in self?.presentLanguage(response) })
+        subscribers.append(interactor.tabPublisher
+            .sink { [weak self] response in self?.presentTab(response) })
     }
 
     // MARK: - Presentation Logic
@@ -85,5 +89,10 @@ open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentatio
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         let viewModel = DNSFormStage.Models.Language.ViewModel(languageCode: response.languageCode)
         languagePublisher.send(viewModel)
+    }
+    open func presentTab(_ response: DNSFormStage.Models.Tab.Response) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        let viewModel = DNSFormStage.Models.Tab.ViewModel(tabCode: response.tabCode)
+        tabPublisher.send(viewModel)
     }
 }

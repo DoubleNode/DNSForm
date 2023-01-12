@@ -24,12 +24,14 @@ public protocol DNSFormStageBusinessLogic: DNSBaseStageBusinessLogic {
     var imageDeletePublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
     var imageSelectPublisher: PassthroughSubject<DNSFormStage.Models.Field.Response, Never> { get }
     var languagePublisher: PassthroughSubject<DNSFormStage.Models.Language.Response, Never> { get }
+    var tabPublisher: PassthroughSubject<DNSFormStage.Models.Tab.Response, Never> { get }
 }
 open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessLogic {
     static public let xlt = DNSDataTranslation()
 
     open var formState: DNSFormStage.Form.FormState = .none { didSet { self.formRefresh() } }
     open var selectedLanguage = DNSCore.languageCode { didSet { self.formUpdateLanguage() } }
+    open var selectedTab = "" { didSet { self.formUpdateTab() } }
 
     // MARK: - Outgoing Pipelines
     public let fieldAlertPublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
@@ -38,6 +40,7 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
     public let imageDeletePublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
     public let imageSelectPublisher = PassthroughSubject<DNSFormStage.Models.Field.Response, Never>()
     public let languagePublisher = PassthroughSubject<DNSFormStage.Models.Language.Response, Never>()
+    public let tabPublisher = PassthroughSubject<DNSFormStage.Models.Tab.Response, Never>()
 
     // MARK: - Incoming Pipelines
     open var subscribers: [AnyCancellable] = []
@@ -147,6 +150,10 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         self.selectedLanguage = request.languageCode
     }
     open func doSave(_ request: DNSFormStage.Models.Base.Request) { }
+    open func doTabChanged(_ request: DNSFormStage.Models.Tab.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.selectedTab = request.tabCode
+    }
 
     // MARK: - Message methods
     open func messageUnsavedChanges() { }
@@ -170,6 +177,12 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         DNSLowThread.run {
             let request = DNSFormStage.Models.Language.Response(languageCode: self.selectedLanguage)
             self.languagePublisher.send(request)
+        }
+    }
+    open func formUpdateTab() {
+        DNSLowThread.run {
+            let request = DNSFormStage.Models.Tab.Response(tabCode: self.selectedTab)
+            self.tabPublisher.send(request)
         }
     }
 }

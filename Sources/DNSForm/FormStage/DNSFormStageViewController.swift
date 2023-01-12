@@ -27,6 +27,7 @@ public protocol DNSFormStageDisplayLogic: DNSBaseStageDisplayLogic {
     var imageUploadPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
     var languageChangedPublisher: PassthroughSubject<DNSFormStage.Models.Language.Request, Never> { get }
     var saveActionPublisher: PassthroughSubject<DNSFormStage.Models.Base.Request, Never> { get }
+    var tabChangedPublisher: PassthroughSubject<DNSFormStage.Models.Tab.Request, Never> { get }
 }
 open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageDisplayLogic {
     public var formDataSource: UICollectionViewDiffableDataSource<AnyHashable, AnyHashable>! = nil
@@ -43,6 +44,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     public var imageUploadPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
     public var languageChangedPublisher = PassthroughSubject<DNSFormStage.Models.Language.Request, Never>()
     public var saveActionPublisher = PassthroughSubject<DNSFormStage.Models.Base.Request, Never>()
+    public var tabChangedPublisher = PassthroughSubject<DNSFormStage.Models.Tab.Request, Never>()
 
     public var anyChanges = false
     public var enableSave = false
@@ -50,6 +52,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     public var fieldRequest: DNSFormStage.Models.Field.Request?
     public var lastFieldChanged: (field: String, subfield: String)? = nil
     public var selectedLanguage: String = DNSCore.languageCode { didSet { self.formRefresh() } }
+    public var selectedTab: String = "" { didSet { self.formRefresh() } }
 
     // MARK: - Incoming Pipelines
     open var subscribers: [AnyCancellable] = []
@@ -72,6 +75,8 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
             .sink { [weak self] viewModel in self?.displayImageSelect(viewModel) })
         subscribers.append(presenter.languagePublisher
             .sink { [weak self] viewModel in self?.displayLanguage(viewModel) })
+        subscribers.append(presenter.tabPublisher
+            .sink { [weak self] viewModel in self?.displayTab(viewModel) })
     }
     
     override open func viewDidLoad() {
@@ -123,6 +128,10 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         self.lastFieldChanged = nil
         self.formRefresh()
     }
+    open func displayTab(_ viewModel: DNSFormStage.Models.Tab.ViewModel) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.selectedTab = viewModel.tabCode
+    }
 
     // MARK: - Action methods -
     open func fieldChangedAction(request: DNSFormStage.Models.Field.Request) {
@@ -161,6 +170,10 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     open func saveButtonAction(request: DNSFormStage.Models.Base.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         self.saveActionPublisher.send(request)
+    }
+    open func tabChangedAction(request: DNSFormStage.Models.Tab.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.tabChangedPublisher.send(request)
     }
 
     // MARK: - Utility methods
@@ -284,6 +297,9 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         } else if let fieldCell = fieldCell as? DNSFormDetailPostalAddressCell {
             cellSubscribers.append(fieldCell.changeValuePublisher
                 .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailTabSelectionCell {
+            cellSubscribers.append(fieldCell.selectedPublisher
+                .sink { [weak self] request in self?.tabChangedAction(request: request) })
         } else if let fieldCell = fieldCell as? DNSFormDetailTextEditorCell {
             cellSubscribers.append(fieldCell.changeTextPublisher
                 .sink { [weak self] request in self?.fieldChangedAction(request: request) })
