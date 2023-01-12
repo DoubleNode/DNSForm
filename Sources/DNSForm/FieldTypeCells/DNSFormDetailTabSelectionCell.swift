@@ -28,21 +28,23 @@ open class DNSFormDetailTabSelectionCell: DNSBaseStageCollectionViewCell, DNSFor
         public var label: String
         public var lineBottomOffset: Double
         public var section: Int
-        public var tabCode: String
+        public var selectedTabCode: String
         public var tabs: [String] = []
+        public var tabsCode: String
         public var tabStrings: [String: DNSString] = [:]
 
         public init(languageCode: String, label: String, lineBottomOffset: Double, section: Int,
-                    tabCode: String, tabs: [String], tabStrings: [String: DNSString]) {
+                    selectedTabCode: String, tabs: [String], tabsCode: String, tabStrings: [String: DNSString]) {
             self.languageCode = languageCode
             self.label = label
             self.lineBottomOffset = lineBottomOffset
             self.section = section
-            self.tabCode = tabCode
+            self.selectedTabCode = selectedTabCode
             self.tabs = tabs
+            self.tabsCode = tabsCode
             self.tabStrings = tabStrings
-            if tabCode.isEmpty && !tabs.isEmpty {
-                self.tabCode = tabs.first ?? ""
+            if selectedTabCode.isEmpty && !tabs.isEmpty {
+                self.selectedTabCode = tabs.first ?? ""
             }
 
         }
@@ -63,7 +65,7 @@ open class DNSFormDetailTabSelectionCell: DNSBaseStageCollectionViewCell, DNSFor
                 if data.tabs.count > index {
                     let tabCode = data.tabs[index]
                     $0.setTitle(data.tabStrings[tabCode]?.asString(for: data.languageCode), for: .normal)
-                    $0.isEnabled = data.tabCode != tabCode
+                    $0.isEnabled = data.selectedTabCode != tabCode
                     $0.isHidden = false
                     $0.alpha = $0.isEnabled ? 0.3 : 1.0
                 } else {
@@ -105,13 +107,12 @@ open class DNSFormDetailTabSelectionCell: DNSBaseStageCollectionViewCell, DNSFor
     // MARK: - Action methods -
     @IBAction func selectAction(sender: UIButton) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        guard let data else { return }
-        var newTabCode = ""
-        self.tabButtons.forEach {
-            let index = self.tabButtons.firstIndex(of: $0) ?? 0
-            newTabCode = data.tabs[index]
-        }
+        guard let data,
+            let sender = sender as? DNSUIButton else { return }
+        let buttonIndex = tabButtons.firstIndex(of: sender) ?? 0
+        let newTabCode = (buttonIndex < tabButtons.count) ? data.tabs[buttonIndex] : ""
         guard !newTabCode.isEmpty else { return }
-        selectedPublisher.send(Stage.Models.Tab.Request(tabCode: newTabCode))
+        selectedPublisher.send(Stage.Models.Tab.Request(selectedTabCode: newTabCode,
+                                                        tabsCode: data.tabsCode))
     }
 }

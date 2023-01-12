@@ -75,21 +75,18 @@ open class DNSFormStageModels: DNSBaseStageModels {
     public enum Language {
         public struct Request: DNSBaseStageBaseRequest {
             public var languageCode: String
-
             public init(languageCode: String) {
                 self.languageCode = languageCode
             }
         }
         public struct Response: DNSBaseStageBaseResponse {
             public var languageCode: String
-
             public init(languageCode: String) {
                 self.languageCode = languageCode
             }
         }
         public struct ViewModel: DNSBaseStageBaseViewModel {
             public var languageCode: String
-
             public init(languageCode: String) {
                 self.languageCode = languageCode
             }
@@ -97,21 +94,27 @@ open class DNSFormStageModels: DNSBaseStageModels {
     }
     public enum Tab {
         public struct Request: DNSBaseStageBaseRequest {
-            public var tabCode: String
-            public init(tabCode: String) {
-                self.tabCode = tabCode
+            public var selectedTabCode: String
+            public var tabsCode: String
+            public init(selectedTabCode: String, tabsCode: String) {
+                self.selectedTabCode = selectedTabCode
+                self.tabsCode = tabsCode
             }
         }
         public struct Response: DNSBaseStageBaseResponse {
-            public var tabCode: String
-            public init(tabCode: String) {
-                self.tabCode = tabCode
+            public var selectedTabCode: String
+            public var tabsCode: String
+            public init(selectedTabCode: String, tabsCode: String) {
+                self.selectedTabCode = selectedTabCode
+                self.tabsCode = tabsCode
             }
         }
         public struct ViewModel: DNSBaseStageBaseViewModel {
-            public var tabCode: String
-            public init(tabCode: String) {
-                self.tabCode = tabCode
+            public var selectedTabCode: String
+            public var tabsCode: String
+            public init(selectedTabCode: String, tabsCode: String) {
+                self.selectedTabCode = selectedTabCode
+                self.tabsCode = tabsCode
             }
         }
     }
