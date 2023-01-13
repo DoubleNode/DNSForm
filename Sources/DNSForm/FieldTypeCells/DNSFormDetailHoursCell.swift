@@ -26,7 +26,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 95)
 
-    public lazy var timeFormatter: DateFormatter = {
+    static public var timeFormatter: DateFormatter = {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "h:mm a"
         return timeFormatter
@@ -88,7 +88,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             self.openTextField.placeholder = data.openPlaceholder
             self.openTextField.isEnabled = !data.readonly
             self.openTextField.title = data.openLabel
-            self.openTextField.text = timeFormatter.string(from: openTimeOfDay.today)
+            self.openTextField.text = Self.timeFormatter.string(from: openTimeOfDay.today)
 
             let closeTimeOfDay = data.hours.close ?? DNSTimeOfDay()
             self.closeIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
@@ -102,7 +102,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             self.closeTextField.placeholder = data.closePlaceholder
             self.closeTextField.isEnabled = !data.readonly
             self.closeTextField.title = data.closeLabel
-            self.closeTextField.text = timeFormatter.string(from: closeTimeOfDay.today)
+            self.closeTextField.text = Self.timeFormatter.string(from: closeTimeOfDay.today)
         }
     }
 
@@ -168,7 +168,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         openPicker.tintColor = openTextField.format.highlightColor
 
         openTextField.keyboardAppearance = .dark
-        openTextField.type = .datepicker(.time, openPicker.date, nil, nil, "", timeFormatter.dateFormat)
+        openTextField.type = .datepicker(.time, openPicker.date, nil, nil, "", Self.timeFormatter.dateFormat)
     }
     func contentInitClosePicker() {
         closePicker.date = Date()
@@ -176,7 +176,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         closePicker.tintColor = closeTextField.format.highlightColor
 
         closeTextField.keyboardAppearance = .dark
-        closeTextField.type = .datepicker(.time, closePicker.date, nil, nil, "", timeFormatter.dateFormat)
+        closeTextField.type = .datepicker(.time, closePicker.date, nil, nil, "", Self.timeFormatter.dateFormat)
     }
 
     // MARK: - Workers -
@@ -191,13 +191,13 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
-        var open = timeFormatter.date(from: openTextField.text!) ?? Date()
+        var open = Self.timeFormatter.date(from: openTextField.text!) ?? Date()
         let openTimeOfDay = DNSTimeOfDay(hour: open.dnsHour,
                                          minute: open.dnsMinute)
         open = openTimeOfDay.today
         openTextField.hideAlert()
 
-        var close = timeFormatter.date(from: closeTextField.text!) ?? Date()
+        var close = Self.timeFormatter.date(from: closeTextField.text!) ?? Date()
         let closeTimeOfDay = DNSTimeOfDay(hour: close.dnsHour,
                                           minute: close.dnsMinute)
         close = closeTimeOfDay.today

@@ -25,7 +25,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 76)
 
-    public lazy var dateFormatter: DateFormatter = {
+    static public var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
         return dateFormatter
@@ -74,10 +74,10 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
             self.dateTextField.placeholder = data.datePlaceholder
             self.dateTextField.isEnabled = !data.readonly
             self.dateTextField.title = data.dateLabel
-            self.dateTextField.text = dateFormatter.string(from: data.date)
+            self.dateTextField.text = Self.dateFormatter.string(from: data.date)
             self.dateTextField.type = .datepicker(.date, datePicker.date, data.minimumDate,
                                                   data.maximumDate, data.datePlaceholder,
-                                                  dateFormatter.dateFormat)
+                                                  Self.dateFormatter.dateFormat)
         }
     }
 
@@ -137,7 +137,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
-        let date = dateFormatter.date(from: dateTextField.text!) ?? Date()
+        let date = Self.dateFormatter.date(from: dateTextField.text!) ?? Date()
         dateTextField.hideAlert()
         changeDatePublisher.send(Stage.Models.Field.Request(field: data.field,
                                                             languageCode: "",

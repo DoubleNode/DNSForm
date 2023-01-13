@@ -25,7 +25,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 76)
 
-    public lazy var timeFormatter: DateFormatter = {
+    static public var timeFormatter: DateFormatter = {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "h:mm a"
         return timeFormatter
@@ -78,7 +78,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
                                          minute: data.timeOfDay.minute)
             self.timeZeroLabel.isHidden = (timeOfDay != Date.zeroTime)
             self.timeZeroLabel.isEnabled = !data.readonly
-            self.timeTextField.text = timeFormatter.string(from: data.timeOfDay.today)
+            self.timeTextField.text = Self.timeFormatter.string(from: data.timeOfDay.today)
         }
     }
 
@@ -123,7 +123,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
         timePicker.tintColor = timeTextField.format.highlightColor
 
         timeTextField.keyboardAppearance = .dark
-        timeTextField.type = .datepicker(.time, timePicker.date, nil, nil, "", timeFormatter.dateFormat)
+        timeTextField.type = .datepicker(.time, timePicker.date, nil, nil, "", Self.timeFormatter.dateFormat)
     }
 
     // MARK: - Workers -
@@ -138,7 +138,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
-        var time = timeFormatter.date(from: timeTextField.text!) ?? Date()
+        var time = Self.timeFormatter.date(from: timeTextField.text!) ?? Date()
         let timeOfDay = DNSTimeOfDay(hour: time.dnsHour,
                                      minute: time.dnsMinute)
         time = timeOfDay.today
