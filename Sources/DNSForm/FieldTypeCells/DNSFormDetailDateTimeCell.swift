@@ -25,12 +25,12 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 76)
 
-    public lazy var dateFormatter: DateFormatter = {
+    static public var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd, yyyy"
         return dateFormatter
     }()
-    public lazy var timeFormatter: DateFormatter = {
+    static public var timeFormatter: DateFormatter = {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "h:mm a"
         return timeFormatter
@@ -89,10 +89,10 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
             self.dateTextField.placeholder = data.datePlaceholder
             self.dateTextField.isEnabled = !data.readonly
             self.dateTextField.title = data.dateLabel
-            self.dateTextField.text = dateFormatter.string(from: data.date)
+            self.dateTextField.text = Self.dateFormatter.string(from: data.date)
             self.dateTextField.type = .datepicker(.date, datePicker.date, data.minimumDate,
                                                   data.maximumDate, data.datePlaceholder,
-                                                  dateFormatter.dateFormat)
+                                                  Self.dateFormatter.dateFormat)
 
             self.timeIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.timeLabel.text = data.timeLabel
@@ -110,7 +110,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
                                          minute: data.date.dnsMinute)
             self.timeZeroLabel.isHidden = (timeOfDay != Date.zeroTime)
             self.timeZeroLabel.isEnabled = !data.readonly
-            self.timeTextField.text = timeFormatter.string(from: data.date)
+            self.timeTextField.text = Self.timeFormatter.string(from: data.date)
         }
     }
 
@@ -198,8 +198,8 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         guard let data = self.data else { return }
-        let date = dateFormatter.date(from: dateTextField.text!) ?? Date()
-        var time = timeFormatter.date(from: timeTextField.text!) ?? Date()
+        let date = Self.dateFormatter.date(from: dateTextField.text!) ?? Date()
+        var time = Self.timeFormatter.date(from: timeTextField.text!) ?? Date()
         let timeOfDay = DNSTimeOfDay(hour: time.dnsHour,
                                      minute: time.dnsMinute)
         time = timeOfDay.time(on: date)
