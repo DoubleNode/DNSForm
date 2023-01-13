@@ -140,6 +140,7 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
         textField.hideAlert()
         textField.isEnabled = false
         textField.formatPattern = ""
+        textField.prefix = "$ "
         textField.keyboardType = .default
         textField.returnKeyType = .next
         textField.type = .none
