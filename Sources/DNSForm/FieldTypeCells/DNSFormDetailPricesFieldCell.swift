@@ -30,16 +30,16 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
             public var field: String = ""
             public var label: String
             public var languageCode: String
-            public var maximumPrice: Double = 999999.00
+            public var maximumPrice: Float = 999999.00
             public var placeholder: String
             public var readonly: Bool
             public var required: Bool
             public var returnKeyType: UIReturnKeyType = .next
             public var style: DNSThemeFieldStyle = .DNSForm.default
-            public var price: Double
+            public var price: Float
 
             public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool,
-                        required: Bool, price: Double) {
+                        required: Bool, price: Float) {
                 self.field = field
                 self.label = label
                 self.languageCode = languageCode
@@ -119,7 +119,7 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
         }
         animatedField.hideAlert()
         let newText = animatedField.text.orEmpty
-        let newPrice = Double(newText)
+        let newPrice = Float(newText)
         guard newPrice != fieldData.price else { return }
         let request = Stage.Models.Field.Request(field: fieldData.field,
                                                  languageCode: fieldData.languageCode,
@@ -155,7 +155,7 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
         textField.isSecure = false
         textField.keyboardType = .decimalPad
         textField.returnKeyType = fieldData.returnKeyType
-        textField.type = .price(fieldData.maximumPrice, 2)
+        textField.type = .price(Double(fieldData.maximumPrice), 2)
         textField.placeholder = fieldData.placeholder + languageLabel
         textField.title = fieldData.label + languageLabel
         let newText = "\(fieldData.price)"
