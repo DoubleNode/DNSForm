@@ -23,6 +23,8 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
                                       DNSFormDetailCheckboxCellLogic {
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 52)
+    static public var defaultImageChecked = UIImage(dnsSymbol: SFSymbol.Checkmark.squareFill)
+    static public var defaultImageUnchecked = UIImage(dnsSymbol: SFSymbol.square)
 
     public struct Data: Hashable {
         public var checked: Bool
@@ -31,6 +33,8 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
         public var titleText: String
+        public var imageChecked: UIImage? = DNSFormDetailCheckboxCell.defaultImageChecked
+        public var imageUnchecked: UIImage? = DNSFormDetailCheckboxCell.defaultImageUnchecked
 
         public init(checked: Bool, detailText: String, field: String, readonly: Bool, required: Bool, titleText: String) {
             self.checked = checked
@@ -44,11 +48,11 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
-                self.checkImageView.image = UIImage(dnsSymbol: SFSymbol.square)
+                self.checkImageView.image = DNSFormDetailCheckboxCell.defaultImageUnchecked
                 return
             }
-            self.checkImageView.image =
-                data.checked ? UIImage(dnsSymbol: SFSymbol.Checkmark.squareFill) : UIImage(dnsSymbol: SFSymbol.square)
+            self.checkImageView.image = data.checked ? data.imageChecked : data.imageUnchecked
+            self.checkImageView.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.detailLabel.isEnabled = !data.readonly
             self.detailLabel.text = data.detailText
             self.titleLabel.isEnabled = !data.readonly

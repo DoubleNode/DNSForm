@@ -14,6 +14,7 @@ import DNSCore
 import DNSCoreThreading
 import DNSDataObjects
 import DNSProtocols
+import SFSymbol
 import UIKit
 
 public protocol DNSFormDetailHoursCellLogic: DNSBaseStageCellLogic {
@@ -26,6 +27,8 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 95)
 
+    static public var defaultImageClose = UIImage(dnsSymbol: SFSymbol.clock)
+    static public var defaultImageOpen = UIImage(dnsSymbol: SFSymbol.clock)
     static public var timeFormatter: DateFormatter = {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "h:mm a"
@@ -46,6 +49,8 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         public var style: DNSThemeFieldStyle = .DNSForm.default
         public var closeAlertMessage: String = ""
         public var openAlertMessage: String = ""
+        public var imageClose: UIImage? = DNSFormDetailHoursCell.defaultImageClose
+        public var imageOpen: UIImage? = DNSFormDetailHoursCell.defaultImageOpen
 
         public init(closeLabel: String, closePlaceholder: String, field: String, hours: DNSDailyHours, hoursLabel: String, languageCode: String, openLabel: String, openPlaceholder: String, readonly: Bool, required: Bool) {
             self.closeLabel = closeLabel
@@ -77,6 +82,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             self.hoursLabel.isEnabled = !data.readonly
 
             let openTimeOfDay = data.hours.open ?? DNSTimeOfDay()
+            self.openIcon.image = data.imageOpen
             self.openIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.openLabel.text = data.openLabel
             self.openLabel.isEnabled = !data.readonly
@@ -91,6 +97,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
             self.openTextField.text = Self.timeFormatter.string(from: openTimeOfDay.today)
 
             let closeTimeOfDay = data.hours.close ?? DNSTimeOfDay()
+            self.closeIcon.image = data.imageClose
             self.closeIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.closeLabel.text = data.closeLabel
             self.closeLabel.isEnabled = !data.readonly

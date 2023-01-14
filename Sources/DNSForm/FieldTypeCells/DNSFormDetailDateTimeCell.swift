@@ -13,6 +13,7 @@ import DNSBaseTheme
 import DNSCore
 import DNSCoreThreading
 import DNSProtocols
+import SFSymbol
 import UIKit
 
 public protocol DNSFormDetailDateTimeCellLogic: DNSBaseStageCellLogic {
@@ -25,6 +26,8 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 76)
 
+    static public var defaultImageDate = UIImage(dnsSymbol: SFSymbol.calendar)
+    static public var defaultImageTime = UIImage(dnsSymbol: SFSymbol.clock)
     static public var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM dd, yyyy"
@@ -51,6 +54,8 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
         public var timePlaceholder: String
         public var dateAlertMessage: String = ""
         public var timeAlertMessage: String = ""
+        public var imageDate: UIImage? = DNSFormDetailDateTimeCell.defaultImageDate
+        public var imageTime: UIImage? = DNSFormDetailDateTimeCell.defaultImageTime
 
         public init(date: Date, dateLabel: String, datePlaceholder: String, field: String, languageCode: String, readonly: Bool, required: Bool, timeLabel: String, timePlaceholder: String) {
             self.date = date
@@ -78,6 +83,8 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
             timeTextField.style = data.style
             self.utilityDisplayAlert(data.dateAlertMessage, for: dateTextField)
             self.utilityDisplayAlert(data.timeAlertMessage, for: timeTextField)
+
+            self.dateIcon.image = data.imageDate
             self.dateIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.dateLabel.text = data.dateLabel
             self.dateLabel.isEnabled = !data.readonly
@@ -94,6 +101,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
                                                   data.maximumDate, data.datePlaceholder,
                                                   Self.dateFormatter.dateFormat)
 
+            self.timeIcon.image = data.imageTime
             self.timeIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.timeLabel.text = data.timeLabel
             self.timeLabel.isEnabled = !data.readonly

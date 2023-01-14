@@ -13,6 +13,7 @@ import DNSBaseTheme
 import DNSCore
 import DNSCoreThreading
 import DNSProtocols
+import SFSymbol
 import UIKit
 
 public protocol DNSFormDetailDateCellLogic: DNSBaseStageCellLogic {
@@ -25,6 +26,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 76)
 
+    static public var defaultImage = UIImage(dnsSymbol: SFSymbol.calendar)
     static public var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
@@ -43,6 +45,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         public var required: Bool
         public var style: DNSThemeFieldStyle = .DNSForm.default
         public var alertMessage: String = ""
+        public var image: UIImage? = DNSFormDetailDateCell.defaultImage
 
         public init(date: Date, dateLabel: String, datePlaceholder: String, field: String, languageCode: String, readonly: Bool, required: Bool) {
             self.date = date
@@ -63,6 +66,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
             }
             dateTextField.style = data.style
             self.utilityDisplayAlert(data.alertMessage, for: dateTextField)
+            self.dateIcon.image = data.image
             self.dateIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.dateLabel.text = data.dateLabel
             self.dateLabel.isEnabled = !data.readonly

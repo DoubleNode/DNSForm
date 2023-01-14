@@ -13,6 +13,7 @@ import DNSBaseTheme
 import DNSCore
 import DNSCoreThreading
 import DNSProtocols
+import SFSymbol
 import UIKit
 
 public protocol DNSFormDetailPricesFieldCellLogic: DNSBaseStageCellLogic {
@@ -25,6 +26,7 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 64)
 
+    static public var defaultImage = UIImage(dnsSymbol: SFSymbol4.dollarsign)
     static public var numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.locale = Locale.current
@@ -47,6 +49,7 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
             public var returnKeyType: UIReturnKeyType = .next
             public var style: DNSThemeFieldStyle = .DNSForm.default
             public var price: Float
+            public var image: UIImage? = DNSFormDetailPricesFieldCell.defaultImage
 
             public init(field: String, label: String, languageCode: String, placeholder: String, readonly: Bool,
                         required: Bool, price: Float) {
@@ -71,18 +74,20 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
     public var data: Data? {
         didSet {
             guard let data = self.data else {
-                utilityReset(textField1)
-                utilityReset(textField2)
+                utilityReset(textField1, imageView1)
+                utilityReset(textField2, imageView2)
                 return
             }
-            utilityUpdate(textField1, with: data.fieldData1)
+            utilityUpdate(textField1, imageView1, with: data.fieldData1)
             self.utilityDisplayAlert(data.alertMessage, for: textField1)
 
-            utilityUpdate(textField2, with: data.fieldData2)
+            utilityUpdate(textField2, imageView2, with: data.fieldData2)
             self.utilityDisplayAlert(data.alertMessage, for: textField2)
         }
     }
 
+    @IBOutlet var imageView1: UIImageView!
+    @IBOutlet var imageView2: UIImageView!
     @IBOutlet var textField1: DNSUIAnimatedField!
     @IBOutlet var textField2: DNSUIAnimatedField!
 
@@ -91,6 +96,8 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
 
     override open func awakeFromNib() {
         super.awakeFromNib()
+        imageView1.image = Self.defaultImage
+        imageView2.image = Self.defaultImage
         textField1.dataSource = self
         textField1.delegate = self
         textField2.dataSource = self
@@ -146,7 +153,9 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
             field.showAlert(alertMessage)
         }
     }
-    func utilityReset(_ textField: DNSUIAnimatedField) {
+    func utilityReset(_ textField: DNSUIAnimatedField,
+                      _ imageView: UIImageView) {
+        imageView.image = Self.defaultImage
         textField.hideAlert()
         textField.isEnabled = false
         textField.formatPattern = ""
@@ -159,7 +168,10 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
         textField.text = ""
     }
     func utilityUpdate(_ textField: DNSUIAnimatedField,
+                       _ imageView: UIImageView,
                        with fieldData: Data.FieldData) {
+        imageView.image = fieldData.image
+        imageView.tintColor = fieldData.readonly ? UIColor.lightGray : UIColor.darkGray
         textField.style = fieldData.style
         let languageLabel = fieldData.languageCode.isEmpty ? "" : " (\(fieldData.languageCode))"
         textField.isEnabled = !fieldData.readonly
