@@ -45,7 +45,7 @@
                                 </connections>
                             </datePicker>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UXn-gT-llh">
-                                <rect key="frame" x="370" y="25.333333333333332" width="20" height="17.333333333333339"/>
+                                <rect key="frame" x="370" y="29.333333333333332" width="20" height="17.333333333333339"/>
                                 <color key="tintColor" name="TitleDark"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-Nc-3jh" userLabel="Line View">
@@ -63,7 +63,7 @@
                             <constraint firstAttribute="bottom" secondItem="fyx-Nc-3jh" secondAttribute="bottom" constant="22" id="Ju3-zB-D1g"/>
                             <constraint firstItem="UXn-gT-llh" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="trailing" constant="10" id="K7H-pP-zk3"/>
                             <constraint firstItem="ala-U9-OFA" firstAttribute="trailing" secondItem="9zh-Qd-KcT" secondAttribute="trailing" id="N7K-Ae-MpG"/>
-                            <constraint firstItem="fyx-Nc-3jh" firstAttribute="top" secondItem="UXn-gT-llh" secondAttribute="bottom" constant="9" id="PRr-P8-UY9"/>
+                            <constraint firstItem="fyx-Nc-3jh" firstAttribute="top" secondItem="UXn-gT-llh" secondAttribute="bottom" constant="5" id="PRr-P8-UY9"/>
                             <constraint firstItem="fyx-Nc-3jh" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="leading" id="T16-JQ-t3J"/>
                             <constraint firstItem="9zh-Qd-KcT" firstAttribute="leading" secondItem="KuD-TU-KgD" secondAttribute="leading" constant="24" id="VyL-sm-yf9"/>
                             <constraint firstItem="9zh-Qd-KcT" firstAttribute="leading" secondItem="njb-EG-v3S" secondAttribute="leading" id="aoN-oS-7FD"/>
