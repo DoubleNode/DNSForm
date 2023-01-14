@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,9 +59,10 @@
                                     <action selector="openValueChangedActionWithSender:" destination="gTV-IL-0wX" eventType="valueChanged" id="MGH-dF-GCw"/>
                                 </connections>
                             </datePicker>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UXn-gT-llh">
-                                <rect key="frame" x="180" y="43.666666666666664" width="20" height="19"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UXn-gT-llh">
+                                <rect key="frame" x="180" y="47.666666666666664" width="20" height="19.000000000000007"/>
                                 <color key="tintColor" name="TitleDark"/>
+                                <imageReference key="image" image="clock" catalog="system" symbolScale="medium"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-Nc-3jh" userLabel="Line View">
                                 <rect key="frame" x="24" y="72" width="176" height="1"/>
@@ -92,9 +94,10 @@
                                     <action selector="closeValueChangedActionWithSender:" destination="gTV-IL-0wX" eventType="valueChanged" id="lFh-5a-dNQ"/>
                                 </connections>
                             </datePicker>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7hz-cO-IB0" userLabel="clock">
-                                <rect key="frame" x="370" y="43.666666666666664" width="20" height="19"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7hz-cO-IB0" userLabel="clock">
+                                <rect key="frame" x="370" y="47.666666666666664" width="20" height="19.000000000000007"/>
                                 <color key="tintColor" name="TitleDark"/>
+                                <imageReference key="image" image="clock" catalog="system" symbolScale="medium"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DL-Eo-7yt" userLabel="Line View">
                                 <rect key="frame" x="214" y="72" width="176" height="1"/>
@@ -112,7 +115,7 @@
                             <constraint firstItem="i3e-20-2EJ" firstAttribute="top" secondItem="njb-EG-v3S" secondAttribute="top" id="7ZP-JU-r6X"/>
                             <constraint firstItem="ala-U9-OFA" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="leading" id="8Bg-Qd-s5w"/>
                             <constraint firstItem="7hz-cO-IB0" firstAttribute="trailing" secondItem="7DL-Eo-7yt" secondAttribute="trailing" id="AuT-h6-VVd"/>
-                            <constraint firstItem="7DL-Eo-7yt" firstAttribute="top" secondItem="7hz-cO-IB0" secondAttribute="bottom" constant="9" id="BIy-DV-1Ms"/>
+                            <constraint firstItem="7DL-Eo-7yt" firstAttribute="top" secondItem="7hz-cO-IB0" secondAttribute="bottom" constant="5" id="BIy-DV-1Ms"/>
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="trailing" constant="44" id="Bjb-CD-9va"/>
                             <constraint firstAttribute="bottom" secondItem="9zh-Qd-KcT" secondAttribute="bottom" id="Bvg-Rz-vnG"/>
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="leading" secondItem="vTS-EN-5KK" secondAttribute="leading" id="C6N-IX-66r"/>
@@ -120,7 +123,7 @@
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="leading" secondItem="i3e-20-2EJ" secondAttribute="leading" id="Gyz-MT-d5D"/>
                             <constraint firstAttribute="bottom" secondItem="fyx-Nc-3jh" secondAttribute="bottom" constant="22" id="Ju3-zB-D1g"/>
                             <constraint firstItem="i3e-20-2EJ" firstAttribute="bottom" secondItem="njb-EG-v3S" secondAttribute="bottom" id="LOt-AX-8EO"/>
-                            <constraint firstItem="fyx-Nc-3jh" firstAttribute="top" secondItem="UXn-gT-llh" secondAttribute="bottom" constant="9" id="PRr-P8-UY9"/>
+                            <constraint firstItem="fyx-Nc-3jh" firstAttribute="top" secondItem="UXn-gT-llh" secondAttribute="bottom" constant="5" id="PRr-P8-UY9"/>
                             <constraint firstItem="x8Z-e5-aHa" firstAttribute="top" secondItem="KuD-TU-KgD" secondAttribute="top" constant="6" id="R15-ti-KlB"/>
                             <constraint firstItem="fyx-Nc-3jh" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="leading" id="T16-JQ-t3J"/>
                             <constraint firstItem="UXn-gT-llh" firstAttribute="leading" secondItem="9zh-Qd-KcT" secondAttribute="trailing" constant="10" id="Ugy-uC-kaT"/>
