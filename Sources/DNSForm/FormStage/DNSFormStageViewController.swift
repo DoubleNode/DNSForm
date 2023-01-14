@@ -146,35 +146,75 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     }
     open func fileDeleteAction(request: DNSFormStage.Models.Field.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.fileDeletePublisher.send(request)
+        DNSUIThread.run {
+            self.view.endEditing(true)
+            DNSThread.run(after: 0.1) {
+                self.fileDeletePublisher.send(request)
+            }
+        }
     }
     open func fileSelectAction(request: DNSFormStage.Models.Field.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.fileSelectPublisher.send(request)
+        DNSUIThread.run {
+            self.view.endEditing(true)
+            DNSThread.run(after: 0.1) {
+                self.fileSelectPublisher.send(request)
+            }
+        }
     }
     open func imageDeleteAction(request: DNSFormStage.Models.Field.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.imageDeletePublisher.send(request)
+        DNSUIThread.run {
+            self.view.endEditing(true)
+            DNSThread.run(after: 0.1) {
+                self.imageDeletePublisher.send(request)
+            }
+        }
     }
     open func imagePopupAction(request: DNSFormStage.Models.ImagePopup.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.imagePopupPublisher.send(request)
+        DNSUIThread.run {
+            self.view.endEditing(true)
+            DNSThread.run(after: 0.1) {
+                self.imagePopupPublisher.send(request)
+            }
+        }
     }
     open func imageSelectAction(request: DNSFormStage.Models.Field.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.imageSelectPublisher.send(request)
+        DNSUIThread.run {
+            self.view.endEditing(true)
+            DNSThread.run(after: 0.1) {
+                self.imageSelectPublisher.send(request)
+            }
+        }
     }
     open func languageChangedAction(request: DNSFormStage.Models.Language.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.languageChangedPublisher.send(request)
+        DNSUIThread.run {
+            self.view.endEditing(true)
+            DNSThread.run(after: 0.1) {
+                self.languageChangedPublisher.send(request)
+            }
+        }
     }
     open func saveButtonAction(request: DNSFormStage.Models.Base.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.saveActionPublisher.send(request)
+        DNSUIThread.run {
+            self.view.endEditing(true)
+            DNSThread.run(after: 0.1) {
+                self.saveActionPublisher.send(request)
+            }
+        }
     }
     open func tabChangedAction(request: DNSFormStage.Models.Tab.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
-        self.tabChangedPublisher.send(request)
+        DNSUIThread.run {
+            self.view.endEditing(true)
+            DNSThread.run(after: 0.1) {
+                self.tabChangedPublisher.send(request)
+            }
+        }
     }
 
     // MARK: - Utility methods
