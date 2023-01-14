@@ -2,8 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,15 +21,39 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="5JO-zU-hnS">
+                                <rect key="frame" x="24" y="12.5" width="15" height="21"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <imageReference key="image" image="dollarsign" catalog="system" symbolScale="medium"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oX-e2-VEk" userLabel="Line View">
+                                <rect key="frame" x="24" y="38" width="176.5" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="nqh-ER-C4a"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-oh-Ee1" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
-                                <rect key="frame" x="24" y="0.0" width="171" height="64"/>
+                                <rect key="frame" x="49" y="0.0" width="151.5" height="64"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Aew-Xl-w2x"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Y0x-iz-cgE">
+                                <rect key="frame" x="214.5" y="12.5" width="14.5" height="21"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <imageReference key="image" image="dollarsign" catalog="system" symbolScale="medium"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDo-1T-HoB" userLabel="Line View">
+                                <rect key="frame" x="214.5" y="38" width="175.5" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="WOH-dC-CoW"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyY-zM-JSk" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
-                                <rect key="frame" x="219" y="0.0" width="171" height="64"/>
+                                <rect key="frame" x="239" y="0.0" width="151" height="64"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="IVW-rb-jhQ"/>
@@ -37,14 +61,24 @@
                             </view>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="YDo-1T-HoB" firstAttribute="top" secondItem="5oX-e2-VEk" secondAttribute="top" id="0gc-ds-ia5"/>
                             <constraint firstItem="aUe-oh-Ee1" firstAttribute="top" secondItem="KuD-TU-KgD" secondAttribute="top" id="78d-dL-hQy"/>
                             <constraint firstAttribute="bottom" secondItem="xyY-zM-JSk" secondAttribute="bottom" id="B9S-dd-gGa"/>
-                            <constraint firstItem="aUe-oh-Ee1" firstAttribute="leading" secondItem="KuD-TU-KgD" secondAttribute="leading" constant="24" id="EGm-Gu-5F6"/>
+                            <constraint firstItem="xyY-zM-JSk" firstAttribute="leading" secondItem="Y0x-iz-cgE" secondAttribute="trailing" constant="10" id="C7F-Mt-aaO"/>
+                            <constraint firstItem="xyY-zM-JSk" firstAttribute="trailing" secondItem="YDo-1T-HoB" secondAttribute="trailing" id="JEZ-vl-mkR"/>
                             <constraint firstItem="xyY-zM-JSk" firstAttribute="top" secondItem="KuD-TU-KgD" secondAttribute="top" id="NIe-vK-Fdl"/>
-                            <constraint firstItem="xyY-zM-JSk" firstAttribute="leading" secondItem="aUe-oh-Ee1" secondAttribute="trailing" constant="24" id="O7T-Qb-leM"/>
+                            <constraint firstItem="5JO-zU-hnS" firstAttribute="leading" secondItem="KuD-TU-KgD" secondAttribute="leading" constant="24" id="O4n-6E-wHr"/>
+                            <constraint firstItem="Y0x-iz-cgE" firstAttribute="leading" secondItem="YDo-1T-HoB" secondAttribute="leading" id="Wof-ke-tId"/>
+                            <constraint firstItem="YDo-1T-HoB" firstAttribute="top" secondItem="Y0x-iz-cgE" secondAttribute="bottom" constant="5" id="Zs1-gk-13f"/>
+                            <constraint firstItem="5oX-e2-VEk" firstAttribute="leading" secondItem="5JO-zU-hnS" secondAttribute="leading" id="bLm-p5-luJ"/>
+                            <constraint firstItem="5oX-e2-VEk" firstAttribute="trailing" secondItem="aUe-oh-Ee1" secondAttribute="trailing" id="cp2-5Y-HH2"/>
+                            <constraint firstItem="5oX-e2-VEk" firstAttribute="top" secondItem="5JO-zU-hnS" secondAttribute="bottom" constant="5" id="dQk-f5-she"/>
+                            <constraint firstItem="Y0x-iz-cgE" firstAttribute="leading" secondItem="aUe-oh-Ee1" secondAttribute="trailing" constant="14" id="e1n-WV-Rsw"/>
                             <constraint firstAttribute="bottom" secondItem="aUe-oh-Ee1" secondAttribute="bottom" id="fMP-ee-Bv6"/>
+                            <constraint firstAttribute="bottom" secondItem="5oX-e2-VEk" secondAttribute="bottom" constant="25" id="hEm-6Q-dmA"/>
                             <constraint firstItem="xyY-zM-JSk" firstAttribute="width" secondItem="aUe-oh-Ee1" secondAttribute="width" id="nMh-2G-NEt"/>
                             <constraint firstAttribute="trailing" secondItem="xyY-zM-JSk" secondAttribute="trailing" constant="24" id="r44-1q-Gab"/>
+                            <constraint firstItem="aUe-oh-Ee1" firstAttribute="leading" secondItem="5JO-zU-hnS" secondAttribute="trailing" constant="10" id="um6-bG-sYo"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -68,6 +102,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="dollarsign" catalog="system" width="89" height="128"/>
         <namedColor name="TitleDark">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
