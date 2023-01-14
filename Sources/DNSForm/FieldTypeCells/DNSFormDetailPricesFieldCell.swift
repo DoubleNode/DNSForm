@@ -25,7 +25,7 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 64)
 
-    static public var currencyFormatter: NumberFormatter = {
+    static public var numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.locale = Locale.current
         formatter.numberStyle = .decimal
@@ -169,7 +169,7 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
         textField.type = .price(Double(fieldData.maximumPrice), 2)
         textField.placeholder = fieldData.placeholder + languageLabel
         textField.title = fieldData.label + languageLabel
-        let newText = Self.currencyFormatter.string(from: NSNumber(value: fieldData.price))
+        let newText = Self.numberFormatter.string(from: NSNumber(value: fieldData.price))
         if textField.text != newText {
             textField.text = newText
         }
