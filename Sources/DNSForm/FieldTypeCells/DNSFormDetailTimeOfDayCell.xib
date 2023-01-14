@@ -51,7 +51,7 @@
                                 </connections>
                             </datePicker>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7hz-cO-IB0" userLabel="clock">
-                                <rect key="frame" x="370" y="24.5" width="20" height="19"/>
+                                <rect key="frame" x="370" y="28.5" width="20" height="19"/>
                                 <color key="tintColor" name="TitleDark"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZERO TIME" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="25" translatesAutoresizingMaskIntoConstraints="NO" id="yuv-KN-cy3" userLabel="Zero Time Label">
@@ -74,7 +74,7 @@
                         <constraints>
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="leading" secondItem="7DL-Eo-7yt" secondAttribute="leading" id="1cs-wR-fz1"/>
                             <constraint firstAttribute="bottom" secondItem="7DL-Eo-7yt" secondAttribute="bottom" constant="22" id="90h-37-UMO"/>
-                            <constraint firstItem="7DL-Eo-7yt" firstAttribute="top" secondItem="7hz-cO-IB0" secondAttribute="bottom" constant="9" id="BIy-DV-1Ms"/>
+                            <constraint firstItem="7DL-Eo-7yt" firstAttribute="top" secondItem="7hz-cO-IB0" secondAttribute="bottom" constant="5" id="BIy-DV-1Ms"/>
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="top" secondItem="vTS-EN-5KK" secondAttribute="top" id="C7X-MJ-06r"/>
                             <constraint firstItem="I0J-MI-Xmn" firstAttribute="leading" secondItem="i3e-20-2EJ" secondAttribute="leading" id="Gyz-MT-d5D"/>
                             <constraint firstItem="yuv-KN-cy3" firstAttribute="top" secondItem="I0J-MI-Xmn" secondAttribute="top" id="LMv-5k-g4y"/>
