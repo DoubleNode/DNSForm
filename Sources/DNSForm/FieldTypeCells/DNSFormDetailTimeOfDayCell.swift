@@ -13,6 +13,7 @@ import DNSBaseTheme
 import DNSCore
 import DNSCoreThreading
 import DNSProtocols
+import SFSymbol
 import UIKit
 
 public protocol DNSFormDetailTimeOfDayCellLogic: DNSBaseStageCellLogic {
@@ -25,6 +26,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 76)
 
+    static public var defaultImage = UIImage(dnsSymbol: SFSymbol.clock)
     static public var timeFormatter: DateFormatter = {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "h:mm a"
@@ -41,6 +43,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
         public var timeLabel: String
         public var timePlaceholder: String
         public var alertMessage: String = ""
+        public var image: UIImage? = DNSFormDetailTimeOfDayCell.defaultImage
 
         public init(field: String, languageCode: String, readonly: Bool, required: Bool, timeOfDay: DNSTimeOfDay, timeLabel: String, timePlaceholder: String) {
             self.field = field
@@ -62,6 +65,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
             }
             timeTextField.style = data.style
             self.utilityDisplayAlert(data.alertMessage, for: timeTextField)
+            self.timeIcon.image = data.image
             self.timeIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.timeLabel.text = data.timeLabel
             self.timeLabel.isEnabled = !data.readonly

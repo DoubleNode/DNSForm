@@ -10,6 +10,7 @@ import Combine
 import DNSBaseStage
 import DNSBaseTheme
 import DNSCoreThreading
+import SFSymbol
 import UIKit
 
 public protocol DNSFormDetailSearchButtonCellLogic: DNSBaseStageCellLogic {
@@ -21,9 +22,11 @@ open class DNSFormDetailSearchButtonCell: DNSBaseStageCollectionViewCell, DNSFor
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 72)
 
+    static public var defaultImage = UIImage(dnsSymbol: SFSymbol.magnifyingglass)
     public struct Data: Hashable {
         public var enabled: Bool
         public var label: String
+        public var image: UIImage? = DNSFormDetailSearchButtonCell.defaultImage
 
         public init(enabled: Bool, label: String) {
             self.enabled = enabled
@@ -37,7 +40,8 @@ open class DNSFormDetailSearchButtonCell: DNSBaseStageCollectionViewCell, DNSFor
                 self.button.setTitle("", for: UIControl.State.normal)
                 return
             }
-            self.button.setTitle(data.label, for: UIControl.State.normal)
+            self.button.setImage(data.image, for: .normal)
+            self.button.setTitle(data.label, for: .normal)
             self.button.isEnabled = data.enabled
         }
     }
