@@ -43,12 +43,10 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
     public let tabPublisher = PassthroughSubject<DNSFormStage.Models.Tab.Response, Never>()
 
     // MARK: - Incoming Pipelines
-    open var subscribers: [AnyCancellable] = []
     override open func subscribe(to baseViewController: BaseStage.Logic.Display) {
         super.subscribe(to: baseViewController)
         // swiftlint:disable:next force_cast
         let viewController = baseViewController as! DNSFormStage.Logic.Display
-        subscribers.removeAll()
         subscribers.append(viewController.fieldChangedPublisher
             .sink { [weak self] request in self?.doFieldChanged(request) })
         subscribers.append(viewController.fileDeletePublisher

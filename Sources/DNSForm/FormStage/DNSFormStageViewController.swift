@@ -55,14 +55,12 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     public var selectedTabs: [String: String] = [:]
 
     // MARK: - Incoming Pipelines
-    open var subscribers: [AnyCancellable] = []
     open var cellSubscribers: [DNSBaseStageCollectionViewCell: [AnyCancellable]] = [:]
     open var reusableViewSubscribers: [DNSBaseStageCollectionReusableView: [AnyCancellable]] = [:]
     override open func subscribe(to basePresenter: BaseStage.Logic.Presentation) {
         super.subscribe(to: basePresenter)
         // swiftlint:disable:next force_cast
         let presenter = basePresenter as! DNSFormStage.Logic.Presentation
-        subscribers.removeAll()
         subscribers.append(presenter.fieldAlertPublisher
             .sink { [weak self] viewModel in self?.displayFieldAlert(viewModel) })
         subscribers.append(presenter.fileDeletePublisher
