@@ -336,6 +336,9 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         } else if let fieldCell = fieldCell as? DNSFormDetailPostalAddressCell {
             cellSubscribers.append(fieldCell.changeValuePublisher
                 .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailPostalAddressNicknameCell {
+            cellSubscribers.append(fieldCell.changeValuePublisher
+                .sink { [weak self] request in self?.fieldChangedAction(request: request) })
         } else if let fieldCell = fieldCell as? DNSFormDetailPricesFieldCell {
             cellSubscribers.append(fieldCell.changeTextPublisher
                 .sink { [weak self] request in self?.fieldChangedAction(request: request) })
