@@ -21,6 +21,7 @@ public protocol DNSFormDetailSearchButtonCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailSearchButtonCell: DNSBaseStageCollectionViewCell, DNSFormDetailSearchButtonCellLogic {
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 72)
+    static public let heightForSection: Double = recommendedContentSize.height
 
     static public var defaultImage = UIImage(dnsSymbol: SFSymbol.magnifyingglass)
     public struct Data: Hashable {

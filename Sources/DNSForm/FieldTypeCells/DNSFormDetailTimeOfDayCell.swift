@@ -25,6 +25,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
     DNSFormDetailTimeOfDayCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 76)
+    static public let heightForSection: Double = recommendedContentSize.height
 
     static public var defaultImage = UIImage(dnsSymbol: SFSymbol.clock)
     static public var timeFormatter: DateFormatter = {

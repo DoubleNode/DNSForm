@@ -24,6 +24,7 @@ open class DNSFormDetailTextSelectionCell: DNSBaseStageCollectionViewCell,
     DNSFormDetailTextSelectionCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 64)
+    static public let heightForSection: Double = recommendedContentSize.height
 
     public struct Data: Hashable {
         public var field: String

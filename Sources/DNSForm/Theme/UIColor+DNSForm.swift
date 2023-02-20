@@ -1308,6 +1308,7 @@ public extension UIColor {
         }
         public enum Label {
             public static var `default` = UIColor.darkText
+            public static var actionControlTitle = UIColor.white
             public static var body = UIColor.darkText
             public static var bodyTight = UIColor.darkText
             public enum Field {
@@ -1334,6 +1335,11 @@ public extension UIColor {
             public enum Default {
                 public static var background = UIColor.systemBackground
                 public static var border = UIColor.systemGray
+                public static var tint = UIColor.systemBlue
+            }
+            public enum ActionControlTitle {
+                public static var background = UIColor.systemBrown
+                public static var border = UIColor.systemBlue
                 public static var tint = UIColor.systemBlue
             }
             public enum Clear {
