@@ -17,6 +17,7 @@ public extension DNSThemeLabelStyle {
         }
         public static let createThemes: DNSBlock = {
             _ = Self.default
+            _ = Self.actionControlTitle
             _ = Self.body
             _ = Self.bodyTight
             _ = Self.field
@@ -59,6 +60,11 @@ public extension DNSThemeLabelStyle {
                                                          styleSetName: "DNSForm",
                                                          color: DNSUIColor.DNSForm.Label.default,
                                                          font: DNSUIFont.DNSForm.Label.default)
+        public static var actionControlTitle =
+            DNSThemeLabelStyle(styleName: "actionControlTitle",
+                               styleSetName: "DNSForm",
+                               color: DNSUIColor.DNSForm.Label.actionControlTitle,
+                               font: DNSUIFont.DNSForm.Label.actionControlTitle)
         public static var body = DNSThemeLabelStyle(styleName: "body",
                                                     styleSetName: "DNSForm",
                                                     color: DNSUIColor.DNSForm.Label.body,
