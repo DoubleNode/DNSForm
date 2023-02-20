@@ -23,6 +23,7 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
                                       DNSFormDetailCheckboxCellLogic {
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 52)
+    static public let heightForSection: Double = recommendedContentSize.height
     static public var defaultImageChecked = UIImage(dnsSymbol: SFSymbol.Checkmark.squareFill)
     static public var defaultImageUnchecked = UIImage(dnsSymbol: SFSymbol.square)
 

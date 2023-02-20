@@ -19,6 +19,7 @@ public protocol DNSFormDetailSpacerCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailSpacerCell: DNSBaseStageCollectionViewCell, DNSFormDetailSpacerCellLogic {
     public typealias Stage = DNSFormStage
     static public let recommendedContentSize = CGSize(width: 414, height: 20)
+    static public let heightForSection: Double = recommendedContentSize.height
 
     public struct Data: Hashable {
         public var id: UUID = UUID()
