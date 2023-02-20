@@ -162,6 +162,9 @@ open class DNSFormDetailPostalAddressNicknameCell: DNSBaseStageCollectionViewCel
         }
     }
 
+    @IBOutlet var actionButton: UIButton!
+    @IBOutlet var actionLabel: DNSUILabel!
+    @IBOutlet var actionView: DNSUIView!
     @IBOutlet var nicknameTextField: DNSUIAnimatedField!
     @IBOutlet var streetTextField: DNSUIAnimatedField!
     @IBOutlet var cityTextField: DNSUIAnimatedField!
@@ -283,6 +286,18 @@ open class DNSFormDetailPostalAddressNicknameCell: DNSBaseStageCollectionViewCel
         var request = Stage.Models.Field
             .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
         request.subfield = CodingKeys.postalCode.rawValue
+        changeValuePublisher.send(request)
+    }
+
+    // MARK: - Action Methods -
+    @IBAction func clearAction(_ sender: UIButton) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        guard let data = self.data,
+              let oldValue = data.value as? DNSPostalAddress else { return }
+        let newValue = DNSPostalAddress()
+        guard newValue != oldValue else { return }
+        var request = Stage.Models.Field
+            .Request(field: data.field, languageCode: DNSCore.languageCode, value: newValue)
         changeValuePublisher.send(request)
     }
 

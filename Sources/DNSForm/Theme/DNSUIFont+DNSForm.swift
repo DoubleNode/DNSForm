@@ -170,6 +170,7 @@ public extension DNSUIFont {
         }
         public enum Label {
             public static var `default` = DNSUIFont(UIFont.DNSForm.Label.default)
+            public static var actionControlTitle = DNSUIFont(UIFont.DNSForm.Label.actionControlTitle)
             public static var body = DNSUIFont(UIFont.DNSForm.Label.body)
             public static var bodyTight = DNSUIFont(UIFont.DNSForm.Label.bodyTight)
             public static var field = DNSUIFont(UIFont.DNSForm.Label.field)

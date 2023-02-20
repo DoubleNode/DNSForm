@@ -150,6 +150,10 @@ public extension DNSUIBorder {
                 DNSUIBorder(color: DNSUIColor.DNSForm.View.Default.border,
                             cornerRadius: 10,
                             width: 1)
+            public static var actionControlTitle =
+                DNSUIBorder(color: DNSUIColor.DNSForm.View.ActionControlTitle.border,
+                            cornerRadiusMulti: true,
+                            cornerBottomLeftRadius: 10)
             public static var clear =
                 DNSUIBorder(color: DNSUIColor.DNSForm.View.Clear.border,
                             cornerRadius: 10,
