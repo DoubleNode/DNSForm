@@ -17,9 +17,11 @@ public extension DNSThemeViewStyle {
         }
         public static let createThemes: DNSBlock = {
             _ = Self.default
+            _ = Self.actionControlTitle
             _ = Self.clear
             _ = Self.sectionFrame
             _ = Self.sectionFrameTitle
+            _ = Self.textViewBackground
         }
         public static var `default` = DNSThemeViewStyle(styleName: "default",
                                                         styleSetName: "DNSForm",
@@ -27,6 +29,13 @@ public extension DNSThemeViewStyle {
                                                         border: DNSUIBorder(),
                                                         shadow: DNSUIShadow(),
                                                         tintColor: DNSUIColor.DNSForm.View.Default.tint)
+        public static var actionControlTitle =
+            DNSThemeViewStyle(styleName: "actionControlTitle",
+                              styleSetName: "DNSForm",
+                              backgroundColor: DNSUIColor.DNSForm.View.ActionControlTitle.background,
+                              border: DNSUIBorder.DNSForm.View.actionControlTitle,
+                              shadow: DNSUIShadow(),
+                              tintColor: DNSUIColor.DNSForm.View.ActionControlTitle.tint)
         public static var clear = DNSThemeViewStyle(styleName: "clear",
                                                     styleSetName: "DNSForm",
                                                     backgroundColor: DNSUIColor.DNSForm.View.Clear.background,
