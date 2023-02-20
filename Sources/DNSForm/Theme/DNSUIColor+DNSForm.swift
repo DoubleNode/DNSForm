@@ -1124,6 +1124,7 @@ public extension DNSUIColor {
         }
         public enum Label {
             public static var `default` = DNSUIColor(UIColor.DNSForm.Label.default)
+            public static var actionControlTitle = DNSUIColor(UIColor.DNSForm.Label.actionControlTitle)
             public static var body = DNSUIColor(UIColor.DNSForm.Label.body)
             public static var bodyTight = DNSUIColor(UIColor.DNSForm.Label.bodyTight)
             public static var field = DNSUIColor(UIColor.DNSForm.Label.Field.normal,
@@ -1143,6 +1144,11 @@ public extension DNSUIColor {
                 public static var background = DNSUIColor(UIColor.DNSForm.View.Default.background)
                 public static var border = DNSUIColor(UIColor.DNSForm.View.Default.border)
                 public static var tint = DNSUIColor(UIColor.DNSForm.View.Default.tint)
+            }
+            public enum ActionControlTitle {
+                public static var background = DNSUIColor(UIColor.DNSForm.View.ActionControlTitle.background)
+                public static var border = DNSUIColor(UIColor.DNSForm.View.ActionControlTitle.border)
+                public static var tint = DNSUIColor(UIColor.DNSForm.View.ActionControlTitle.tint)
             }
             public enum Clear {
                 public static var background = DNSUIColor(UIColor.DNSForm.View.Clear.Background.normal,

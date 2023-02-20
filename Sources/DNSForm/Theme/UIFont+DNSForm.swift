@@ -188,6 +188,7 @@ public extension UIFont {
         }
         public enum Label {
             public static var `default` = UIFont.systemFont(ofSize: 18, weight: .regular)
+            public static var actionControlTitle = UIFont.systemFont(ofSize: 10, weight: .semibold)
             public static var body = UIFont.systemFont(ofSize: 14, weight: .regular)
             public static var bodyTight = UIFont.systemFont(ofSize: 9, weight: .semibold)
             public static var field = UIFont.systemFont(ofSize: 11, weight: .regular)

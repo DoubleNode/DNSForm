@@ -67,22 +67,24 @@ open class DNSFormDetailSectionHeaderCell: DNSBaseStageCollectionViewCell,
                 titleView.backgroundColor = UIColor.DNSForm.Field.Default.Alert.text
                 titleView.layer.borderColor = UIColor.DNSForm.Field.Default.Alert.text.cgColor
             }
-            lineViewBottomConstraint.constant = data.lineBottomOffset
+            lineViewBottomConstraint.constant = data.lineBottomOffset - 23
             sectionLabel.text = data.label
             if data.sectionLabelWidth == -1 {
-                sectionLabelWidthConstraint.isActive = true
+                sectionLabelWidthConstraint.isActive = false
             } else {
                 sectionLabelWidthConstraint.isActive = true
                 sectionLabelWidthConstraint.constant = data.sectionLabelWidth
             }
         }
     }
-    
+
     @IBOutlet var lineView: UIView!
     @IBOutlet var lineViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var sectionLabel: DNSUILabel!
     @IBOutlet var sectionLabelWidthConstraint: NSLayoutConstraint!
     @IBOutlet var titleView: UIView!
+
+    // MARK: - Outgoing Pipelines -
 
     override open func contentInit() {
         super.contentInit()
