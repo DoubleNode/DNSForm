@@ -27,6 +27,7 @@ public protocol DNSFormStageDisplayLogic: DNSBaseStageDisplayLogic {
     var imageUploadPublisher: PassthroughSubject<DNSFormStage.Models.Field.Request, Never> { get }
     var languageChangedPublisher: PassthroughSubject<DNSFormStage.Models.Language.Request, Never> { get }
     var saveActionPublisher: PassthroughSubject<DNSFormStage.Models.Base.Request, Never> { get }
+    var sectionActionPublisher: PassthroughSubject<DNSFormStage.Models.Section.Request, Never> { get }
     var tabChangedPublisher: PassthroughSubject<DNSFormStage.Models.Tab.Request, Never> { get }
 }
 open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageDisplayLogic {
@@ -44,6 +45,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     public var imageUploadPublisher = PassthroughSubject<DNSFormStage.Models.Field.Request, Never>()
     public var languageChangedPublisher = PassthroughSubject<DNSFormStage.Models.Language.Request, Never>()
     public var saveActionPublisher = PassthroughSubject<DNSFormStage.Models.Base.Request, Never>()
+    public var sectionActionPublisher = PassthroughSubject<DNSFormStage.Models.Section.Request, Never>()
     public var tabChangedPublisher = PassthroughSubject<DNSFormStage.Models.Tab.Request, Never>()
 
     public var anyChanges = false
@@ -205,6 +207,14 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
             }
         }
     }
+    open func sectionAction(request: DNSFormStage.Models.Section.Request) {
+        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        DNSUIThread.run {
+            DNSThread.run(after: 0.1) {
+                self.sectionActionPublisher.send(request)
+            }
+        }
+    }
     open func tabChangedAction(request: DNSFormStage.Models.Tab.Request) {
         self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
         DNSUIThread.run {
@@ -342,6 +352,9 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         } else if let fieldCell = fieldCell as? DNSFormDetailPricesFieldCell {
             cellSubscribers.append(fieldCell.changeTextPublisher
                 .sink { [weak self] request in self?.fieldChangedAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailSectionHeaderCell {
+            cellSubscribers.append(fieldCell.actionPublisher
+                .sink { [weak self] request in self?.sectionAction(request: request) })
         } else if let fieldCell = fieldCell as? DNSFormDetailTabSelectionCell {
             cellSubscribers.append(fieldCell.selectedPublisher
                 .sink { [weak self] request in self?.tabChangedAction(request: request) })
