@@ -62,9 +62,61 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.sectionFrameTitle"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qmt-bJ-SuB" userLabel="Action View" customClass="DNSUIView" customModule="DNSBaseTheme">
+                                        <rect key="frame" x="0.0" y="212" width="100" height="16"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP TO CLEAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzf-Nx-Kfk" customClass="DNSUILabel" customModule="DNSBaseTheme">
+                                                <rect key="frame" x="10" y="2" width="80" height="12"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.actionControlTitle"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ac-uh-mEn" userLabel="Action Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="16"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                                <connections>
+                                                    <action selector="buttonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Q6T-HG-Nx7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <constraints>
+                                            <constraint firstItem="zzf-Nx-Kfk" firstAttribute="leading" secondItem="Qmt-bJ-SuB" secondAttribute="leading" constant="10" id="2du-dY-3l6"/>
+                                            <constraint firstAttribute="height" constant="16" id="2vE-hn-zaT"/>
+                                            <constraint firstAttribute="trailing" secondItem="0ac-uh-mEn" secondAttribute="trailing" id="9lY-IX-JuK"/>
+                                            <constraint firstItem="0ac-uh-mEn" firstAttribute="top" secondItem="Qmt-bJ-SuB" secondAttribute="top" id="Sfy-Cg-KjL"/>
+                                            <constraint firstAttribute="trailing" secondItem="zzf-Nx-Kfk" secondAttribute="trailing" constant="10" id="ZDc-hq-ehE"/>
+                                            <constraint firstAttribute="width" constant="100" id="fll-9P-EbR"/>
+                                            <constraint firstItem="zzf-Nx-Kfk" firstAttribute="centerY" secondItem="Qmt-bJ-SuB" secondAttribute="centerY" id="ifA-IG-sN7"/>
+                                            <constraint firstAttribute="bottom" secondItem="0ac-uh-mEn" secondAttribute="bottom" id="tdb-fb-MWQ"/>
+                                            <constraint firstItem="0ac-uh-mEn" firstAttribute="leading" secondItem="Qmt-bJ-SuB" secondAttribute="leading" id="ylH-iY-Y7e"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusMulti" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" systemColor="systemBlueColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerBottomLeftRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerTopRightRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.actionControlTitle"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="pOc-ku-bUq" firstAttribute="top" secondItem="pR5-gM-3yX" secondAttribute="top" id="JvU-lX-cgF"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qmt-bJ-SuB" secondAttribute="bottom" id="QHp-Np-fLV"/>
+                                    <constraint firstItem="Qmt-bJ-SuB" firstAttribute="leading" secondItem="pR5-gM-3yX" secondAttribute="leading" id="mgy-OR-XPz"/>
                                     <constraint firstAttribute="trailing" secondItem="pOc-ku-bUq" secondAttribute="trailing" id="pzI-zE-2Lt"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -107,6 +159,10 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.clear"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="actionButton" destination="0ac-uh-mEn" id="5dX-nL-cxe"/>
+                <outlet property="actionLabel" destination="zzf-Nx-Kfk" id="vTh-gS-0Cb"/>
+                <outlet property="actionLabelWidthConstraint" destination="fll-9P-EbR" id="qhA-pa-jJX"/>
+                <outlet property="actionView" destination="Qmt-bJ-SuB" id="mjh-sp-9Yn"/>
                 <outlet property="lineView" destination="pR5-gM-3yX" id="8U0-j0-2Js"/>
                 <outlet property="lineViewBottomConstraint" destination="09B-tF-vF5" id="Wlh-tc-gXy"/>
                 <outlet property="sectionLabel" destination="1pX-XK-23v" id="t3m-Pr-II3"/>
@@ -120,8 +176,14 @@
         <designable name="1pX-XK-23v">
             <size key="intrinsicContentSize" width="64.5" height="12"/>
         </designable>
+        <designable name="zzf-Nx-Kfk">
+            <size key="intrinsicContentSize" width="75" height="12"/>
+        </designable>
     </designables>
     <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
