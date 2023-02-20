@@ -92,6 +92,17 @@ open class DNSFormStageModels: DNSBaseStageModels {
             }
         }
     }
+    public enum Section {
+        public struct Request: DNSBaseStageBaseRequest {
+            public var section: Int
+            public var languageCode: String
+
+            public init(section: Int, languageCode: String) {
+                self.section = section
+                self.languageCode = languageCode
+            }
+        }
+    }
     public enum Tab {
         public struct Request: DNSBaseStageBaseRequest {
             public var selectedTabCode: String
