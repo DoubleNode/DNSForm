@@ -27,6 +27,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Aew-Xl-w2x"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="StringPicker"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <constraints>

@@ -108,6 +108,48 @@ public extension DNSUIStrikeThru {
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.Default.Title.strikeThru,
                                     enabled: DNSUIEnabled.DNSForm.Field.Default.Title.strikeThru)
             }
+            public enum DatePicker {
+                public static var alert =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.DatePicker.Alert.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Field.DatePicker.Alert.strikeThru)
+                public static var counter =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.DatePicker.Counter.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Field.DatePicker.Counter.strikeThru)
+                public static var text =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.DatePicker.Text.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Field.DatePicker.Text.strikeThru)
+                public static var title =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.DatePicker.Title.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Field.DatePicker.Title.strikeThru)
+            }
+            public enum NumberPicker {
+                public static var alert =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.NumberPicker.Alert.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Field.NumberPicker.Alert.strikeThru)
+                public static var counter =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.NumberPicker.Counter.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Field.NumberPicker.Counter.strikeThru)
+                public static var text =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.NumberPicker.Text.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Field.NumberPicker.Text.strikeThru)
+                public static var title =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.NumberPicker.Title.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Field.NumberPicker.Title.strikeThru)
+            }
+            public enum StringPicker {
+                public static var alert =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.StringPicker.Alert.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Field.StringPicker.Alert.strikeThru)
+                public static var counter =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.StringPicker.Counter.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Field.StringPicker.Counter.strikeThru)
+                public static var text =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.StringPicker.Text.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Field.StringPicker.Text.strikeThru)
+                public static var title =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.StringPicker.Title.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Field.StringPicker.Title.strikeThru)
+            }
             public enum TextView {
                 public static var alert =
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Field.TextView.Alert.strikeThru,

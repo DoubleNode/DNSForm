@@ -72,7 +72,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
             self.timeLabel.isEnabled = !data.readonly
             self.timePicker.date = data.timeOfDay.today
             self.timePicker.isEnabled = !data.readonly
-            let timePickerColor = data.readonly ? data.style.textStyle.color.disabled : data.style.textStyle.color.normal
+            let timePickerColor = data.readonly ? data.style.pickerTextColor.disabled : data.style.pickerTextColor.normal
             self.timePicker.setValue(timePickerColor, forKey: "textColor")
             self.timePickerLineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.darkGray
             self.timeTextField.placeholder = data.timePlaceholder
@@ -126,6 +126,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
         timePicker.date = Date()
         timePicker.timeZone = NSTimeZone.local
         timePicker.tintColor = timeTextField.format.highlightColor
+        timePicker.setValue(timeTextField.format.pickerTextColor, forKey: "textColor")
 
         timeTextField.keyboardAppearance = .dark
         timeTextField.type = .datepicker(.time, timePicker.date, nil, nil, "", Self.timeFormatter.dateFormat)

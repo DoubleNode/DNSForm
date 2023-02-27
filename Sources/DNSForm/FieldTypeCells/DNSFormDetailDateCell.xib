@@ -37,6 +37,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="jPx-i4-cfN"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DatePicker"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <datePicker contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="ala-U9-OFA">
                                 <rect key="frame" x="24" y="0.0" width="336" height="76"/>

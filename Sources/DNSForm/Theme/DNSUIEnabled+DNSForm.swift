@@ -76,6 +76,72 @@ public extension DNSUIEnabled {
                     public static var strikeThru = DNSUIEnabled(false)
                 }
             }
+            public enum DatePicker {
+                public static var alertEnabled = DNSUIEnabled(true)
+                public static var alertFieldActive = DNSUIEnabled(false)
+                public static var alertLineActive = DNSUIEnabled(true)
+                public static var alertTitleActive = DNSUIEnabled(false)
+                public static var countDown = DNSUIEnabled(false)
+                public static var counterAnimation = DNSUIEnabled(true)
+                public static var counterEnabled = DNSUIEnabled(true)
+                public static var titleAlwaysVisible = DNSUIEnabled(true)
+                public enum Alert {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Counter {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Text {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Title {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+            }
+            public enum NumberPicker {
+                public static var alertEnabled = DNSUIEnabled(true)
+                public static var alertFieldActive = DNSUIEnabled(false)
+                public static var alertLineActive = DNSUIEnabled(true)
+                public static var alertTitleActive = DNSUIEnabled(false)
+                public static var countDown = DNSUIEnabled(false)
+                public static var counterAnimation = DNSUIEnabled(true)
+                public static var counterEnabled = DNSUIEnabled(true)
+                public static var titleAlwaysVisible = DNSUIEnabled(true)
+                public enum Alert {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Counter {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Text {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Title {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+            }
+            public enum StringPicker {
+                public static var alertEnabled = DNSUIEnabled(true)
+                public static var alertFieldActive = DNSUIEnabled(false)
+                public static var alertLineActive = DNSUIEnabled(true)
+                public static var alertTitleActive = DNSUIEnabled(false)
+                public static var countDown = DNSUIEnabled(false)
+                public static var counterAnimation = DNSUIEnabled(true)
+                public static var counterEnabled = DNSUIEnabled(true)
+                public static var titleAlwaysVisible = DNSUIEnabled(true)
+                public enum Alert {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Counter {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Text {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+                public enum Title {
+                    public static var strikeThru = DNSUIEnabled(false)
+                }
+            }
             public enum TextView {
                 public static var alertEnabled = DNSUIEnabled(true)
                 public static var alertFieldActive = DNSUIEnabled(false)
