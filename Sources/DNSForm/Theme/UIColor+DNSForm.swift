@@ -1242,6 +1242,198 @@ public extension UIColor {
                     public static var tint = UIColor.systemPurple
                 }
             }
+            public enum DatePicker {
+                public static var background = UIColor.clear
+                public static var border = UIColor.clear
+                public enum Line {
+                    public static var disabled = UIColor.lightGray
+                    public static var focused = UIColor.darkText
+                    public static var highlighted = UIColor.darkText
+                    public static var normal = UIColor.darkText
+                    public static var selected = UIColor.darkText
+                }
+                public static var pickerText = UIColor.label
+                public static var shadow = UIColor.clear
+                public static var tint = UIColor.systemPurple
+                public enum Alert {
+                    public static var background = UIColor.clear
+                    public static var border = UIColor.clear
+                    public static var shadow = UIColor.clear
+                    public static var strikeThru = UIColor.systemRed
+                    public static var text = UIColor.systemRed
+                    public static var tint = UIColor.systemRed
+                }
+                public enum Counter {
+                    public static var background = UIColor.clear
+                    public static var border = UIColor.clear
+                    public static var shadow = UIColor.clear
+                    public static var strikeThru = UIColor.darkText
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
+                    public static var tint = UIColor.systemPurple
+                }
+                public enum Text {
+                    public static var background = UIColor.clear
+                    public static var border = UIColor.clear
+                    public static var shadow = UIColor.clear
+                    public static var strikeThru = UIColor.label
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
+                    public static var tint = UIColor.systemPurple
+                }
+                public enum Title {
+                    public static var background = UIColor.clear
+                    public static var border = UIColor.clear
+                    public static var shadow = UIColor.clear
+                    public static var strikeThru = UIColor.darkText
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
+                    public static var tint = UIColor.systemPurple
+                }
+            }
+            public enum NumberPicker {
+                public static var background = UIColor.clear
+                public static var border = UIColor.clear
+                public enum Line {
+                    public static var disabled = UIColor.lightGray
+                    public static var focused = UIColor.darkText
+                    public static var highlighted = UIColor.darkText
+                    public static var normal = UIColor.darkText
+                    public static var selected = UIColor.darkText
+                }
+                public static var pickerText = UIColor.white
+                public static var shadow = UIColor.clear
+                public static var tint = UIColor.systemPurple
+                public enum Alert {
+                    public static var background = UIColor.clear
+                    public static var border = UIColor.clear
+                    public static var shadow = UIColor.clear
+                    public static var strikeThru = UIColor.systemRed
+                    public static var text = UIColor.systemRed
+                    public static var tint = UIColor.systemRed
+                }
+                public enum Counter {
+                    public static var background = UIColor.clear
+                    public static var border = UIColor.clear
+                    public static var shadow = UIColor.clear
+                    public static var strikeThru = UIColor.darkText
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
+                    public static var tint = UIColor.systemPurple
+                }
+                public enum Text {
+                    public static var background = UIColor.clear
+                    public static var border = UIColor.clear
+                    public static var shadow = UIColor.clear
+                    public static var strikeThru = UIColor.label
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
+                    public static var tint = UIColor.systemPurple
+                }
+                public enum Title {
+                    public static var background = UIColor.clear
+                    public static var border = UIColor.clear
+                    public static var shadow = UIColor.clear
+                    public static var strikeThru = UIColor.darkText
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
+                    public static var tint = UIColor.systemPurple
+                }
+            }
+            public enum StringPicker {
+                public static var background = UIColor.clear
+                public static var border = UIColor.clear
+                public enum Line {
+                    public static var disabled = UIColor.lightGray
+                    public static var focused = UIColor.darkText
+                    public static var highlighted = UIColor.darkText
+                    public static var normal = UIColor.darkText
+                    public static var selected = UIColor.darkText
+                }
+                public static var pickerText = UIColor.white
+                public static var shadow = UIColor.clear
+                public static var tint = UIColor.systemPurple
+                public enum Alert {
+                    public static var background = UIColor.clear
+                    public static var border = UIColor.clear
+                    public static var shadow = UIColor.clear
+                    public static var strikeThru = UIColor.systemRed
+                    public static var text = UIColor.systemRed
+                    public static var tint = UIColor.systemRed
+                }
+                public enum Counter {
+                    public static var background = UIColor.clear
+                    public static var border = UIColor.clear
+                    public static var shadow = UIColor.clear
+                    public static var strikeThru = UIColor.darkText
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
+                    public static var tint = UIColor.systemPurple
+                }
+                public enum Text {
+                    public static var background = UIColor.clear
+                    public static var border = UIColor.clear
+                    public static var shadow = UIColor.clear
+                    public static var strikeThru = UIColor.label
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
+                    public static var tint = UIColor.systemPurple
+                }
+                public enum Title {
+                    public static var background = UIColor.clear
+                    public static var border = UIColor.clear
+                    public static var shadow = UIColor.clear
+                    public static var strikeThru = UIColor.darkText
+                    public enum Text {
+                        public static var disabled = UIColor.lightGray
+                        public static var focused = UIColor.darkText
+                        public static var highlighted = UIColor.darkText
+                        public static var normal = UIColor.darkText
+                        public static var selected = UIColor.darkText
+                    }
+                    public static var tint = UIColor.systemPurple
+                }
+            }
             public enum TextView {
                 public static var background = UIColor.clear
                 public static var border = UIColor.clear

@@ -179,6 +179,24 @@ public extension UIFont {
                 public static var text = UIFont.systemFont(ofSize: 16, weight: .regular)
                 public static var title = UIFont.systemFont(ofSize: 13, weight: .regular)
             }
+            public enum DatePicker {
+                public static var alert = UIFont.systemFont(ofSize: 13, weight: .bold)
+                public static var counter = UIFont.systemFont(ofSize: 11, weight: .regular)
+                public static var text = UIFont.systemFont(ofSize: 16, weight: .regular)
+                public static var title = UIFont.systemFont(ofSize: 13, weight: .regular)
+            }
+            public enum NumberPicker {
+                public static var alert = UIFont.systemFont(ofSize: 13, weight: .bold)
+                public static var counter = UIFont.systemFont(ofSize: 11, weight: .regular)
+                public static var text = UIFont.systemFont(ofSize: 16, weight: .regular)
+                public static var title = UIFont.systemFont(ofSize: 13, weight: .regular)
+            }
+            public enum StringPicker {
+                public static var alert = UIFont.systemFont(ofSize: 13, weight: .bold)
+                public static var counter = UIFont.systemFont(ofSize: 11, weight: .regular)
+                public static var text = UIFont.systemFont(ofSize: 16, weight: .regular)
+                public static var title = UIFont.systemFont(ofSize: 13, weight: .regular)
+            }
             public enum TextView {
                 public static var alert = UIFont.systemFont(ofSize: 13, weight: .bold)
                 public static var counter = UIFont.systemFont(ofSize: 11, weight: .regular)

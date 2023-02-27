@@ -161,6 +161,24 @@ public extension DNSUIFont {
                 public static var text = DNSUIFont(UIFont.DNSForm.Field.Default.text)
                 public static var title = DNSUIFont(UIFont.DNSForm.Field.Default.title)
             }
+            public enum DatePicker {
+                public static var alert = DNSUIFont(UIFont.DNSForm.Field.DatePicker.alert)
+                public static var counter = DNSUIFont(UIFont.DNSForm.Field.DatePicker.counter)
+                public static var text = DNSUIFont(UIFont.DNSForm.Field.DatePicker.text)
+                public static var title = DNSUIFont(UIFont.DNSForm.Field.DatePicker.title)
+            }
+            public enum NumberPicker {
+                public static var alert = DNSUIFont(UIFont.DNSForm.Field.NumberPicker.alert)
+                public static var counter = DNSUIFont(UIFont.DNSForm.Field.NumberPicker.counter)
+                public static var text = DNSUIFont(UIFont.DNSForm.Field.NumberPicker.text)
+                public static var title = DNSUIFont(UIFont.DNSForm.Field.NumberPicker.title)
+            }
+            public enum StringPicker {
+                public static var alert = DNSUIFont(UIFont.DNSForm.Field.StringPicker.alert)
+                public static var counter = DNSUIFont(UIFont.DNSForm.Field.StringPicker.counter)
+                public static var text = DNSUIFont(UIFont.DNSForm.Field.StringPicker.text)
+                public static var title = DNSUIFont(UIFont.DNSForm.Field.StringPicker.title)
+            }
             public enum TextView {
                 public static var alert = DNSUIFont(UIFont.DNSForm.Field.TextView.alert)
                 public static var counter = DNSUIFont(UIFont.DNSForm.Field.TextView.counter)

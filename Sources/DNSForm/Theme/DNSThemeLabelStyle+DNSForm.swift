@@ -51,6 +51,18 @@ public extension DNSThemeLabelStyle {
             _ = Self.Field.Default.counter
             _ = Self.Field.Default.text
             _ = Self.Field.Default.title
+            _ = Self.Field.DatePicker.alert
+            _ = Self.Field.DatePicker.counter
+            _ = Self.Field.DatePicker.text
+            _ = Self.Field.DatePicker.title
+            _ = Self.Field.NumberPicker.alert
+            _ = Self.Field.NumberPicker.counter
+            _ = Self.Field.NumberPicker.text
+            _ = Self.Field.NumberPicker.title
+            _ = Self.Field.StringPicker.alert
+            _ = Self.Field.StringPicker.counter
+            _ = Self.Field.StringPicker.text
+            _ = Self.Field.StringPicker.title
             _ = Self.Field.TextView.alert
             _ = Self.Field.TextView.counter
             _ = Self.Field.TextView.text
@@ -368,6 +380,132 @@ public extension DNSThemeLabelStyle {
                                        backgroundColor: DNSUIColor.DNSForm.Field.Default.Title.background,
                                        border: DNSUIBorder.DNSForm.Field.Default.title,
                                        tintColor: DNSUIColor.DNSForm.Field.Default.Title.tint)
+            }
+            public enum DatePicker {
+                public static var alert =
+                    DNSThemeLabelStyle(styleName: "Field.DatePicker.alert",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Field.DatePicker.Alert.text,
+                                       font: DNSUIFont.DNSForm.Field.DatePicker.alert,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Field.DatePicker.alert,
+                                       shadow: DNSUIShadow.DNSForm.Field.DatePicker.alert,
+                                       backgroundColor: DNSUIColor.DNSForm.Field.DatePicker.Alert.background,
+                                       border: DNSUIBorder.DNSForm.Field.DatePicker.alert,
+                                       tintColor: DNSUIColor.DNSForm.Field.DatePicker.Alert.tint)
+                public static var counter =
+                    DNSThemeLabelStyle(styleName: "Field.DatePicker.counter",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Field.DatePicker.Counter.text,
+                                       font: DNSUIFont.DNSForm.Field.DatePicker.counter,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Field.DatePicker.counter,
+                                       shadow: DNSUIShadow.DNSForm.Field.DatePicker.counter,
+                                       backgroundColor: DNSUIColor.DNSForm.Field.DatePicker.Counter.background,
+                                       border: DNSUIBorder.DNSForm.Field.DatePicker.counter,
+                                       tintColor: DNSUIColor.DNSForm.Field.DatePicker.Counter.tint)
+                public static var text =
+                    DNSThemeLabelStyle(styleName: "Field.DatePicker.text",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Field.DatePicker.Text.text,
+                                       font: DNSUIFont.DNSForm.Field.DatePicker.text,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Field.DatePicker.text,
+                                       shadow: DNSUIShadow.DNSForm.Field.DatePicker.text,
+                                       backgroundColor: DNSUIColor.DNSForm.Field.DatePicker.Text.background,
+                                       border: DNSUIBorder.DNSForm.Field.DatePicker.text,
+                                       tintColor: DNSUIColor.DNSForm.Field.DatePicker.Text.tint)
+                public static var title =
+                    DNSThemeLabelStyle(styleName: "Field.DatePicker.title",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Field.DatePicker.Title.text,
+                                       font: DNSUIFont.DNSForm.Field.DatePicker.title,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Field.DatePicker.title,
+                                       shadow: DNSUIShadow.DNSForm.Field.DatePicker.title,
+                                       backgroundColor: DNSUIColor.DNSForm.Field.DatePicker.Title.background,
+                                       border: DNSUIBorder.DNSForm.Field.DatePicker.title,
+                                       tintColor: DNSUIColor.DNSForm.Field.DatePicker.Title.tint)
+            }
+            public enum NumberPicker {
+                public static var alert =
+                    DNSThemeLabelStyle(styleName: "Field.NumberPicker.alert",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Field.NumberPicker.Alert.text,
+                                       font: DNSUIFont.DNSForm.Field.NumberPicker.alert,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Field.NumberPicker.alert,
+                                       shadow: DNSUIShadow.DNSForm.Field.NumberPicker.alert,
+                                       backgroundColor: DNSUIColor.DNSForm.Field.NumberPicker.Alert.background,
+                                       border: DNSUIBorder.DNSForm.Field.NumberPicker.alert,
+                                       tintColor: DNSUIColor.DNSForm.Field.NumberPicker.Alert.tint)
+                public static var counter =
+                    DNSThemeLabelStyle(styleName: "Field.NumberPicker.counter",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Field.NumberPicker.Counter.text,
+                                       font: DNSUIFont.DNSForm.Field.NumberPicker.counter,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Field.NumberPicker.counter,
+                                       shadow: DNSUIShadow.DNSForm.Field.NumberPicker.counter,
+                                       backgroundColor: DNSUIColor.DNSForm.Field.NumberPicker.Counter.background,
+                                       border: DNSUIBorder.DNSForm.Field.NumberPicker.counter,
+                                       tintColor: DNSUIColor.DNSForm.Field.NumberPicker.Counter.tint)
+                public static var text =
+                    DNSThemeLabelStyle(styleName: "Field.NumberPicker.text",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Field.NumberPicker.Text.text,
+                                       font: DNSUIFont.DNSForm.Field.NumberPicker.text,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Field.NumberPicker.text,
+                                       shadow: DNSUIShadow.DNSForm.Field.NumberPicker.text,
+                                       backgroundColor: DNSUIColor.DNSForm.Field.NumberPicker.Text.background,
+                                       border: DNSUIBorder.DNSForm.Field.NumberPicker.text,
+                                       tintColor: DNSUIColor.DNSForm.Field.NumberPicker.Text.tint)
+                public static var title =
+                    DNSThemeLabelStyle(styleName: "Field.NumberPicker.title",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Field.NumberPicker.Title.text,
+                                       font: DNSUIFont.DNSForm.Field.NumberPicker.title,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Field.NumberPicker.title,
+                                       shadow: DNSUIShadow.DNSForm.Field.NumberPicker.title,
+                                       backgroundColor: DNSUIColor.DNSForm.Field.NumberPicker.Title.background,
+                                       border: DNSUIBorder.DNSForm.Field.NumberPicker.title,
+                                       tintColor: DNSUIColor.DNSForm.Field.NumberPicker.Title.tint)
+            }
+            public enum StringPicker {
+                public static var alert =
+                    DNSThemeLabelStyle(styleName: "Field.StringPicker.alert",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Field.StringPicker.Alert.text,
+                                       font: DNSUIFont.DNSForm.Field.StringPicker.alert,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Field.StringPicker.alert,
+                                       shadow: DNSUIShadow.DNSForm.Field.StringPicker.alert,
+                                       backgroundColor: DNSUIColor.DNSForm.Field.StringPicker.Alert.background,
+                                       border: DNSUIBorder.DNSForm.Field.StringPicker.alert,
+                                       tintColor: DNSUIColor.DNSForm.Field.StringPicker.Alert.tint)
+                public static var counter =
+                    DNSThemeLabelStyle(styleName: "Field.StringPicker.counter",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Field.StringPicker.Counter.text,
+                                       font: DNSUIFont.DNSForm.Field.StringPicker.counter,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Field.StringPicker.counter,
+                                       shadow: DNSUIShadow.DNSForm.Field.StringPicker.counter,
+                                       backgroundColor: DNSUIColor.DNSForm.Field.StringPicker.Counter.background,
+                                       border: DNSUIBorder.DNSForm.Field.StringPicker.counter,
+                                       tintColor: DNSUIColor.DNSForm.Field.StringPicker.Counter.tint)
+                public static var text =
+                    DNSThemeLabelStyle(styleName: "Field.StringPicker.text",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Field.StringPicker.Text.text,
+                                       font: DNSUIFont.DNSForm.Field.StringPicker.text,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Field.StringPicker.text,
+                                       shadow: DNSUIShadow.DNSForm.Field.StringPicker.text,
+                                       backgroundColor: DNSUIColor.DNSForm.Field.StringPicker.Text.background,
+                                       border: DNSUIBorder.DNSForm.Field.StringPicker.text,
+                                       tintColor: DNSUIColor.DNSForm.Field.StringPicker.Text.tint)
+                public static var title =
+                    DNSThemeLabelStyle(styleName: "Field.StringPicker.title",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Field.StringPicker.Title.text,
+                                       font: DNSUIFont.DNSForm.Field.StringPicker.title,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Field.StringPicker.title,
+                                       shadow: DNSUIShadow.DNSForm.Field.StringPicker.title,
+                                       backgroundColor: DNSUIColor.DNSForm.Field.StringPicker.Title.background,
+                                       border: DNSUIBorder.DNSForm.Field.StringPicker.title,
+                                       tintColor: DNSUIColor.DNSForm.Field.StringPicker.Title.tint)
             }
             public enum TextView {
                 public static var alert =

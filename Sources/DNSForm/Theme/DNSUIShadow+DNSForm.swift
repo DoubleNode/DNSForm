@@ -65,12 +65,33 @@ public extension DNSUIShadow {
         }
         public enum Field {
             public static var `default` = DNSUIShadow(color: DNSUIColor.DNSForm.Field.Default.shadow)
+            public static var datePicker = DNSUIShadow(color: DNSUIColor.DNSForm.Field.DatePicker.shadow)
+            public static var numberPicker = DNSUIShadow(color: DNSUIColor.DNSForm.Field.NumberPicker.shadow)
+            public static var stringPicker = DNSUIShadow(color: DNSUIColor.DNSForm.Field.StringPicker.shadow)
             public static var textView = DNSUIShadow(color: DNSUIColor.DNSForm.Field.TextView.shadow)
             public enum Default {
                 public static var alert = DNSUIShadow(color: DNSUIColor.DNSForm.Field.Default.Alert.shadow)
                 public static var counter = DNSUIShadow(color: DNSUIColor.DNSForm.Field.Default.Counter.shadow)
                 public static var text = DNSUIShadow(color: DNSUIColor.DNSForm.Field.Default.Text.shadow)
                 public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Field.Default.Title.shadow)
+            }
+            public enum DatePicker {
+                public static var alert = DNSUIShadow(color: DNSUIColor.DNSForm.Field.DatePicker.Alert.shadow)
+                public static var counter = DNSUIShadow(color: DNSUIColor.DNSForm.Field.DatePicker.Counter.shadow)
+                public static var text = DNSUIShadow(color: DNSUIColor.DNSForm.Field.DatePicker.Text.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Field.DatePicker.Title.shadow)
+            }
+            public enum NumberPicker {
+                public static var alert = DNSUIShadow(color: DNSUIColor.DNSForm.Field.NumberPicker.Alert.shadow)
+                public static var counter = DNSUIShadow(color: DNSUIColor.DNSForm.Field.NumberPicker.Counter.shadow)
+                public static var text = DNSUIShadow(color: DNSUIColor.DNSForm.Field.NumberPicker.Text.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Field.NumberPicker.Title.shadow)
+            }
+            public enum StringPicker {
+                public static var alert = DNSUIShadow(color: DNSUIColor.DNSForm.Field.StringPicker.Alert.shadow)
+                public static var counter = DNSUIShadow(color: DNSUIColor.DNSForm.Field.StringPicker.Counter.shadow)
+                public static var text = DNSUIShadow(color: DNSUIColor.DNSForm.Field.StringPicker.Text.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Field.StringPicker.Title.shadow)
             }
             public enum TextView {
                 public static var alert = DNSUIShadow(color: DNSUIColor.DNSForm.Field.TextView.Alert.shadow)

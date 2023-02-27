@@ -131,12 +131,33 @@ public extension DNSUIBorder {
         }
         public enum Field {
             public static var `default` = DNSUIBorder(color: DNSUIColor.DNSForm.Field.Default.border)
+            public static var datePicker = DNSUIBorder(color: DNSUIColor.DNSForm.Field.DatePicker.border)
+            public static var numberPicker = DNSUIBorder(color: DNSUIColor.DNSForm.Field.NumberPicker.border)
+            public static var stringPicker = DNSUIBorder(color: DNSUIColor.DNSForm.Field.StringPicker.border)
             public static var textView = DNSUIBorder(color: DNSUIColor.DNSForm.Field.TextView.border)
             public enum Default {
                 public static var alert = DNSUIBorder(color: DNSUIColor.DNSForm.Field.Default.Alert.border)
                 public static var counter = DNSUIBorder(color: DNSUIColor.DNSForm.Field.Default.Counter.border)
                 public static var text = DNSUIBorder(color: DNSUIColor.DNSForm.Field.Default.Text.border)
                 public static var title = DNSUIBorder(color: DNSUIColor.DNSForm.Field.Default.Title.border)
+            }
+            public enum DatePicker {
+                public static var alert = DNSUIBorder(color: DNSUIColor.DNSForm.Field.DatePicker.Alert.border)
+                public static var counter = DNSUIBorder(color: DNSUIColor.DNSForm.Field.DatePicker.Counter.border)
+                public static var text = DNSUIBorder(color: DNSUIColor.DNSForm.Field.DatePicker.Text.border)
+                public static var title = DNSUIBorder(color: DNSUIColor.DNSForm.Field.DatePicker.Title.border)
+            }
+            public enum NumberPicker {
+                public static var alert = DNSUIBorder(color: DNSUIColor.DNSForm.Field.NumberPicker.Alert.border)
+                public static var counter = DNSUIBorder(color: DNSUIColor.DNSForm.Field.NumberPicker.Counter.border)
+                public static var text = DNSUIBorder(color: DNSUIColor.DNSForm.Field.NumberPicker.Text.border)
+                public static var title = DNSUIBorder(color: DNSUIColor.DNSForm.Field.NumberPicker.Title.border)
+            }
+            public enum StringPicker {
+                public static var alert = DNSUIBorder(color: DNSUIColor.DNSForm.Field.StringPicker.Alert.border)
+                public static var counter = DNSUIBorder(color: DNSUIColor.DNSForm.Field.StringPicker.Counter.border)
+                public static var text = DNSUIBorder(color: DNSUIColor.DNSForm.Field.StringPicker.Text.border)
+                public static var title = DNSUIBorder(color: DNSUIColor.DNSForm.Field.StringPicker.Title.border)
             }
             public enum TextView {
                 public static var alert = DNSUIBorder(color: DNSUIColor.DNSForm.Field.TextView.Alert.border)

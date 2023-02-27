@@ -1078,6 +1078,138 @@ public extension DNSUIColor {
                     public static var tint = DNSUIColor(UIColor.DNSForm.Field.Default.Title.tint)
                 }
             }
+            public enum DatePicker {
+                public static var background = DNSUIColor(UIColor.DNSForm.Field.DatePicker.background)
+                public static var border = DNSUIColor(UIColor.DNSForm.Field.DatePicker.border)
+                public static var line = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Line.normal,
+                                                    disabled: UIColor.DNSForm.Field.DatePicker.Line.disabled)
+                public static var pickerText = DNSUIColor(UIColor.DNSForm.Field.DatePicker.pickerText)
+                public static var shadow = DNSUIColor(UIColor.DNSForm.Field.DatePicker.shadow)
+                public static var tint = DNSUIColor(UIColor.DNSForm.Field.DatePicker.tint)
+                public enum Alert {
+                    public static var background = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Alert.background)
+                    public static var border = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Alert.border)
+                    public static var shadow = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Alert.shadow)
+                    public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Alert.strikeThru)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Alert.text)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Alert.tint)
+                }
+                public enum Counter {
+                    public static var background = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Counter.background)
+                    public static var border = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Counter.border)
+                    public static var shadow = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Counter.shadow)
+                    public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Counter.strikeThru)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Counter.Text.normal,
+                                                        disabled: UIColor.DNSForm.Field.DatePicker.Counter.Text.disabled)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Counter.tint)
+                }
+                public enum Text {
+                    public static var background = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Text.background)
+                    public static var border = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Text.border)
+                    public static var shadow = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Text.shadow)
+                    public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Text.strikeThru)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Text.Text.normal,
+                                                        disabled: UIColor.DNSForm.Field.DatePicker.Text.Text.disabled)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Text.tint)
+                }
+                public enum Title {
+                    public static var background = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Title.background)
+                    public static var border = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Title.border)
+                    public static var shadow = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Title.shadow)
+                    public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Title.strikeThru)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Title.Text.normal,
+                                                        disabled: UIColor.DNSForm.Field.DatePicker.Title.Text.disabled)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.DatePicker.Title.tint)
+                }
+            }
+            public enum NumberPicker {
+                public static var background = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.background)
+                public static var border = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.border)
+                public static var line = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Line.normal,
+                                                    disabled: UIColor.DNSForm.Field.NumberPicker.Line.disabled)
+                public static var pickerText = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.pickerText)
+                public static var shadow = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.shadow)
+                public static var tint = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.tint)
+                public enum Alert {
+                    public static var background = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Alert.background)
+                    public static var border = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Alert.border)
+                    public static var shadow = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Alert.shadow)
+                    public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Alert.strikeThru)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Alert.text)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Alert.tint)
+                }
+                public enum Counter {
+                    public static var background = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Counter.background)
+                    public static var border = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Counter.border)
+                    public static var shadow = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Counter.shadow)
+                    public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Counter.strikeThru)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Counter.Text.normal,
+                                                        disabled: UIColor.DNSForm.Field.NumberPicker.Counter.Text.disabled)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Counter.tint)
+                }
+                public enum Text {
+                    public static var background = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Text.background)
+                    public static var border = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Text.border)
+                    public static var shadow = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Text.shadow)
+                    public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Text.strikeThru)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Text.Text.normal,
+                                                        disabled: UIColor.DNSForm.Field.NumberPicker.Text.Text.disabled)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Text.tint)
+                }
+                public enum Title {
+                    public static var background = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Title.background)
+                    public static var border = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Title.border)
+                    public static var shadow = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Title.shadow)
+                    public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Title.strikeThru)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Title.Text.normal,
+                                                        disabled: UIColor.DNSForm.Field.NumberPicker.Title.Text.disabled)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.NumberPicker.Title.tint)
+                }
+            }
+            public enum StringPicker {
+                public static var background = DNSUIColor(UIColor.DNSForm.Field.StringPicker.background)
+                public static var border = DNSUIColor(UIColor.DNSForm.Field.StringPicker.border)
+                public static var line = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Line.normal,
+                                                    disabled: UIColor.DNSForm.Field.StringPicker.Line.disabled)
+                public static var pickerText = DNSUIColor(UIColor.DNSForm.Field.StringPicker.pickerText)
+                public static var shadow = DNSUIColor(UIColor.DNSForm.Field.StringPicker.shadow)
+                public static var tint = DNSUIColor(UIColor.DNSForm.Field.StringPicker.tint)
+                public enum Alert {
+                    public static var background = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Alert.background)
+                    public static var border = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Alert.border)
+                    public static var shadow = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Alert.shadow)
+                    public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Alert.strikeThru)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Alert.text)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Alert.tint)
+                }
+                public enum Counter {
+                    public static var background = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Counter.background)
+                    public static var border = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Counter.border)
+                    public static var shadow = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Counter.shadow)
+                    public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Counter.strikeThru)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Counter.Text.normal,
+                                                        disabled: UIColor.DNSForm.Field.StringPicker.Counter.Text.disabled)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Counter.tint)
+                }
+                public enum Text {
+                    public static var background = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Text.background)
+                    public static var border = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Text.border)
+                    public static var shadow = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Text.shadow)
+                    public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Text.strikeThru)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Text.Text.normal,
+                                                        disabled: UIColor.DNSForm.Field.StringPicker.Text.Text.disabled)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Text.tint)
+                }
+                public enum Title {
+                    public static var background = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Title.background)
+                    public static var border = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Title.border)
+                    public static var shadow = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Title.shadow)
+                    public static var strikeThru = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Title.strikeThru)
+                    public static var text = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Title.Text.normal,
+                                                        disabled: UIColor.DNSForm.Field.StringPicker.Title.Text.disabled)
+                    public static var tint = DNSUIColor(UIColor.DNSForm.Field.StringPicker.Title.tint)
+                }
+            }
             public enum TextView {
                 public static var background = DNSUIColor(UIColor.DNSForm.Field.TextView.background)
                 public static var border = DNSUIColor(UIColor.DNSForm.Field.TextView.border)
