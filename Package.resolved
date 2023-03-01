@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseStage.git",
       "state" : {
-        "revision" : "838075cdb676bd7b67b10697e2197d0fec9694ee",
-        "version" : "1.10.32"
+        "revision" : "c1ceff73741605064f0a8d118799708d9bfa94e3",
+        "version" : "1.10.35"
       }
     },
     {
@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseTheme.git",
       "state" : {
-        "revision" : "c49a49dedc8387ae12b72972ce53e0126d88fe9d",
-        "version" : "1.10.7"
+        "revision" : "e6ae306cf4b0fdce0b41d596fe3a8ade3d3ff317",
+        "version" : "1.10.8"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "55ded4ea55d2915a54fd0a05ffdb60e8fae42852",
-        "version" : "1.10.47"
+        "revision" : "41bf0529d75bcab12b9d1f9a73baa319ebf4514f",
+        "version" : "1.10.48"
       }
     },
     {
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashWorkers.git",
       "state" : {
-        "revision" : "2ed6e0887e635f2b1938fb9f957175db1971be3e",
-        "version" : "1.10.38"
+        "revision" : "7627969e382386098b6f2c3a09449399eb8a8415",
+        "version" : "1.10.39"
       }
     },
     {
@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSProtocols.git",
       "state" : {
-        "revision" : "13f2901e1b419261088ab3d82888ae11e3a756fe",
-        "version" : "1.10.72"
+        "revision" : "e62497e7467b5c6a78ae58a5f664dbe79a8a1a2e",
+        "version" : "1.10.73"
       }
     },
     {
@@ -268,6 +268,15 @@
       "state" : {
         "revision" : "d6680f79d5b293ddfc4640ad6d4101697426e840",
         "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "skeletonview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Juanpe/SkeletonView.git",
+      "state" : {
+        "revision" : "739a4f5d78731bebc48811c75fa9e1f4c4cef23e",
+        "version" : "1.30.4"
       }
     },
     {
