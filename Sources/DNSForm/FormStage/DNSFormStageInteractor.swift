@@ -90,7 +90,7 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
 
     // MARK: - Business Logic
     override open func doCloseAction(_ request: DNSFormStage.Models.Base.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard !self.formAnyChanges() else {
             self.formState = .cancelling
             self.messageUnsavedChanges()
@@ -101,21 +101,21 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
     open func doFieldChanged(_ request: DNSFormStage.Models.Field.Request) {
     }
     open func doFileDelete(_ request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
     }
     open func doFileSelect(_ request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         let response = DNSFormStage.Models.Field.Response(field: request.field)
         self.fileSelectPublisher.send(response)
     }
     open func doFileUpload(_ request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
     }
     open func doImageDelete(_ request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
     }
     open func doImagePopup(_ request: DNSFormStage.Models.ImagePopup.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         var response = DNSFormStage.Models.Message.Response(message: request.message,
                                                             style: .popup,
                                                             title: request.title)
@@ -128,12 +128,12 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         self.messagePublisher.send(response)
     }
     open func doImageSelect(_ request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         let response = DNSFormStage.Models.Field.Response(field: request.field)
         self.imageSelectPublisher.send(response)
     }
     open func doImageUpload(_ request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
     }
     override open func doMessageDone(_ request: DNSFormStage.Models.Message.Request) {
         super.doMessageDone(request)
@@ -146,12 +146,12 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
         }
     }
     open func doLanguageChanged(_ request: DNSFormStage.Models.Language.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         self.selectedLanguage = request.languageCode
     }
     open func doSave(_ request: DNSFormStage.Models.Base.Request) { }
     open func doTabChanged(_ request: DNSFormStage.Models.Tab.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         self.selectedTabs[request.tabsCode] = request.selectedTabCode
         self.formUpdateTab(for: request.tabsCode)
     }

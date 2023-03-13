@@ -135,12 +135,12 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
     
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
     }
     
     // MARK: - Action Methods -
     @IBAction func actionEditButtonAction(_ sender: UIButton) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data = self.data else { return }
         if data.selectMode {
             guard self.selectMode else { return }

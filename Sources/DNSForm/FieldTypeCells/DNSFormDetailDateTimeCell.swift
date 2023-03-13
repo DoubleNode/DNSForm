@@ -207,7 +207,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data = self.data else { return }
         let date = Self.dateFormatter.date(from: dateTextField.text!) ?? Date()
         var time = Self.timeFormatter.date(from: timeTextField.text!) ?? Date()
@@ -223,7 +223,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Action methods -
     @IBAction func dateValueChangedAction(sender: UIDatePicker) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data = self.data else { return }
         _ = dateTextField.becomeFirstResponder()
         _ = dateTextField.resignFirstResponder()
@@ -237,7 +237,7 @@ open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
                                                             value: time))
     }
     @IBAction func timeValueChangedAction(sender: UIDatePicker) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data = self.data else { return }
         _ = timeTextField.becomeFirstResponder()
         _ = timeTextField.resignFirstResponder()

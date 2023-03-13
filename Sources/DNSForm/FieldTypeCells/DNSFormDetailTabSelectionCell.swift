@@ -106,7 +106,7 @@ open class DNSFormDetailTabSelectionCell: DNSBaseStageCollectionViewCell, DNSFor
 
     // MARK: - Action methods -
     @IBAction func selectAction(sender: UIButton) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data,
             let sender = sender as? DNSUIButton else { return }
         let buttonIndex = tabButtons.firstIndex(of: sender) ?? 0

@@ -107,7 +107,7 @@ open class DNSFormDetailTextSelectionCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data = self.data else { return }
         guard textField.isValid else {
             textField.showAlert()
@@ -128,7 +128,7 @@ open class DNSFormDetailTextSelectionCell: DNSBaseStageCollectionViewCell,
     }
     public func animatedField(_ animatedField: AnimatedField,
                               didChangePickerValue value: String) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
 //        self.textField.text = value
     }
     

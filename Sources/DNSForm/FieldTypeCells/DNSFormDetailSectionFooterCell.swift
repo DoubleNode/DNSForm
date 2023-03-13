@@ -80,7 +80,7 @@ open class DNSFormDetailSectionFooterCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Action Methods -
     @IBAction func buttonAction(_ sender: UIButton) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data else { return }
         let request = Stage.Models.Section.Request(section: data.section,
                                                    languageCode: DNSCore.languageCode)

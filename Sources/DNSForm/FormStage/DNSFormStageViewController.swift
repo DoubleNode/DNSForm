@@ -89,35 +89,35 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
 
     // MARK: - Display Logic
     open func displayFieldAlert(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         self.fieldAlertMessages[viewModel.field] = viewModel.alertMessage
         self.formRefresh()
     }
     open func displayFileDelete(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
                                                               languageCode: self.selectedLanguage)
     }
     open func displayFileSelect(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
                                                               languageCode: self.selectedLanguage)
         self.openFilePicker()
     }
     open func displayImageDelete(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
                                                               languageCode: self.selectedLanguage,
                                                               value: nil)
     }
     open func displayImageSelect(_ viewModel: DNSFormStage.Models.Field.ViewModel) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         self.fieldRequest = DNSFormStage.Models.Field.Request(field: viewModel.field,
                                                               languageCode: self.selectedLanguage)
         self.openPHPicker()
     }
     open func displayLanguage(_ viewModel: DNSFormStage.Models.Language.ViewModel) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         self.selectedLanguage = viewModel.languageCode
     }
     override open func displayReset(_ viewModel: BaseStage.Models.Base.ViewModel) {
@@ -129,14 +129,14 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         self.formRefresh()
     }
     open func displayTab(_ viewModel: DNSFormStage.Models.Tab.ViewModel) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         self.selectedTabs[viewModel.tabsCode] = viewModel.selectedTabCode
         self.formRefresh()
     }
 
     // MARK: - Action methods -
     open func fieldChangedAction(request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         DNSUIThread.run {
             self.lastFieldChanged = (request.field, request.subfield)
             DNSThread.run(after: 0.1) {
@@ -145,7 +145,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         }
     }
     open func fileDeleteAction(request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         DNSUIThread.run {
             self.view.endEditing(true)
             DNSLowThread.run(after: 0.2) {
@@ -154,7 +154,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         }
     }
     open func fileSelectAction(request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         DNSUIThread.run {
             self.view.endEditing(true)
             DNSLowThread.run(after: 0.2) {
@@ -163,7 +163,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         }
     }
     open func imageDeleteAction(request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         DNSUIThread.run {
             self.view.endEditing(true)
             DNSLowThread.run(after: 0.2) {
@@ -172,7 +172,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         }
     }
     open func imagePopupAction(request: DNSFormStage.Models.ImagePopup.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         DNSUIThread.run {
             self.view.endEditing(true)
             DNSLowThread.run(after: 0.2) {
@@ -181,7 +181,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         }
     }
     open func imageSelectAction(request: DNSFormStage.Models.Field.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         DNSUIThread.run {
             self.view.endEditing(true)
             DNSLowThread.run(after: 0.2) {
@@ -190,7 +190,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         }
     }
     open func languageChangedAction(request: DNSFormStage.Models.Language.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         DNSUIThread.run {
             self.view.endEditing(true)
             DNSLowThread.run(after: 0.2) {
@@ -199,7 +199,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         }
     }
     open func saveButtonAction(request: DNSFormStage.Models.Base.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         DNSUIThread.run {
             self.view.endEditing(true)
             DNSLowThread.run(after: 0.2) {
@@ -208,7 +208,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         }
     }
     open func sectionAction(request: DNSFormStage.Models.Section.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         DNSUIThread.run {
             self.view.endEditing(true)
             DNSThread.run(after: 0.2) {
@@ -217,7 +217,7 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         }
     }
     open func tabChangedAction(request: DNSFormStage.Models.Tab.Request) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         DNSUIThread.run {
             self.view.endEditing(true)
             DNSLowThread.run(after: 0.2) {

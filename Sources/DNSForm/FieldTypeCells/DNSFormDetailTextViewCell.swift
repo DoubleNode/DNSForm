@@ -113,11 +113,11 @@ open class DNSFormDetailTextViewCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidBeginEditing(_ animatedField: AnimatedField) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         lineView.backgroundColor = textView.format.lineColor
     }
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         lineView.backgroundColor = textView.format.lineColor
         guard let data = self.data else { return }
         guard textView.isValid else {

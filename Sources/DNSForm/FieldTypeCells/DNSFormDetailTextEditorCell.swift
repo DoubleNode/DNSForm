@@ -114,11 +114,11 @@ open class DNSFormDetailTextEditorCell: DNSBaseStageCollectionViewCell, DNSFormD
 //
 //    // MARK: - AnimatedFieldDelegate methods
 //    public func animatedFieldDidBeginEditing(_ animatedField: AnimatedField) {
-//        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+//        self.utilityAutoTrack("\(#function)")
 //        lineView.backgroundColor = editorView.format.lineColor
 //    }
 //    public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
-//        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+//        self.utilityAutoTrack("\(#function)")
 //        lineView.backgroundColor = editorView.format.lineColor
 //        guard let data = self.data else { return }
 //        guard editorView.isValid else {

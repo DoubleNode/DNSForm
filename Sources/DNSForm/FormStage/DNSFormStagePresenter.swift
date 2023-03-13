@@ -53,43 +53,43 @@ open class DNSFormStagePresenter: DNSBaseStagePresenter, DNSFormStagePresentatio
 
     // MARK: - Presentation Logic
     open func presentFieldAlert(_ response: DNSFormStage.Models.Field.Response) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         let viewModel = DNSFormStage.Models.Field
             .ViewModel(field: response.field,
                        alertMessage: response.error?.localizedDescription ?? "")
         fieldAlertPublisher.send(viewModel)
     }
     open func presentFileDelete(_ response: DNSFormStage.Models.Field.Response) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         let viewModel = DNSFormStage.Models.Field.ViewModel(field: response.field,
                                                             alertMessage: "")
         fileDeletePublisher.send(viewModel)
     }
     open func presentFileSelect(_ response: DNSFormStage.Models.Field.Response) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         let viewModel = DNSFormStage.Models.Field.ViewModel(field: response.field,
                                                             alertMessage: "")
         fileSelectPublisher.send(viewModel)
     }
     open func presentImageDelete(_ response: DNSFormStage.Models.Field.Response) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         let viewModel = DNSFormStage.Models.Field.ViewModel(field: response.field,
                                                             alertMessage: "")
         imageDeletePublisher.send(viewModel)
     }
     open func presentImageSelect(_ response: DNSFormStage.Models.Field.Response) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         let viewModel = DNSFormStage.Models.Field.ViewModel(field: response.field,
                                                             alertMessage: "")
         imageSelectPublisher.send(viewModel)
     }
     open func presentLanguage(_ response: DNSFormStage.Models.Language.Response) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         let viewModel = DNSFormStage.Models.Language.ViewModel(languageCode: response.languageCode)
         languagePublisher.send(viewModel)
     }
     open func presentTab(_ response: DNSFormStage.Models.Tab.Response) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         let viewModel = DNSFormStage.Models.Tab.ViewModel(selectedTabCode: response.selectedTabCode,
                                                           tabsCode: response.tabsCode)
         tabPublisher.send(viewModel)

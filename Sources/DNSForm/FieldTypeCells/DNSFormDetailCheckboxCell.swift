@@ -75,7 +75,7 @@ open class DNSFormDetailCheckboxCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Action methods -
     @IBAction func selectAction(sender: UIButton) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data = self.data else { return }
         selectedPublisher.send(Stage.Models.Field.Request(field: data.field,
                                                           languageCode: "",

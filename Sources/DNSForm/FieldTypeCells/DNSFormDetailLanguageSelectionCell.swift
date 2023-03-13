@@ -75,7 +75,7 @@ open class DNSFormDetailLanguageSelectionCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Action methods -
     @IBAction func selectAction(sender: UIButton) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         var language = ""
         if sender == enButton {
             language = "en"

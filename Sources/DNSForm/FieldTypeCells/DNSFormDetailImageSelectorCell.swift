@@ -130,7 +130,7 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Action Methods -
     @IBAction func deleteButtonAction(_ sender: UIButton) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data = self.data else { return }
         self.activityIndicator.stopAnimating()
         imageDeleteActionPublisher
@@ -138,7 +138,7 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
                                                     languageCode: data.languageCode))
     }
     @IBAction func imagePopupButtonAction(_ sender: UIButton) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data = self.data else { return }
         guard let image = self.imageView.image else { return }
         imagePopupActionPublisher
@@ -148,7 +148,7 @@ open class DNSFormDetailImageSelectorCell: DNSBaseStageCollectionViewCell,
                                                          title: data.label))
     }
     @IBAction func selectButtonAction(_ sender: UIButton) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data = self.data else { return }
         self.activityIndicator.startAnimating()
         imageSelectActionPublisher

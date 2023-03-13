@@ -213,7 +213,7 @@ open class DNSFormDetailPostalAddressNicknameCell: DNSBaseStageCollectionViewCel
 
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         if animatedField == nicknameTextField {
             nicknameAnimatedFieldDidEndEditing(animatedField)
         } else if animatedField == streetTextField {

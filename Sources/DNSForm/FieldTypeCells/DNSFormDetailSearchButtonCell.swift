@@ -63,7 +63,7 @@ open class DNSFormDetailSearchButtonCell: DNSBaseStageCollectionViewCell, DNSFor
 
     // MARK: - Action Methods -
     @IBAction func selectButtonAction(_ sender: UIButton) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         pushActionPublisher.send(Stage.Models.Base.Request())
     }
 }

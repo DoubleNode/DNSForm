@@ -116,7 +116,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - AnimatedFieldDelegate methods
     public func animatedFieldDidEndEditing(_ animatedField: AnimatedField) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data = self.data else { return }
         guard textField.isValid else {
             textField.showAlert()
@@ -139,7 +139,7 @@ open class DNSFormDetailWeblinkCell: DNSBaseStageCollectionViewCell,
 
     // MARK: - Action Methods -
     @IBAction func weblinkButtonAction(_ sender: UIButton) {
-        self.wkrAnalytics.doAutoTrack(class: String(describing: self), method: "\(#function)")
+        self.utilityAutoTrack("\(#function)")
         guard let data = self.data else { return }
         guard let weblink = data.weblink else { return }
         weblinkActionPublisher
