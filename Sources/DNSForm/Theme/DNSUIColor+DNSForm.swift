@@ -1036,7 +1036,11 @@ public extension DNSUIColor {
         }
         public enum Field {
             public enum Default {
-                public static var background = DNSUIColor(UIColor.DNSForm.Field.Default.background)
+                public static var background = DNSUIColor(UIColor.DNSForm.Field.Default.Background.normal,
+                                                          disabled: UIColor.DNSForm.Field.Default.Background.disabled,
+                                                          focused: UIColor.DNSForm.Field.Default.Background.focused,
+                                                          highlighted: UIColor.DNSForm.Field.Default.Background.highlighted,
+                                                          selected: UIColor.DNSForm.Field.Default.Background.selected)
                 public static var border = DNSUIColor(UIColor.DNSForm.Field.Default.border)
                 public static var line = DNSUIColor(UIColor.DNSForm.Field.Default.Line.normal,
                                                     disabled: UIColor.DNSForm.Field.Default.Line.disabled)
