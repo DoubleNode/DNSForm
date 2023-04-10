@@ -27,7 +27,7 @@ public protocol DNSFormDetailImageSelectorPlusCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailImageSelectorPlusCell: DNSBaseStageCollectionViewCell,
                                                DNSFormDetailImageSelectorPlusCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormStage
-    static public let recommendedContentSize = CGSize(width: 414, height: 164)
+    static public let recommendedContentSize = CGSize(width: 414, height: 174)
     static public let heightForSection: Double = recommendedContentSize.height
 
     var lastMedia: DAOMedia?
