@@ -24,7 +24,7 @@ public protocol DNSFormDetailImageUrlCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
     DNSFormDetailImageUrlCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormStage
-    static public let recommendedContentSize = CGSize(width: 414, height: 80)
+    static public let recommendedContentSize = CGSize(width: 414, height: 74)
     static public let heightForSection: Double = recommendedContentSize.height
 
     var lastURL: URL?

@@ -24,7 +24,7 @@ public protocol DNSFormDetailDateTimeCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailDateTimeCell: DNSBaseStageCollectionViewCell,
     DNSFormDetailDateTimeCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormStage
-    static public let recommendedContentSize = CGSize(width: 414, height: 76)
+    static public let recommendedContentSize = CGSize(width: 414, height: 86)
     static public let heightForSection: Double = recommendedContentSize.height
 
     static public var defaultImageDate = UIImage(dnsSymbol: SFSymbol.calendar)

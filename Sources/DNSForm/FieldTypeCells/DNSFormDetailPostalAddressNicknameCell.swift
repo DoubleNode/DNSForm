@@ -23,7 +23,7 @@ public protocol DNSFormDetailPostalAddressNicknameCellLogic: DNSBaseStageCellLog
 open class DNSFormDetailPostalAddressNicknameCell: DNSBaseStageCollectionViewCell,
                            DNSFormDetailPostalAddressNicknameCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormStage
-    static public let recommendedContentSize = CGSize(width: 414, height: 192)
+    static public let recommendedContentSize = CGSize(width: 414, height: 202)
     static public let heightForSection: Double = recommendedContentSize.height
     public enum CodingKeys: String, CodingKey {
         case city, nickname, postalCode, state, street
