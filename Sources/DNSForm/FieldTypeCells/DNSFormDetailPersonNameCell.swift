@@ -23,7 +23,7 @@ public protocol DNSFormDetailPersonNameCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
                                         DNSFormDetailPersonNameCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormStage
-    static public let recommendedContentSize = CGSize(width: 414, height: 256)
+    static public let recommendedContentSize = CGSize(width: 414, height: 266)
     static public let heightForSection: Double = recommendedContentSize.height
     public enum CodingKeys: String, CodingKey {
         case familyName, givenName, middleName, nickname

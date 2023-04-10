@@ -25,7 +25,7 @@ public protocol DNSFormDetailHoursCellLogic: DNSBaseStageCellLogic {
 open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
     DNSFormDetailHoursCellLogic, AnimatedFieldDelegate, AnimatedFieldDataSource {
     public typealias Stage = DNSFormStage
-    static public let recommendedContentSize = CGSize(width: 414, height: 95)
+    static public let recommendedContentSize = CGSize(width: 414, height: 105)
     static public let heightForSection: Double = recommendedContentSize.height
 
     static public var defaultImageClose = UIImage(dnsSymbol: SFSymbol.clock)

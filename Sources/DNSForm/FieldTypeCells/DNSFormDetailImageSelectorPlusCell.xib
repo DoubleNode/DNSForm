@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,14 +18,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DNSFormDetailImageSelectorPlusCell" customModule="DNSForm">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jap-NZ-Uma" userLabel="Image Container View" customClass="DNSUIView" customModule="DNSBaseTheme">
                                 <rect key="frame" x="24" y="0.0" width="84" height="84"/>
@@ -149,7 +149,7 @@
                             <constraint firstItem="FgJ-ac-3E1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Jap-NZ-Uma" secondAttribute="bottom" constant="16" id="Bwr-bt-fZp"/>
                             <constraint firstItem="mP2-6q-Y9a" firstAttribute="leading" secondItem="BgG-z5-9Dn" secondAttribute="leading" id="Byl-HO-BzR"/>
                             <constraint firstAttribute="trailing" secondItem="DTP-4Z-aCp" secondAttribute="trailing" constant="24" id="C76-hc-QG1"/>
-                            <constraint firstAttribute="bottom" secondItem="FgJ-ac-3E1" secondAttribute="bottom" id="LKQ-V4-2q1"/>
+                            <constraint firstAttribute="bottom" secondItem="FgJ-ac-3E1" secondAttribute="bottom" constant="10" id="LKQ-V4-2q1"/>
                             <constraint firstItem="BgG-z5-9Dn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KuD-TU-KgD" secondAttribute="top" constant="2" id="M9O-PS-DoC"/>
                             <constraint firstItem="DTP-4Z-aCp" firstAttribute="width" secondItem="mP2-6q-Y9a" secondAttribute="width" multiplier="0.8" id="Ri0-bC-TrJ"/>
                             <constraint firstAttribute="trailing" secondItem="FgJ-ac-3E1" secondAttribute="trailing" constant="24" id="Y0D-JU-Rpr"/>
