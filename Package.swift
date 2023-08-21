@@ -12,9 +12,9 @@ import PackageDescription
 let package = Package(
     name: "DNSForm",
     platforms: [
-        .iOS(.v15),
-        .tvOS(.v15),
-        .macOS(.v10_15),
+        .iOS(.v16),
+        .tvOS(.v16),
+//        .macOS(.v13),
         .watchOS(.v9),
     ],
     products: [
@@ -26,18 +26,18 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/DoubleNodeOpen/AnimatedField.git", from: "2.5.49"),
-        .package(url: "https://github.com/DoubleNode/DNSAppCore.git", from: "1.10.2"),
-        .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.10.51"),
-        .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.10.28"),
-        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.10.63"),
-        .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.10.48"),
-        .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", from: "1.10.1"),
-        .package(url: "https://github.com/DoubleNode/DNSCrashNetwork.git", from: "1.10.3"),
-        .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", from: "1.10.0"),
-        .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.10.53"),
-        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.10.90"),
-        .package(url: "https://github.com/rajdeep/proton.git", from: "0.6.1"),
+        .package(url: "https://github.com/DoubleNodeOpen/AnimatedField.git", from: "2.5.50"),
+        .package(url: "https://github.com/DoubleNode/DNSAppCore.git", from: "1.11.0"),
+        .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.11.0"),
+        .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.11.0"),
+        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.11.0"),
+        .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.11.2"),
+        .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", from: "1.11.0"),
+        .package(url: "https://github.com/DoubleNode/DNSCrashNetwork.git", from: "1.11.0"),
+        .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", from: "1.11.0"),
+        .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.11.0"),
+        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.11.0"),
+        .package(url: "https://github.com/rajdeep/proton.git", from: "0.8.11"),
         .package(url: "https://github.com/Nirma/SFSymbol", from: "2.2.0")
     ],
     targets: [
