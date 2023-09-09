@@ -29,6 +29,8 @@ public protocol DNSFormStageDisplayLogic: DNSBaseStageDisplayLogic {
     var saveActionPublisher: PassthroughSubject<DNSFormStage.Models.Base.Request, Never> { get }
     var sectionActionPublisher: PassthroughSubject<DNSFormStage.Models.Section.Request, Never> { get }
     var tabChangedPublisher: PassthroughSubject<DNSFormStage.Models.Tab.Request, Never> { get }
+    var tabCopyPublisher: PassthroughSubject<DNSFormStage.Models.Tab.Request, Never> { get }
+    var tabPastePublisher: PassthroughSubject<DNSFormStage.Models.Tab.Request, Never> { get }
 }
 open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageDisplayLogic {
     public var formDataSource: UICollectionViewDiffableDataSource<AnyHashable, AnyHashable>! = nil
@@ -47,6 +49,8 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
     public var saveActionPublisher = PassthroughSubject<DNSFormStage.Models.Base.Request, Never>()
     public var sectionActionPublisher = PassthroughSubject<DNSFormStage.Models.Section.Request, Never>()
     public var tabChangedPublisher = PassthroughSubject<DNSFormStage.Models.Tab.Request, Never>()
+    public var tabCopyPublisher = PassthroughSubject<DNSFormStage.Models.Tab.Request, Never>()
+    public var tabPastePublisher = PassthroughSubject<DNSFormStage.Models.Tab.Request, Never>()
 
     public var anyChanges = false
     public var enableSave = false
@@ -225,6 +229,24 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
             }
         }
     }
+    open func tabCopyAction(request: DNSFormStage.Models.Tab.Request) {
+        self.utilityAutoTrack("\(#function)")
+        DNSUIThread.run {
+            self.view.endEditing(true)
+            DNSLowThread.run(after: 0.2) {
+                self.tabCopyPublisher.send(request)
+            }
+        }
+    }
+    open func tabPasteAction(request: DNSFormStage.Models.Tab.Request) {
+        self.utilityAutoTrack("\(#function)")
+        DNSUIThread.run {
+            self.view.endEditing(true)
+            DNSLowThread.run(after: 0.2) {
+                self.tabPastePublisher.send(request)
+            }
+        }
+    }
 
     // MARK: - Utility methods
     open func formRefresh(fieldChangeRedraw: Bool = false,
@@ -356,6 +378,12 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         } else if let fieldCell = fieldCell as? DNSFormDetailSectionFooterCell {
             cellSubscribers.append(fieldCell.actionPublisher
                 .sink { [weak self] request in self?.sectionAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailTabSelectionCell {
+            cellSubscribers.append(fieldCell.copyPublisher
+                .sink { [weak self] request in self?.tabCopyAction(request: request) })
+        } else if let fieldCell = fieldCell as? DNSFormDetailTabSelectionCell {
+            cellSubscribers.append(fieldCell.pastePublisher
+                .sink { [weak self] request in self?.tabPasteAction(request: request) })
         } else if let fieldCell = fieldCell as? DNSFormDetailTabSelectionCell {
             cellSubscribers.append(fieldCell.selectedPublisher
                 .sink { [weak self] request in self?.tabChangedAction(request: request) })

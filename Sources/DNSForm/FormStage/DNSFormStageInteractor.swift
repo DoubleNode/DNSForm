@@ -69,6 +69,10 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
             .sink { [weak self] request in self?.doSave(request) })
         subscribers.append(viewController.tabChangedPublisher
             .sink { [weak self] request in self?.doTabChanged(request) })
+        subscribers.append(viewController.tabCopyPublisher
+            .sink { [weak self] request in self?.doTabCopy(request) })
+        subscribers.append(viewController.tabPastePublisher
+            .sink { [weak self] request in self?.doTabPaste(request) })
     }
 
     // MARK: - Workers -
@@ -153,6 +157,14 @@ open class DNSFormStageInteractor: DNSBaseStageInteractor, DNSFormStageBusinessL
     open func doTabChanged(_ request: DNSFormStage.Models.Tab.Request) {
         self.utilityAutoTrack("\(#function)")
         self.selectedTabs[request.tabsCode] = request.selectedTabCode
+        self.formUpdateTab(for: request.tabsCode)
+    }
+    open func doTabCopy(_ request: DNSFormStage.Models.Tab.Request) {
+        self.utilityAutoTrack("\(#function)")
+        self.formUpdateTab(for: request.tabsCode)
+    }
+    open func doTabPaste(_ request: DNSFormStage.Models.Tab.Request) {
+        self.utilityAutoTrack("\(#function)")
         self.formUpdateTab(for: request.tabsCode)
     }
 

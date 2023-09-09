@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,12 +21,15 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyP-bB-mz5" userLabel="Content View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW2-zE-Aln" customClass="DNSUIButton" customModule="DNSBaseTheme">
-                                <rect key="frame" x="30" y="14" width="71" height="30"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW2-zE-Aln" customClass="DNSUIButton" customModule="DNSBaseTheme">
+                                <rect key="frame" x="30" y="14" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="lRh-WI-BRN"/>
                                 </constraints>
-                                <state key="normal" title="Tier 01"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                                <state key="normal" title="Tab1" image="list.clipboard" catalog="system">
+                                    <color key="titleColor" name="AccentColor"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusMulti" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerTopLeftRadius">
@@ -48,11 +51,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbp-wn-DYL" customClass="DNSUIButton" customModule="DNSBaseTheme">
-                                <rect key="frame" x="101" y="14" width="70.5" height="30"/>
+                                <rect key="frame" x="90" y="14" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8GD-wn-oFX"/>
                                 </constraints>
-                                <state key="normal" title="Tier 02"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                                <state key="normal" title="Tab2"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusMulti" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerTopLeftRadius">
@@ -74,11 +78,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjM-sf-STd" customClass="DNSUIButton" customModule="DNSBaseTheme">
-                                <rect key="frame" x="171.5" y="14" width="71" height="30"/>
+                                <rect key="frame" x="150" y="14" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="U7p-Nx-Fpn"/>
                                 </constraints>
-                                <state key="normal" title="Tier 03"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                                <state key="normal" title="Tab3"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusMulti" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerTopLeftRadius">
@@ -100,11 +105,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfC-pr-xqI" customClass="DNSUIButton" customModule="DNSBaseTheme">
-                                <rect key="frame" x="242.5" y="14" width="70.5" height="30"/>
+                                <rect key="frame" x="210" y="14" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0Du-HE-1wL"/>
                                 </constraints>
-                                <state key="normal" title="Tier 04"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                                <state key="normal" title="Tab4"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusMulti" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerTopLeftRadius">
@@ -126,11 +132,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0z-h4-waN" customClass="DNSUIButton" customModule="DNSBaseTheme">
-                                <rect key="frame" x="313" y="14" width="71" height="30"/>
+                                <rect key="frame" x="270" y="14" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Lmg-Aq-FlI"/>
                                 </constraints>
-                                <state key="normal" title="Tier 05"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                                <state key="normal" title="Tab5"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusMulti" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerTopLeftRadius">
@@ -149,6 +156,61 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="selectActionWithSender:" destination="gTV-IL-0wX" eventType="touchUpInside" id="lBA-Ux-da1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPw-JT-9BF" userLabel="Copy Button" customClass="DNSUIButton" customModule="DNSBaseTheme">
+                                <rect key="frame" x="340" y="14" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="ZY6-ug-AU5"/>
+                                    <constraint firstAttribute="height" constant="30" id="oeK-pl-hfq"/>
+                                </constraints>
+                                <state key="normal" image="arrow.right.doc.on.clipboard" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusMulti" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerTopLeftRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerTopRightRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="TitleDark"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.indexTab"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectActionWithSender:" destination="gTV-IL-0wX" eventType="touchUpInside" id="IkU-Ml-qWd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFB-17-AqW" userLabel="Paste Button" customClass="DNSUIButton" customModule="DNSBaseTheme">
+                                <rect key="frame" x="370" y="14" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EZw-rj-KXu"/>
+                                    <constraint firstAttribute="width" constant="30" id="bd2-wQ-qp8"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
+                                <state key="normal" image="clipboard.fill" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="cornerRadiusMulti" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerTopLeftRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerTopRightRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="TitleDark"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.indexTab"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectActionWithSender:" destination="gTV-IL-0wX" eventType="touchUpInside" id="eWu-kK-JkW"/>
                                 </connections>
                             </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mke-m6-mGw" customClass="DNSUIView" customModule="DNSBaseTheme">
@@ -209,7 +271,9 @@
                         <constraints>
                             <constraint firstItem="mfC-pr-xqI" firstAttribute="width" secondItem="RW2-zE-Aln" secondAttribute="width" id="23G-pK-i1D"/>
                             <constraint firstItem="gbp-wn-DYL" firstAttribute="leading" secondItem="RW2-zE-Aln" secondAttribute="trailing" id="3iu-hG-HRg"/>
+                            <constraint firstItem="bPw-JT-9BF" firstAttribute="leading" secondItem="M0z-h4-waN" secondAttribute="trailing" constant="10" id="4eS-t6-mKS"/>
                             <constraint firstAttribute="bottom" secondItem="RW2-zE-Aln" secondAttribute="bottom" constant="16" id="5I6-iA-DzV"/>
+                            <constraint firstItem="RFB-17-AqW" firstAttribute="leading" secondItem="bPw-JT-9BF" secondAttribute="trailing" id="6UA-lI-G7c"/>
                             <constraint firstItem="wjM-sf-STd" firstAttribute="width" secondItem="RW2-zE-Aln" secondAttribute="width" id="6dZ-f7-bf8"/>
                             <constraint firstItem="M0z-h4-waN" firstAttribute="width" secondItem="RW2-zE-Aln" secondAttribute="width" id="7c8-Ev-B4U"/>
                             <constraint firstItem="gbp-wn-DYL" firstAttribute="top" secondItem="RW2-zE-Aln" secondAttribute="top" id="90A-ND-do7"/>
@@ -222,14 +286,16 @@
                             <constraint firstItem="M0z-h4-waN" firstAttribute="top" secondItem="mfC-pr-xqI" secondAttribute="top" id="Mlv-GR-5uz"/>
                             <constraint firstItem="Mke-m6-mGw" firstAttribute="leading" secondItem="jyP-bB-mz5" secondAttribute="leading" constant="14" id="Pcp-g1-ij4"/>
                             <constraint firstAttribute="bottom" secondItem="Mke-m6-mGw" secondAttribute="bottom" constant="-200" id="WRF-sm-maS"/>
-                            <constraint firstItem="M0z-h4-waN" firstAttribute="trailing" secondItem="Mke-m6-mGw" secondAttribute="trailing" constant="-16" id="ZK2-cB-tf3"/>
                             <constraint firstItem="M0z-h4-waN" firstAttribute="bottom" secondItem="mfC-pr-xqI" secondAttribute="bottom" id="ZSv-PG-1VB"/>
                             <constraint firstItem="wjM-sf-STd" firstAttribute="top" secondItem="gbp-wn-DYL" secondAttribute="top" id="ZXO-rL-dBg"/>
                             <constraint firstItem="gbp-wn-DYL" firstAttribute="bottom" secondItem="RW2-zE-Aln" secondAttribute="bottom" id="clT-Wb-k4x"/>
+                            <constraint firstItem="RFB-17-AqW" firstAttribute="bottom" secondItem="bPw-JT-9BF" secondAttribute="bottom" id="gb9-tQ-oli"/>
                             <constraint firstItem="Mke-m6-mGw" firstAttribute="top" secondItem="RW2-zE-Aln" secondAttribute="bottom" id="hgc-qa-5oK"/>
+                            <constraint firstItem="RFB-17-AqW" firstAttribute="trailing" secondItem="Mke-m6-mGw" secondAttribute="trailing" id="kQD-cA-VvN"/>
                             <constraint firstItem="M0z-h4-waN" firstAttribute="leading" secondItem="mfC-pr-xqI" secondAttribute="trailing" id="ki7-mo-PjG"/>
                             <constraint firstItem="gbp-wn-DYL" firstAttribute="width" secondItem="RW2-zE-Aln" secondAttribute="width" id="lad-uM-uW3"/>
                             <constraint firstItem="Mke-m6-mGw" firstAttribute="leading" secondItem="RW2-zE-Aln" secondAttribute="leading" constant="-16" id="mkV-Xp-4Hq"/>
+                            <constraint firstItem="RFB-17-AqW" firstAttribute="bottom" secondItem="RW2-zE-Aln" secondAttribute="bottom" id="x1A-qp-Pth"/>
                             <constraint firstItem="RW2-zE-Aln" firstAttribute="top" secondItem="jyP-bB-mz5" secondAttribute="top" constant="14" id="yiB-K3-Acd"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -252,8 +318,10 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.clear"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="copyButton" destination="bPw-JT-9BF" id="MNk-6o-Rqq"/>
                 <outlet property="lineView" destination="Mke-m6-mGw" id="dMh-h9-5VI"/>
                 <outlet property="lineViewBottomConstraint" destination="WRF-sm-maS" id="jsB-y8-WnL"/>
+                <outlet property="pasteButton" destination="RFB-17-AqW" id="TCM-xx-S0z"/>
                 <outlet property="sectionLabel" destination="a4Q-fu-3yH" id="5Ih-RR-jyv"/>
                 <outlet property="tab1Button" destination="RW2-zE-Aln" id="6FQ-Sj-kPo"/>
                 <outlet property="tab2Button" destination="gbp-wn-DYL" id="q4O-fm-2yt"/>
@@ -266,25 +334,37 @@
     </objects>
     <designables>
         <designable name="M0z-h4-waN">
-            <size key="intrinsicContentSize" width="49" height="30"/>
+            <size key="intrinsicContentSize" width="34" height="30"/>
+        </designable>
+        <designable name="RFB-17-AqW">
+            <size key="intrinsicContentSize" width="18" height="23"/>
         </designable>
         <designable name="RW2-zE-Aln">
-            <size key="intrinsicContentSize" width="47" height="30"/>
+            <size key="intrinsicContentSize" width="55" height="23"/>
         </designable>
         <designable name="a4Q-fu-3yH">
             <size key="intrinsicContentSize" width="64.5" height="12"/>
         </designable>
+        <designable name="bPw-JT-9BF">
+            <size key="intrinsicContentSize" width="21" height="23"/>
+        </designable>
         <designable name="gbp-wn-DYL">
-            <size key="intrinsicContentSize" width="49" height="30"/>
+            <size key="intrinsicContentSize" width="34" height="30"/>
         </designable>
         <designable name="mfC-pr-xqI">
-            <size key="intrinsicContentSize" width="50" height="30"/>
+            <size key="intrinsicContentSize" width="35" height="30"/>
         </designable>
         <designable name="wjM-sf-STd">
-            <size key="intrinsicContentSize" width="49" height="30"/>
+            <size key="intrinsicContentSize" width="34" height="30"/>
         </designable>
     </designables>
     <resources>
+        <image name="arrow.right.doc.on.clipboard" catalog="system" width="116" height="128"/>
+        <image name="clipboard.fill" catalog="system" width="103" height="128"/>
+        <image name="list.clipboard" catalog="system" width="103" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="TitleDark">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
