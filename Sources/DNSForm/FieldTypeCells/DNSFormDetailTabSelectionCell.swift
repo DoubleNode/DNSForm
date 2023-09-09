@@ -28,6 +28,7 @@ open class DNSFormDetailTabSelectionCell: DNSBaseStageCollectionViewCell, DNSFor
     static public var pasteImage = UIImage(dnsSymbol: SFSymbol4.Clipboard.fill)
 
     public struct Data: Hashable {
+        public var allowTabCopy: Bool
         public var copiedTabCode: String
         public var languageCode: String
         public var label: String
@@ -38,8 +39,9 @@ open class DNSFormDetailTabSelectionCell: DNSBaseStageCollectionViewCell, DNSFor
         public var tabsCode: String
         public var tabStrings: [String: DNSString] = [:]
 
-        public init(copiedTabCode: String = "", languageCode: String, label: String, lineBottomOffset: Double, section: Int,
+        public init(allowTabCopy: Bool = false, copiedTabCode: String = "", languageCode: String, label: String, lineBottomOffset: Double, section: Int,
                     selectedTabCode: String, tabs: [String], tabsCode: String, tabStrings: [String: DNSString]) {
+            self.allowTabCopy = allowTabCopy
             self.copiedTabCode = copiedTabCode
             self.languageCode = languageCode
             self.label = label
@@ -61,35 +63,68 @@ open class DNSFormDetailTabSelectionCell: DNSBaseStageCollectionViewCell, DNSFor
                     $0.isEnabled = false
                     $0.isHidden = true
                     $0.setImage(nil, for: .normal)
+//                    $0.setImage(Self.copiedImage, for: .normal)
+                    $0.imageView?.isHidden = true
                 }
                 lineViewBottomConstraint.constant = 0
                 sectionLabel.text = ""
 
+                self.copyButton.isEnabled = false
                 self.copyButton.setImage(nil, for: .normal)
+                self.pasteButton.isEnabled = false
                 self.pasteButton.setImage(nil, for: .normal)
                 return
             }
-            self.copyButton.setImage(nil, for: .normal)
-            self.pasteButton.setImage(nil, for: .normal)
+            self.pasteButton.isEnabled = false
+            if data.allowTabCopy {
+                self.copyButton.isEnabled = true
+                self.copyButton.setImage(Self.copyImage, for: .normal)
+                if !data.copiedTabCode.isEmpty &&
+                    data.copiedTabCode != data.selectedTabCode {
+                    self.pasteButton.isEnabled = true
+                }
+                self.pasteButton.setImage(Self.pasteImage, for: .normal)
+            } else {
+                self.copyButton.isEnabled = false
+                self.copyButton.setImage(nil, for: .normal)
+                self.pasteButton.setImage(nil, for: .normal)
+            }
             self.tabButtons.forEach {
                 let index = self.tabButtons.firstIndex(of: $0) ?? 0
+                let equalWidthConstraint = self.tabButtonEqualWidthConstraints[index]
+                let widthConstraint = self.tabButtonWidthConstraints[index]
                 if data.tabs.count > index {
+                    equalWidthConstraint?.isActive = true
+                    widthConstraint?.isActive = false
                     let tabCode = data.tabs[index]
                     $0.setTitle(data.tabStrings[tabCode]?.asString(for: data.languageCode), for: .normal)
                     $0.isEnabled = data.selectedTabCode != tabCode
-                    $0.isHidden = false
+                    $0.isSelected = data.selectedTabCode == tabCode
                     $0.alpha = $0.isEnabled ? 0.3 : 1.0
-                    if data.copiedTabCode == tabCode {
-                        $0.setImage(Self.copiedImage, for: .normal)
-                        self.pasteButton.setImage(Self.pasteImage, for: .normal)
+                    $0.isHidden = false
+                    if data.allowTabCopy {
+                        if data.copiedTabCode == tabCode {
+                            $0.setImage(Self.copiedImage, for: .normal)
+                            $0.imageView?.isHidden = false
+                            self.copyButton.isEnabled = false
+                        } else {
+                            $0.setImage(nil, for: .normal)
+//                            $0.setImage(Self.copiedImage, for: .normal)
+                            $0.imageView?.isHidden = true
+                        }
                     } else {
                         $0.setImage(nil, for: .normal)
-                        self.pasteButton.setImage(nil, for: .normal)
+//                        $0.setImage(Self.copiedImage, for: .normal)
+                        $0.imageView?.isHidden = true
                     }
-                    self.copyButton.setImage(Self.copyImage, for: .normal)
                 } else {
+                    equalWidthConstraint?.isActive = false
+                    widthConstraint?.isActive = true
                     $0.isEnabled = false
                     $0.isHidden = true
+                    $0.setImage(nil, for: .normal)
+//                    $0.setImage(Self.copiedImage, for: .normal)
+                    $0.imageView?.isHidden = true
                 }
             }
 
@@ -99,14 +134,24 @@ open class DNSFormDetailTabSelectionCell: DNSBaseStageCollectionViewCell, DNSFor
     }
 
     var tabButtons: [DNSUIButton] = []
+    var tabButtonEqualWidthConstraints: [NSLayoutConstraint?] = []
+    var tabButtonWidthConstraints: [NSLayoutConstraint?] = []
 
     @IBOutlet var copyButton: DNSUIButton!
     @IBOutlet var pasteButton: DNSUIButton!
     @IBOutlet var tab1Button: DNSUIButton!
     @IBOutlet var tab2Button: DNSUIButton!
+    @IBOutlet var tab2ButtonEqualWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var tab2ButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet var tab3Button: DNSUIButton!
+    @IBOutlet var tab3ButtonEqualWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var tab3ButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet var tab4Button: DNSUIButton!
+    @IBOutlet var tab4ButtonEqualWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var tab4ButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet var tab5Button: DNSUIButton!
+    @IBOutlet var tab5ButtonEqualWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var tab5ButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet var lineView: UIView!
     @IBOutlet var lineViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var sectionLabel: DNSUILabel!
@@ -120,6 +165,12 @@ open class DNSFormDetailTabSelectionCell: DNSBaseStageCollectionViewCell, DNSFor
         super.awakeFromNib()
         tabButtons = [
             tab1Button, tab2Button, tab3Button, tab4Button, tab5Button,
+        ]
+        tabButtonEqualWidthConstraints = [
+            nil, tab2ButtonEqualWidthConstraint, tab3ButtonEqualWidthConstraint, tab4ButtonEqualWidthConstraint, tab5ButtonEqualWidthConstraint,
+        ]
+        tabButtonWidthConstraints = [
+            nil, tab2ButtonWidthConstraint, tab3ButtonWidthConstraint, tab4ButtonWidthConstraint, tab5ButtonWidthConstraint,
         ]
     }
     override open func contentInit() {

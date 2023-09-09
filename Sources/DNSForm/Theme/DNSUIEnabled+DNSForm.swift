@@ -52,6 +52,10 @@ public extension DNSUIEnabled {
                 public static var subtitle = DNSUIEnabled(false)
                 public static var title = DNSUIEnabled(false)
             }
+            public enum Symbol {
+                public static var subtitle = DNSUIEnabled(false)
+                public static var title = DNSUIEnabled(false)
+            }
         }
         public enum Field {
             public enum Default {

@@ -153,6 +153,20 @@ public extension DNSUIFont {
                               highlighted: UIFont.DNSForm.Button.Square.Title.highlighted,
                               selected: UIFont.DNSForm.Button.Square.Title.selected)
             }
+            public enum Symbol {
+                public static var subtitle =
+                    DNSUIFont(UIFont.DNSForm.Button.Symbol.Subtitle.normal,
+                              disabled: UIFont.DNSForm.Button.Symbol.Subtitle.disabled,
+                              focused: UIFont.DNSForm.Button.Symbol.Subtitle.focused,
+                              highlighted: UIFont.DNSForm.Button.Symbol.Subtitle.highlighted,
+                              selected: UIFont.DNSForm.Button.Symbol.Subtitle.selected)
+                public static var title =
+                    DNSUIFont(UIFont.DNSForm.Button.Symbol.Title.normal,
+                              disabled: UIFont.DNSForm.Button.Symbol.Title.disabled,
+                              focused: UIFont.DNSForm.Button.Symbol.Title.focused,
+                              highlighted: UIFont.DNSForm.Button.Symbol.Title.highlighted,
+                              selected: UIFont.DNSForm.Button.Symbol.Title.selected)
+            }
         }
         public enum Field {
             public enum Default {

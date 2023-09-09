@@ -22,6 +22,7 @@ public extension DNSUIShadow {
             public static var preview = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Preview.shadow)
             public static var search = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Search.shadow)
             public static var square = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Square.shadow)
+            public static var symbol = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Symbol.shadow)
             public enum Default {
                 public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Default.Subtitle.shadow)
                 public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Default.Title.shadow)
@@ -61,6 +62,10 @@ public extension DNSUIShadow {
             public enum Square {
                 public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Square.Subtitle.shadow)
                 public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Square.Title.shadow)
+            }
+            public enum Symbol {
+                public static var subtitle = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Symbol.Subtitle.shadow)
+                public static var title = DNSUIShadow(color: DNSUIColor.DNSForm.Button.Symbol.Title.shadow)
             }
         }
         public enum Field {

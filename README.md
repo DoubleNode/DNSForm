@@ -51,7 +51,7 @@ dependencies: [
 -   DNSCrashSystems v1.11.0+
 -   DNSCrashWorkers v1.11.0+
 -   DNSProtocols v1.11.0+
--   Proton v0.8.11+
+-   Proton v0.8.14+
 -   SFSymbol v2.2.0+
 
 ## Credits

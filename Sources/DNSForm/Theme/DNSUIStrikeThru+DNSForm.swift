@@ -92,6 +92,14 @@ public extension DNSUIStrikeThru {
                     DNSUIStrikeThru(color: DNSUIColor.DNSForm.Button.Square.Subtitle.strikeThru,
                                     enabled: DNSUIEnabled.DNSForm.Button.Square.subtitle)
             }
+            public enum Symbol {
+                public static var subtitle =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Button.Symbol.Subtitle.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Button.Symbol.subtitle)
+                public static var title =
+                    DNSUIStrikeThru(color: DNSUIColor.DNSForm.Button.Symbol.Subtitle.strikeThru,
+                                    enabled: DNSUIEnabled.DNSForm.Button.Symbol.subtitle)
+            }
         }
         public enum Field {
             public enum Default {

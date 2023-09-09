@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "bc268c28fb170f494de9e9927c371b8342979ece",
-        "version" : "5.7.1"
+        "revision" : "b2fa556e4e48cbf06cf8c63def138c98f4b811fa",
+        "version" : "5.8.0"
       }
     },
     {
@@ -257,8 +257,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rajdeep/proton.git",
       "state" : {
-        "revision" : "244ed980a0e2090b48c0b79abd95bc4d881124f0",
-        "version" : "0.8.11"
+        "revision" : "e31a2e6ea148b44e271787375dc094f855b86c3a",
+        "version" : "0.8.14"
       }
     },
     {

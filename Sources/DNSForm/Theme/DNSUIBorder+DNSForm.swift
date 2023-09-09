@@ -48,6 +48,9 @@ public extension DNSUIBorder {
             public static var square = DNSUIBorder(color: DNSUIColor.DNSForm.Button.Square.border,
                                                    cornerRadius: 0,
                                                    width: 1)
+            public static var symbol =
+                DNSUIBorder(color: DNSUIColor.DNSForm.Button.Symbol.border,
+                            cornerRadius: 0)
             public enum Default {
                 public static var subtitle =
                     DNSUIBorder(color: DNSUIColor.DNSForm.Button.Default.Subtitle.border,
@@ -126,6 +129,14 @@ public extension DNSUIBorder {
                                 cornerRadius: 0)
                 public static var title =
                     DNSUIBorder(color: DNSUIColor.DNSForm.Button.Square.Title.border,
+                                cornerRadius: 0)
+            }
+            public enum Symbol {
+                public static var subtitle =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Symbol.Subtitle.border,
+                                cornerRadius: 0)
+                public static var title =
+                    DNSUIBorder(color: DNSUIColor.DNSForm.Button.Symbol.Title.border,
                                 cornerRadius: 0)
             }
         }

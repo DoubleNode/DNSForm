@@ -47,6 +47,8 @@ public extension DNSThemeLabelStyle {
             _ = Self.Button.Search.title
             _ = Self.Button.Square.subtitle
             _ = Self.Button.Square.title
+            _ = Self.Button.Symbol.subtitle
+            _ = Self.Button.Symbol.title
             _ = Self.Field.Default.alert
             _ = Self.Field.Default.counter
             _ = Self.Field.Default.text
@@ -336,6 +338,28 @@ public extension DNSThemeLabelStyle {
                                        backgroundColor: DNSUIColor.DNSForm.Button.Square.Title.background,
                                        border: DNSUIBorder.DNSForm.Button.Square.title,
                                        tintColor: DNSUIColor.DNSForm.Button.Square.Title.tint)
+            }
+            public enum Symbol {
+                public static var subtitle =
+                    DNSThemeLabelStyle(styleName: "Button.Symbol.subtitle",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Button.Symbol.Subtitle.text,
+                                       font: DNSUIFont.DNSForm.Button.Symbol.subtitle,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Button.Symbol.subtitle,
+                                       shadow: DNSUIShadow.DNSForm.Button.Symbol.subtitle,
+                                       backgroundColor: DNSUIColor.DNSForm.Button.Symbol.Subtitle.background,
+                                       border: DNSUIBorder.DNSForm.Button.Symbol.subtitle,
+                                       tintColor: DNSUIColor.DNSForm.Button.Symbol.Subtitle.tint)
+                public static var title =
+                    DNSThemeLabelStyle(styleName: "Button.Symbol.title",
+                                       styleSetName: "DNSForm",
+                                       color: DNSUIColor.DNSForm.Button.Symbol.Title.text,
+                                       font: DNSUIFont.DNSForm.Button.Symbol.title,
+                                       strikeThru: DNSUIStrikeThru.DNSForm.Button.Symbol.title,
+                                       shadow: DNSUIShadow.DNSForm.Button.Symbol.title,
+                                       backgroundColor: DNSUIColor.DNSForm.Button.Symbol.Title.background,
+                                       border: DNSUIBorder.DNSForm.Button.Symbol.title,
+                                       tintColor: DNSUIColor.DNSForm.Button.Symbol.Title.tint)
             }
         }
         public enum Field {

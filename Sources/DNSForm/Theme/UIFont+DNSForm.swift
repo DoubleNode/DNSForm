@@ -116,11 +116,11 @@ public extension UIFont {
                     public static var selected = UIFont.systemFont(ofSize: 12, weight: .regular)
                 }
                 public enum Title {
-                    public static var disabled = UIFont.systemFont(ofSize: 18, weight: .regular)
-                    public static var focused = UIFont.systemFont(ofSize: 18, weight: .semibold)
-                    public static var highlighted = UIFont.systemFont(ofSize: 18, weight: .semibold)
-                    public static var normal = UIFont.systemFont(ofSize: 18, weight: .semibold)
-                    public static var selected = UIFont.systemFont(ofSize: 18, weight: .semibold)
+                    public static var disabled = UIFont.systemFont(ofSize: 15, weight: .regular)
+                    public static var focused = UIFont.systemFont(ofSize: 15, weight: .semibold)
+                    public static var highlighted = UIFont.systemFont(ofSize: 15, weight: .semibold)
+                    public static var normal = UIFont.systemFont(ofSize: 15, weight: .semibold)
+                    public static var selected = UIFont.systemFont(ofSize: 15, weight: .semibold)
                 }
             }
             public enum Preview {
@@ -156,6 +156,22 @@ public extension UIFont {
                 }
             }
             public enum Square {
+                public enum Subtitle {
+                    public static var disabled = UIFont.systemFont(ofSize: 12, weight: .light)
+                    public static var focused = UIFont.systemFont(ofSize: 12, weight: .light)
+                    public static var highlighted = UIFont.systemFont(ofSize: 12, weight: .light)
+                    public static var normal = UIFont.systemFont(ofSize: 12, weight: .light)
+                    public static var selected = UIFont.systemFont(ofSize: 12, weight: .light)
+                }
+                public enum Title {
+                    public static var disabled = UIFont.systemFont(ofSize: 15, weight: .regular)
+                    public static var focused = UIFont.systemFont(ofSize: 15, weight: .regular)
+                    public static var highlighted = UIFont.systemFont(ofSize: 15, weight: .regular)
+                    public static var normal = UIFont.systemFont(ofSize: 15, weight: .regular)
+                    public static var selected = UIFont.systemFont(ofSize: 15, weight: .regular)
+                }
+            }
+            public enum Symbol {
                 public enum Subtitle {
                     public static var disabled = UIFont.systemFont(ofSize: 12, weight: .light)
                     public static var focused = UIFont.systemFont(ofSize: 12, weight: .light)

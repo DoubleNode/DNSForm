@@ -381,10 +381,8 @@ open class DNSFormStageViewController: DNSBaseStageViewController, DNSFormStageD
         } else if let fieldCell = fieldCell as? DNSFormDetailTabSelectionCell {
             cellSubscribers.append(fieldCell.copyPublisher
                 .sink { [weak self] request in self?.tabCopyAction(request: request) })
-        } else if let fieldCell = fieldCell as? DNSFormDetailTabSelectionCell {
             cellSubscribers.append(fieldCell.pastePublisher
                 .sink { [weak self] request in self?.tabPasteAction(request: request) })
-        } else if let fieldCell = fieldCell as? DNSFormDetailTabSelectionCell {
             cellSubscribers.append(fieldCell.selectedPublisher
                 .sink { [weak self] request in self?.tabChangedAction(request: request) })
         } else if let fieldCell = fieldCell as? DNSFormDetailTextEditorCell {

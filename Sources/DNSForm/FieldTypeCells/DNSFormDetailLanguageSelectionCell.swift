@@ -42,8 +42,10 @@ open class DNSFormDetailLanguageSelectionCell: DNSBaseStageCollectionViewCell,
             guard let data = self.data else {
                 enButton.isEnabled = false
                 enButton.alpha = 0.3
+                enButton.imageView?.isHidden = true
                 es419Button.isEnabled = false
                 es419Button.alpha = 0.3
+                es419Button.imageView?.isHidden = true
                 lineViewBottomConstraint.constant = 0
                 sectionLabel.text = ""
                 return
@@ -51,9 +53,11 @@ open class DNSFormDetailLanguageSelectionCell: DNSBaseStageCollectionViewCell,
             enButton.isEnabled = data.languageCode != "en"
             enButton.isSelected = data.languageCode == "en"
             enButton.alpha = data.languageCode != "en" ? 0.3 : 1.0
+            enButton.imageView?.isHidden = true
             es419Button.isEnabled = data.languageCode != "es-419"
             es419Button.isSelected = data.languageCode == "es-419"
             es419Button.alpha = data.languageCode != "es-419" ? 0.3 : 1.0
+            es419Button.imageView?.isHidden = true
             lineViewBottomConstraint.constant = data.lineBottomOffset
             sectionLabel.text = data.label
         }
