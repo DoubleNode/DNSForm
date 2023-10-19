@@ -97,7 +97,9 @@ open class DNSFormDetailTabSelectionCell: DNSBaseStageCollectionViewCell, DNSFor
                     equalWidthConstraint?.isActive = true
                     widthConstraint?.isActive = false
                     let tabCode = data.tabs[index]
-                    $0.setTitle(data.tabStrings[tabCode]?.asString(for: data.languageCode), for: .normal)
+                    let tabLabel = data.tabStrings[tabCode]?.asString(for: data.languageCode)
+                    $0.setTitle(tabLabel, for: .normal)
+                    $0.accessibilityLabel = tabLabel
                     $0.isEnabled = data.selectedTabCode != tabCode
                     $0.isSelected = data.selectedTabCode == tabCode
                     $0.alpha = $0.isEnabled ? 0.3 : 1.0

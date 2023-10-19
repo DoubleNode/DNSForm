@@ -43,8 +43,8 @@ open class DNSFormDetailSaveButtonCell: DNSBaseStageCollectionViewCell,
                 return
             }
             let label = data.newObject ? data.newObjectLabel : data.label
-            self.button.setTitle(label,
-                                 for: UIControl.State.normal)
+            self.button.setTitle(label, for: UIControl.State.normal)
+            self.button.accessibilityLabel = label
             self.button.isEnabled = data.enabled
         }
     }
@@ -57,6 +57,7 @@ open class DNSFormDetailSaveButtonCell: DNSBaseStageCollectionViewCell,
     override open func awakeFromNib() {
         super.awakeFromNib()
         button.setTitle("", for: UIControl.State.normal)
+        button.accessibilityLabel = ""
     }
     override open func contentInit() {
         super.contentInit()

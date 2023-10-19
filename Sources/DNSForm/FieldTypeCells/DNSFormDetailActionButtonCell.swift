@@ -43,6 +43,7 @@ open class DNSFormDetailActionButtonCell: DNSBaseStageCollectionViewCell, DNSFor
             self.iconButton.isEnabled = data.enabled
             self.textButton.isEnabled = data.enabled
             self.textButton.setTitle(data.label, for: UIControl.State.normal)
+            self.textButton.accessibilityLabel = data.label
         }
     }
 
@@ -55,6 +56,7 @@ open class DNSFormDetailActionButtonCell: DNSBaseStageCollectionViewCell, DNSFor
     override open func contentInit() {
         super.contentInit()
         textButton.setTitle("", for: UIControl.State.normal)
+        self.textButton.accessibilityLabel = ""
         data = nil
     }
 

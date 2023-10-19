@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -98,6 +98,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mP2-6q-Y9a" customClass="DNSUIButton" customModule="DNSBaseTheme">
                                 <rect key="frame" x="120" y="25" width="143.5" height="44"/>
+                                <accessibility key="accessibilityConfiguration" label="SELECT"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ymQ-3U-6Ba"/>
                                 </constraints>
@@ -112,6 +113,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTP-4Z-aCp" customClass="DNSUIButton" customModule="DNSBaseTheme">
                                 <rect key="frame" x="275.5" y="25" width="114.5" height="44"/>
+                                <accessibility key="accessibilityConfiguration" label="DELETE"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Knh-j3-Hoj"/>
                                 </constraints>

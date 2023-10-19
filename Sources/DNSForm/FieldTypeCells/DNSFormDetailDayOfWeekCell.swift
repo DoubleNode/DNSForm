@@ -107,18 +107,25 @@ open class DNSFormDetailDayOfWeekCell: DNSBaseStageCollectionViewCell,
         super.awakeFromNib()
         monButton.setTitle(Stage.Localizations.DayOfWeekCell.mondayLabel,
                            for: UIControl.State.normal)
+        monButton.accessibilityLabel = Stage.Localizations.DayOfWeekCell.mondayLabel
         tueButton.setTitle(Stage.Localizations.DayOfWeekCell.tuesdayLabel,
                            for: UIControl.State.normal)
+        tueButton.accessibilityLabel = Stage.Localizations.DayOfWeekCell.tuesdayLabel
         wedButton.setTitle(Stage.Localizations.DayOfWeekCell.wednesdayLabel,
                            for: UIControl.State.normal)
+        wedButton.accessibilityLabel = Stage.Localizations.DayOfWeekCell.wednesdayLabel
         thrButton.setTitle(Stage.Localizations.DayOfWeekCell.thursdayLabel,
                            for: UIControl.State.normal)
+        thrButton.accessibilityLabel = Stage.Localizations.DayOfWeekCell.thursdayLabel
         friButton.setTitle(Stage.Localizations.DayOfWeekCell.fridayLabel,
                            for: UIControl.State.normal)
+        friButton.accessibilityLabel = Stage.Localizations.DayOfWeekCell.fridayLabel
         satButton.setTitle(Stage.Localizations.DayOfWeekCell.saturdayLabel,
                            for: UIControl.State.normal)
+        satButton.accessibilityLabel = Stage.Localizations.DayOfWeekCell.saturdayLabel
         sunButton.setTitle(Stage.Localizations.DayOfWeekCell.sundayLabel,
                            for: UIControl.State.normal)
+        sunButton.accessibilityLabel = Stage.Localizations.DayOfWeekCell.sundayLabel
     }
     override open func contentInit() {
         super.contentInit()

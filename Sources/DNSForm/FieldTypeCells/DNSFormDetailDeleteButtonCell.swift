@@ -39,8 +39,8 @@ open class DNSFormDetailDeleteButtonCell: DNSBaseStageCollectionViewCell,
                 return
             }
             let label = data.label
-            self.button.setTitle(label,
-                                 for: UIControl.State.normal)
+            self.button.setTitle(label, for: UIControl.State.normal)
+            self.button.accessibilityLabel = label
             self.button.isEnabled = data.enabled
         }
     }
@@ -53,6 +53,7 @@ open class DNSFormDetailDeleteButtonCell: DNSBaseStageCollectionViewCell,
     override open func awakeFromNib() {
         super.awakeFromNib()
         button.setTitle("", for: UIControl.State.normal)
+        button.accessibilityLabel = ""
     }
     override open func contentInit() {
         super.contentInit()

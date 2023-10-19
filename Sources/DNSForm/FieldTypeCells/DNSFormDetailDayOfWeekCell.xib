@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -41,6 +41,7 @@
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW2-zE-Aln" customClass="DNSUIButton" customModule="DNSBaseTheme">
                                 <rect key="frame" x="24.000000000000004" y="27" width="51.333333333333343" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
+                                <accessibility key="accessibilityConfiguration" label="Monday"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="lRh-WI-BRN"/>
                                 </constraints>
@@ -64,6 +65,7 @@
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dr1-Ha-AdO" userLabel="Tue" customClass="DNSUIButton" customModule="DNSBaseTheme">
                                 <rect key="frame" x="76.333333333333329" y="27" width="51.666666666666671" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
+                                <accessibility key="accessibilityConfiguration" label="Tuesday"/>
                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
                                 <state key="normal" title="Tue">
                                     <color key="titleColor" name="BodyLight"/>
@@ -84,6 +86,7 @@
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhd-wt-uRz" customClass="DNSUIButton" customModule="DNSBaseTheme">
                                 <rect key="frame" x="129" y="27" width="51.333333333333343" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
+                                <accessibility key="accessibilityConfiguration" label="Wednesday"/>
                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
                                 <state key="normal" title="Wed">
                                     <color key="titleColor" name="BodyLight"/>
@@ -104,6 +107,7 @@
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C54-cN-4kc" customClass="DNSUIButton" customModule="DNSBaseTheme">
                                 <rect key="frame" x="181.33333333333334" y="27" width="51.333333333333343" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
+                                <accessibility key="accessibilityConfiguration" label="Thursday"/>
                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
                                 <state key="normal" title="Thr">
                                     <color key="titleColor" name="BodyLight"/>
@@ -124,6 +128,7 @@
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2b-1x-rFh" customClass="DNSUIButton" customModule="DNSBaseTheme">
                                 <rect key="frame" x="233.66666666666666" y="27" width="51.333333333333343" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
+                                <accessibility key="accessibilityConfiguration" label="Friday"/>
                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
                                 <state key="normal" title="Fri">
                                     <color key="titleColor" name="BodyLight"/>
@@ -144,6 +149,7 @@
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMz-1i-pdw" customClass="DNSUIButton" customModule="DNSBaseTheme">
                                 <rect key="frame" x="286" y="27" width="51.666666666666686" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
+                                <accessibility key="accessibilityConfiguration" label="Saturday"/>
                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
                                 <state key="normal" title="Sat">
                                     <color key="titleColor" name="BodyLight"/>
@@ -161,9 +167,10 @@
                                     <action selector="selectActionWithSender:" destination="gTV-IL-0wX" eventType="touchUpInside" id="V5H-II-3Xs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbp-wn-DYL" userLabel="Sun" customClass="DNSUIButton" customModule="DNSBaseTheme">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbp-wn-DYL" customClass="DNSUIButton" customModule="DNSBaseTheme">
                                 <rect key="frame" x="338.66666666666669" y="27" width="51.333333333333314" height="30"/>
                                 <color key="backgroundColor" name="TitleDark"/>
+                                <accessibility key="accessibilityConfiguration" label="Sunday"/>
                                 <fontDescription key="fontDescription" name="URWDINCond-Demi" family="URW DIN Cond" pointSize="15"/>
                                 <state key="normal" title="Sun">
                                     <color key="titleColor" name="BodyLight"/>

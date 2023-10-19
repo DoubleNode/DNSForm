@@ -36,9 +36,11 @@ open class DNSFormDetailPreviewButtonCell: DNSBaseStageCollectionViewCell, DNSFo
             guard let data = self.data else {
                 self.button.isEnabled = false
                 self.button.setTitle("", for: UIControl.State.normal)
+                self.button.accessibilityLabel = ""
                 return
             }
             self.button.setTitle(data.label, for: UIControl.State.normal)
+            self.button.accessibilityLabel = data.label
             self.button.isEnabled = data.enabled
         }
     }
@@ -51,6 +53,7 @@ open class DNSFormDetailPreviewButtonCell: DNSBaseStageCollectionViewCell, DNSFo
     override open func awakeFromNib() {
         super.awakeFromNib()
         button.setTitle("", for: UIControl.State.normal)
+        button.accessibilityLabel = ""
     }
     override open func contentInit() {
         super.contentInit()

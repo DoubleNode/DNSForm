@@ -39,10 +39,12 @@ open class DNSFormDetailSearchButtonCell: DNSBaseStageCollectionViewCell, DNSFor
             guard let data = self.data else {
                 self.button.isEnabled = false
                 self.button.setTitle("", for: UIControl.State.normal)
+                self.button.accessibilityLabel = ""
                 return
             }
             self.button.setImage(data.image, for: .normal)
             self.button.setTitle(data.label, for: .normal)
+            self.button.accessibilityLabel = data.label
             self.button.isEnabled = data.enabled
         }
     }
@@ -55,6 +57,7 @@ open class DNSFormDetailSearchButtonCell: DNSBaseStageCollectionViewCell, DNSFor
     override open func awakeFromNib() {
         super.awakeFromNib()
         button.setTitle("", for: UIControl.State.normal)
+        button.accessibilityLabel = ""
     }
     override open func contentInit() {
         super.contentInit()
