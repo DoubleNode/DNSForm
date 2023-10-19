@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseStage.git",
       "state" : {
-        "revision" : "0c8673076fa75a2bb77af8b77420a3984be4f038",
-        "version" : "1.11.0"
+        "revision" : "5e2405ad93ace96bc329bf570eeb0f49ba778d32",
+        "version" : "1.11.1"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "f8b19c044cd6111ec0547d567b2f33dfaf58a4dc",
-        "version" : "1.11.0"
+        "revision" : "1a858746c8b8ac2ff6b95e014273ccb360786c53",
+        "version" : "1.11.6"
       }
     },
     {
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashWorkers.git",
       "state" : {
-        "revision" : "779379e5da02842a06ae1f0ee7fe4b93e3ef828d",
-        "version" : "1.11.0"
+        "revision" : "f2d01fba0ef03c7d79bffe775c8285ed71578b23",
+        "version" : "1.11.6"
       }
     },
     {
@@ -266,8 +266,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Nirma/SFSymbol",
       "state" : {
-        "revision" : "c18f260b9b69d1c24e40ad367e8a589563fb8f3d",
-        "version" : "2.2.0"
+        "revision" : "1b127194b976a58ea460a2cbe10f00fa994b1ece",
+        "version" : "2.3.0"
       }
     },
     {
