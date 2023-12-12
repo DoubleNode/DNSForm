@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "b2fa556e4e48cbf06cf8c63def138c98f4b811fa",
-        "version" : "5.8.0"
+        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+        "version" : "5.8.1"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/AlamofireImage.git",
       "state" : {
-        "revision" : "98cbb00ce0ec5fc8e52a5b50a6bfc08d3e5aee10",
-        "version" : "4.2.0"
+        "revision" : "1eaf3b6c6882bed10f6e7b119665599dd2329aa1",
+        "version" : "4.3.0"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "9075e62ce1aca257c62753b3713a4f91043e75fa",
-        "version" : "1.11.7"
+        "revision" : "7acc96bec5acfbb31d6ee0e8bdb8e4c14433f4ed",
+        "version" : "1.11.8"
       }
     },
     {
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashWorkers.git",
       "state" : {
-        "revision" : "14b0b3385a201575ed7c38962c19bcc75b6d2783",
-        "version" : "1.11.7"
+        "revision" : "09663f3ed43020b8a9d8b99ecb81237c8457e96e",
+        "version" : "1.11.8"
       }
     },
     {
@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSDataObjects.git",
       "state" : {
-        "revision" : "41858ba206c770af01a3aa57749fc9f1b35526d2",
-        "version" : "1.11.0"
+        "revision" : "ea6e9da344ab1579108b08652e68e9a8542ab041",
+        "version" : "1.11.1"
       }
     },
     {
@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSProtocols.git",
       "state" : {
-        "revision" : "318b0e817b32ae529bc8352228a0bcd3f824d731",
-        "version" : "1.11.1"
+        "revision" : "181cc8772884e9bed9d2d558bbfab70bee5b9d3a",
+        "version" : "1.11.2"
       }
     },
     {
@@ -194,8 +194,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/futuretap/FTLinearActivityIndicator.git",
       "state" : {
-        "revision" : "a7770c9d65ff3b16eee44462bb211df3208dcf27",
-        "version" : "1.6.0"
+        "revision" : "ddac02505a2d18e265059bafe9381193e578bf15",
+        "version" : "1.7.0"
       }
     },
     {
@@ -221,8 +221,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hackiftekhar/IQKeyboardManager.git",
       "state" : {
-        "revision" : "ea08e08958890043019d248065fe3d825f338087",
-        "version" : "6.5.12"
+        "revision" : "c00b1ae9fa1ad8af4465bb6ca901f6943fc98eba",
+        "version" : "6.5.16"
       }
     },
     {
@@ -257,8 +257,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rajdeep/proton.git",
       "state" : {
-        "revision" : "e31a2e6ea148b44e271787375dc094f855b86c3a",
-        "version" : "0.8.14"
+        "revision" : "3ae97ee482905edfaf6fb92d44c5eee3d61c33bd",
+        "version" : "0.8.24"
       }
     },
     {
