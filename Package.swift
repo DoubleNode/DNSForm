@@ -26,17 +26,17 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/DoubleNodeOpen/AnimatedField.git", from: "2.5.50"),
+        .package(url: "https://github.com/DoubleNodeOpen/AnimatedField.git", from: "2.5.53"),
         .package(url: "https://github.com/DoubleNode/DNSAppCore.git", from: "1.11.0"),
         .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.11.3"),
         .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.11.0"),
-        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.11.9"),
-        .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.11.2"),
+        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.11.15"),
+        .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.11.4"),
         .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", from: "1.11.0"),
         .package(url: "https://github.com/DoubleNode/DNSCrashNetwork.git", from: "1.11.1"),
         .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", from: "1.11.0"),
-        .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.11.9"),
-        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.11.2"),
+        .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.11.15"),
+        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.11.8"),
         .package(url: "https://github.com/rajdeep/proton.git", from: "0.8.24"),
         .package(url: "https://github.com/Nirma/SFSymbol", from: "2.3.0")
     ],
