@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSAppCore.git",
       "state" : {
-        "revision" : "64ca0c752ca516953b4167c274d131e834401bef",
-        "version" : "1.11.0"
+        "revision" : "74d2ee1334d71dc55cef4636545d0fd52eb70713",
+        "version" : "1.11.1"
       }
     },
     {
@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseStage.git",
       "state" : {
-        "revision" : "4ddd6e989879732d4663e45463a4c3a4beba2650",
-        "version" : "1.11.4"
+        "revision" : "4bc009f0173511ae1c3512e4e3aa85dde88bea2a",
+        "version" : "1.11.7"
       }
     },
     {
@@ -77,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankNetwork.git",
       "state" : {
-        "revision" : "9867a63510ae3223fee78f81a57e25c30b354768",
-        "version" : "1.11.1"
+        "revision" : "f37ea99085946856e7144bbda830d2d83627e40a",
+        "version" : "1.11.2"
       }
     },
     {
@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankSystems.git",
       "state" : {
-        "revision" : "99b8c6385da1ed3a5ef8862693b2e13381900183",
-        "version" : "1.11.0"
+        "revision" : "5d798ff29c33cc5bd16e3c414b3f9c17fc6fb6c4",
+        "version" : "1.11.1"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "cbaa54f7474ec51ebaff39fae39aa2185617bb9e",
-        "version" : "1.11.16"
+        "revision" : "79edb96190a984c756272690b6577c85e70fc733",
+        "version" : "1.11.21"
       }
     },
     {
@@ -104,8 +104,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCore.git",
       "state" : {
-        "revision" : "6ae42e7423029031d27c53702554e86eed6a055e",
-        "version" : "1.11.8"
+        "revision" : "b2db7908f11f202a3321ea3c18eb731a5f00512e",
+        "version" : "1.11.9"
       }
     },
     {
@@ -122,8 +122,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashNetwork.git",
       "state" : {
-        "revision" : "0170cb4ddd01bf1b4fd28ebc8c99e88d4fe4c952",
-        "version" : "1.11.1"
+        "revision" : "58bf523df2b7530c2fd818c5b5316436cd2764aa",
+        "version" : "1.11.2"
       }
     },
     {
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashWorkers.git",
       "state" : {
-        "revision" : "e9320f2d29191cbc5b7755ad79cb393ea9295cd3",
-        "version" : "1.11.15"
+        "revision" : "58034df82954b8235b5b9770594bdc065265e8f4",
+        "version" : "1.11.17"
       }
     },
     {
@@ -194,8 +194,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/futuretap/FTLinearActivityIndicator.git",
       "state" : {
-        "revision" : "ddac02505a2d18e265059bafe9381193e578bf15",
-        "version" : "1.7.0"
+        "revision" : "4767d37cb53d383aca8bd47d0b0206d8da635032",
+        "version" : "1.8.0"
       }
     },
     {
@@ -203,8 +203,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kaishin/Gifu.git",
       "state" : {
-        "revision" : "82da0086dea14ca9afc9801234ad8dc4cd9e2738",
-        "version" : "3.4.1"
+        "revision" : "46434cd816f035271beb16d80f7bc91381cbd8e4",
+        "version" : "3.5.1"
       }
     },
     {
@@ -253,12 +253,21 @@
       }
     },
     {
+      "identity" : "phonenumberkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marmelroy/PhoneNumberKit",
+      "state" : {
+        "revision" : "288b99e9e99926bc8be41220802df83c059fac9b",
+        "version" : "4.0.2"
+      }
+    },
+    {
       "identity" : "proton",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rajdeep/proton.git",
       "state" : {
-        "revision" : "4a64c4cbd2310abad2fe9fb26be58edb99d149d1",
-        "version" : "0.8.33"
+        "revision" : "2fa41f78731461c40a1dd12bee7de1845c310c31",
+        "version" : "0.8.35"
       }
     },
     {
@@ -275,8 +284,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Juanpe/SkeletonView.git",
       "state" : {
-        "revision" : "739a4f5d78731bebc48811c75fa9e1f4c4cef23e",
-        "version" : "1.30.4"
+        "revision" : "2f5274827d310e32c09325dd3e0007120940988e",
+        "version" : "1.31.0"
       }
     },
     {
