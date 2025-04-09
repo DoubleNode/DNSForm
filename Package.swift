@@ -31,12 +31,13 @@ let package = Package(
         .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.11.7"),
         .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.11.1"),
         .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.11.21"),
-        .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.11.9"),
+        .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.11.10"),
         .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", from: "1.11.1"),
         .package(url: "https://github.com/DoubleNode/DNSCrashNetwork.git", from: "1.11.2"),
         .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", from: "1.11.0"),
         .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.11.17"),
-        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.11.14"),
+        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.11.16"),
+        .package(url: "https://github.com/Minitour/EasyNotificationBadge.git", from: "1.2.4"),
         .package(url: "https://github.com/rajdeep/proton.git", from: "0.8.35"),
         .package(url: "https://github.com/Nirma/SFSymbol", from: "2.3.0")
     ],
@@ -48,7 +49,7 @@ let package = Package(
             dependencies: [
                 "AnimatedField", "DNSAppCore", "DNSBaseStage", "DNSBaseTheme", "DNSBlankWorkers",
                 "DNSCore", "DNSCoreThreading", "DNSCrashNetwork", "DNSCrashSystems",
-                "DNSCrashWorkers", "DNSProtocols", "SFSymbol",
+                "DNSCrashWorkers", "DNSProtocols", "EasyNotificationBadge", "SFSymbol",
                 .product(name: "Proton", package: "proton")
             ],
             resources: [

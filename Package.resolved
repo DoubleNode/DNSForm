@@ -104,8 +104,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCore.git",
       "state" : {
-        "revision" : "b2db7908f11f202a3321ea3c18eb731a5f00512e",
-        "version" : "1.11.9"
+        "revision" : "3e37d10f8698de371a3970ac9b694ca6d1eab4e7",
+        "version" : "1.11.10"
       }
     },
     {
@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSDataObjects.git",
       "state" : {
-        "revision" : "d7297906c33e8d79f1220ac0e773e85145ee156f",
-        "version" : "1.11.10"
+        "revision" : "7feafaf5f472b0cc29020acefdbcd29c1c46edcd",
+        "version" : "1.11.11"
       }
     },
     {
@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSProtocols.git",
       "state" : {
-        "revision" : "d90af5be18cb5a7f6a01a059934d86aa075e8daa",
-        "version" : "1.11.14"
+        "revision" : "fad4c204bf14193c44d496d84ef3624a14cb7fe5",
+        "version" : "1.11.16"
       }
     },
     {
@@ -187,6 +187,15 @@
       "state" : {
         "revision" : "4c486bd7e9ad046db7fb58b3487c5691896579d7",
         "version" : "0.9.1"
+      }
+    },
+    {
+      "identity" : "easynotificationbadge",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Minitour/EasyNotificationBadge.git",
+      "state" : {
+        "revision" : "2774998af193a396b1842c0727fe52c2bd217ae2",
+        "version" : "1.2.5"
       }
     },
     {
@@ -302,8 +311,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SimplyDanny/SwiftLintPlugins",
       "state" : {
-        "revision" : "7a3d77f3dd9f91d5cea138e52c20cfceabf352de",
-        "version" : "0.58.2"
+        "revision" : "a60b5704f335fc18aa3aea3564c74774a338425f",
+        "version" : "0.59.0"
       }
     },
     {
