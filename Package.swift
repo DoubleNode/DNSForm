@@ -37,7 +37,7 @@ let package = Package(
         .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", from: "1.11.0"),
         .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.11.17"),
         .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.11.16"),
-        .package(url: "https://github.com/Minitour/EasyNotificationBadge.git", from: "1.2.4"),
+        .package(url: "https://github.com/Minitour/EasyNotificationBadge.git", from: "1.2.5"),
         .package(url: "https://github.com/rajdeep/proton.git", from: "0.8.35"),
         .package(url: "https://github.com/Nirma/SFSymbol", from: "2.3.0")
     ],
