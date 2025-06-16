@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBaseStage.git",
       "state" : {
-        "revision" : "3395784665510898a6a1eda8cbe578924e8f3292",
-        "version" : "1.11.9"
+        "revision" : "20d26a5cda940a6d56cbeb280800a7eedea1830e",
+        "version" : "1.11.20"
       }
     },
     {
@@ -266,8 +266,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/marmelroy/PhoneNumberKit",
       "state" : {
-        "revision" : "288b99e9e99926bc8be41220802df83c059fac9b",
-        "version" : "4.0.2"
+        "revision" : "24af4d5147fc42e97cb6cb3761d5d9933d41c240",
+        "version" : "4.1.0"
       }
     },
     {
@@ -331,6 +331,15 @@
       "state" : {
         "revision" : "7219cad3098637176ace311510d11467dbfb9bb0",
         "version" : "2.7.1"
+      }
+    },
+    {
+      "identity" : "uilabel-copyable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alexandreos/UILabel-Copyable.git",
+      "state" : {
+        "revision" : "a1ac4d7d1118fde314796f449e803e610d7b801c",
+        "version" : "2.0.1"
       }
     }
   ],
