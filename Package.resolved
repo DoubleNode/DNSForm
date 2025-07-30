@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNodeOpen/AnimatedField.git",
       "state" : {
-        "revision" : "a2b81fb8016b696beaba68d4a4a82fd3228187bb",
-        "version" : "2.5.56"
+        "revision" : "4f2a586fa8f8fc68e812328b81ab6bdfeb402201",
+        "version" : "2.5.64"
       }
     },
     {
@@ -77,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankNetwork.git",
       "state" : {
-        "revision" : "f37ea99085946856e7144bbda830d2d83627e40a",
-        "version" : "1.11.2"
+        "revision" : "74b8936484fc2332cbbbccc2c067c71326a27f38",
+        "version" : "1.11.3"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSBlankWorkers.git",
       "state" : {
-        "revision" : "79edb96190a984c756272690b6577c85e70fc733",
-        "version" : "1.11.21"
+        "revision" : "065208743ff9e996d6e0e87ddacb4feb17cd1fdf",
+        "version" : "1.11.22"
       }
     },
     {
@@ -122,8 +122,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCrashNetwork.git",
       "state" : {
-        "revision" : "58bf523df2b7530c2fd818c5b5316436cd2764aa",
-        "version" : "1.11.2"
+        "revision" : "700de1e63c00d035c20cc92649df16cf125d95dd",
+        "version" : "1.11.3"
       }
     },
     {
@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSProtocols.git",
       "state" : {
-        "revision" : "fad4c204bf14193c44d496d84ef3624a14cb7fe5",
-        "version" : "1.11.16"
+        "revision" : "7b819465f5d9ef4033918c9f8017cc3dea1b21c6",
+        "version" : "1.11.17"
       }
     },
     {
@@ -266,8 +266,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/marmelroy/PhoneNumberKit",
       "state" : {
-        "revision" : "24af4d5147fc42e97cb6cb3761d5d9933d41c240",
-        "version" : "4.1.0"
+        "revision" : "4eda4fe8f3cf83411ee55a08adefba21b1557c3f",
+        "version" : "4.1.3"
       }
     },
     {
