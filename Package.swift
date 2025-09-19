@@ -4,7 +4,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSForm
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2025 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import PackageDescription
@@ -14,7 +14,8 @@ let package = Package(
     platforms: [
         .iOS(.v16),
         .tvOS(.v16),
-//        .macOS(.v13),
+        .macCatalyst(.v16),
+        .macOS(.v13),
         .watchOS(.v9),
     ],
     products: [
@@ -26,20 +27,29 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/DoubleNodeOpen/AnimatedField.git", from: "2.5.64"),
-        .package(url: "https://github.com/DoubleNode/DNSAppCore.git", from: "1.11.1"),
-        .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", from: "1.11.20"),
-        .package(url: "https://github.com/DoubleNode/DNSBaseTheme.git", from: "1.11.1"),
-        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", from: "1.11.22"),
-        .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.11.10"),
-        .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", from: "1.11.1"),
-        .package(url: "https://github.com/DoubleNode/DNSCrashNetwork.git", from: "1.11.3"),
-        .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", from: "1.11.0"),
-        .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", from: "1.11.17"),
-        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", from: "1.11.17"),
-        .package(url: "https://github.com/Minitour/EasyNotificationBadge.git", from: "1.2.5"),
-        .package(url: "https://github.com/rajdeep/proton.git", from: "0.8.35"),
-        .package(url: "https://github.com/Nirma/SFSymbol", from: "2.3.0")
+        .package(url: "https://github.com/DoubleNodeOpen/AnimatedField.git", .upToNextMajor(from: "2.5.69")),
+        .package(url: "https://github.com/DoubleNode/DNSAppCore.git", .upToNextMajor(from: "1.12.0")),
+        .package(url: "https://github.com/DoubleNode/DNSBaseStage.git", .upToNextMajor(from: "1.12.0")),
+        .package(url: "https://github.com/DoubleNode/DNSBlankWorkers.git", .upToNextMajor(from: "1.12.0")),
+        .package(url: "https://github.com/DoubleNode/DNSCore.git", .upToNextMajor(from: "1.12.0")),
+        .package(url: "https://github.com/DoubleNode/DNSCoreThreading.git", .upToNextMajor(from: "1.12.0")),
+        .package(url: "https://github.com/DoubleNode/DNSCrashNetwork.git", .upToNextMajor(from: "1.12.0")),
+        .package(url: "https://github.com/DoubleNode/DNSCrashSystems.git", .upToNextMajor(from: "1.12.0")),
+        .package(url: "https://github.com/DoubleNode/DNSCrashWorkers.git", .upToNextMajor(from: "1.12.0")),
+        .package(url: "https://github.com/DoubleNode/DNSProtocols.git", .upToNextMajor(from: "1.12.0")),
+//        .package(path: "../../Open Source/AnimatedField"),
+//        .package(path: "../DNSAppCore"),
+//        .package(path: "../DNSBaseStage"),
+//        .package(path: "../DNSBlankWorkers"),
+//        .package(path: "../DNSCore"),
+//        .package(path: "../DNSCoreThreading"),
+//        .package(path: "../DNSCrashNetwork"),
+//        .package(path: "../DNSCrashSystems"),
+//        .package(path: "../DNSCrashWorkers"),
+//        .package(path: "../DNSProtocols"),
+        .package(url: "https://github.com/Minitour/EasyNotificationBadge.git", .upToNextMajor(from: "1.2.5")),
+        .package(url: "https://github.com/rajdeep/proton.git", .upToNextMajor(from: "0.8.35")),
+        .package(url: "https://github.com/DoubleNodeOpen/SFSymbol", .upToNextMajor(from: "3.0.1"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -47,7 +57,7 @@ let package = Package(
         .target(
             name: "DNSForm",
             dependencies: [
-                "AnimatedField", "DNSAppCore", "DNSBaseStage", "DNSBaseTheme", "DNSBlankWorkers",
+                "AnimatedField", "DNSAppCore", "DNSBaseStage", "DNSBlankWorkers",
                 "DNSCore", "DNSCoreThreading", "DNSCrashNetwork", "DNSCrashSystems",
                 "DNSCrashWorkers", "DNSProtocols", "EasyNotificationBadge", "SFSymbol",
                 .product(name: "Proton", package: "proton")
@@ -79,6 +89,7 @@ let package = Package(
                 .process("FieldTypeCells/DNSFormDetailSpacerCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailSubHeaderView.xib"),
                 .process("FieldTypeCells/DNSFormDetailTabSelectionCell.xib"),
+                .process("FieldTypeCells/DNSFormDetailTextEditorCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailTextFieldCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailTextSelectionCell.xib"),
                 .process("FieldTypeCells/DNSFormDetailTextViewCell.xib"),
