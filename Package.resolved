@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNodeOpen/AnimatedField.git",
       "state" : {
-        "revision" : "1421681b250b2bd73925003889ef6c205f2e3b90",
-        "version" : "3.0.0"
+        "revision" : "a0d5e520403c017f6abc33ed9d98bf54c2ed8ef1",
+        "version" : "3.0.1"
       }
     },
     {

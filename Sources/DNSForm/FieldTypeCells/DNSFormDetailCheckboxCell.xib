@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="height" constant="24" id="Qjh-nj-ZxH"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HY-KK-0su" customClass="DNSUILabel" customModule="DNSBaseTheme">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HY-KK-0su" customClass="DNSUILabel" customModule="DNSThemeObjects">
                                 <rect key="frame" x="64.000000000000014" y="9.3333333333333339" width="153.33333333333337" height="21.666666666666664"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -44,7 +44,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="DNSForm.title"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[This is a note on content type and frequency]" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inU-rk-1bD" customClass="DNSUILabel" customModule="DNSBaseTheme">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[This is a note on content type and frequency]" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inU-rk-1bD" customClass="DNSUILabel" customModule="DNSThemeObjects">
                                 <rect key="frame" x="64" y="31" width="322" height="13"/>
                                 <fontDescription key="fontDescription" name="URWDIN-Regular" family="URW DIN" pointSize="11"/>
                                 <color key="textColor" name="FormFootnote"/>

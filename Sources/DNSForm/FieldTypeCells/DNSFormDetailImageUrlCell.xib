@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jap-NZ-Uma" userLabel="Image Container View" customClass="DNSUIView" customModule="DNSBaseTheme">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jap-NZ-Uma" userLabel="Image Container View" customClass="DNSUIView" customModule="DNSThemeObjects">
                                 <rect key="frame" x="24" y="0.0" width="64" height="64"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="vfR-AG-nbV">
@@ -77,7 +77,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-oh-Ee1" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-oh-Ee1" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSThemeObjects">
                                 <rect key="frame" x="98" y="0.0" width="292" height="64"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>

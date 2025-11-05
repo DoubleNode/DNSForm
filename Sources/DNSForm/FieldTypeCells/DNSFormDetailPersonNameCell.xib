@@ -21,28 +21,28 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="266"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-oh-Ee1" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-oh-Ee1" customClass="DNSUIAnimatedField" customModule="DNSThemeObjects">
                                 <rect key="frame" x="24" y="0.0" width="366" height="64"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Aew-Xl-w2x"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7LT-83-TJW" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7LT-83-TJW" customClass="DNSUIAnimatedField" customModule="DNSThemeObjects">
                                 <rect key="frame" x="24" y="64" width="366" height="64"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="m1U-8I-jMF"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDn-9D-VaM" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDn-9D-VaM" customClass="DNSUIAnimatedField" customModule="DNSThemeObjects">
                                 <rect key="frame" x="24" y="128" width="366" height="64"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="1D8-Za-3WV"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOd-HE-WAU" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOd-HE-WAU" customClass="DNSUIAnimatedField" customModule="DNSThemeObjects">
                                 <rect key="frame" x="24" y="192" width="366" height="64"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>

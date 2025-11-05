@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-TU-KgD" userLabel="Content View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-oh-Ee1" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-oh-Ee1" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSThemeObjects">
                                 <rect key="frame" x="24" y="0.0" width="366" height="64"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>

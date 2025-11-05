@@ -39,7 +39,7 @@
                                     <constraint firstAttribute="height" constant="1" id="nqh-ER-C4a"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-oh-Ee1" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUe-oh-Ee1" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSThemeObjects">
                                 <rect key="frame" x="49" y="0.0" width="151.5" height="64"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>
@@ -63,7 +63,7 @@
                                     <constraint firstAttribute="height" constant="1" id="WOH-dC-CoW"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyY-zM-JSk" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSBaseTheme">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyY-zM-JSk" userLabel="Text Field" customClass="DNSUIAnimatedField" customModule="DNSThemeObjects">
                                 <rect key="frame" x="239" y="0.0" width="151" height="64"/>
                                 <color key="tintColor" name="TitleDark"/>
                                 <constraints>
