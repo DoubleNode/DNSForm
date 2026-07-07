@@ -65,7 +65,7 @@ public extension DNSUIEnabled {
                 public static var countDown = DNSUIEnabled(false)
                 public static var counterAnimation = DNSUIEnabled(false)
                 public static var counterEnabled = DNSUIEnabled(false)
-                public static var titleAlwaysVisible = DNSUIEnabled(false)
+                public static var titleAlwaysVisible = DNSUIEnabled(true)
                 public enum Alert {
                     public static var strikeThru = DNSUIEnabled(false)
                 }
