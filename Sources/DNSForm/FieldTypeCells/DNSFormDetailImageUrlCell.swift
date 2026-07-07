@@ -38,6 +38,7 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
         public var style: DNSThemeFieldStyle = .DNSForm.default
+        public var titleAlwaysVisible: Bool = true
         public var url: URL?
         public var alertMessage: String = ""
 
@@ -66,7 +67,8 @@ open class DNSFormDetailImageUrlCell: DNSBaseStageCollectionViewCell,
                 self.lastURL = nil
                 return
             }
-            textField.style = data.style
+            let effectiveStyle = data.style.dnsFormTitleAlwaysVisible(data.titleAlwaysVisible)
+            textField.style = effectiveStyle
             self.utilityDisplayAlert(data.alertMessage, for: textField)
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
             textField.isEnabled = !data.readonly

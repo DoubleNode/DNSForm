@@ -39,6 +39,7 @@ open class DNSFormDetailTextViewLargeCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
         public var style: DNSThemeFieldStyle = .DNSForm.textView
+        public var titleAlwaysVisible: Bool = true
         public var styleBackground: DNSThemeViewStyle = .DNSForm.textViewBackground
         public var text: String
         public var alertMessage: String = ""
@@ -63,7 +64,8 @@ open class DNSFormDetailTextViewLargeCell: DNSBaseStageCollectionViewCell,
                 return
             }
             backView.style = data.styleBackground
-            textView.style = data.style
+            let effectiveStyle = data.style.dnsFormTitleAlwaysVisible(data.titleAlwaysVisible)
+            textView.style = effectiveStyle
             self.utilityDisplayAlert(data.alertMessage, for: textView)
             self.lineView.backgroundColor = data.readonly ? UIColor.lightGray : UIColor.black
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"

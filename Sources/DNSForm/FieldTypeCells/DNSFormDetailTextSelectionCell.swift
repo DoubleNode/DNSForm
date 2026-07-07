@@ -37,6 +37,7 @@ open class DNSFormDetailTextSelectionCell: DNSBaseStageCollectionViewCell,
         public var resultStrings: [String: String]
         public var selectionStrings: [String]
         public var style: DNSThemeFieldStyle = .DNSForm.default
+        public var titleAlwaysVisible: Bool = true
         public var text: String
         public var selectedText = ""
         public var alertMessage: String = ""
@@ -65,7 +66,8 @@ open class DNSFormDetailTextSelectionCell: DNSBaseStageCollectionViewCell,
                 textField.text = ""
                 return
             }
-            textField.style = data.style
+            let effectiveStyle = data.style.dnsFormTitleAlwaysVisible(data.titleAlwaysVisible)
+            textField.style = effectiveStyle
             self.utilityDisplayAlert(data.alertMessage, for: textField)
             textField.type = .stringpicker(data.selectedText,
                                            data.selectionStrings,

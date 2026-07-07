@@ -41,6 +41,7 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
         public var style: DNSThemeFieldStyle = .DNSForm.default
+        public var titleAlwaysVisible: Bool = true
         public var timeOfDay: DNSTimeOfDay
         public var timeLabel: String
         public var timePlaceholder: String
@@ -65,7 +66,8 @@ open class DNSFormDetailTimeOfDayCell: DNSBaseStageCollectionViewCell,
                 self.timeZeroLabel.isHidden = true
                 return
             }
-            timeTextField.style = data.style
+            let effectiveStyle = data.style.dnsFormTitleAlwaysVisible(data.titleAlwaysVisible)
+            timeTextField.style = effectiveStyle
             self.utilityDisplayAlert(data.alertMessage, for: timeTextField)
             self.timeIcon.image = data.image
             self.timeIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray

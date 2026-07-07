@@ -49,6 +49,7 @@ open class DNSFormDetailImageSelectorPlusCell: DNSBaseStageCollectionViewCell,
         public var required: Bool
         public var returnKeyType: UIReturnKeyType = .next
         public var style: DNSThemeFieldStyle = .DNSForm.default
+        public var titleAlwaysVisible: Bool = true
         public var textLabel: String
         public var textPlaceholder: String
         public var type: DNSFormFieldType = .none
@@ -101,7 +102,8 @@ open class DNSFormDetailImageSelectorPlusCell: DNSBaseStageCollectionViewCell,
             self.titleLabel.style = data.style.titleStyle
             self.titleLabel.text = data.imageLabel + languageLabel
 
-            textField.style = data.style
+            let effectiveStyle = data.style.dnsFormTitleAlwaysVisible(data.titleAlwaysVisible)
+            textField.style = effectiveStyle
             self.utilityDisplayAlert(data.textAlertMessage, for: textField)
             textField.isEnabled = !data.readonly
             textField.isSecure = false

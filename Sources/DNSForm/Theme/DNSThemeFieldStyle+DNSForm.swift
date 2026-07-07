@@ -10,6 +10,22 @@ import DNSCore
 import DNSCoreThreading
 import DNSThemeTypes
 
+internal extension DNSThemeFieldStyle {
+    /// Returns a per-cell copy of this style with `titleAlwaysVisible` overridden.
+    ///
+    /// `DNSThemeFieldStyle` is a reference type, and the shared static styles
+    /// (`.DNSForm.default`, `.DNSForm.textView`, …) are singletons — mutating one
+    /// in place would corrupt every cell that shares it. Copying first keeps the
+    /// override local to this cell. Because the override lives in the returned
+    /// style, it survives AnimatedField's per-state `updateForState(_:)` format
+    /// rebuilds, which re-read `titleAlwaysVisible.<state>` on every state change.
+    func dnsFormTitleAlwaysVisible(_ isVisible: Bool) -> DNSThemeFieldStyle {
+        let copy = DNSThemeFieldStyle(from: self)
+        copy.titleAlwaysVisible = DNSUIEnabled(isVisible)
+        return copy
+    }
+}
+
 public extension DNSThemeFieldStyle {
     enum DNSForm {  // swiftlint:disable:this type_name
         public static func initThemes() {

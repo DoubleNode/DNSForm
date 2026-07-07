@@ -50,6 +50,7 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
         public var style: DNSThemeFieldStyle = .DNSForm.default
+        public var titleAlwaysVisible: Bool = true
         public var closeAlertMessage: String = ""
         public var openAlertMessage: String = ""
         public var imageClose: UIImage? = DNSFormDetailHoursCell.defaultImageClose
@@ -77,8 +78,9 @@ open class DNSFormDetailHoursCell: DNSBaseStageCollectionViewCell,
                 self.openPicker.date = Date()
                 return
             }
-            closeTextField.style = data.style
-            openTextField.style = data.style
+            let effectiveStyle = data.style.dnsFormTitleAlwaysVisible(data.titleAlwaysVisible)
+            closeTextField.style = effectiveStyle
+            openTextField.style = effectiveStyle
             self.utilityDisplayAlert(data.closeAlertMessage, for: closeTextField)
             self.utilityDisplayAlert(data.openAlertMessage, for: openTextField)
             self.hoursLabel.text = data.hoursLabel

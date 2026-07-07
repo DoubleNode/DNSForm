@@ -39,6 +39,7 @@ open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
         public var required: Bool
         public var returnKeyType: UIReturnKeyType = .next
         public var style: DNSThemeFieldStyle = .DNSForm.default
+        public var titleAlwaysVisible: Bool = true
         public var value: AnyHashable
         public var alertMessages: [CodingKeys: String] = [
             .familyName: "", .givenName: "", .middleName: "", .nickname: "",
@@ -68,17 +69,18 @@ open class DNSFormDetailPersonNameCell: DNSBaseStageCollectionViewCell,
                 utilityClearTextField(nicknameTextField)
                 return
             }
-            if familyNameTextField.style != data.style {
-                familyNameTextField.style = data.style
+            let effectiveStyle = data.style.dnsFormTitleAlwaysVisible(data.titleAlwaysVisible)
+            if familyNameTextField.style != effectiveStyle {
+                familyNameTextField.style = effectiveStyle
             }
-            if givenNameTextField.style != data.style {
-                givenNameTextField.style = data.style
+            if givenNameTextField.style != effectiveStyle {
+                givenNameTextField.style = effectiveStyle
             }
-            if middleNameTextField.style != data.style {
-                middleNameTextField.style = data.style
+            if middleNameTextField.style != effectiveStyle {
+                middleNameTextField.style = effectiveStyle
             }
-            if nicknameTextField.style != data.style {
-                nicknameTextField.style = data.style
+            if nicknameTextField.style != effectiveStyle {
+                nicknameTextField.style = effectiveStyle
             }
 
             familyNameTextField.autocapitalizationType = .words

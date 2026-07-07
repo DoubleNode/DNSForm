@@ -1308,10 +1308,10 @@ public extension UIColor {
                 public static var border = UIColor.clear
                 public enum Line {
                     public static var disabled = UIColor.lightGray
-                    public static var focused = UIColor.darkText
-                    public static var highlighted = UIColor.darkText
-                    public static var normal = UIColor.darkText
-                    public static var selected = UIColor.darkText
+                    public static var focused = UIColor.label
+                    public static var highlighted = UIColor.label
+                    public static var normal = UIColor.label
+                    public static var selected = UIColor.label
                 }
                 public static var shadow = UIColor.clear
                 public static var tint = UIColor.systemPurple
@@ -1371,10 +1371,10 @@ public extension UIColor {
                 public static var border = UIColor.clear
                 public enum Line {
                     public static var disabled = UIColor.lightGray
-                    public static var focused = UIColor.darkText
-                    public static var highlighted = UIColor.darkText
-                    public static var normal = UIColor.darkText
-                    public static var selected = UIColor.darkText
+                    public static var focused = UIColor.label
+                    public static var highlighted = UIColor.label
+                    public static var normal = UIColor.label
+                    public static var selected = UIColor.label
                 }
                 public static var pickerText = UIColor.label
                 public static var shadow = UIColor.clear
@@ -1435,10 +1435,10 @@ public extension UIColor {
                 public static var border = UIColor.clear
                 public enum Line {
                     public static var disabled = UIColor.lightGray
-                    public static var focused = UIColor.darkText
-                    public static var highlighted = UIColor.darkText
-                    public static var normal = UIColor.darkText
-                    public static var selected = UIColor.darkText
+                    public static var focused = UIColor.label
+                    public static var highlighted = UIColor.label
+                    public static var normal = UIColor.label
+                    public static var selected = UIColor.label
                 }
                 public static var pickerText = UIColor.white
                 public static var shadow = UIColor.clear
@@ -1499,10 +1499,10 @@ public extension UIColor {
                 public static var border = UIColor.clear
                 public enum Line {
                     public static var disabled = UIColor.lightGray
-                    public static var focused = UIColor.darkText
-                    public static var highlighted = UIColor.darkText
-                    public static var normal = UIColor.darkText
-                    public static var selected = UIColor.darkText
+                    public static var focused = UIColor.label
+                    public static var highlighted = UIColor.label
+                    public static var normal = UIColor.label
+                    public static var selected = UIColor.label
                 }
                 public static var pickerText = UIColor.white
                 public static var shadow = UIColor.clear

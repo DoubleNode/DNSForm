@@ -46,6 +46,7 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
         public var readonly: Bool
         public var required: Bool
         public var style: DNSThemeFieldStyle = .DNSForm.default
+        public var titleAlwaysVisible: Bool = true
         public var alertMessage: String = ""
         public var image: UIImage? = DNSFormDetailDateCell.defaultImage
 
@@ -66,7 +67,8 @@ open class DNSFormDetailDateCell: DNSBaseStageCollectionViewCell,
                 self.datePicker.date = Date()
                 return
             }
-            dateTextField.style = data.style
+            let effectiveStyle = data.style.dnsFormTitleAlwaysVisible(data.titleAlwaysVisible)
+            dateTextField.style = effectiveStyle
             self.utilityDisplayAlert(data.alertMessage, for: dateTextField)
             self.dateIcon.image = data.image
             self.dateIcon.tintColor = data.readonly ? UIColor.lightGray : UIColor.darkGray

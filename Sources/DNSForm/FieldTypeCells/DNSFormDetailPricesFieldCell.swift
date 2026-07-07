@@ -50,6 +50,7 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
             public var required: Bool
             public var returnKeyType: UIReturnKeyType = .next
             public var style: DNSThemeFieldStyle = .DNSForm.default
+            public var titleAlwaysVisible: Bool = true
             public var price: Float
             public var image: UIImage? = DNSFormDetailPricesFieldCell.defaultImage
 
@@ -174,7 +175,7 @@ open class DNSFormDetailPricesFieldCell: DNSBaseStageCollectionViewCell,
                        with fieldData: Data.FieldData) {
         imageView.image = fieldData.image
         imageView.tintColor = fieldData.readonly ? UIColor.lightGray : UIColor.darkGray
-        textField.style = fieldData.style
+        textField.style = fieldData.style.dnsFormTitleAlwaysVisible(fieldData.titleAlwaysVisible)
         let languageLabel = fieldData.languageCode.isEmpty ? "" : " (\(fieldData.languageCode))"
         textField.isEnabled = !fieldData.readonly
         textField.isSecure = false

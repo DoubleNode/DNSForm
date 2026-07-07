@@ -40,6 +40,7 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
         public var required: Bool
         public var selectMode: Bool
         public var style: DNSThemeFieldStyle = .DNSForm.default
+        public var titleAlwaysVisible: Bool = true
         public var appAction: DAOAppAction?
         public var alertMessage: String = ""
         
@@ -74,7 +75,8 @@ open class DNSFormDetailAppActionCell: DNSBaseStageCollectionViewCell,
                 self.selectModeView?.backgroundColor = UIColor.clear
                 return
             }
-            textField.style = data.style
+            let effectiveStyle = data.style.dnsFormTitleAlwaysVisible(data.titleAlwaysVisible)
+            textField.style = effectiveStyle
             self.utilityDisplayAlert(data.alertMessage, for: textField)
             let languageLabel = data.languageCode.isEmpty ? "" : " (\(data.languageCode))"
             self.selectModeView.isSelected = self.selectMode
